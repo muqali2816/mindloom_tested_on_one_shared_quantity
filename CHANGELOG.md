@@ -83,5 +83,11 @@ Baseline: manuscript v3 (sha256 dec8007fb39d42e2), deposit v1.3 (e7ea015ce7b9171
 ## v4.7 — final text pass
 - Supplementary Note S6 (new): ConTraSt scheme and limits (from §7.5), full Table 2 scenario list (from §7.6). Body 16 407 → 15 813 words; §8.1–8.3 shortened by about a quarter with every citation kept; §8.4 nested highlight flattened. Response §4(i) version, §4(j) sentence on remaining length. Deposit README lists S6.
 
+## v4.8 — after the authors' review of the whole package
+- Protocol v3: one confirmatory contrast (C1a/P23), count branch as estimation, Morsella urge rating as a report-based test of P16 (P35) and pilot stop rule, titration phase with frozen contrast, 7 cells / 16 blocks, single C1a cells with 3 blocks; scripts v2.4/v3.3/v2.3, 11/11.
+- References: broken DOI (195) fixed; 107 published form; pages for 9 entries; Webb & Graziano byline order; Kelly 2014 added; list renumbered by first appearance (206).
+- §7.2 provenance paragraph; one provisional rule (57 cells); §6.4 Cogitate by pair relations; abstract first/last sentences; AI statement names both systems; response E5/R1-9 v4, §4(i), letters a–k.
+- Codebook v2.4; agreement.py v2.4 (publication-level S2); pack v3.4; S2 form at publication level; PDF wish-list for the authors in pdfs/.
+
 ## Still with the authors
 Send extension request; send proponent letters (record dates); second coding → agreement.py → fill κ; upload deposit_v2 → DOI into 4 places; names, CRediT confirmation, funding, CoI, AI tool; decide on length cuts; confirm Poznanski DOI.

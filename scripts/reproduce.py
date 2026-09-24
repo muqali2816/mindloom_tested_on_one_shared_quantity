@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-reproduce.py (v2.1) -- one-command reproduction of every computed number in the supplementary deposit.
+reproduce.py (v2.3) -- one-command reproduction of every computed number in the supplementary deposit.
 
 Steps (each prints PASS / FAIL; the script exits non-zero if any step fails):
   1.  recompute_table1   on Table_S1_v2.csv if present in the deposit directory, else on the deposit-v1.3
@@ -37,9 +37,9 @@ Writes <out>/reproduce_log.txt and <out>/reproduce_report.json.
 from __future__ import annotations
 import argparse, hashlib, json, os, platform, subprocess, sys, time
 
-__version__ = "2.2"
+__version__ = "2.3"
 HERE = os.path.dirname(os.path.abspath(__file__))
-EXACT = ["typology/column_typology_v2.csv", "typology/column_typology_pairs.csv", "power/protocol_numbers.json", "power/trials_budget.csv", "power/power_study1.csv", "power/power_study2.csv", "recompute/table1_tallies_v2.csv", "recompute/table1_wide_v2.csv", "recompute/table1_tallies_legacy_view.csv",
+EXACT = ["typology/column_typology_v2.csv", "typology/column_typology_pairs.csv", "power/protocol_numbers.json", "power/trials_budget.csv", "power/trials_budget_cells.csv", "power/trials_budget_analysis_cells.csv", "power/block_orders_study1.csv", "power/power_study1.csv", "power/power_study2.csv", "recompute/table1_tallies_v2.csv", "recompute/table1_wide_v2.csv", "recompute/table1_tallies_legacy_view.csv",
          "recompute_selftest/table1_tallies_v2.csv", "recompute_selftest/recompute_selftest_log.csv",
          "table2/Table_2_counts.csv", "s2/s2_sensitivity.csv",
          "power/power_study1.csv", "power/power_study2.csv", "power/trials_budget.csv",
@@ -239,15 +239,17 @@ def main(argv=None):
         kn = os.path.join(a.out, "power", "section9_key_numbers.json")
         if os.path.exists(kn):
             k = json.load(open(kn))
-            params["trials_budget"] = {x: k[x] for x in ["presented_session2_per_cell", "usable_session2_per_cell_expected", "presented_session2_total", "session2_minutes", "usable_target_per_analysis_cell"] if x in k}
+            params["trials_budget"] = {x: k[x] for x in ["n_cells", "n_blocks_session2", "presented_session2_per_cell", "usable_single_cell", "usable_pooled_cell", "presented_session2_total", "session2_minutes", "session1_minutes", "usable_target_per_analysis_cell"] if x in k}
         step("4 section9_power", rc == 0 and ok, dt, (note if rc == 0 else f"section9_power.py exited {rc}: {err.strip()[-200:]}"), params)
 
     # 4b. protocol numbers (v2.2): session arithmetic, multiplicity, success-rule powers and retention, from the step-4 outputs
     if os.path.exists(os.path.join(a.out, "power", "trials_budget.csv")):
         rc, dt, out, err = run(["protocol_numbers.py", "--power-dir", os.path.join(a.out, "power"), "--out", os.path.join(a.out, "power", "protocol_numbers.json")], log)
         pn = json.load(open(os.path.join(a.out, "power", "protocol_numbers.json"))) if rc == 0 else {}
-        note = (f"session 2: {pn['study1']['session2']['presented_per_cell']} per cell, {pn['study1']['session2']['blocks']} blocks, {pn['study1']['session2']['total_minutes']} min; usable {pn['study1']['usable_expected_per_cell']}; "
-                f"Holm {pn['power']['holm_independence_approx']}, rule A {pn['power']['rule_A_per_contrast_both_modalities']}, rule C {pn['power']['rule_C_both_contrasts_both_modalities']}; P(cell >= floor) {pn['retention']['P_cell_reaches_target']}") if rc == 0 else err.strip()[-300:]
+        note = (f"{pn['study1']['n_presentation_cells']} cells, {pn['study1']['n_blocks_per_session']} blocks; session 2 {pn['study1']['session2']['total_minutes']} min, session 1 {pn['study1']['session1']['total_minutes']} min; "
+                f"usable single C1a cell {pn['study1']['usable_single_c1a_cell']}, pooled {pn['study1']['usable_pooled_c1a_cell']}; C1a power {pn['power']['C1a_single_alpha05']}, two-version rule {pn['power']['two_version_rule_independence']}; "
+                f"CR power at dz {pn['power']['rating_contrast_CR']['assumed_dz']}: {pn['power']['rating_contrast_CR']['power_at_N']}; pilot stop dz {pn['power']['pilot_stop']['threshold_dz']}; "
+                f"P(3-block cell >= floor) {pn['retention']['three_block_c1a_cell']['P_reaches_target']}; block orders {pn['block_orders']['n_sequences']}") if rc == 0 else err.strip()[-300:]
         step("4b protocol_numbers", rc == 0, dt, note)
     else:
         step("4b protocol_numbers", False, 0.0, "power/trials_budget.csv absent (step 4 did not run)")    # 5. consistency

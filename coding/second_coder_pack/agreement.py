@@ -104,7 +104,7 @@ import argparse, os, re, sys
 import numpy as np
 import pandas as pd
 
-__version__ = "2.3"
+__version__ = "2.4"
 
 # ---------------------------------------------------------------- code schemes
 V2_CODES = ["EXPLICIT", "INTERPRETED", "NOT_LOCATED", "NOT_APPLICABLE", "UNRESOLVED"]
@@ -764,10 +764,33 @@ def check_s2_reference(A, B, reference, pa, pb, man):
 def analyse_s2_v2(pa, pb, man=None, reference=None):
     man = man or _default_manifest_for(pa)
     A, B = load_s2_v2(pa, man), load_s2_v2(pb, man)
-    ref_ids = check_s2_reference(A, B, reference, pa, pb, man)
+    res = {"S2v2_version": __version__, "S2v2_reference_file": str(reference or pa)}
+    pub_mode = "publication_id" in A.columns and "publication_id" in B.columns and set(A.key) != set(B.key)
+    if pub_mode:
+        # Coder 2 partitioned the publications herself (blank v3.4: one row per publication, rows added per experiment she identified,
+        # experiment_id = <publication_id>-E<k>). Publication sets must match exactly; experiment ids are compared only where both
+        # coders used the same id, and the partition itself is compared as a count per publication.
+        pa_ids, pb_ids = set(A.publication_id), set(B.publication_id)
+        if pa_ids != pb_ids:
+            raise ValidationError(f"S2 v2: publication_id sets differ: {sorted(pa_ids - pb_ids)[:5]} only in file 1, {sorted(pb_ids - pa_ids)[:5]} only in file 2")
+        res["S2v2_mode"] = "publication-level (coder 2 partitioned independently)"
+        res["S2v2_n_publications"] = len(pa_ids)
+        ra = A.groupby("publication_id").size(); rb = B.groupby("publication_id").size()
+        part = pd.DataFrame({"rows_coder1": ra, "rows_coder2": rb}).fillna(0).astype(int)
+        res["S2v2_partition_agreement_publications"] = f"{int((part.rows_coder1 == part.rows_coder2).sum())} of {len(part)}"
+        res["S2v2_partition_disagreeing_publications"] = ";".join(part.index[part.rows_coder1 != part.rows_coder2].astype(str)) or "(none)"
+        common = sorted(set(A.key) & set(B.key)); res["S2v2_n_experiment_ids_shared"] = len(common)
+        res["S2v2_n_experiment_ids_only_coder1"] = len(set(A.key) - set(B.key)); res["S2v2_n_experiment_ids_only_coder2"] = len(set(B.key) - set(A.key))
+        A, B = A[A.key.isin(common)].copy(), B[B.key.isin(common)].copy()
+        ref_ids = set(common)
+        if not common:
+            res["S2v2_note"] = "no shared experiment_id; field-level agreement not computable — align ids at the adjudication meeting"
+            return res, pd.DataFrame()
+    else:
+        ref_ids = check_s2_reference(A, B, reference, pa, pb, man)
     m = A.merge(B, on="key", suffixes=("_A", "_B"), how="inner", validate="one_to_one")
     assert len(m) == len(ref_ids)
-    res = {"S2v2_version": __version__, "S2v2_n_experiments_compared": len(m), "S2v2_reference_file": str(reference or pa), "S2v2_n_reference_experiment_ids": len(ref_ids)}
+    res.update({"S2v2_n_experiments_compared": len(m), "S2v2_n_reference_experiment_ids": len(ref_ids)})
     for f in S2V2_FIELDS:
         labels = S2V2_VOCAB[f] + [UNRESOLVED]
         k, n, p = raw_agreement(m[f + "_n_A"], m[f + "_n_B"])

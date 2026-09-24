@@ -18,7 +18,7 @@ All scenarios are computed by `s2_sensitivity.py` from `Table_S2_v2_experiments.
 
 | Scenario | Neutral visual | Valenced | Interoceptive |
 |---|---|---|---|
-| S1 add the suppressed-access study [131] | 15 of 22 (18 of 31) | 1 of 22 (1 of 31) | 1 of 22 (1 of 31) |
+| S1 add the suppressed-access study [129] | 15 of 22 (18 of 31) | 1 of 22 (1 of 31) | 1 of 22 (1 of 31) |
 | S2 remove the metacognition studies | 11 of 16 (14 of 25) | 0 of 16 (0 of 25) | 0 of 16 (0 of 25) |
 | S3 remove every contested row | 11 of 16 (14 of 25) | 0 of 16 (0 of 25) | 0 of 16 (0 of 25) |
 | S5 add the coder's inferred attributions | 18 of 25 (22 of 35) | 0 of 25 (0 of 35) | 1 of 25 (1 of 35) |

@@ -11,7 +11,8 @@ Purpose of this pack: an independent second application of the coding scheme beh
 1. **Code independently.** Do not discuss cells with the first coder before the forms are returned. Do not open the manuscript's §7 results, the filled S1/S2, or any draft of the response to reviewers.
 2. **Read the sources, not the summaries.** For each theory, read the primary sources listed in §5 of this codebook (3–5 per theory). You may add further sources, but each code must be anchored to a specific citable text; record it in the `source_label` / `source_doi` columns.
 3. **Fill `S1_blank_for_coder2_v2.csv` (120 rows).** For every account × domain cell enter exactly one code from {EXPLICIT, INTERPRETED, NOT_LOCATED, NOT_APPLICABLE, UNRESOLVED} in `code`, `polarity` (positive / stated_null / negative) for EXPLICIT and INTERPRETED, `relation`, a one- or two-sentence `claim_text` in your own words, and `source_label`, `source_doi`, `source_locus`. If the code is NOT_LOCATED, `claim_text` should state what you looked for and did not find. `confidence` is optional (1 = guess, 2 = defensible, 3 = certain).
-4. **Fill `S2_blank_for_coder2_v2.csv` (42 rows, one per row of the first coder's partition of 32 publications).** For each row enter the raw fields `modality`, `affective_status`, `effector_type` (skeletal / autonomic, motor rows only), `manipulation`, `measured_outcome`, `report_type`; the attribution fields `theory_attribution_by_authors` (with `by_authors_locus`), `theory_attribution_later` (post-publication attribution by others, with `later_attribution_evidence` — a citable DOI or 'none found'); and `contested_inclusion`. The content class is not entered: it is derived from the raw fields by script (§4). **Your own partition:** in `unit_type_coder2` state whether the row is, in your reading of the paper, one experiment, a group of experiments, or the whole publication treated as one because the paper's partition could not be verified; in `n_experiments_identified` give the number of separately analysed experiments you find in the publication, and in `partition_note` say where they differ from the row structure. You will need the methods (stimuli and task), not only the abstract.
+4. **Fill `S2_blank_for_coder2_v3.csv` (32 rows, one per publication).** The form does not show the first coder's partition. Read each publication's methods and decide yourself how many separately analysed experiments it reports: keep one row if the publication is one experiment (or if you treat it as one because the partition cannot be verified — say which in `unit_type_coder2`), and **duplicate the row** for each further experiment, numbering `experiment_id` as `<publication_id>-E1`, `-E2`, … in the paper's order and naming each in `experiment_label`; put the total in `n_experiments_identified` and any doubt in `partition_note`. Ancillary and control experiments are rows (note it in `experiment_label`). Then, for every row, enter the raw fields `modality`, `affective_status`, `effector_type` (skeletal / autonomic, motor rows only), `manipulation`, `measured_outcome`, `report_type`; the attribution fields `theory_attribution_by_authors` (with `by_authors_locus`), `theory_attribution_later` (post-publication attribution by others, with `later_attribution_evidence` — a citable DOI or 'none found'); and `contested_inclusion` (with `contested_reason`). The content class is not entered: it is derived from the raw fields by script (§4). Agreement is computed at publication level (partition counts) and, at experiment level, on the rows whose ids coincide; the remainder is aligned at the adjudication meeting.
+
 5. **Time yourself.** Record start and end times per theory block and for the S2 form in `coder2_timing_log.csv`. The time is reported in the manuscript's method section as a property of the scheme, not as an assessment of you.
 6. **Do not resolve doubt by looking for the "expected" answer.** When a cell is genuinely ambiguous, choose the code the decision rules in §3 require, and flag the cell with `confidence = 1`. Ambiguous cells are exactly what the adjudication meeting is for.
 7. **Return** the S1 and S2 forms, the timing log and, if you took it on, the S3 form. Agreement is then computed by `agreement.py` (raw agreement, confusion matrix, nominal κ for code and for code × polarity, per-domain κ, κ by origin subset; for S2 agreement on the raw fields, on the by-authors attribution and separately on the later attribution and its evidence; disagreement lists) and the disagreements are adjudicated jointly, with the adjudication record deposited alongside the tables. **Second step, after S1 is returned:** you receive the prediction register (Table S4) and a pair list with the assessment fields empty, and code the relation of every cross-theory pair of stated predictions (different / jointly compatible / discriminating / incompatible) with a pair confidence; that step checks the first coder's pair judgements, not the completeness of the register's extraction, which only your S1 can check.
@@ -78,6 +79,10 @@ Each cell = one account × one domain. Code the **statement**, not your belief a
 Every EXPLICIT or INTERPRETED cell carries: `relation` ∈ {effect, modulation, necessity, sufficiency, constitution, marker, scope}, `source_label`, `source_doi`, `source_locus` (section / page / figure / preregistered-prediction number), `evidence_status` (full-text / abstract-only / secondary), `confidence` (1–3). Several distinct predictions in one cell are **not** separate S1 rows: S1 holds one row per cell with the code of the strongest statement; each prediction is a row of Table S4 (register) with its own P-id, listed in `prediction_id` separated by `;`.
 
 **Legacy mapping (for the 96 cells carried from v1.3, HOT/HOSS split):** YES → EXPLICIT positive; YES (negative) → EXPLICIT stated_null; IMPLICIT → INTERPRETED; NO → NOT_LOCATED, unless the source states a scope exclusion → NOT_APPLICABLE. The legacy code stays in `legacy_code` and is never overwritten.
+
+**Provisional cells — one flag, one rule.** A cell is `provisional = True` when, and only when, its code rests on an abstract or a secondary source (`evidence_status` ≠ full-text). Nothing else makes a cell provisional; the reason is therefore never written into the flag. `flag_for_adjudication` is a separate field, used only for a cell whose code the first coder wants discussed at the adjudication meeting, with the reason in one sentence. Reading the full text clears `provisional`; it does not by itself clear a flag.
+
+**Replies from theory proponents.** If a proponent answers a query about a derived prediction, the reply is entered verbatim, with permission, in Table S4 (`published_author_statement` / `explicit_endorsement_of_this_test`) and may be quoted in the text. It does **not** change any S1 code after the freeze: a code is a reading of the published sources named in §5, and a private communication is not one of them. A reply may motivate a new source in a later version of the codebook, never a re-code under this one.
 
 **What the column class means and who assigns it.** No coder assigns a column class. `column_typology_pairs.py` derives it from S1, S4 and a pair register after both codings: contested (≥ 2 EXPLICIT and ≥ 1 cross-theory pair of stated predictions whose relation is *discriminating* or *incompatible* — a shared observable under a shared condition, with a value predicted by one and excluded by the other; pairs that merely *differ* or are *jointly compatible* do not count), single-occupant (exactly 1 EXPLICIT), occupied-not-contested (≥ 2 EXPLICIT, no discriminating pair), thin (0 EXPLICIT, ≥ 1 INTERPRETED), unoccupied (none). The pair relations are coded in a second step, after S1 is returned. Do not let the expected class influence a code.
 ## 4. Rules for Table S2 v2.1 (study inventory)
@@ -188,9 +193,11 @@ Sources are listed most-recent-empirical-statement first; that is the canonical 
 
 
 **AST — Attention schema theory** (content-level)
-- Wilterson et al. 2020 — doi:10.1016/j.pneurobio.2020.101844
+- Webb & Graziano 2015 — doi:10.3389/fpsyg.2015.00500 (author order as on the PDF byline; CrossRef lists it reversed)
+- Kelly, Webb, Meier, Arcaro & Graziano 2014 — doi:10.1073/pnas.1401201111 (the empirical source of the temporo-parietal locus claim)
+- Graziano & Kastner 2011 — doi:10.1080/17588928.2011.585237 (earliest statement of the theory)
 - Graziano, Guterstam, Bio & Wilterson 2019 — doi:10.1080/02643294.2019.1670630
-- Graziano & Webb 2015 — doi:10.3389/fpsyg.2015.00500
+- Wilterson et al. 2020 — doi:10.1016/j.pneurobio.2020.101844
 
 **PP — Predictive processing / beast-machine account** (content-level)
 - Hohwy & Seth 2020 — doi:10.33735/phimisci.2020.ii.64
@@ -228,14 +235,14 @@ Sources are listed most-recent-empirical-statement first; that is the canonical 
 - Park & Tallon-Baudry 2014 — doi:10.1098/rstb.2013.0208
 
 ---
-## 6. Files in this pack (v3.3)
+## 6. Files in this pack (v3.4)
 
 | File | Purpose |
 |---|---|
 | accounts_manifest.csv | 12 accounts with `theory_id`, `row_class`, `origin`. Labels must match exactly. |
 | domains_manifest.csv | 10 domains M1, M2, M3, M4a, M4b, M4c, M5, M6, M7, M8. |
 | S1_blank_for_coder2_v2.csv | 120 rows (theory_id × domain_id) with code, polarity, relation, claim_text, source_label, source_doi, source_locus, evidence_status, confidence empty. |
-| S2_blank_for_coder2_v2.csv | 42 rows (the first coder's partition of 32 publications into experiment-level rows), all coding columns empty; includes your own partition fields (`unit_type_coder2`, `n_experiments_identified`, `partition_note`), `effector_type` and the later-attribution fields. |
+| S2_blank_for_coder2_v3.csv | 32 rows, one per publication (publication_id, citation, DOI, year only); you add rows for the experiments you identify (§1 item 4); all coding columns empty, including your partition fields (`unit_type_coder2`, `n_experiments_identified`, `partition_note`), `effector_type` and the later-attribution fields. |
 | S3_blank_for_coder2.csv | Optional: 120 rows (10 theory blocks × 12 ConTraSt dimensions), coding columns empty (§7). |
 | agreement.py | `python agreement.py --s1a <coder1> --s1b <coder2> --accounts accounts_manifest.csv --domains domains_manifest.csv --code-scheme v2 --out agreement_out/` — raw agreement, confusion matrix, nominal κ, per-domain κ, κ by origin subset. No interval unless `--ci` is given. |
 | coder2_timing_log.csv | Start/end time per block. |
@@ -265,4 +272,4 @@ Sources are listed most-recent-empirical-statement first; that is the canonical 
 Anchor every non-NO cell to a citable source, as in S1. If the theory says nothing that bears on the dimension, code NO and state what you looked for.
 
 ---
-**Codebook v2.3 — frozen 24 September 2026. sha256 of everything above this line (all bytes up to and including the newline that precedes it): `3b4b0cac6995df03c730b211d5d4d3dae3b070e252308610dae730f08ab479f1`.** Changes after the second coder starts → `codebook_changelog.md` and re-coding of affected cells.
+**Codebook v2.4 — frozen 24 September 2026. sha256 of everything above this line (all bytes up to and including the newline before the line that begins `**Codebook`): `6b2e7ad9df83b763c215eb79714fde83cf2a620eff8a9e3e95e80d3980ab8dcc`.** Changes after the second coder starts → `codebook_changelog.md` and re-coding of affected cells.
