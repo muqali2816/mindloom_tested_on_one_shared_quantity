@@ -9,6 +9,9 @@ out = sys.argv[2] if len(sys.argv) > 2 else 's2_sensitivity.csv'
 rows = list(csv.DictReader(open(src)))
 B = lambda v: str(v).strip().lower() == 'true'
 CLASSES = ['neutral-visual', 'neutral-nonvisual', 'motor-conflict', 'valenced', 'interoceptive']
+SUBCLASS = 'motor-conflict (autonomic effector)'   # shown apart; counted inside motor-conflict
+def collapse_class(x):
+    return 'motor-conflict' if str(x).startswith('motor-conflict') else x
 
 def is_whalen(r):      return r['citation_label'].startswith('Whalen')
 def is_metacog(r):     return B(r['contested_inclusion']) and 'metacognitive index' in r['contested_reason']
@@ -46,9 +49,10 @@ scenarios = [
 ]
 
 def tally(sel):
-    c = Counter(r['content_class_v2'] for r in sel)
+    c = Counter(collapse_class(r['content_class_v2']) for r in sel)
+    c['motor-conflict (autonomic effector)'] = sum(1 for r in sel if r['content_class_v2'] == 'motor-conflict (autonomic effector)')
     n = len(sel)
-    return n, {k: c.get(k, 0) for k in CLASSES}
+    return n, {k: c.get(k, 0) for k in CLASSES + [SUBCLASS]}
 
 records = []
 for name, desc, filt, ta in scenarios:
@@ -56,7 +60,7 @@ for name, desc, filt, ta in scenarios:
     n, counts = tally(sel)
     rec = dict(scenario=name, unit='experiment', description=desc, n_denominator=n,
                n_publications=len({r['publication_id'] for r in sel}))
-    for k in CLASSES: rec[k] = f'{counts[k]} of {n}'
+    for k in CLASSES + [SUBCLASS]: rec[k] = f'{counts[k]} of {n}'
     rec['neutral_visual_fraction'] = round(counts['neutral-visual'] / n, 3) if n else ''
     rec['experiment_ids'] = ';'.join(r['experiment_id'] for r in sel)
     records.append(rec)
@@ -74,6 +78,7 @@ rec = dict(scenario='H1_legacy_publication_level_no_paradigm_rows', unit='public
            description='Historical reproduction: v1.3 legacy content and theory codes, one row per publication, paradigm-defining rows outside the denominator (manuscript v3 §7.6 reported 19 of 24 neutral visual)',
            n_denominator=n, n_publications=n)
 for k in CLASSES: rec[k] = f'{c.get(k,0)} of {n}'
+rec[SUBCLASS] = ''
 rec['neutral_visual_fraction'] = round(c.get('neutral-visual',0)/n,3) if n else ''
 rec['experiment_ids'] = ';'.join(sorted(r['publication_id'] for r in hist_sel))
 records.append(rec)
@@ -85,11 +90,12 @@ rec = dict(scenario='H0_legacy_publication_level_with_paradigm_rows', unit='publ
            description='Historical reproduction: as H1 with the three content-coded paradigm-defining rows (Melloni 2023, Dehaene 2006, Poehlman 2012) added back (manuscript v3 Table 2 reported 21 of 27)',
            n_denominator=n2, n_publications=n2)
 for k in CLASSES: rec[k] = f'{c2.get(k,0)} of {n2}'
+rec[SUBCLASS] = ''
 rec['neutral_visual_fraction'] = round(c2.get('neutral-visual',0)/n2,3)
 rec['experiment_ids'] = rec['experiment_ids'] = ';'.join(sorted([r['publication_id'] for r in hist_sel] + [p for p,_ in para]))
 records.append(rec)
 
-cols = ['scenario','unit','description','n_denominator','n_publications'] + CLASSES + ['neutral_visual_fraction','experiment_ids']
+cols = ['scenario','unit','description','n_denominator','n_publications'] + CLASSES + [SUBCLASS, 'neutral_visual_fraction','experiment_ids']
 with open(out, 'w', newline='') as f:
     w = csv.DictWriter(f, fieldnames=cols); w.writeheader(); w.writerows(records)
 
@@ -107,7 +113,7 @@ summary = dict(
     smallest_neutral_visual_share=min((r for r in records if r['unit']=='experiment' and r['neutral_visual_fraction']!=''), key=lambda r: r['neutral_visual_fraction'])['scenario'],
     largest_neutral_visual_share=max((r for r in records if r['unit']=='experiment' and r['neutral_visual_fraction']!=''), key=lambda r: r['neutral_visual_fraction'])['scenario'],
 )
-json.dump(summary, open('handoff/s2_summary.json','w'), indent=1)
+json.dump(summary, open(out.replace('.csv', '_summary.json'),'w'), indent=1)
 for r in records:
     print(f"{r['scenario']:<48} n={r['n_denominator']:>3} | " + ' | '.join(f"{k[:9]} {r[k]}" for k in CLASSES) + f" | frac {r['neutral_visual_fraction']}")
 print(json.dumps(summary, indent=1))

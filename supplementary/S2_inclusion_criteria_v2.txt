@@ -1,4 +1,4 @@
-INCLUSION CRITERIA, TABLE S2 v2 (content inventory) — supersedes S2_inclusion_criteria.txt (v1.3)
+INCLUSION CRITERIA, TABLE S2 v2.1 (content inventory) — supersedes v2 (24 Sep 2026: content classes sharpened) and S2_inclusion_criteria.txt (v1.3)
 
 UNIT OF ANALYSIS
 U1. The unit is one empirical experiment: a data collection with its own sample (or sub-samples) and its own
@@ -47,11 +47,17 @@ CONTENT CODING (two orthogonal fields; the five-way class used in counts is deri
   affective_status  : neutral / valenced (affective value is the manipulated dimension) / interoceptive
                       (content originates in visceral or autonomic channels)
   content_class_v2 (derived) : neutral-visual = neutral × visual; neutral-nonvisual = neutral × auditory or
-                      tactile; motor-conflict = modality motor (competing action policies, including awareness of
-                      one's own response errors when the error itself is the accessed content, codebook §4.2
-                      rule ii); valenced = affective_status valenced; interoceptive = affective_status
-                      interoceptive or modality interoceptive; state (no content) = no content contrast, outside
-                      the content denominators.
+                      tactile; motor-conflict (skeletal) = modality motor, competing action policies realised by
+                      skeletal effectors (including awareness of one's own response errors when the error itself is
+                      the accessed content, codebook §4.2 rule ii); motor-conflict (autonomic effector) = an intention
+                      directed at an autonomic (smooth-muscle, glandular) effector against a reflex or a competing
+                      intention — the accessed content is the experienced conflict of intentions, not a visceral
+                      signal (Morsella et al. 2009 control study); valenced = affective_status valenced;
+                      interoceptive = the accessed content originates in visceral AFFERENTS (heartbeat, respiration,
+                      gastric rhythm, thermal/homeostatic state) or an autonomic signal modulates access to another
+                      content; state (no content) = no content contrast, outside the content denominators.
+                      Motor-conflict rows of both kinds count together as 'motor-conflict' in the five-way tallies and
+                      are shown apart in the seven-way breakdown.
   Boundary rules of codebook §4.2 (i)–(iii) apply unchanged. Code by the content whose access is manipulated
   or measured, not by any content that merely appears in the display.
 

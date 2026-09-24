@@ -80,12 +80,12 @@ Every EXPLICIT or INTERPRETED cell carries: `relation` ∈ {effect, modulation, 
 **Legacy mapping (for the 96 cells carried from v1.3, HOT/HOSS split):** YES → EXPLICIT positive; YES (negative) → EXPLICIT stated_null; IMPLICIT → INTERPRETED; NO → NOT_LOCATED, unless the source states a scope exclusion → NOT_APPLICABLE. The legacy code stays in `legacy_code` and is never overwritten.
 
 **What the column class means and who assigns it.** No coder assigns a column class. `column_typology.py` derives it from S1 and S4 after both codings: contested (≥ 2 EXPLICIT and ≥ 1 pair of stated predictions that differ in sign, magnitude, locus, timing, distribution or condition), single-occupant (exactly 1 EXPLICIT), occupied-not-contested (≥ 2 EXPLICIT, no distinguishable pair), thin (0 EXPLICIT, ≥ 1 INTERPRETED), unoccupied (none). Do not let the expected class influence a code.
-## 4. Rules for Table S2 v2 (study inventory)
+## 4. Rules for Table S2 v2.1 (study inventory)
 
-The unit of analysis, inclusion rules and the attribution rule are given verbatim in `S2_inclusion_criteria_v2.txt`, reproduced here.
+The unit of analysis, inclusion rules, content classes and the attribution rule are given verbatim in `S2_inclusion_criteria_v2.txt` (v2.1), reproduced here.
 
 ```
-INCLUSION CRITERIA, TABLE S2 v2 (content inventory) — supersedes S2_inclusion_criteria.txt (v1.3)
+INCLUSION CRITERIA, TABLE S2 v2.1 (content inventory) — supersedes v2 (24 Sep 2026: content classes sharpened) and S2_inclusion_criteria.txt (v1.3)
 
 UNIT OF ANALYSIS
 U1. The unit is one empirical experiment: a data collection with its own sample (or sub-samples) and its own
@@ -134,11 +134,17 @@ CONTENT CODING (two orthogonal fields; the five-way class used in counts is deri
   affective_status  : neutral / valenced (affective value is the manipulated dimension) / interoceptive
                       (content originates in visceral or autonomic channels)
   content_class_v2 (derived) : neutral-visual = neutral × visual; neutral-nonvisual = neutral × auditory or
-                      tactile; motor-conflict = modality motor (competing action policies, including awareness of
-                      one's own response errors when the error itself is the accessed content, codebook §4.2
-                      rule ii); valenced = affective_status valenced; interoceptive = affective_status
-                      interoceptive or modality interoceptive; state (no content) = no content contrast, outside
-                      the content denominators.
+                      tactile; motor-conflict (skeletal) = modality motor, competing action policies realised by
+                      skeletal effectors (including awareness of one's own response errors when the error itself is
+                      the accessed content, codebook §4.2 rule ii); motor-conflict (autonomic effector) = an intention
+                      directed at an autonomic (smooth-muscle, glandular) effector against a reflex or a competing
+                      intention — the accessed content is the experienced conflict of intentions, not a visceral
+                      signal (Morsella et al. 2009 control study); valenced = affective_status valenced;
+                      interoceptive = the accessed content originates in visceral AFFERENTS (heartbeat, respiration,
+                      gastric rhythm, thermal/homeostatic state) or an autonomic signal modulates access to another
+                      content; state (no content) = no content contrast, outside the content denominators.
+                      Motor-conflict rows of both kinds count together as 'motor-conflict' in the five-way tallies and
+                      are shown apart in the seven-way breakdown.
   Boundary rules of codebook §4.2 (i)–(iii) apply unchanged. Code by the content whose access is manipulated
   or measured, not by any content that merely appears in the display.
 
@@ -158,7 +164,8 @@ SPECIFIC DECISIONS CARRIED IN v2 (each visible in the table, none applied silent
                                 pupillary (smooth-muscle) conflict → interoceptive by the coding rule; ancillary.
 ```
 
-Coder 2 fills, for every experiment row: `modality`, `affective_status`, `manipulation`, `measured_outcome`, `report_type`, `theory_attribution_by_authors` (with locus) and `contested_inclusion` + `contested_reason`. `theory_attribution_later` and `theory_attribution_coder` are filled by the first coder and adjudicated; `theory_addressed` is derived by script and is never typed.
+Coder 2 fills, for every experiment row: `modality`, `affective_status`, `manipulation`, `measured_outcome`, `report_type`, `theory_attribution_by_authors` (with locus) and `contested_inclusion` + `contested_reason`. Code by the content whose access is manipulated or measured: an intention directed at an autonomic effector is motor conflict (autonomic effector), not interoceptive content; interoceptive content originates in visceral afferents. `theory_attribution_later`, `theory_attribution_coder` and `theory_addressed` are derived or first-coder fields and are never typed by coder 2.
+
 ## 5. Theories and primary sources
 
 Twelve row blocks appear in `S1_blank_for_coder2_v2.csv` (120 rows: 12 accounts × 10 domains). Ten are trial-level accounts and two are origin-level. Relative to the submitted manuscript, the composite label is split (supramodular interaction theory; passive frame theory), the neural subjective frame is added, and HOT and HOSS are coded as separate accounts on their own primary sources (§5).
@@ -271,4 +278,4 @@ Sources are listed most-recent-empirical-statement first; that is the canonical 
 Anchor every non-NO cell to a citable source, as in S1. If the theory says nothing that bears on the dimension, code NO and state what you looked for.
 
 ---
-**Codebook v2.0 — frozen 24 September 2026. sha256 of everything above this line (all bytes up to and including the newline that precedes it): `365e5a59b4c36d1c01df84936c31ca5cc7fc5000d8c88d2c8b63d1bfcf09718e`.** Changes after the second coder starts → `codebook_changelog.md` and re-coding of affected cells.
+**Codebook v2.1 — frozen 24 September 2026. sha256 of everything above this line (all bytes up to and including the newline that precedes it): `7dd78645d6bc14de70820e3e20984aaa13371326af180ec647db657d0648e524`.** Changes after the second coder starts → `codebook_changelog.md` and re-coding of affected cells.

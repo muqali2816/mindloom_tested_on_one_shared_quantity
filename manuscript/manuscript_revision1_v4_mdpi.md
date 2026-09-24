@@ -15,7 +15,7 @@
 
 ## Abstract
 
-[The first large preregistered adversarial test of consciousness theories compared global neuronal workspace theory and integrated information theory on three divergent predictions about the cortical signature of conscious content — locus, temporal profile and connectivity — and each theory passed at least one criterion and failed at least one. We ask what else the theories could be tested on. A purposive audit coded the stated predictions of 12 accounts (10 trial-level, 2 origin-level) against 10 measurable quantities (120 cells), registered 31 predictions (28 stated, 3 derived by us), and classified the content manipulated in 42 experiments from 32 publications. Column classes were derived by script from the coded cells, not assigned by a coder. Stated commitments concentrate on the cortical signature of access: 6 accounts predict it explicitly, and the column is contested at locus, timing and connectivity (15 distinguishable pairs of stated predictions, 14 at confidence ≥ 2). The number and incompatibility of competing action policies each have one explicit occupant. Interoceptive content, visceral modulation of exteroceptive access and purely autonomic conflict are each occupied by two accounts whose predictions answer different questions and do not conflict. Organism-wide cortical–autonomic coherence is thin: 0 stated predictions, 5 interpreted. Under the stated attribution rule, 18 of 30 theory-addressed experiments manipulated neutral visual content and 0 of 30 valenced content. The one runnable condition tests a stated threshold and a derivation of our own; a null constrains the derivation within a preregistered equivalence bound and refutes no theory. All codes are provisional pending a second coding.]{.mark}
+[The first preregistered adversarial test of consciousness theories compared two theories on three divergent predictions about the cortical signature of conscious content; each passed one criterion and failed one. We ask what the theories have committed to beyond that signature, and what they have left unmeasured. A purposive audit coded the stated predictions of 12 accounts against 10 measurable quantities (120 cells), registered 31 predictions (28 stated, 3 derived by us) and classified the content manipulated in 42 experiments; column classes were derived by script, not assigned by a coder. The result is a concentration. Only 22 of 120 cells carry a stated prediction; 6 of 12 accounts state one about the cortical signature, where the column is contested at locus, timing and connectivity (15 distinguishable pairs, 14 at confidence ≥ 2). Elsewhere commitment is sparse: the number and the incompatibility of competing action policies have one explicit occupant each; interoceptive content, visceral modulation of access and autonomic conflict have two each, whose predictions do not conflict; cortical–autonomic coherence has none. The empirical base mirrors this: 18 of 30 theory-addressed experiments manipulated neutral visual content, 0 of 30 valenced content. The next adversarial test needs a condition on a quantity the theories have committed to and never measured, not another contrast on the cortical signature. We specify one — incompatibility of co-executable action policies at fixed count under no-report access — that tests a stated threshold and a derivation of our own; a null bounds the derivation and refutes no theory.]{.mark}
 
 **Keywords:** [consciousness; adversarial collaboration; conscious access; theory audit; stated predictions; action-policy competition; interoception; column typology]{.mark}
 
@@ -618,8 +618,7 @@ the deposited inclusion criteria: 42 experiments from 32 publications. Four furt
 the Cogitate protocol, the taxonomy paper of the masking family, the front-versus-back review and
 the theory paper behind the sustained-intentions paradigm [1,121] — define paradigms rather than
 report data; they were rows of the earlier inventory, are now listed as paradigm sources, and are
-outside every denominator. Content is coded on two orthogonal fields, modality and affective
-status, from which a five-way class is derived by script. The category that does the analytic work
+outside every denominator. Content is coded on two orthogonal fields, modality and affective status, from which the class is derived by script; interoceptive content means content from visceral afferents or an autonomic signal modulating access, and motor conflict is split by effector, skeletal or autonomic. The category that does the analytic work
 is "theory-addressed", and its rule (criterion I2) keeps three attributions apart: a study is
 theory-addressed when its own authors name a coded theory as tested or as the framework their
 result bears on, or when a later paper that is a coded theory's primary statement cites it; the
@@ -637,23 +636,14 @@ Of the 42 experiments, the two state experiments without a content contrast and 
 | Content class | [All content experiments, no theory filter (n = 39)]{.mark} | [Theory-addressed, baseline S0 (n = 30)]{.mark} |
 |---|---|---|
 | Neutral visual | [22 of 39]{.mark} | [18 of 30]{.mark} |
-| Competing motor policies | [7 of 39]{.mark} | [7 of 30]{.mark} |
+| Competing motor policies, skeletal effectors | [7 of 39]{.mark} | [7 of 30]{.mark} |
+| Competing motor policies, autonomic effector | [1 of 39]{.mark} | [1 of 30]{.mark} |
 | Neutral non-visual | [4 of 39]{.mark} | [3 of 30]{.mark} |
 | Valenced | [3 of 39]{.mark} | [0 of 30]{.mark} |
-| Interoceptive | [3 of 39]{.mark} | [2 of 30]{.mark} |
+| Interoceptive (visceral afferent content) | [2 of 39]{.mark} | [1 of 30]{.mark} |
 
 [The finding is an imbalance, and it should be stated in the terms the attribution rule licenses.
-In the checked sample, under the stated attribution rule, 18 of 30 theory-addressed experiments
-manipulated neutral visual content, 7 of 30 competing motor policies (all from the supramodular
-programme), 3 of 30 neutral non-visual content (the auditory no-report family [104]), 0 of 30
-valenced content and 2 of 30 interoceptive content. The interoceptive cell is not empty: it holds
-the smooth-muscle control experiment of the supramodular programme, interoceptive by the coding
-rule and ancillary [40], and the cardiac interoceptive-accuracy study that a coded theory's
-primary statement cites [118]. The valenced cell is empty because the three valenced experiments
-in the sample — fearful expressions breaking continuous flash suppression faster than neutral
-ones [130], arousal and valence varied orthogonally [133], threat-signalling input gaining
-preferential access [134] — are named by no coded theory's own authors and cited by no coded
-theory's primary statement. That is a statement about this sample and this rule, and we withdraw the earlier
+In the checked sample, under the stated attribution rule, 18 of 30 theory-addressed experiments manipulated neutral visual content, 8 of 30 competing motor policies — 7 realised by skeletal effectors and 1 by an autonomic effector, all from the supramodular programme — 3 of 30 neutral non-visual content (the auditory no-report family [104]), 0 of 30 valenced content and 1 of 30 interoceptive content. The single interoceptive experiment is the cardiac interoceptive-accuracy study that a coded theory's primary statement cites [118], itself a contested inclusion; in the strict scenarios the cell is empty. The smooth-muscle control experiment of the supramodular programme [40] was coded interoceptive in the earlier version; it is re-coded here as autonomic-effector motor conflict, because the content whose access it measures is the experienced conflict between a sustained intention and the pupillary reflex, not a visceral afferent signal. It is the only theory-addressed experiment on autonomic-effector conflict in the sample — a control condition inside one programme — and it is the empirical anchor of column M4c. The valenced cell is empty because the three valenced experiments in the sample — fearful expressions breaking continuous flash suppression faster than neutral ones [130], arousal and valence varied orthogonally [133], threat-signalling input gaining preferential access [134] — are named by no coded theory's own authors and cited by no coded theory's primary statement. That is a statement about this sample and this rule, and we withdraw the earlier
 version's formulation that no coded theory claims the valenced or interoceptive literature: a
 registered search, or a broader reading of what counts as a theory's primary statement, could
 attach a theory to any of these studies.]{.mark}
@@ -663,8 +653,7 @@ masked-expression study whose access was suppressed [131] makes valenced content
 the five metacognition experiments gives neutral visual 14 of 25. Accepting a later attribution
 only when its citing sentence was read and names the theory gives 13 of 24; removing every
 contested row as well gives 10 of 21, the smallest neutral-visual share in any scenario. Adding the
-coder's own inferred attributions gives 22 of 35. Dropping the theory filter gives 22 of 39 neutral
-visual, 3 of 39 valenced and 3 of 39 interoceptive. Seven rows carry a contested-inclusion flag with
+coder's own inferred attributions gives 22 of 35. Dropping the theory filter gives 22 of 39 neutral visual, 3 of 39 valenced and 2 of 39 interoceptive. Seven rows carry a contested-inclusion flag with
 a written reason. The publication-level counts of the earlier version reproduce from the
 legacy codes — 21 of 27 with the paradigm-defining rows, 19 of 24 without — so the change of unit
 and of attribution rule, not recoding, accounts for the difference between versions. The imbalance survives every scenario; the zero in the valenced cell survives every

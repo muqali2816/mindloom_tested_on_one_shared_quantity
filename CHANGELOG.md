@@ -51,5 +51,9 @@ Baseline: manuscript v3 (sha256 dec8007fb39d42e2), deposit v1.3 (e7ea015ce7b9171
 - Ref 84 left as Graziano & Webb 2015: CrossRef and OpenAlex both give Graziano as first author for 10.3389/fpsyg.2015.00500.
 - NOT done (author decisions): reclassification of Morsella 2009 E3 (interoceptive → motor-conflict) and the abstract sentence that rests on it; length cut to ≤ 13 500; full-text reading of the 54 EXPLICIT/INTERPRETED cells; abstract rewrite.
 
+## v4.3 — interoceptive row (author decision, 24 Sep)
+- Morsella, Gray & Krieger 2009 control study (P22-E3) re-coded interoceptive → motor-conflict (autonomic effector) by the first coder. Criteria v2.1 / codebook v2.1 (re-frozen, hash 7dd78645…): interoceptive = content from visceral afferents or autonomic modulation of access; motor-conflict split skeletal / autonomic-effector. Baseline: motor-conflict 8 of 30 (7 + 1), interoceptive 1 of 30 (Garfinkel, contested), 0 in strict scenarios; §7.6 and Table 2 updated; abstract carries no interoceptive count.
+- Abstract rewritten (250 words): thesis (commitments concentrate; 22 of 120 cells stated), no "provisional pending second coding" sentence, closing sentence on what the next test needs.
+
 ## Still with the authors
 Send extension request; send proponent letters (record dates); second coding → agreement.py → fill κ; upload deposit_v2 → DOI into 4 places; names, CRediT confirmation, funding, CoI, AI tool; decide on length cuts; confirm Poznanski DOI.
