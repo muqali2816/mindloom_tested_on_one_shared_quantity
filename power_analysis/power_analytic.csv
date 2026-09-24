@@ -1,0 +1,9 @@
+effect,assumption,dz,method,alpha,target_power,n_participants,trials_per_cell,achieved_power
+main,small,0.25,analytic_paired_t,0.05,0.8,128,,
+main,small,0.25,analytic_paired_t,0.05,0.9,171,,
+main,medium,0.4,analytic_paired_t,0.05,0.8,52,,
+main,medium,0.4,analytic_paired_t,0.05,0.9,68,,
+int,small,0.2,analytic_paired_t,0.05,0.8,199,,
+int,small,0.2,analytic_paired_t,0.05,0.9,265,,
+int,medium,0.3,analytic_paired_t,0.05,0.8,90,,
+int,medium,0.3,analytic_paired_t,0.05,0.9,119,,

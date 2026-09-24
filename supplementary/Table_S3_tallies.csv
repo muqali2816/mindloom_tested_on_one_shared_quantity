@@ -1,0 +1,13 @@
+dimension_id,dimension,n_YES,n_IMPLICIT,n_NO
+C1,Type of consciousness (content / state),2,8,0
+C2,Report / no-report paradigm,4,4,2
+C3,Consciousness measure type (objective / subjective / condition assessment / none),7,2,1
+C4,Experimental paradigm (family / specific),7,2,1
+C5,Task type,6,3,1
+C6,Stimulus (modality / category / duration / contrast),5,5,0
+C7,Sample / population type (healthy adults / patients / non-human / computer),5,4,1
+C8,Neuroscientific technique,3,5,2
+C9,"Dependent measure / analysis type (incl. connectivity, complexity, PHI, cardiac tags)",5,4,1
+C10,Temporal findings (component / time window),3,2,5
+C11,Spatial findings (AAL3 label / lobe / stream),6,4,0
+C12,Frequency findings (delta–gamma bands),1,3,6

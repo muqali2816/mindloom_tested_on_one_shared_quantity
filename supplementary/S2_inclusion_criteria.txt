@@ -1,0 +1,22 @@
+INCLUSION CRITERIA (content inventory)
+I1. The experiment manipulates or measures conscious access / awareness of a specific content
+    (content-NCC), OR is a canonical no-report / state-consciousness test cited as evidence for
+    one of the coded theories. Purely computational, purely philosophical and purely clinical-
+    outcome papers excluded.
+I2. The study is cited as evidence for, or an explicit test of, at least one theory in the
+    prediction matrix (GNWT, IIT, RPT, HOT/HOSS, AST, PP, SIT, UAL, F&M), or is a canonical
+    paradigm paper such tests are built on.
+I3. Primary empirical report in humans or non-human animals with a stimulus-level content
+    manipulation. Reviews, meta-analyses and databases are coded separately as SURVEY rows and
+    excluded from the share denominator.
+I4. Citation must resolve through the verified citation pool or be verified via CrossRef
+    (first-author surname + year match).
+CONTENT CODING (mutually exclusive, by the content whose ACCESS is manipulated)
+  neutral-visual      : gratings, letters, words, objects, faces used as neutral category
+                        exemplars, geometric shapes, motion, contrast-defined stimuli
+  valenced            : content whose affective value is the manipulated dimension
+                        (emotional expressions, threat, reward, pain)
+  interoceptive       : content originating in visceral/autonomic channels
+  motor-conflict      : competing action policies over the body as the manipulated content
+  neutral-nonvisual   : auditory / tactile neutral content
+  state (no content)  : global state manipulations without a content contrast

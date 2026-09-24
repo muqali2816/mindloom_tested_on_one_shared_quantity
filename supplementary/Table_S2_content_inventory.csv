@@ -1,0 +1,37 @@
+citation_label,doi,paradigm,content,theory_addressed,note,theory_linked
+Cogitate Consortium et al. 2025,10.1038/s41586-025-08888-1,"Suprathreshold viewing, target detection; fMRI/MEG/iEEG",neutral-visual,GNWT vs IIT,"Four categories: faces, objects, letters, false fonts; no affective dimension manipulated",True
+Melloni et al. 2023,10.1371/journal.pone.0268577,Preregistered protocol for the above,neutral-visual,GNWT vs IIT,Stimulus set fixed in advance as faces/objects/letters/false fonts,True
+"Del Cul, Baillet & Dehaene 2007",10.1371/journal.pbio.0050260,"Backward masking, variable SOA",neutral-visual,GNWT,Digits/letters; nonlinear visibility threshold,True
+Dehaene et al. 2001,10.1038/89551,"Masked word repetition priming, fMRI",neutral-visual,GNWT,Words as neutral lexical content,True
+Dehaene et al. 2006,10.1016/j.tics.2006.03.007,Masking taxonomy (survey of own paradigms),neutral-visual,GNWT,Testable taxonomy stated over visual masking,True
+Salti et al. 2015,10.7554/elife.05652,"Threshold detection, MEG decoding",neutral-visual,GNWT,Faint squares near threshold,True
+"Sergent, Baillet & Dehaene 2005",10.1038/nn1549,"Attentional blink, ERP/MEG",neutral-visual,GNWT,Letters/digits in RSVP,True
+Sergent et al. 2021,10.1038/s41467-021-21393-z,"Threshold detection, bifurcation dynamics",neutral-visual,GNWT,Auditory-visual neutral targets; report-independent analysis,True
+"Lumer, Friston & Rees 1998",10.1126/science.280.5371.1930,"Binocular rivalry, fMRI",neutral-visual,GNWT/RPT,Face vs grating as neutral categories,True
+Frässle et al. 2014,10.1523/jneurosci.4403-13.2014,"Binocular rivalry, active vs passive (no-report), fMRI",neutral-visual,GNWT,Gratings; frontal activity tracks report not percept,True
+Tsuchiya & Koch 2005,10.1038/nn1500,"Continuous flash suppression, afterimages",neutral-visual,RPT/IIT,Gratings and afterimage adaptation,True
+Pitts et al. 2014,10.3389/fpsyg.2014.01078,"Inattentional blindness, no-report ERP",neutral-visual,GNWT,Line textures; P3 dissociated from awareness,True
+Kronemer et al. 2022,10.1038/s41467-022-35117-4,"No-report visual detection, fMRI/pupillometry",neutral-visual,GNWT,Faint visual discs,True
+Dellert et al. 2025,10.1016/j.cub.2025.10.026,"No-report auditory paradigm, fMRI",neutral-nonvisual,GNWT/IIT,Auditory stimuli; rare non-visual test,True
+Boly et al. 2017,10.1523/jneurosci.3218-16.2017,Lesion + neuroimaging comparison of front vs back,state (no content),GNWT vs IIT,State-level anatomical argument,True
+Maniscalco & Lau 2012,10.1016/j.concog.2011.09.021,Signal-detection modelling of confidence (meta-d prime),neutral-visual,HOT/HOSS,Visual discrimination with confidence ratings,True
+Rounis et al. 2010,10.1080/17588921003632529,"Theta-burst TMS to PFC, metacognitive sensitivity",neutral-visual,HOT/HOSS,Visual discrimination; causal prefrontal manipulation,True
+Fleming et al. 2010,10.1126/science.1191883,"Perceptual metacognition, VBM",neutral-visual,HOT/HOSS,Visual contrast discrimination,True
+Fleming et al. 2014,10.1093/brain/awu221,"Anterior prefrontal lesions, domain-specific metacognition",neutral-visual,HOT/HOSS,"Perception vs memory, both neutral",True
+Dijkstra & Fleming 2023,10.1038/s41467-023-37322-1,"Imagination vs reality, signal strength",neutral-visual,HOT/HOSS,Gratings; imagery vs perception,True
+Wilterson et al. 2020,10.1016/j.pneurobio.2020.101844,"Attention control and awareness, behavioural/neural",neutral-visual,AST,Visual attention tasks,True
+"Morsella, Gray & Krieger 2009",10.1037/a0017121,Sustaining incompatible skeletomotor intentions vs compatible,motor-conflict,SIT,Also included a smooth-muscle (pupillary) conflict condition: no subjective effect,True
+"Gray, Bargh & Morsella 2013",10.1007/s00221-013-3566-5,fMRI of sustaining incompatible intentions,motor-conflict,SIT,Right/left action inclinations,True
+Morsella et al. 2009b,10.3758/app.71.8.1807,Subjective effects of conflict at different processing stages,motor-conflict,SIT,Response conflict vs perceptual conflict,True
+"Poehlman, Jantz & Morsella 2012",10.3389/fpsyg.2012.00369,"Skeletal muscle action, conscious broadcast",motor-conflict,SIT,Skeletomotor task,True
+"Yang, Zald & Blake 2007",10.1037/1528-3542.7.4.882,"Continuous flash suppression, breakthrough time",valenced,none of the coded theories,"Fearful vs neutral expressions; access measured, theory-neutral",False
+Sheth & Pham 2008,10.1016/j.visres.2008.07.013,Binocular rivalry / access to awareness,valenced,none of the coded theories,Arousal and valence varied orthogonally,False
+Gayet et al. 2016,10.1016/j.cognition.2016.01.009,Breaking continuous flash suppression,valenced,none of the coded theories,Threat-signalling input; access latency,False
+Whalen et al. 1998,10.1523/jneurosci.18-01-00411.1998,"Backward masking, amygdala fMRI",valenced,none of the coded theories,"Masked fearful faces; unconscious processing, not access threshold contrast for a theory",False
+Charles et al. 2013,10.1016/j.neuroimage.2013.01.054,"Conscious vs subliminal error detection, ERP",neutral-visual,GNWT,Error signals on a visual task,True
+Nieuwenhuis et al. 2001,10.1111/1469-8986.3850752,Error-related potentials and awareness of errors,neutral-visual,GNWT,Response errors,True
+Garfinkel et al. 2015,10.1016/j.biopsycho.2014.11.004,Heartbeat detection/tracking; interoceptive accuracy vs awareness,interoceptive,none of the coded theories,Cardiac interoception; not framed as a test of a consciousness theory,False
+Farb et al. 2013,10.1093/scan/nss066,"Interoceptive attention, fMRI",interoceptive,none of the coded theories,Respiratory/body attention,False
+Pinto et al. 2017,10.1093/brain/aww358,Split-brain confrontation naming and detection,neutral-visual,GNWT/IIT,Visual hemifield stimuli,True
+Boulakis et al. 2023,10.1523/jneurosci.0696-23.2023,"Experience sampling, whole-brain deactivations",state (no content),GNWT,No content contrast,True
+Kawagoe et al. 2019,10.1002/hbm.24748,"Mind blanking, fMRI",state (no content),GNWT,No content contrast,True

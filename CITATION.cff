@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use these materials, please cite the manuscript and this repository."
+title: "Tested on one shared quantity: supplementary materials"
+version: "1.0"
+date-released: "2026-09-24"
+authors:
+  - family-names: "[Author 1 surname]"
+    given-names: "[Author 1 given names]"
+  - family-names: "[Author 2 surname]"
+    given-names: "[Author 2 given names]"
+repository-code: "https://github.com/muqali2816/mindloom_tested_on_one_shared_quantity"
+license: CC-BY-4.0
