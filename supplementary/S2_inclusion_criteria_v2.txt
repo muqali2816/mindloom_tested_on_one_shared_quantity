@@ -1,0 +1,71 @@
+INCLUSION CRITERIA, TABLE S2 v2 (content inventory) — supersedes S2_inclusion_criteria.txt (v1.3)
+
+UNIT OF ANALYSIS
+U1. The unit is one empirical experiment: a data collection with its own sample (or sub-samples) and its own
+    analysed contrast. A publication reporting several experiments contributes several rows (experiment_id);
+    a preregistered protocol and its final report share one study_family_id and the protocol contributes no row.
+    Control and ancillary experiments reported in the same publication are rows, flagged ancillary_experiment = True.
+    Re-analyses of previously published data sets are not new experiments and are not rows.
+    Where only the abstract could be read and the partition into experiments cannot be verified, the publication
+    is carried as one row (or as the blocks the abstract itself names) and evidence_status records the limitation.
+U2. participants_total (recruited/tested) and participants_in_analysis are recorded separately; multi-arm
+    experiments (e.g. fMRI / MEG / iEEG arms of the same design) list one sample_id per arm in samples_detail.
+
+INCLUSION
+I1. The experiment manipulates conscious access / awareness of a specific content (content-NCC), or measures
+    awareness of a specific content trial by trial or between groups. Purely computational, purely philosophical
+    and purely clinical-outcome papers are excluded. Experiments that hold access below threshold throughout
+    (e.g. masked presentation with no seen/unseen contrast) and experiments in which the measured variable is a
+    metacognitive index (confidence–accuracy correspondence, meta-d′) rather than access are admissible only
+    as contested rows: contested_inclusion = True with a written contested_reason, and their effect on every
+    count is reported in s2_sensitivity.csv. No borderline row is included or excluded automatically.
+I2. Theory attribution is recorded in three separate columns and is never merged:
+      theory_attribution_by_authors — the theory the study's own authors name as tested, or as the framework
+                                      their result bears on, in the study's own abstract, introduction or
+                                      discussion, with the locus given;
+      theory_attribution_later      — a later paper that is a coded theory's primary statement (codebook §5)
+                                      cites the study, with DOI; later_attribution_evidence states whether the
+                                      citing sentence was read and names the theory (CONTEXT_NAMED), was read
+                                      but names no theory (CONTEXT_UNNAMED), or whether only the reference list
+                                      was checked (REFLIST);
+      theory_attribution_coder      — the coder's own inference, marked as such.
+    theory_addressed (baseline) = True if and only if theory_attribution_by_authors or theory_attribution_later
+    names a coded theory. Coder inference alone is NOT sufficient for the baseline; it enters only the
+    sensitivity scenario "plus coder attribution". A stricter variant (theory_addressed_strict) accepts a later
+    attribution only when its citing context was read and names the theory.
+I3. Canonical paradigm papers — the protocol, taxonomy, theory or review paper that defines a paradigm the coded
+    theories are tested with — are paradigm sources, not theory-addressed studies (consistent with codebook §4.1:
+    a canonical paradigm paper addresses none of the coded theories as an empirical test). They are listed in
+    paradigm_sources.csv with the rows that rely on them and are outside every S2 denominator. In v2 these are
+    Melloni et al. 2023 (protocol), Dehaene et al. 2006 (taxonomy), Boly et al. 2017 (review) and Poehlman,
+    Jantz & Morsella 2012 (theory paper). Meta-analyses and databases (e.g. ConTraSt) are not inventory rows.
+I4. Citations must resolve through CrossRef (DOI); abstracts and, where accessible, full texts were read for every
+    row, and evidence_status records which.
+
+CONTENT CODING (two orthogonal fields; the five-way class used in counts is derived by script)
+  modality          : visual / auditory / tactile / motor / interoceptive / mixed / not applicable (state)
+  affective_status  : neutral / valenced (affective value is the manipulated dimension) / interoceptive
+                      (content originates in visceral or autonomic channels)
+  content_class_v2 (derived) : neutral-visual = neutral × visual; neutral-nonvisual = neutral × auditory or
+                      tactile; motor-conflict = modality motor (competing action policies, including awareness of
+                      one's own response errors when the error itself is the accessed content, codebook §4.2
+                      rule ii); valenced = affective_status valenced; interoceptive = affective_status
+                      interoceptive or modality interoceptive; state (no content) = no content contrast, outside
+                      the content denominators.
+  Boundary rules of codebook §4.2 (i)–(iii) apply unchanged. Code by the content whose access is manipulated
+  or measured, not by any content that merely appears in the display.
+
+SPECIFIC DECISIONS CARRIED IN v2 (each visible in the table, none applied silently)
+  Sergent et al. 2021           auditory, neutral (three experiments: main, control 1 no-report only, control 2 tones).
+  Whalen et al. 1998            contested_inclusion = True: access suppressed by masking, not manipulated; excluded
+                                from the baseline scenario; its reference-list citation in Dehaene & Naccache 2001
+                                makes it theory-addressed under I2 if included (scenario S1).
+  Farb et al. 2013              contested_inclusion = True: attentional focus contrast, awareness of the interoceptive
+                                content neither manipulated nor measured; not theory-addressed.
+  Maniscalco & Lau 2012, Rounis et al. 2010, Fleming et al. 2010, Fleming et al. 2014, Garfinkel et al. 2015
+                                kept in the baseline, contested_inclusion = True: metacognitive index, not access
+                                manipulation.
+  Nieuwenhuis et al. 2001       re-coded motor-conflict (awareness of one's own saccade error is the accessed content);
+                                flagged for the second coder.
+  Morsella, Gray & Krieger 2009, control study
+                                pupillary (smooth-muscle) conflict → interoceptive by the coding rule; ancillary.

@@ -1,0 +1,13 @@
+theory_id,theory,row_class,origin,note
+AST,AST,trial-level,submitted-v1,
+FM,Feinberg & Mallatt,origin-level,submitted-v1,
+GNWT,GNWT,trial-level,submitted-v1,
+HOT,Higher-order theory (HOT / HOROR),trial-level,submitted-v1,split from merged HOT/HOSS row in v1.3
+HOSS,Higher-order state space (HOSS),trial-level,submitted-v1,split from merged HOT/HOSS row in v1.3
+IIT,IIT (3.0/4.0),trial-level,submitted-v1,
+NSF,Neural subjective frame,trial-level,added-in-revision,
+PFT,Passive frame theory,trial-level,added-in-revision,
+PP,Predictive processing / beast machine,trial-level,submitted-v1,
+RPT,Recurrent processing (RPT),trial-level,submitted-v1,
+SIT,Supramodular interaction theory (SIT),trial-level,submitted-v1,
+UAL,UAL,origin-level,submitted-v1,

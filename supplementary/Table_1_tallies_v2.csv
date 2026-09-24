@@ -1,0 +1,501 @@
+scope,domain_id,code,polarity,n
+trial-level,M1,EXPLICIT,positive,1
+trial-level,M1,EXPLICIT,null,0
+trial-level,M1,EXPLICIT,negative,0
+trial-level,M1,INTERPRETED,positive,0
+trial-level,M1,INTERPRETED,null,1
+trial-level,M1,INTERPRETED,negative,0
+trial-level,M1,NOT_LOCATED,,8
+trial-level,M1,NOT_APPLICABLE,,0
+trial-level,M1,UNRESOLVED,,0
+trial-level,M1,ALL,,10
+trial-level,M2,EXPLICIT,positive,1
+trial-level,M2,EXPLICIT,null,0
+trial-level,M2,EXPLICIT,negative,0
+trial-level,M2,INTERPRETED,positive,1
+trial-level,M2,INTERPRETED,null,1
+trial-level,M2,INTERPRETED,negative,0
+trial-level,M2,NOT_LOCATED,,7
+trial-level,M2,NOT_APPLICABLE,,0
+trial-level,M2,UNRESOLVED,,0
+trial-level,M2,ALL,,10
+trial-level,M3,EXPLICIT,positive,1
+trial-level,M3,EXPLICIT,null,0
+trial-level,M3,EXPLICIT,negative,0
+trial-level,M3,INTERPRETED,positive,1
+trial-level,M3,INTERPRETED,null,4
+trial-level,M3,INTERPRETED,negative,0
+trial-level,M3,NOT_LOCATED,,4
+trial-level,M3,NOT_APPLICABLE,,0
+trial-level,M3,UNRESOLVED,,0
+trial-level,M3,ALL,,10
+trial-level,M4a,EXPLICIT,positive,1
+trial-level,M4a,EXPLICIT,null,0
+trial-level,M4a,EXPLICIT,negative,0
+trial-level,M4a,INTERPRETED,positive,4
+trial-level,M4a,INTERPRETED,null,1
+trial-level,M4a,INTERPRETED,negative,0
+trial-level,M4a,NOT_LOCATED,,4
+trial-level,M4a,NOT_APPLICABLE,,0
+trial-level,M4a,UNRESOLVED,,0
+trial-level,M4a,ALL,,10
+trial-level,M4b,EXPLICIT,positive,2
+trial-level,M4b,EXPLICIT,null,0
+trial-level,M4b,EXPLICIT,negative,0
+trial-level,M4b,INTERPRETED,positive,0
+trial-level,M4b,INTERPRETED,null,0
+trial-level,M4b,INTERPRETED,negative,0
+trial-level,M4b,NOT_LOCATED,,8
+trial-level,M4b,NOT_APPLICABLE,,0
+trial-level,M4b,UNRESOLVED,,0
+trial-level,M4b,ALL,,10
+trial-level,M4c,EXPLICIT,positive,0
+trial-level,M4c,EXPLICIT,null,2
+trial-level,M4c,EXPLICIT,negative,0
+trial-level,M4c,INTERPRETED,positive,3
+trial-level,M4c,INTERPRETED,null,0
+trial-level,M4c,INTERPRETED,negative,0
+trial-level,M4c,NOT_LOCATED,,5
+trial-level,M4c,NOT_APPLICABLE,,0
+trial-level,M4c,UNRESOLVED,,0
+trial-level,M4c,ALL,,10
+trial-level,M5,EXPLICIT,positive,0
+trial-level,M5,EXPLICIT,null,0
+trial-level,M5,EXPLICIT,negative,0
+trial-level,M5,INTERPRETED,positive,3
+trial-level,M5,INTERPRETED,null,0
+trial-level,M5,INTERPRETED,negative,0
+trial-level,M5,NOT_LOCATED,,7
+trial-level,M5,NOT_APPLICABLE,,0
+trial-level,M5,UNRESOLVED,,0
+trial-level,M5,ALL,,10
+trial-level,M6,EXPLICIT,positive,2
+trial-level,M6,EXPLICIT,null,0
+trial-level,M6,EXPLICIT,negative,0
+trial-level,M6,INTERPRETED,positive,3
+trial-level,M6,INTERPRETED,null,0
+trial-level,M6,INTERPRETED,negative,0
+trial-level,M6,NOT_LOCATED,,5
+trial-level,M6,NOT_APPLICABLE,,0
+trial-level,M6,UNRESOLVED,,0
+trial-level,M6,ALL,,10
+trial-level,M7,EXPLICIT,positive,3
+trial-level,M7,EXPLICIT,null,0
+trial-level,M7,EXPLICIT,negative,0
+trial-level,M7,INTERPRETED,positive,2
+trial-level,M7,INTERPRETED,null,0
+trial-level,M7,INTERPRETED,negative,0
+trial-level,M7,NOT_LOCATED,,5
+trial-level,M7,NOT_APPLICABLE,,0
+trial-level,M7,UNRESOLVED,,0
+trial-level,M7,ALL,,10
+trial-level,M8,EXPLICIT,positive,6
+trial-level,M8,EXPLICIT,null,0
+trial-level,M8,EXPLICIT,negative,0
+trial-level,M8,INTERPRETED,positive,3
+trial-level,M8,INTERPRETED,null,0
+trial-level,M8,INTERPRETED,negative,0
+trial-level,M8,NOT_LOCATED,,0
+trial-level,M8,NOT_APPLICABLE,,1
+trial-level,M8,UNRESOLVED,,0
+trial-level,M8,ALL,,10
+origin-level,M1,EXPLICIT,positive,0
+origin-level,M1,EXPLICIT,null,0
+origin-level,M1,EXPLICIT,negative,0
+origin-level,M1,INTERPRETED,positive,0
+origin-level,M1,INTERPRETED,null,0
+origin-level,M1,INTERPRETED,negative,0
+origin-level,M1,NOT_LOCATED,,2
+origin-level,M1,NOT_APPLICABLE,,0
+origin-level,M1,UNRESOLVED,,0
+origin-level,M1,ALL,,2
+origin-level,M2,EXPLICIT,positive,0
+origin-level,M2,EXPLICIT,null,0
+origin-level,M2,EXPLICIT,negative,0
+origin-level,M2,INTERPRETED,positive,0
+origin-level,M2,INTERPRETED,null,0
+origin-level,M2,INTERPRETED,negative,0
+origin-level,M2,NOT_LOCATED,,2
+origin-level,M2,NOT_APPLICABLE,,0
+origin-level,M2,UNRESOLVED,,0
+origin-level,M2,ALL,,2
+origin-level,M3,EXPLICIT,positive,2
+origin-level,M3,EXPLICIT,null,0
+origin-level,M3,EXPLICIT,negative,0
+origin-level,M3,INTERPRETED,positive,0
+origin-level,M3,INTERPRETED,null,0
+origin-level,M3,INTERPRETED,negative,0
+origin-level,M3,NOT_LOCATED,,0
+origin-level,M3,NOT_APPLICABLE,,0
+origin-level,M3,UNRESOLVED,,0
+origin-level,M3,ALL,,2
+origin-level,M4a,EXPLICIT,positive,1
+origin-level,M4a,EXPLICIT,null,0
+origin-level,M4a,EXPLICIT,negative,0
+origin-level,M4a,INTERPRETED,positive,1
+origin-level,M4a,INTERPRETED,null,0
+origin-level,M4a,INTERPRETED,negative,0
+origin-level,M4a,NOT_LOCATED,,0
+origin-level,M4a,NOT_APPLICABLE,,0
+origin-level,M4a,UNRESOLVED,,0
+origin-level,M4a,ALL,,2
+origin-level,M4b,EXPLICIT,positive,0
+origin-level,M4b,EXPLICIT,null,0
+origin-level,M4b,EXPLICIT,negative,0
+origin-level,M4b,INTERPRETED,positive,0
+origin-level,M4b,INTERPRETED,null,0
+origin-level,M4b,INTERPRETED,negative,0
+origin-level,M4b,NOT_LOCATED,,2
+origin-level,M4b,NOT_APPLICABLE,,0
+origin-level,M4b,UNRESOLVED,,0
+origin-level,M4b,ALL,,2
+origin-level,M4c,EXPLICIT,positive,0
+origin-level,M4c,EXPLICIT,null,0
+origin-level,M4c,EXPLICIT,negative,0
+origin-level,M4c,INTERPRETED,positive,1
+origin-level,M4c,INTERPRETED,null,0
+origin-level,M4c,INTERPRETED,negative,0
+origin-level,M4c,NOT_LOCATED,,1
+origin-level,M4c,NOT_APPLICABLE,,0
+origin-level,M4c,UNRESOLVED,,0
+origin-level,M4c,ALL,,2
+origin-level,M5,EXPLICIT,positive,0
+origin-level,M5,EXPLICIT,null,0
+origin-level,M5,EXPLICIT,negative,0
+origin-level,M5,INTERPRETED,positive,2
+origin-level,M5,INTERPRETED,null,0
+origin-level,M5,INTERPRETED,negative,0
+origin-level,M5,NOT_LOCATED,,0
+origin-level,M5,NOT_APPLICABLE,,0
+origin-level,M5,UNRESOLVED,,0
+origin-level,M5,ALL,,2
+origin-level,M6,EXPLICIT,positive,0
+origin-level,M6,EXPLICIT,null,0
+origin-level,M6,EXPLICIT,negative,0
+origin-level,M6,INTERPRETED,positive,0
+origin-level,M6,INTERPRETED,null,0
+origin-level,M6,INTERPRETED,negative,0
+origin-level,M6,NOT_LOCATED,,2
+origin-level,M6,NOT_APPLICABLE,,0
+origin-level,M6,UNRESOLVED,,0
+origin-level,M6,ALL,,2
+origin-level,M7,EXPLICIT,positive,0
+origin-level,M7,EXPLICIT,null,0
+origin-level,M7,EXPLICIT,negative,0
+origin-level,M7,INTERPRETED,positive,0
+origin-level,M7,INTERPRETED,null,0
+origin-level,M7,INTERPRETED,negative,0
+origin-level,M7,NOT_LOCATED,,2
+origin-level,M7,NOT_APPLICABLE,,0
+origin-level,M7,UNRESOLVED,,0
+origin-level,M7,ALL,,2
+origin-level,M8,EXPLICIT,positive,0
+origin-level,M8,EXPLICIT,null,0
+origin-level,M8,EXPLICIT,negative,0
+origin-level,M8,INTERPRETED,positive,1
+origin-level,M8,INTERPRETED,null,0
+origin-level,M8,INTERPRETED,negative,0
+origin-level,M8,NOT_LOCATED,,0
+origin-level,M8,NOT_APPLICABLE,,1
+origin-level,M8,UNRESOLVED,,0
+origin-level,M8,ALL,,2
+all rows,M1,EXPLICIT,positive,1
+all rows,M1,EXPLICIT,null,0
+all rows,M1,EXPLICIT,negative,0
+all rows,M1,INTERPRETED,positive,0
+all rows,M1,INTERPRETED,null,1
+all rows,M1,INTERPRETED,negative,0
+all rows,M1,NOT_LOCATED,,10
+all rows,M1,NOT_APPLICABLE,,0
+all rows,M1,UNRESOLVED,,0
+all rows,M1,ALL,,12
+all rows,M2,EXPLICIT,positive,1
+all rows,M2,EXPLICIT,null,0
+all rows,M2,EXPLICIT,negative,0
+all rows,M2,INTERPRETED,positive,1
+all rows,M2,INTERPRETED,null,1
+all rows,M2,INTERPRETED,negative,0
+all rows,M2,NOT_LOCATED,,9
+all rows,M2,NOT_APPLICABLE,,0
+all rows,M2,UNRESOLVED,,0
+all rows,M2,ALL,,12
+all rows,M3,EXPLICIT,positive,3
+all rows,M3,EXPLICIT,null,0
+all rows,M3,EXPLICIT,negative,0
+all rows,M3,INTERPRETED,positive,1
+all rows,M3,INTERPRETED,null,4
+all rows,M3,INTERPRETED,negative,0
+all rows,M3,NOT_LOCATED,,4
+all rows,M3,NOT_APPLICABLE,,0
+all rows,M3,UNRESOLVED,,0
+all rows,M3,ALL,,12
+all rows,M4a,EXPLICIT,positive,2
+all rows,M4a,EXPLICIT,null,0
+all rows,M4a,EXPLICIT,negative,0
+all rows,M4a,INTERPRETED,positive,5
+all rows,M4a,INTERPRETED,null,1
+all rows,M4a,INTERPRETED,negative,0
+all rows,M4a,NOT_LOCATED,,4
+all rows,M4a,NOT_APPLICABLE,,0
+all rows,M4a,UNRESOLVED,,0
+all rows,M4a,ALL,,12
+all rows,M4b,EXPLICIT,positive,2
+all rows,M4b,EXPLICIT,null,0
+all rows,M4b,EXPLICIT,negative,0
+all rows,M4b,INTERPRETED,positive,0
+all rows,M4b,INTERPRETED,null,0
+all rows,M4b,INTERPRETED,negative,0
+all rows,M4b,NOT_LOCATED,,10
+all rows,M4b,NOT_APPLICABLE,,0
+all rows,M4b,UNRESOLVED,,0
+all rows,M4b,ALL,,12
+all rows,M4c,EXPLICIT,positive,0
+all rows,M4c,EXPLICIT,null,2
+all rows,M4c,EXPLICIT,negative,0
+all rows,M4c,INTERPRETED,positive,4
+all rows,M4c,INTERPRETED,null,0
+all rows,M4c,INTERPRETED,negative,0
+all rows,M4c,NOT_LOCATED,,6
+all rows,M4c,NOT_APPLICABLE,,0
+all rows,M4c,UNRESOLVED,,0
+all rows,M4c,ALL,,12
+all rows,M5,EXPLICIT,positive,0
+all rows,M5,EXPLICIT,null,0
+all rows,M5,EXPLICIT,negative,0
+all rows,M5,INTERPRETED,positive,5
+all rows,M5,INTERPRETED,null,0
+all rows,M5,INTERPRETED,negative,0
+all rows,M5,NOT_LOCATED,,7
+all rows,M5,NOT_APPLICABLE,,0
+all rows,M5,UNRESOLVED,,0
+all rows,M5,ALL,,12
+all rows,M6,EXPLICIT,positive,2
+all rows,M6,EXPLICIT,null,0
+all rows,M6,EXPLICIT,negative,0
+all rows,M6,INTERPRETED,positive,3
+all rows,M6,INTERPRETED,null,0
+all rows,M6,INTERPRETED,negative,0
+all rows,M6,NOT_LOCATED,,7
+all rows,M6,NOT_APPLICABLE,,0
+all rows,M6,UNRESOLVED,,0
+all rows,M6,ALL,,12
+all rows,M7,EXPLICIT,positive,3
+all rows,M7,EXPLICIT,null,0
+all rows,M7,EXPLICIT,negative,0
+all rows,M7,INTERPRETED,positive,2
+all rows,M7,INTERPRETED,null,0
+all rows,M7,INTERPRETED,negative,0
+all rows,M7,NOT_LOCATED,,7
+all rows,M7,NOT_APPLICABLE,,0
+all rows,M7,UNRESOLVED,,0
+all rows,M7,ALL,,12
+all rows,M8,EXPLICIT,positive,6
+all rows,M8,EXPLICIT,null,0
+all rows,M8,EXPLICIT,negative,0
+all rows,M8,INTERPRETED,positive,4
+all rows,M8,INTERPRETED,null,0
+all rows,M8,INTERPRETED,negative,0
+all rows,M8,NOT_LOCATED,,0
+all rows,M8,NOT_APPLICABLE,,2
+all rows,M8,UNRESOLVED,,0
+all rows,M8,ALL,,12
+"trial-level, submitted-v1 cells",M1,EXPLICIT,positive,1
+"trial-level, submitted-v1 cells",M1,EXPLICIT,null,0
+"trial-level, submitted-v1 cells",M1,EXPLICIT,negative,0
+"trial-level, submitted-v1 cells",M1,INTERPRETED,positive,0
+"trial-level, submitted-v1 cells",M1,INTERPRETED,null,0
+"trial-level, submitted-v1 cells",M1,INTERPRETED,negative,0
+"trial-level, submitted-v1 cells",M1,NOT_LOCATED,,7
+"trial-level, submitted-v1 cells",M1,NOT_APPLICABLE,,0
+"trial-level, submitted-v1 cells",M1,UNRESOLVED,,0
+"trial-level, submitted-v1 cells",M1,ALL,,8
+"trial-level, submitted-v1 cells",M2,EXPLICIT,positive,1
+"trial-level, submitted-v1 cells",M2,EXPLICIT,null,0
+"trial-level, submitted-v1 cells",M2,EXPLICIT,negative,0
+"trial-level, submitted-v1 cells",M2,INTERPRETED,positive,1
+"trial-level, submitted-v1 cells",M2,INTERPRETED,null,0
+"trial-level, submitted-v1 cells",M2,INTERPRETED,negative,0
+"trial-level, submitted-v1 cells",M2,NOT_LOCATED,,6
+"trial-level, submitted-v1 cells",M2,NOT_APPLICABLE,,0
+"trial-level, submitted-v1 cells",M2,UNRESOLVED,,0
+"trial-level, submitted-v1 cells",M2,ALL,,8
+"trial-level, submitted-v1 cells",M3,EXPLICIT,positive,1
+"trial-level, submitted-v1 cells",M3,EXPLICIT,null,0
+"trial-level, submitted-v1 cells",M3,EXPLICIT,negative,0
+"trial-level, submitted-v1 cells",M3,INTERPRETED,positive,0
+"trial-level, submitted-v1 cells",M3,INTERPRETED,null,3
+"trial-level, submitted-v1 cells",M3,INTERPRETED,negative,0
+"trial-level, submitted-v1 cells",M3,NOT_LOCATED,,4
+"trial-level, submitted-v1 cells",M3,NOT_APPLICABLE,,0
+"trial-level, submitted-v1 cells",M3,UNRESOLVED,,0
+"trial-level, submitted-v1 cells",M3,ALL,,8
+"trial-level, submitted-v1 cells",M4a,EXPLICIT,positive,0
+"trial-level, submitted-v1 cells",M4a,EXPLICIT,null,0
+"trial-level, submitted-v1 cells",M4a,EXPLICIT,negative,0
+"trial-level, submitted-v1 cells",M4a,INTERPRETED,positive,0
+"trial-level, submitted-v1 cells",M4a,INTERPRETED,null,0
+"trial-level, submitted-v1 cells",M4a,INTERPRETED,negative,0
+"trial-level, submitted-v1 cells",M4a,NOT_LOCATED,,0
+"trial-level, submitted-v1 cells",M4a,NOT_APPLICABLE,,0
+"trial-level, submitted-v1 cells",M4a,UNRESOLVED,,0
+"trial-level, submitted-v1 cells",M4a,ALL,,0
+"trial-level, submitted-v1 cells",M4b,EXPLICIT,positive,0
+"trial-level, submitted-v1 cells",M4b,EXPLICIT,null,0
+"trial-level, submitted-v1 cells",M4b,EXPLICIT,negative,0
+"trial-level, submitted-v1 cells",M4b,INTERPRETED,positive,0
+"trial-level, submitted-v1 cells",M4b,INTERPRETED,null,0
+"trial-level, submitted-v1 cells",M4b,INTERPRETED,negative,0
+"trial-level, submitted-v1 cells",M4b,NOT_LOCATED,,0
+"trial-level, submitted-v1 cells",M4b,NOT_APPLICABLE,,0
+"trial-level, submitted-v1 cells",M4b,UNRESOLVED,,0
+"trial-level, submitted-v1 cells",M4b,ALL,,0
+"trial-level, submitted-v1 cells",M4c,EXPLICIT,positive,0
+"trial-level, submitted-v1 cells",M4c,EXPLICIT,null,0
+"trial-level, submitted-v1 cells",M4c,EXPLICIT,negative,0
+"trial-level, submitted-v1 cells",M4c,INTERPRETED,positive,0
+"trial-level, submitted-v1 cells",M4c,INTERPRETED,null,0
+"trial-level, submitted-v1 cells",M4c,INTERPRETED,negative,0
+"trial-level, submitted-v1 cells",M4c,NOT_LOCATED,,0
+"trial-level, submitted-v1 cells",M4c,NOT_APPLICABLE,,0
+"trial-level, submitted-v1 cells",M4c,UNRESOLVED,,0
+"trial-level, submitted-v1 cells",M4c,ALL,,0
+"trial-level, submitted-v1 cells",M5,EXPLICIT,positive,0
+"trial-level, submitted-v1 cells",M5,EXPLICIT,null,0
+"trial-level, submitted-v1 cells",M5,EXPLICIT,negative,0
+"trial-level, submitted-v1 cells",M5,INTERPRETED,positive,2
+"trial-level, submitted-v1 cells",M5,INTERPRETED,null,0
+"trial-level, submitted-v1 cells",M5,INTERPRETED,negative,0
+"trial-level, submitted-v1 cells",M5,NOT_LOCATED,,6
+"trial-level, submitted-v1 cells",M5,NOT_APPLICABLE,,0
+"trial-level, submitted-v1 cells",M5,UNRESOLVED,,0
+"trial-level, submitted-v1 cells",M5,ALL,,8
+"trial-level, submitted-v1 cells",M6,EXPLICIT,positive,2
+"trial-level, submitted-v1 cells",M6,EXPLICIT,null,0
+"trial-level, submitted-v1 cells",M6,EXPLICIT,negative,0
+"trial-level, submitted-v1 cells",M6,INTERPRETED,positive,2
+"trial-level, submitted-v1 cells",M6,INTERPRETED,null,0
+"trial-level, submitted-v1 cells",M6,INTERPRETED,negative,0
+"trial-level, submitted-v1 cells",M6,NOT_LOCATED,,4
+"trial-level, submitted-v1 cells",M6,NOT_APPLICABLE,,0
+"trial-level, submitted-v1 cells",M6,UNRESOLVED,,0
+"trial-level, submitted-v1 cells",M6,ALL,,8
+"trial-level, submitted-v1 cells",M7,EXPLICIT,positive,3
+"trial-level, submitted-v1 cells",M7,EXPLICIT,null,0
+"trial-level, submitted-v1 cells",M7,EXPLICIT,negative,0
+"trial-level, submitted-v1 cells",M7,INTERPRETED,positive,2
+"trial-level, submitted-v1 cells",M7,INTERPRETED,null,0
+"trial-level, submitted-v1 cells",M7,INTERPRETED,negative,0
+"trial-level, submitted-v1 cells",M7,NOT_LOCATED,,3
+"trial-level, submitted-v1 cells",M7,NOT_APPLICABLE,,0
+"trial-level, submitted-v1 cells",M7,UNRESOLVED,,0
+"trial-level, submitted-v1 cells",M7,ALL,,8
+"trial-level, submitted-v1 cells",M8,EXPLICIT,positive,6
+"trial-level, submitted-v1 cells",M8,EXPLICIT,null,0
+"trial-level, submitted-v1 cells",M8,EXPLICIT,negative,0
+"trial-level, submitted-v1 cells",M8,INTERPRETED,positive,2
+"trial-level, submitted-v1 cells",M8,INTERPRETED,null,0
+"trial-level, submitted-v1 cells",M8,INTERPRETED,negative,0
+"trial-level, submitted-v1 cells",M8,NOT_LOCATED,,0
+"trial-level, submitted-v1 cells",M8,NOT_APPLICABLE,,0
+"trial-level, submitted-v1 cells",M8,UNRESOLVED,,0
+"trial-level, submitted-v1 cells",M8,ALL,,8
+"trial-level, added-in-revision cells",M1,EXPLICIT,positive,0
+"trial-level, added-in-revision cells",M1,EXPLICIT,null,0
+"trial-level, added-in-revision cells",M1,EXPLICIT,negative,0
+"trial-level, added-in-revision cells",M1,INTERPRETED,positive,0
+"trial-level, added-in-revision cells",M1,INTERPRETED,null,1
+"trial-level, added-in-revision cells",M1,INTERPRETED,negative,0
+"trial-level, added-in-revision cells",M1,NOT_LOCATED,,1
+"trial-level, added-in-revision cells",M1,NOT_APPLICABLE,,0
+"trial-level, added-in-revision cells",M1,UNRESOLVED,,0
+"trial-level, added-in-revision cells",M1,ALL,,2
+"trial-level, added-in-revision cells",M2,EXPLICIT,positive,0
+"trial-level, added-in-revision cells",M2,EXPLICIT,null,0
+"trial-level, added-in-revision cells",M2,EXPLICIT,negative,0
+"trial-level, added-in-revision cells",M2,INTERPRETED,positive,0
+"trial-level, added-in-revision cells",M2,INTERPRETED,null,1
+"trial-level, added-in-revision cells",M2,INTERPRETED,negative,0
+"trial-level, added-in-revision cells",M2,NOT_LOCATED,,1
+"trial-level, added-in-revision cells",M2,NOT_APPLICABLE,,0
+"trial-level, added-in-revision cells",M2,UNRESOLVED,,0
+"trial-level, added-in-revision cells",M2,ALL,,2
+"trial-level, added-in-revision cells",M3,EXPLICIT,positive,0
+"trial-level, added-in-revision cells",M3,EXPLICIT,null,0
+"trial-level, added-in-revision cells",M3,EXPLICIT,negative,0
+"trial-level, added-in-revision cells",M3,INTERPRETED,positive,1
+"trial-level, added-in-revision cells",M3,INTERPRETED,null,1
+"trial-level, added-in-revision cells",M3,INTERPRETED,negative,0
+"trial-level, added-in-revision cells",M3,NOT_LOCATED,,0
+"trial-level, added-in-revision cells",M3,NOT_APPLICABLE,,0
+"trial-level, added-in-revision cells",M3,UNRESOLVED,,0
+"trial-level, added-in-revision cells",M3,ALL,,2
+"trial-level, added-in-revision cells",M4a,EXPLICIT,positive,1
+"trial-level, added-in-revision cells",M4a,EXPLICIT,null,0
+"trial-level, added-in-revision cells",M4a,EXPLICIT,negative,0
+"trial-level, added-in-revision cells",M4a,INTERPRETED,positive,4
+"trial-level, added-in-revision cells",M4a,INTERPRETED,null,1
+"trial-level, added-in-revision cells",M4a,INTERPRETED,negative,0
+"trial-level, added-in-revision cells",M4a,NOT_LOCATED,,4
+"trial-level, added-in-revision cells",M4a,NOT_APPLICABLE,,0
+"trial-level, added-in-revision cells",M4a,UNRESOLVED,,0
+"trial-level, added-in-revision cells",M4a,ALL,,10
+"trial-level, added-in-revision cells",M4b,EXPLICIT,positive,2
+"trial-level, added-in-revision cells",M4b,EXPLICIT,null,0
+"trial-level, added-in-revision cells",M4b,EXPLICIT,negative,0
+"trial-level, added-in-revision cells",M4b,INTERPRETED,positive,0
+"trial-level, added-in-revision cells",M4b,INTERPRETED,null,0
+"trial-level, added-in-revision cells",M4b,INTERPRETED,negative,0
+"trial-level, added-in-revision cells",M4b,NOT_LOCATED,,8
+"trial-level, added-in-revision cells",M4b,NOT_APPLICABLE,,0
+"trial-level, added-in-revision cells",M4b,UNRESOLVED,,0
+"trial-level, added-in-revision cells",M4b,ALL,,10
+"trial-level, added-in-revision cells",M4c,EXPLICIT,positive,0
+"trial-level, added-in-revision cells",M4c,EXPLICIT,null,2
+"trial-level, added-in-revision cells",M4c,EXPLICIT,negative,0
+"trial-level, added-in-revision cells",M4c,INTERPRETED,positive,3
+"trial-level, added-in-revision cells",M4c,INTERPRETED,null,0
+"trial-level, added-in-revision cells",M4c,INTERPRETED,negative,0
+"trial-level, added-in-revision cells",M4c,NOT_LOCATED,,5
+"trial-level, added-in-revision cells",M4c,NOT_APPLICABLE,,0
+"trial-level, added-in-revision cells",M4c,UNRESOLVED,,0
+"trial-level, added-in-revision cells",M4c,ALL,,10
+"trial-level, added-in-revision cells",M5,EXPLICIT,positive,0
+"trial-level, added-in-revision cells",M5,EXPLICIT,null,0
+"trial-level, added-in-revision cells",M5,EXPLICIT,negative,0
+"trial-level, added-in-revision cells",M5,INTERPRETED,positive,1
+"trial-level, added-in-revision cells",M5,INTERPRETED,null,0
+"trial-level, added-in-revision cells",M5,INTERPRETED,negative,0
+"trial-level, added-in-revision cells",M5,NOT_LOCATED,,1
+"trial-level, added-in-revision cells",M5,NOT_APPLICABLE,,0
+"trial-level, added-in-revision cells",M5,UNRESOLVED,,0
+"trial-level, added-in-revision cells",M5,ALL,,2
+"trial-level, added-in-revision cells",M6,EXPLICIT,positive,0
+"trial-level, added-in-revision cells",M6,EXPLICIT,null,0
+"trial-level, added-in-revision cells",M6,EXPLICIT,negative,0
+"trial-level, added-in-revision cells",M6,INTERPRETED,positive,1
+"trial-level, added-in-revision cells",M6,INTERPRETED,null,0
+"trial-level, added-in-revision cells",M6,INTERPRETED,negative,0
+"trial-level, added-in-revision cells",M6,NOT_LOCATED,,1
+"trial-level, added-in-revision cells",M6,NOT_APPLICABLE,,0
+"trial-level, added-in-revision cells",M6,UNRESOLVED,,0
+"trial-level, added-in-revision cells",M6,ALL,,2
+"trial-level, added-in-revision cells",M7,EXPLICIT,positive,0
+"trial-level, added-in-revision cells",M7,EXPLICIT,null,0
+"trial-level, added-in-revision cells",M7,EXPLICIT,negative,0
+"trial-level, added-in-revision cells",M7,INTERPRETED,positive,0
+"trial-level, added-in-revision cells",M7,INTERPRETED,null,0
+"trial-level, added-in-revision cells",M7,INTERPRETED,negative,0
+"trial-level, added-in-revision cells",M7,NOT_LOCATED,,2
+"trial-level, added-in-revision cells",M7,NOT_APPLICABLE,,0
+"trial-level, added-in-revision cells",M7,UNRESOLVED,,0
+"trial-level, added-in-revision cells",M7,ALL,,2
+"trial-level, added-in-revision cells",M8,EXPLICIT,positive,0
+"trial-level, added-in-revision cells",M8,EXPLICIT,null,0
+"trial-level, added-in-revision cells",M8,EXPLICIT,negative,0
+"trial-level, added-in-revision cells",M8,INTERPRETED,positive,1
+"trial-level, added-in-revision cells",M8,INTERPRETED,null,0
+"trial-level, added-in-revision cells",M8,INTERPRETED,negative,0
+"trial-level, added-in-revision cells",M8,NOT_LOCATED,,0
+"trial-level, added-in-revision cells",M8,NOT_APPLICABLE,,1
+"trial-level, added-in-revision cells",M8,UNRESOLVED,,0
+"trial-level, added-in-revision cells",M8,ALL,,2

@@ -1,0 +1,11 @@
+domain_id,domain,n_cells,n_explicit_pos,n_explicit_null,n_explicit_neg,n_interpreted,n_not_located,n_not_applicable,n_unresolved,explicit_theories,n_stated_predictions,n_derived_predictions,n_distinguishable_pairs,distinguishable_pairs,n_distinguishable_pairs_conf2,derived_class,derived_class_conf2,n_flagged_cells,n_provisional_cells,n_abstract_only_cells
+M1,number of simultaneously competing action policies,12,1,0,0,1,10,0,0,SIT,1,1,0,,0,single-occupant,single-occupant,0,2,6
+M2,incompatibility of the competing policies,12,1,0,0,2,9,0,0,SIT,1,1,0,,0,single-occupant,single-occupant,1,2,6
+M3,valence,12,3,0,0,5,4,0,0,FM;PP;UAL,3,0,0,,0,occupied-not-contested,occupied-not-contested,2,2,6
+M5,organism-wide cortical–autonomic coherence,12,0,0,0,5,7,0,0,,0,0,0,,0,thin,thin,1,2,6
+M6,dimensionality of phenomenal structure,12,2,0,0,3,7,0,0,HOSS;IIT,2,0,1,P07-P10,0,contested,occupied-not-contested,2,2,6
+M7,metacognitive sensitivity,12,3,0,0,2,7,0,0,HOSS;HOT;PP,3,0,0,,0,occupied-not-contested,occupied-not-contested,1,2,7
+M8,cortical signature of access,12,6,0,0,4,0,2,0,AST;GNWT;HOSS;HOT;IIT;RPT,12,0,15,P01-P04;P01-P08;P01-P12;P02-P05;P02-P08;P03-P06;P04-P09;P04-P12;P04-P29;P05-P29;P08-P09;P08-P12;P08-P29;P09-P12;P30-P31,14,contested,contested,1,2,7
+M4a,access to interoceptive content as content,12,2,0,0,6,4,0,0,FM;PP,2,0,0,,0,occupied-not-contested,occupied-not-contested,2,12,5
+M4b,visceral modulation of access to exteroceptive content,12,2,0,0,0,10,0,0,NSF;PP,2,0,0,,0,occupied-not-contested,occupied-not-contested,2,12,5
+M4c,conscious involvement in purely autonomic conflict,12,0,2,0,4,6,0,0,PFT;SIT,2,1,0,,0,occupied-not-contested,occupied-not-contested,3,12,4

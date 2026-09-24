@@ -1,0 +1,4 @@
+version,study,cell_grouping,n_cells,usable_target_per_cell,probe_fraction,loss_rate,presented_per_cell_raw,presented_per_cell,expected_usable_per_cell,probe_trials_per_cell,n_sessions,presented_per_session,presented_total,usable_total_expected
+2.0,1,"analysis cells (count1@0, count2@0, count3@0, count3@1, count3@3)",5,64,0.25,0.15,100.39,102,65.0,25.5,2,255,510,325.1
+2.0,1,"presentation cells, effector-balanced",11,64,0.25,0.15,100.39,102,65.0,25.5,2,561,1122,715.3
+2.0,2,valence (3) x shared pairs (3) at count 3 [assumed],9,64,0.25,0.15,100.39,102,65.0,25.5,2,459,918,585.2
