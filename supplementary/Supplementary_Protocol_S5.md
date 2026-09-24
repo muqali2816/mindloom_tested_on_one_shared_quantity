@@ -8,11 +8,13 @@ The earlier §9.1 varied incompatibility through the target's feature conjunctio
 
 ## S5.2 What is tested
 
+Study 1 tests two predictions (P16, P23) and estimates one quantity; P25 appears in the table because the count branch bears on it, but no contrast is powered for it.
+
 | Label | Prediction | Status | Source |
 |---|---|---|---|
 | P16 | Conscious involvement when ≥ 2 incompatible inclinations reach the skeletomotor output system; nothing stated about a further increase beyond two | stated (SIT) | Morsella 2005 (abstract); Morsella et al. 2016 §2.4 |
 | P23 | Access to a masked target rises with the incompatibility of the policies it licenses, at fixed count and load | derived by the authors; not endorsed by SIT proponents | this manuscript |
-| P25 | More competing policies degrade access (load) | derived; GNWT plus a capacity assumption GNWT has not made | this manuscript |
+| P25 | More competing policies degrade access (load) | derived; GNWT plus a capacity assumption GNWT has not made — **not tested**: the count branch (C0) tests the P16 threshold; a monotone decrement across 1/2/3 would be *consistent with* P25 and is reported descriptively | this manuscript |
 | — | Cortical–autonomic coupling index | estimation only; no coded theory predicts over it | — |
 
 A null on C1a (P23) constrains the authors' derivation within the preregistered equivalence bound; it does not refute supramodular interaction theory, whose stated outcome variable is experienced conflict, not access. The condition discriminates between no two coded theories.

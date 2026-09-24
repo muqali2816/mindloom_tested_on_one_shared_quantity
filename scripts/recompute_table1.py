@@ -53,15 +53,13 @@ For each domain, over trial-level accounts:
   n_explicit_pos      EXPLICIT cells with polarity positive or negative (a stated directional prediction)
   n_explicit_null     EXPLICIT cells with polarity null (a stated prediction of no involvement)
   n_interpreted       INTERPRETED cells
-  status              'unoccupied'      if no EXPLICIT cell;
-                      'single-occupant' if exactly one EXPLICIT cell (any polarity);
-                      'contested'       if >= 2 EXPLICIT cells and their polarities differ (positive/negative vs null),
-                                        OR any cell is UNRESOLVED;
-                      'shared'          if >= 2 EXPLICIT cells with the same polarity.
-  'thin' is an additional flag: EXPLICIT + INTERPRETED <= 2.
-Note that 'shared' does not mean 'no discrimination': theories may agree on involvement and differ on
-locus, timing or direction (the `relation` column and Table S4 carry that); the status descriptor
-summarises polarity only.
+  occupancy_summary   'no-EXPLICIT' | 'one-EXPLICIT' | 'multi-EXPLICIT-same-sign' | 'sign-disagreement'
+                      (>= 2 EXPLICIT cells whose polarities disagree, or any UNRESOLVED cell).
+                      This is an occupancy count, not the manuscript's column class. The class
+                      (contested / single-occupant / occupied-not-contested / thin / unoccupied) is
+                      derived by column_typology.py from Table S1 together with the distinguishable
+                      prediction pairs in Table S4 — predictions can differ in locus, timing or
+                      magnitude without differing in sign.
 """
 from __future__ import annotations
 import argparse, json, os, sys
@@ -180,16 +178,19 @@ def wide_v2(df, scope_name, dom_order):
         n_exp = int((sub.code == "EXPLICIT").sum())
         pols = set(sub[sub.code == "EXPLICIT"].polarity)
         directional = {"positive", "negative"} & pols
+        # Occupancy summary ONLY (how many EXPLICIT cells, and whether their signs disagree).
+        # The manuscript's column class is NOT this field: it is derived by column_typology.py from
+        # Table S1 together with the distinguishable-prediction pairs of Table S4.
         if (sub.code == "UNRESOLVED").any() or (n_exp >= 2 and directional and "null" in pols):
-            status = "contested"
+            status = "sign-disagreement"
         elif n_exp == 0:
-            status = "unoccupied"
+            status = "no-EXPLICIT"
         elif n_exp == 1:
-            status = "single-occupant"
+            status = "one-EXPLICIT"
         else:
-            status = "shared"
-        r["status_polarity_based"] = status
-        r["thin"] = bool(n_exp + int((sub.code == "INTERPRETED").sum()) <= 2)
+            status = "multi-EXPLICIT-same-sign"
+        r["occupancy_summary"] = status
+        r["n_stated_or_interpreted_le2"] = bool(n_exp + int((sub.code == "INTERPRETED").sum()) <= 2)
         rows.append(r)
     return rows
 
@@ -270,7 +271,7 @@ def run_v2(path, accounts, domains, out):
         "n_cells_submitted_v1": int((df.origin == "submitted-v1").sum()), "n_cells_added_in_revision": int((df.origin == "added-in-revision").sum()),
         "per_domain_trial_level": {d: {k: (int(v) if isinstance(v, (int, np.integer)) else (bool(v) if isinstance(v, (bool, np.bool_)) else v))
                                        for k, v in status_tl.loc[d].drop("scope").items()} for d in dom_order},
-        "status_counts_trial_level": status_tl.status_polarity_based.value_counts().to_dict(),
+        "occupancy_counts_trial_level": status_tl.occupancy_summary.value_counts().to_dict(),
         "explicit_per_theory": {t: int(((df.theory_id == t) & (df.code == "EXPLICIT")).sum()) for t in theories},
         "legacy_view_n_cells": (int(legacy_view[legacy_view.scope == "all rows"].n.sum()) if legacy_view is not None else None),
     }
@@ -342,8 +343,8 @@ def selftest(out, seed=3):
     per_dom = tal[(tal.scope == "all rows") & (tal.code != "ALL")].groupby("domain_id").n.sum()
     log.append(("tallies sum to cells per domain (all rows)", bool((per_dom == 12).all())))
     log.append(("n_cells == 120", numbers["n_cells"] == 120))
-    log.append(("M8 status contested (E+ vs E0)", numbers["per_domain_trial_level"]["M8"]["status_polarity_based"] == "contested"))
-    log.append(("M6 status single-occupant", numbers["per_domain_trial_level"]["M6"]["status_polarity_based"] == "single-occupant"))
+    log.append(("M8 occupancy sign-disagreement (E+ vs E0)", numbers["per_domain_trial_level"]["M8"]["occupancy_summary"] == "sign-disagreement"))
+    log.append(("M6 occupancy one-EXPLICIT", numbers["per_domain_trial_level"]["M6"]["occupancy_summary"] == "one-EXPLICIT"))
     log.append(("legacy view counts exactly the cells carrying legacy_code", numbers["legacy_view_n_cells"] == int((sim.legacy_code != "").sum())))
     log.append(("origin split: 2 x 10 + 10 x 3 = 50 added cells", numbers["n_cells_added_in_revision"] == 50))
     # legacy schema path on the deposit v1.3 file, if present next to the manifests
@@ -384,7 +385,7 @@ def main(argv=None):
         ap.error("give the Table S1 file or --selftest")
     cols = set(pd.read_csv(a.table, nrows=0).columns)
     if {"theory_id", "domain_id"} <= cols:
-        n = run_v2(a.table, a.accounts, a.domains, a.out); print(json.dumps({k: n[k] for k in ("input", "n_cells", "n_theories", "n_domains", "code_totals_all", "status_counts_trial_level")}, indent=1))
+        n = run_v2(a.table, a.accounts, a.domains, a.out); print(json.dumps({k: n[k] for k in ("input", "n_cells", "n_theories", "n_domains", "code_totals_all", "occupancy_counts_trial_level")}, indent=1))
     elif {"theory", "quantity_id"} <= cols:
         n = run_legacy(a.table, a.out); print(json.dumps(n, indent=1))
     else:

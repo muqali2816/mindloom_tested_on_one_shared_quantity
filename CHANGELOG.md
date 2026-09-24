@@ -35,5 +35,13 @@ Baseline: manuscript v3 (sha256 dec8007fb39d42e2), deposit v1.3 (e7ea015ce7b9171
 ## Response (response/response_to_reviewers_v3.md, 20 pp): 27 comments verbatim; statuses DONE 20 / PREPARED 4 / PARTLY 3; re-audit section; outstanding list.
 ## Gates (gates/): extension request; two letters to proponents — drafts, not sent.
 
+## Integration fixes after audit findings
+- agreement.py: S2 v2 (experiment-unit) path added; blank S2 form now rejected; planted disagreements detected.
+- recompute_table1.py: polarity-based field renamed `occupancy_summary` (no-EXPLICIT / one-EXPLICIT / multi-EXPLICIT-same-sign / sign-disagreement) so it cannot be read as the column class, which only column_typology.py derives.
+- S5 §S5.2: P25 marked "not tested" (count branch tests P16; a decrement is reported descriptively), consistent with §9.1.
+- Table 1 caption: legend for "IIT (3.0/4.0)".
+- §7.2 and CRediT: second coding described as scheduled, not in progress.
+- deposit_v2/README.md: Table S3 covers 10 accounts (v1.3 set without NSF, before the HOT/HOSS split), not the S1 set.
+
 ## Still with the authors
 Send extension request; send proponent letters (record dates); second coding → agreement.py → fill κ; upload deposit_v2 → DOI into 4 places; names, CRediT confirmation, funding, CoI, AI tool; decide on length cuts; confirm Poznanski DOI.

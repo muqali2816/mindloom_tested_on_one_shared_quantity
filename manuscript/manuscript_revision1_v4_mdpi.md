@@ -375,7 +375,7 @@ class. Three further register entries are derived by the authors and not counted
 supramodular M2 prediction extended to access, Section 9.1), P24 (a feeling accompanying purely
 autonomic conflict, derived from the interoceptive-inference mechanism, pending its proponents'
 view) and P25 (a load effect of policy count, derived from GNWT with a capacity assumption it has
-not made). Condensed from Table S1.]{.mark}
+not made). IIT (3.0/4.0) denotes integrated information theory in its 3.0 and 4.0 formulations, coded as one account because their stated predictions over these quantities coincide. Condensed from Table S1.]{.mark}
 
 | Account | M1 N policies | M2 Incompat. | M3 Valence | M4a Intero. content | M4b Visceral modul. | M4c Autonomic conflict | M5 Org-wide coh. | M6 Dim. phen. | M7 Metarep. precision | M8 Cortical signature |
 |---|---|---|---|---|---|---|---|---|---|---|
