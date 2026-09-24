@@ -80,5 +80,8 @@ Baseline: manuscript v3 (sha256 dec8007fb39d42e2), deposit v1.3 (e7ea015ce7b9171
 - S5: S5.16 contradiction removed; S5.8 reserve budget on the feasible grid (112, P ≈ 0.989).
 - Code: section9_power.py v2.3, protocol_numbers.py v3.2, agreement.py v2.3 (new second-coder fields compared, 'not compared' when absent); summary regenerated without P16/N = 119 labels; pair_register_notes.md scope note; README_coder2 subset sizes.
 
+## v4.7 — final text pass
+- Supplementary Note S6 (new): ConTraSt scheme and limits (from §7.5), full Table 2 scenario list (from §7.6). Body 16 407 → 15 813 words; §8.1–8.3 shortened by about a quarter with every citation kept; §8.4 nested highlight flattened. Response §4(i) version, §4(j) sentence on remaining length. Deposit README lists S6.
+
 ## Still with the authors
 Send extension request; send proponent letters (record dates); second coding → agreement.py → fill κ; upload deposit_v2 → DOI into 4 places; names, CRediT confirmation, funding, CoI, AI tool; decide on length cuts; confirm Poznanski DOI.

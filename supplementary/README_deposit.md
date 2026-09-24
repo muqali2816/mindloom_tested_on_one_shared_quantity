@@ -20,6 +20,7 @@ Reproduce every count: `python reproduce.py --deposit . --out out` (11 steps; se
 | S2_inclusion_criteria_v2.txt, s2_sensitivity.csv | Criteria; 11 sensitivity scenarios + 2 historical publication-level reproductions. |
 | Table_S3_contrast_dimensions.csv, Table_S3_tallies.csv, s3_coverage_note.md | Coding of 10 accounts against 12 ConTraSt annotation dimensions (120 cells). Covers the ten accounts of deposit v1.3 minus the neural subjective frame and before the HOT/HOSS split — see the coverage note; not the same account set as Table S1. |
 | codebook_v2.md, codebook_v2.sha256, codebook_changelog.md | Frozen codebook v2.0. |
+| Supplementary_Note_S6.md | The ConTraSt column set of §7.5 (scheme, occupancy, correspondence to M1–M8, limits) and every Table 2 sensitivity scenario of §7.6, with the two historical scenarios. |
 | Supplementary_Protocol_S5.md, protocol_numbers.py, protocol_changes.md | Protocol S5 v2; the script that derives its planning numbers from the section9_power.py outputs; the audit-to-change mapping. |
 | power_study1.csv, power_study2.csv, trials_budget.csv, section9_power_summary.md | Power and trial budget (`section9_power.py`). |
 | agreement.py | Inter-coder agreement (S1 v2 and S2 v2 forms auto-detected; raw agreement, confusion matrix, nominal κ, per-domain κ, κ by origin subset; intervals opt-in). |
