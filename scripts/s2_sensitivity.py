@@ -1,8 +1,14 @@
-# s2_sensitivity.py — scenario counts for Table S2 v2 (unit = experiment).
+# s2_sensitivity.py (v2.1) — scenario counts for Table S2 v2 at BOTH units (unit = experiment row, and unit = publication).
 # Usage: python s2_sensitivity.py [Table_S2_v2.csv] [s2_sensitivity.csv]
 # Every number in s2_sensitivity.csv is produced here from the table; nothing is typed.
-import csv, sys, json
+# v2.1 (audit section 7): the 42 rows mix unit_type experiment / experiment-group / publication-as-one, so every scenario is
+# also evaluated at publication level: a publication enters a scenario when at least one of its rows is selected by that
+# scenario; its class is the single class of the selected rows, 'motor-conflict (skeletal + autonomic effector)' when both
+# motor classes occur, and 'mixed' (printed) for any other mixture.  Rows carry unit='publication'.
+import csv, sys, json, os
 from collections import Counter
+
+__version__ = "2.1"
 
 src = sys.argv[1] if len(sys.argv) > 1 else 'Table_S2_v2.csv'
 out = sys.argv[2] if len(sys.argv) > 2 else 's2_sensitivity.csv'
@@ -10,8 +16,17 @@ rows = list(csv.DictReader(open(src)))
 B = lambda v: str(v).strip().lower() == 'true'
 CLASSES = ['neutral-visual', 'neutral-nonvisual', 'motor-conflict', 'valenced', 'interoceptive']
 SUBCLASS = 'motor-conflict (autonomic effector)'   # shown apart; counted inside motor-conflict
+BOTH_MOTOR = 'motor-conflict (skeletal + autonomic effector)'   # publication level only: a publication with skeletal AND autonomic rows
+EXTRA_COLS = [BOTH_MOTOR, 'mixed', 'n_unit_experiment', 'n_unit_experiment_group', 'n_unit_publication_as_one']
+UNIT_TYPES = ['experiment', 'experiment-group', 'publication-as-one (partition unverified)']
 def collapse_class(x):
     return 'motor-conflict' if str(x).startswith('motor-conflict') else x
+
+def publication_class(classes, pid):
+    if len(classes) == 1: return next(iter(classes))
+    if classes == {'motor-conflict (skeletal)', SUBCLASS}: return BOTH_MOTOR
+    print(f's2_sensitivity.py: publication {pid} mixes classes {sorted(classes)} -> mixed', file=sys.stderr)
+    return 'mixed'
 
 def is_whalen(r):      return r['citation_label'].startswith('Whalen')
 def is_metacog(r):     return B(r['contested_inclusion']) and 'metacognitive index' in r['contested_reason']
@@ -54,6 +69,18 @@ def tally(sel):
     n = len(sel)
     return n, {k: c.get(k, 0) for k in CLASSES + [SUBCLASS]}
 
+def tally_publications(sel):
+    """Publication-level tally of the selected rows: one class per publication (see publication_class)."""
+    pubs = {}
+    for r in sel: pubs.setdefault(r['publication_id'], set()).add(r['content_class_v2'].strip())
+    cls = {p: publication_class(cs, p) for p, cs in pubs.items()}
+    n = len(cls)
+    counts = {k: sum(1 for v in cls.values() if collapse_class(v) == k) for k in CLASSES}
+    counts[SUBCLASS] = sum(1 for v in cls.values() if v == SUBCLASS)
+    counts[BOTH_MOTOR] = sum(1 for v in cls.values() if v == BOTH_MOTOR)
+    counts['mixed'] = sum(1 for v in cls.values() if v == 'mixed')
+    return n, counts, sorted(cls)
+
 records = []
 for name, desc, filt, ta in scenarios:
     sel = [r for r in rows if filt(r) and ta(r)]
@@ -63,6 +90,18 @@ for name, desc, filt, ta in scenarios:
     for k in CLASSES + [SUBCLASS]: rec[k] = f'{counts[k]} of {n}'
     rec['neutral_visual_fraction'] = round(counts['neutral-visual'] / n, 3) if n else ''
     rec['experiment_ids'] = ';'.join(r['experiment_id'] for r in sel)
+    ut = Counter(r['unit_type'] for r in sel)
+    rec['n_unit_experiment'], rec['n_unit_experiment_group'], rec['n_unit_publication_as_one'] = (ut.get(u, 0) for u in UNIT_TYPES)
+    records.append(rec)
+# the same scenarios at publication level (v2.1)
+for name, desc, filt, ta in scenarios:
+    sel = [r for r in rows if filt(r) and ta(r)]
+    n, counts, pids = tally_publications(sel)
+    rec = dict(scenario=name, unit='publication', description=desc + ' [publication level: a publication enters when any of its rows is selected]',
+               n_denominator=n, n_publications=n)
+    for k in CLASSES + [SUBCLASS, BOTH_MOTOR, 'mixed']: rec[k] = f'{counts[k]} of {n}'
+    rec['neutral_visual_fraction'] = round(counts['neutral-visual'] / n, 3) if n else ''
+    rec['experiment_ids'] = ';'.join(pids)
     records.append(rec)
 
 # ---- historical scenarios (publication level, legacy columns), for reproduction only — not targets ----
@@ -95,15 +134,20 @@ rec['neutral_visual_fraction'] = round(c2.get('neutral-visual',0)/n2,3)
 rec['experiment_ids'] = rec['experiment_ids'] = ';'.join(sorted([r['publication_id'] for r in hist_sel] + [p for p,_ in para]))
 records.append(rec)
 
-cols = ['scenario','unit','description','n_denominator','n_publications'] + CLASSES + [SUBCLASS, 'neutral_visual_fraction','experiment_ids']
+cols = ['scenario','unit','description','n_denominator','n_publications'] + CLASSES + [SUBCLASS, 'neutral_visual_fraction','experiment_ids'] + EXTRA_COLS
+os.makedirs(os.path.dirname(os.path.abspath(out)), exist_ok=True)
 with open(out, 'w', newline='') as f:
-    w = csv.DictWriter(f, fieldnames=cols); w.writeheader(); w.writerows(records)
+    w = csv.DictWriter(f, fieldnames=cols, restval=''); w.writeheader(); w.writerows(records)
 
 # summary numbers for the structured report
 base = records[0]
+base_pub = next(r for r in records if r['scenario'] == 'S0_baseline' and r['unit'] == 'publication')
 exp_rows = [r for r in rows]
 summary = dict(
+    version=__version__,
     n_experiments_total=len(exp_rows), n_publications_total=len({r['publication_id'] for r in exp_rows}),
+    n_rows_by_unit_type={u: sum(r['unit_type'] == u for r in exp_rows) for u in UNIT_TYPES},
+    baseline_publication={k: base_pub[k] for k in ['n_denominator'] + CLASSES + [SUBCLASS, BOTH_MOTOR, 'mixed']},
     n_content_experiments=sum(has_content(r) for r in exp_rows),
     baseline={k: base[k] for k in ['n_denominator','n_publications'] + CLASSES},
     n_contested_inclusion_rows=sum(is_contested(r) for r in exp_rows),
@@ -114,6 +158,9 @@ summary = dict(
     largest_neutral_visual_share=max((r for r in records if r['unit']=='experiment' and r['neutral_visual_fraction']!=''), key=lambda r: r['neutral_visual_fraction'])['scenario'],
 )
 json.dump(summary, open(out.replace('.csv', '_summary.json'),'w'), indent=1)
+print(f"s2_sensitivity.py v{__version__}")
+print(f"BASELINE unit=experiment  n={base['n_denominator']}: " + '; '.join(f"{k} {base[k]}" for k in CLASSES + [SUBCLASS]) + f" | unit rows: experiment {base['n_unit_experiment']}, experiment-group {base['n_unit_experiment_group']}, publication-as-one {base['n_unit_publication_as_one']}")
+print(f"BASELINE unit=publication n={base_pub['n_denominator']}: " + '; '.join(f"{k} {base_pub[k]}" for k in CLASSES + [SUBCLASS, BOTH_MOTOR, 'mixed']))
 for r in records:
-    print(f"{r['scenario']:<48} n={r['n_denominator']:>3} | " + ' | '.join(f"{k[:9]} {r[k]}" for k in CLASSES) + f" | frac {r['neutral_visual_fraction']}")
+    print(f"{r['scenario']:<34} {r['unit'][:11]:<11} n={r['n_denominator']:>3} | " + ' | '.join(f"{k[:9]} {r[k]}" for k in CLASSES) + f" | frac {r['neutral_visual_fraction']}")
 print(json.dumps(summary, indent=1))

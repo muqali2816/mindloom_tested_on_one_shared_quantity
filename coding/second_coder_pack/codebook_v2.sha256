@@ -1,1 +1,1 @@
-7dd78645d6bc14de70820e3e20984aaa13371326af180ec647db657d0648e524  codebook_v2.md  (sha256 of all bytes above the final footer line, up to and including the newline that precedes it; verify with: sed '$d' codebook_v2.md | shasum -a 256   [GNU: head -n -1 codebook_v2.md | sha256sum])
+aa72e4229c1271d5be8622502ea40280b6de8059957db070870b66fc27e3a8f1  codebook_v2.md  (sha256 of all bytes above the final footer line, up to and including the newline that precedes it; verify with: sed '$d' codebook_v2.md | shasum -a 256   [GNU: head -n -1 codebook_v2.md | sha256sum])

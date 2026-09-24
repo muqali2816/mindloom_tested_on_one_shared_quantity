@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-agreement.py (v2.0) -- inter-coder agreement for the Table S1 (theory x measurable quantity)
+agreement.py (v2.1) -- inter-coder agreement for the Table S1 (theory x measurable quantity)
 coding of the manuscript "Tested on one shared quantity" (Brain Sciences, brainsci-4583950,
 revision 1), and for the legacy Table S2 (study inventory) coding.
 
@@ -11,14 +11,18 @@ Usage
   python agreement.py --s1a S1_coder1.csv --s1b S1_coder2.csv \
         --accounts accounts_manifest.csv --domains domains_manifest.csv \
         [--code-scheme v2|legacy] [--ci none|multinomial|bootstrap-by-theory] --out agreement_out/
-  python agreement.py --s2a S2_coder1.csv --s2b S2_coder2.csv --out agreement_out/   (S2: v2 experiment-unit form auto-detected by experiment_id; legacy study-unit form otherwise)
+  python agreement.py --s2a S2_coder1.csv --s2b S2_coder2.csv [--s2-reference S2_coder1.csv] --out agreement_out/
+        (S2: v2 experiment-unit form auto-detected by experiment_id; legacy study-unit form otherwise)
   python agreement.py --selftest [--out agreement_selftest/] [--seed 1]
 
 Row matching (S1)
 -----------------
 Rows are matched on the key (theory_id, domain_id).  Both are validated against the two
 manifests: `accounts_manifest.csv` (columns theory_id, theory, row_class, origin, note) and
-`domains_manifest.csv` (columns domain_id, domain).  A file may give `theory_id` directly, or a
+`domains_manifest.csv` (columns domain_id, domain).  Completeness (v2.1): EACH file must contain exactly
+the accounts x domains grid of the manifests (12 x 10 = 120 keys); missing or extra keys abort the run
+(--allow-partial-grid downgrades this to a loud warning, for the 88-cell deposit-v1.3 comparison only).
+A file may give `theory_id` directly, or a
 `theory` name that is resolved through the manifest's `theory` column and a small alias table
 (--extra-alias 'HOT / HOSS=HOT' adds more).  Any theory that cannot be resolved, or any domain_id
 not in the manifest, aborts the run with a message naming the offending values -- nothing is
@@ -62,14 +66,30 @@ optimistic -- they understate the sampling variance and give intervals that are 
                              indicative.  Seeded (--seed); 2000 replicates.
 A 'nominal' kappa means a point estimate with no interval attached.
 
+S2 v2 (experiment unit; v2.1 rules)
+------------------------------------
+  Vocabularies are strict: modality in {visual, auditory, tactile, motor, interoceptive, mixed, not applicable};
+  affective_status in {neutral, valenced, interoceptive}; report_type in {report, no-report, both};
+  contested_inclusion in {True, False}.  UNRESOLVED is accepted in every field as its OWN category (never collapsed;
+  n_UNRESOLVED is reported per coder).  A trailing parenthetical qualifier is stripped before the check
+  ('both (targets reported; ...)' -> both).  Any other value aborts, naming the row and the value.
+  Attribution by the authors: a cell is 'no attribution' when empty or matching
+  ^(none|not named|no theory|n/a|-|not verifiable)\b (case-insensitive), so 'none named (abstract-only)' is False.
+  Otherwise the theory ids are taken from the optional column theory_attribution_by_authors_ids (semicolon-separated
+  theory_ids of the accounts manifest, validated), or extracted from the free text by matching manifest names / ids.
+  Coders are compared on the binary flag AND on the exact SET of theory ids (reported separately); rows whose text
+  names no recognisable theory are listed as unparseable.  Both files must contain the experiment_id set of the
+  reference file (--s2-reference, default: the coder-1 file); the count is reported.
+
 Self-test (--selftest)
 ----------------------
 Positive case: 12 theories x 10 domains, coder 2 agrees with coder 1 on 80 % of cells and picks a
 random other code otherwise; the recovered kappa must match the analytic value for that
 generator within Monte Carlo error.  Negative cases -- each must ABORT with a clear message:
 duplicated key; theory alias not in manifest; typo in a code; NaN code; mismatched row sets;
-DOI missing (NaN) in a positive cell.  The self-test exits non-zero if any case does not behave
-as required.
+DOI missing (NaN) in a positive cell.  v2.1 adds: none-named attribution flagged True; wrong theory id
+undetected; invalid modality accepted; truncated S1 accepted; S2 id set mismatch accepted.  The self-test exits
+non-zero if any case does not behave as required.
 
 Outputs (in --out)
 ------------------
@@ -84,7 +104,7 @@ import argparse, os, re, sys
 import numpy as np
 import pandas as pd
 
-__version__ = "2.0"
+__version__ = "2.1"
 
 # ---------------------------------------------------------------- code schemes
 V2_CODES = ["EXPLICIT", "INTERPRETED", "NOT_LOCATED", "NOT_APPLICABLE", "UNRESOLVED"]
@@ -372,6 +392,20 @@ def load_s1(path, man, scheme: str, label: str):
     return out.rename(columns={"theory_id_r": "theory_id", "domain_id_r": "domain_id"})
 
 
+def check_manifest_grid(df, man, label, allow_partial=False):
+    """Every (theory_id, domain_id) of the accounts x domains grid must be present exactly once, and nothing else."""
+    expected = {(t, d) for t in man["theory_ids"] for d in man["domain_ids"]}
+    keys = set(map(tuple, df[["theory_id", "domain_id"]].values))
+    missing, extra = sorted(expected - keys), sorted(keys - expected)
+    if missing or extra:
+        msg = (f"{label}: key set differs from the manifest grid ({len(expected)} cells expected = {len(man['theory_ids'])} theories x "
+               f"{len(man['domain_ids'])} domains; {len(keys)} present): {len(missing)} missing {missing[:4]}, {len(extra)} extra {extra[:4]}")
+        if not allow_partial:
+            raise ValidationError(msg)
+        print("WARNING (--allow-partial-grid): " + msg, file=sys.stderr)
+    return len(keys)
+
+
 def check_row_sets(A, B):
     ka = set(map(tuple, A[["theory_id", "domain_id"]].values)); kb = set(map(tuple, B[["theory_id", "domain_id"]].values))
     if ka != kb:
@@ -394,9 +428,10 @@ def infer_origin(m, man, added_domains):
 
 
 # ---------------------------------------------------------------- S1 analysis
-def analyse_s1(pa, pb, man, scheme="v2", ci="none", seed=1, added_domains=DEFAULT_ADDED_DOMAINS, n_boot=2000):
+def analyse_s1(pa, pb, man, scheme="v2", ci="none", seed=1, added_domains=DEFAULT_ADDED_DOMAINS, n_boot=2000, allow_partial_grid=False):
     S = SCHEMES[scheme]
     A = load_s1(pa, man, scheme, "S1 file 1"); B = load_s1(pb, man, scheme, "S1 file 2")
+    check_manifest_grid(A, man, "S1 file 1", allow_partial_grid); check_manifest_grid(B, man, "S1 file 2", allow_partial_grid)
     check_row_sets(A, B)
     m = A.merge(B, on=["theory_id", "domain_id"], suffixes=("_A", "_B"), how="inner", validate="one_to_one")
     assert len(m) == len(A) == len(B)
@@ -405,6 +440,7 @@ def analyse_s1(pa, pb, man, scheme="v2", ci="none", seed=1, added_domains=DEFAUL
     res["S1_version"] = __version__; res["S1_code_scheme"] = scheme
     res["S1_n_cells_compared"] = len(m)
     res["S1_n_theories"] = int(m.theory_id.nunique()); res["S1_n_domains"] = int(m.domain_id.nunique())
+    res["S1_n_manifest_grid_cells"] = len(man["theory_ids"]) * len(man["domain_ids"])
     # 1. raw agreement
     k, n, p = raw_agreement(m.code_n_A, m.code_n_B)
     res["S1_1_raw_agreement_code_k_of_n"] = f"{k} of {n}"; res["S1_1_raw_agreement_code_proportion"] = p
@@ -432,6 +468,7 @@ def analyse_s1(pa, pb, man, scheme="v2", ci="none", seed=1, added_domains=DEFAUL
         res["S1_3_n_EXPLICIT_null_coder1"] = int(((m.code_n_A == "EXPLICIT") & (m.polarity_n_A == "null")).sum())
         res["S1_3_n_EXPLICIT_null_coder2"] = int(((m.code_n_B == "EXPLICIT") & (m.polarity_n_B == "null")).sum())
         res["S1_3_n_UNRESOLVED_either_coder"] = int(((m.code_n_A == "UNRESOLVED") | (m.code_n_B == "UNRESOLVED")).sum())
+        res["S1_3_n_UNRESOLVED_coder1"] = int((m.code_n_A == "UNRESOLVED").sum()); res["S1_3_n_UNRESOLVED_coder2"] = int((m.code_n_B == "UNRESOLVED").sum())
     else:
         collapse = lambda c: "YES" if c == "Y(neg)" else c
         oa, ob = m.code_n_A.map(collapse), m.code_n_B.map(collapse)
@@ -535,51 +572,201 @@ def analyse_s2(pa, pb):
 
 # ---------------------------------------------------------------- S2 v2 (experiment unit)
 S2V2_FIELDS = ["modality", "affective_status", "report_type", "contested_inclusion"]
+S2V2_VOCAB = {   # strict vocabularies (v2.1); a trailing parenthetical qualifier is allowed and stripped, e.g. 'both (targets reported; ...)'
+    "modality": ["visual", "auditory", "tactile", "motor", "interoceptive", "mixed", "not applicable"],
+    "affective_status": ["neutral", "valenced", "interoceptive"],
+    "report_type": ["report", "no-report", "both"],
+    "contested_inclusion": ["True", "False"],
+}
+UNRESOLVED = "UNRESOLVED"     # its own category in every kappa; never collapsed into another label
+S2V2_UNRESOLVED_ALIASES = {"not verified": UNRESOLVED}   # spelling present in the frozen Table_S2_v2 (P08-E3 report_type); reported per row
+S2V2_SPELLINGS = {"no report": "no-report", "no_report": "no-report", "n/a": "not applicable", "na": "not applicable", "not-applicable": "not applicable"}
+NO_ATTRIBUTION_RE = re.compile(r"^(none|not named|no theory|n/a|-|not verifiable)\b", re.IGNORECASE)
+IDS_COLUMN = "theory_attribution_by_authors_ids"      # optional structured column: semicolon-separated theory_ids from accounts_manifest.csv
 
-def load_s2_v2(path):
+
+def strip_qualifier(s: str) -> str:
+    """'both (task-relevant targets reported)' -> 'both'; 'not applicable (state)' -> 'not applicable'."""
+    return re.sub(r"\s*\([^()]*\)\s*$", "", s).strip()
+
+
+def norm_s2v2_value(field: str, raw, key: str, path) -> str:
+    """Canonical label for one S2 v2 categorical field, or a ValidationError naming the row and the value."""
+    if pd.isna(raw) or str(raw).strip() == "":
+        raise ValidationError(f"{path}: row {key!r} has an empty '{field}'; every experiment must be coded before agreement is computed")
+    s = re.sub(r"\s+", " ", str(raw).strip())
+    base = strip_qualifier(s)
+    if base.upper() == UNRESOLVED:
+        return UNRESOLVED
+    low = base.lower()
+    if low in S2V2_UNRESOLVED_ALIASES:
+        return S2V2_UNRESOLVED_ALIASES[low]
+    if field == "contested_inclusion":
+        if low in ("true", "false"):
+            return "True" if low == "true" else "False"
+        raise ValidationError(f"{path}: row {key!r} has contested_inclusion={raw!r}; allowed: True / False / UNRESOLVED")
+    low = S2V2_SPELLINGS.get(low, low)
+    if low in S2V2_VOCAB[field]:
+        return low
+    raise ValidationError(f"{path}: row {key!r} has {field}={raw!r} (base value {base!r}), which is not in the {field} vocabulary "
+                          f"{S2V2_VOCAB[field] + [UNRESOLVED]} (a trailing parenthetical qualifier is allowed)")
+
+
+def _default_manifest_for(path):
+    """Manifests beside the S2 file if present; otherwise the built-in alias table over all built-in theory ids."""
+    d = os.path.dirname(os.path.abspath(str(path)))
+    pa, pdm = os.path.join(d, "accounts_manifest.csv"), os.path.join(d, "domains_manifest.csv")
+    if os.path.exists(pa) and os.path.exists(pdm):
+        return load_manifests(pa, pdm)
+    ids = sorted(set(BUILTIN_ALIASES.values()))
+    alias = dict(BUILTIN_ALIASES); alias.update({i.lower(): i for i in ids})
+    return dict(accounts=None, domains=None, alias=alias, theory_ids=set(ids), domain_ids=set())
+
+
+def _alias_patterns(man):
+    """Compiled patterns for every manifest spelling. Short all-caps ids (GNWT, SIT, HOT, PP ...) match case-SENSITIVELY as whole
+    words so that ordinary words ('sit', 'hot') in free text do not become theories; longer names match case-insensitively."""
+    pats = []
+    for spelling, tid in man["alias"].items():
+        sp = spelling.strip()
+        if not sp:
+            continue
+        if len(sp) <= 5 or sp.lower() == tid.lower():      # ids and short abbreviations: exact upper-case match only
+            pats.append((re.compile(r"(?<![A-Za-z0-9])" + re.escape(sp.upper()) + r"(?![A-Za-z0-9])"), tid))
+        else:
+            pats.append((re.compile(r"(?<![A-Za-z0-9])" + re.escape(sp) + r"(?![A-Za-z0-9])", re.IGNORECASE), tid))
+    return pats
+
+
+def parse_attribution(raw, man, patterns=None):
+    """Structured reading of a theory-attribution free-text cell.
+    Returns dict(status, ids): status 'none' (empty, or matches NO_ATTRIBUTION_RE, e.g. 'none named (abstract-only)'),
+    'ids' (>= 1 manifest theory found by name or id), or 'unparseable' (text present, no manifest theory recognised)."""
+    if pd.isna(raw) or str(raw).strip() == "":
+        return dict(status="none", ids=frozenset())
+    s = re.sub(r"\s+", " ", str(raw).strip())
+    if NO_ATTRIBUTION_RE.match(s):
+        return dict(status="none", ids=frozenset())
+    patterns = patterns or _alias_patterns(man)
+    ids = frozenset(tid for pat, tid in patterns if pat.search(s))
+    return dict(status="ids" if ids else "unparseable", ids=ids)
+
+
+def parse_ids_column(raw, man, key, path):
+    if pd.isna(raw) or str(raw).strip() == "":
+        return frozenset()
+    ids = [x.strip() for x in str(raw).split(";") if x.strip()]
+    bad = [x for x in ids if x not in man["theory_ids"]]
+    if bad:
+        raise ValidationError(f"{path}: row {key!r} has {IDS_COLUMN} value(s) {bad} that are not a theory_id in the accounts manifest ({sorted(man['theory_ids'])})")
+    return frozenset(ids)
+
+
+def load_s2_v2(path, man=None):
+    """Load and validate one S2 v2 (experiment-unit) coding file.  Adds: key, <field>_n (canonical labels), by_authors_ids
+    (frozenset), by_authors_status, by_authors_flag (bool), attribution_source, later_ids / later_status when the later column exists."""
+    man = man or _default_manifest_for(path)
     df = read_csv_strict(path)
     need = {"experiment_id", "theory_attribution_by_authors"} | set(S2V2_FIELDS)
     if not need <= set(df.columns):
         raise ValidationError(f"{path}: S2 v2 needs columns {sorted(need)}, has {list(df.columns)}")
     df = df.copy()
     df["key"] = df["experiment_id"].astype(str).str.strip()
-    if (df.key == "").any() or df.key.isna().any():
+    if (df.key == "").any() or df.key.isna().any() or (df.key == "nan").any():
         raise ValidationError(f"{path}: S2 v2 rows without experiment_id")
     dup = df.duplicated("key", keep=False)
     if dup.any():
         raise ValidationError(f"{path}: {int(dup.sum())} rows share a duplicated experiment_id: {df.loc[dup, 'key'].drop_duplicates().tolist()[:5]}")
     for f in S2V2_FIELDS:
-        df[f + "_n"] = df[f].map(norm_text)
-        empty = df[f + "_n"] == "MISSING"
-        if empty.any():
-            raise ValidationError(f"{path}: {int(empty.sum())} row(s) with empty '{f}' (first: {df.loc[empty, 'key'].tolist()[:3]}); "
-                                  f"every experiment must be coded before agreement is computed")
-    df["by_authors_flag"] = df["theory_attribution_by_authors"].map(norm_text).map(lambda s: s not in ("MISSING", NONE_LABEL, "none", ""))
+        df[f + "_n"] = [norm_s2v2_value(f, v, k, path) for v, k in zip(df[f], df.key)]
+        df[f + "_alias_used"] = [strip_qualifier(re.sub(r"\s+", " ", str(v).strip())).lower() in S2V2_UNRESOLVED_ALIASES for v in df[f]]
+    pats = _alias_patterns(man)
+    parsed = [parse_attribution(v, man, pats) for v in df["theory_attribution_by_authors"]]
+    df["by_authors_text_status"] = [p["status"] for p in parsed]
+    text_ids = [p["ids"] for p in parsed]
+    if IDS_COLUMN in df.columns:
+        df["by_authors_ids"] = [parse_ids_column(v, man, k, path) for v, k in zip(df[IDS_COLUMN], df.key)]
+        df["attribution_source"] = "ids column"
+        clash = [(k, sorted(i)) for k, i, st in zip(df.key, df.by_authors_ids, df.by_authors_text_status) if st == "none" and i]
+        if clash:
+            raise ValidationError(f"{path}: {len(clash)} row(s) whose free text says no attribution but whose {IDS_COLUMN} names a theory: {clash[:3]}")
+        df["by_authors_status"] = ["ids" if i else "none" for i in df.by_authors_ids]
+    else:
+        df["by_authors_ids"] = text_ids
+        df["attribution_source"] = "free text (manifest names / ids matched)"
+        df["by_authors_status"] = df["by_authors_text_status"]
+    df["by_authors_flag"] = df["by_authors_status"] != "none"          # 'unparseable' counts as an attribution present but unidentified
+    if "by_authors_named" in df.columns:
+        coder_flag = df["by_authors_named"].astype(str).str.strip().str.lower().map({"true": True, "false": False})
+        mism = df[coder_flag.notna() & (coder_flag != df.by_authors_flag)]
+        if len(mism):
+            raise ValidationError(f"{path}: {len(mism)} row(s) whose by_authors_named flag contradicts the attribution text: "
+                                  f"{mism[['key', 'by_authors_named', 'theory_attribution_by_authors']].head(3).values.tolist()}")
+    if "theory_attribution_later" in df.columns:
+        lp = [parse_attribution(v, man, pats) for v in df["theory_attribution_later"]]
+        df["later_status"] = [p["status"] for p in lp]; df["later_ids"] = [p["ids"] for p in lp]
     df["label"] = df["citation_label"] if "citation_label" in df.columns else df["key"]
     return df
 
 
-def analyse_s2_v2(pa, pb):
-    A, B = load_s2_v2(pa), load_s2_v2(pb)
-    ka, kb = set(A.key), set(B.key)
-    if ka != kb:
-        raise ValidationError(f"S2 v2: experiment_id sets differ ({len(ka - kb)} only in file 1, {len(kb - ka)} only in file 2)")
+def check_s2_reference(A, B, reference, pa, pb, man):
+    """Both coder files must hold exactly the experiment_id set of the reference file (default: coder-1 file)."""
+    ref_ids = set(load_s2_v2(reference, man).key) if reference not in (None, pa) else set(A.key)
+    for name, d in (("file 1 (" + str(pa) + ")", A), ("file 2 (" + str(pb) + ")", B)):
+        ids = set(d.key)
+        if ids != ref_ids:
+            raise ValidationError(f"S2 v2: experiment_id set of {name} differs from the reference set ({len(ref_ids)} ids in {reference or pa}): "
+                                  f"{len(ref_ids - ids)} missing {sorted(ref_ids - ids)[:5]}, {len(ids - ref_ids)} extra {sorted(ids - ref_ids)[:5]}")
+    return ref_ids
+
+
+def analyse_s2_v2(pa, pb, man=None, reference=None):
+    man = man or _default_manifest_for(pa)
+    A, B = load_s2_v2(pa, man), load_s2_v2(pb, man)
+    ref_ids = check_s2_reference(A, B, reference, pa, pb, man)
     m = A.merge(B, on="key", suffixes=("_A", "_B"), how="inner", validate="one_to_one")
-    res = {"S2v2_n_experiments_compared": len(m)}
+    assert len(m) == len(ref_ids)
+    res = {"S2v2_version": __version__, "S2v2_n_experiments_compared": len(m), "S2v2_reference_file": str(reference or pa), "S2v2_n_reference_experiment_ids": len(ref_ids)}
     for f in S2V2_FIELDS:
+        labels = S2V2_VOCAB[f] + [UNRESOLVED]
         k, n, p = raw_agreement(m[f + "_n_A"], m[f + "_n_B"])
         res[f"S2v2_{f}_raw_agreement"] = f"{k} of {n}"
-        res[f"S2v2_{f}_kappa_nominal"] = cohen_kappa(m[f + "_n_A"], m[f + "_n_B"])["kappa"]
+        res[f"S2v2_{f}_kappa_nominal"] = cohen_kappa(m[f + "_n_A"], m[f + "_n_B"], labels)["kappa"]
+        res[f"S2v2_{f}_n_UNRESOLVED_coder1"] = int((m[f + "_n_A"] == UNRESOLVED).sum()); res[f"S2v2_{f}_n_UNRESOLVED_coder2"] = int((m[f + "_n_B"] == UNRESOLVED).sum())
+        al = m.loc[m[f + "_alias_used_A"] | m[f + "_alias_used_B"], "key"].tolist()
+        if al:
+            res[f"S2v2_{f}_rows_read_as_UNRESOLVED_via_alias"] = ";".join(al)
+    # attribution by the authors: binary flag and theory-id SETS, reported separately
     k, n, p = raw_agreement(m.by_authors_flag_A, m.by_authors_flag_B)
     res["S2v2_attribution_by_authors_binary_raw_agreement"] = f"{k} of {n}"
     res["S2v2_attribution_by_authors_binary_kappa_nominal"] = cohen_kappa(m.by_authors_flag_A, m.by_authors_flag_B, [False, True])["kappa"]
+    set_a = m.by_authors_ids_A.map(lambda s: ";".join(sorted(s)) or "(none)"); set_b = m.by_authors_ids_B.map(lambda s: ";".join(sorted(s)) or "(none)")
+    k, n, p = raw_agreement(set_a, set_b)
+    res["S2v2_attribution_by_authors_set_raw_agreement"] = f"{k} of {n}"
+    res["S2v2_attribution_by_authors_set_kappa_nominal"] = cohen_kappa(set_a, set_b)["kappa"]
+    res["S2v2_attribution_source_coder1"] = A.attribution_source.iloc[0]; res["S2v2_attribution_source_coder2"] = B.attribution_source.iloc[0]
+    res["S2v2_n_by_authors_flag_True_coder1"] = int(m.by_authors_flag_A.sum()); res["S2v2_n_by_authors_flag_True_coder2"] = int(m.by_authors_flag_B.sum())
+    for c, d in (("coder1", "A"), ("coder2", "B")):
+        unp = m.loc[m[f"by_authors_status_{d}"] == "unparseable", "key"].tolist()
+        res[f"S2v2_attribution_n_unparseable_{c}"] = len(unp)
+        res[f"S2v2_attribution_unparseable_rows_{c}"] = ";".join(unp) if unp else "(none)"
+    if "later_ids_A" in m.columns and "later_ids_B" in m.columns:
+        la = m.later_ids_A.map(lambda s: ";".join(sorted(s)) or "(none)"); lb = m.later_ids_B.map(lambda s: ";".join(sorted(s)) or "(none)")
+        k, n, p = raw_agreement(la, lb)
+        res["S2v2_attribution_later_set_raw_agreement"] = f"{k} of {n}"; res["S2v2_attribution_later_set_kappa_nominal"] = cohen_kappa(la, lb)["kappa"]
+        for c, d in (("coder1", "A"), ("coder2", "B")):
+            unp = m.loc[m[f"later_status_{d}"] == "unparseable", "key"].tolist()
+            res[f"S2v2_attribution_later_unparseable_rows_{c}"] = ";".join(unp) if unp else "(none)"
     diff = pd.Series(False, index=m.index)
     for f in S2V2_FIELDS:
         diff |= m[f + "_n_A"] != m[f + "_n_B"]
     diff |= m.by_authors_flag_A != m.by_authors_flag_B
+    diff |= set_a != set_b
     cols = ["key", "label_A"] + [f + s for f in S2V2_FIELDS for s in ("_n_A", "_n_B")] + ["by_authors_flag_A", "by_authors_flag_B"]
     dis = m.loc[diff, cols].rename(columns={"key": "experiment_id", "label_A": "citation_label"})
+    dis["by_authors_ids_coder1"] = set_a[diff].values; dis["by_authors_ids_coder2"] = set_b[diff].values
     dis["adjudication_note"] = ""
+    res["S2v2_n_disagreements"] = len(dis)
     return res, dis
 
 # ---------------------------------------------------------------- output
@@ -668,6 +855,24 @@ def _sim_pair(base, rng, p_agree, probs):
     return s1a, s1b
 
 
+def _sim_s2_v2():
+    """Small synthetic S2 v2 coding table (values are illustrative, not the study's codes)."""
+    return pd.DataFrame([
+        dict(experiment_id="X-gnwt-iit", citation_label="sim A", modality="visual", affective_status="neutral", report_type="both (targets reported; irrelevant stimuli unreported)", contested_inclusion="False",
+             theory_attribution_by_authors="GNWT vs IIT — title; abstract; preregistered predictions"),
+        dict(experiment_id="X-none", citation_label="sim B", modality="visual", affective_status="neutral", report_type="report", contested_inclusion="False",
+             theory_attribution_by_authors="none named (abstract-only)"),
+        dict(experiment_id="X-sit", citation_label="sim C", modality="motor", affective_status="neutral", report_type="report", contested_inclusion="False",
+             theory_attribution_by_authors="SIT — Introduction (\"According to supramodular interaction theory (Morsella, 2005)\")"),
+        dict(experiment_id="X-state", citation_label="sim D", modality="not applicable (state)", affective_status="neutral", report_type="report (experience sampling)", contested_inclusion="True",
+             theory_attribution_by_authors=""),
+        dict(experiment_id="X-unres", citation_label="sim E", modality="auditory", affective_status="neutral", report_type="UNRESOLVED", contested_inclusion="False",
+             theory_attribution_by_authors="not verifiable from abstract (no theory named)"),
+        dict(experiment_id="X-hot", citation_label="sim F", modality="visual", affective_status="valenced", report_type="no-report", contested_inclusion="True",
+             theory_attribution_by_authors="HOT — Discussion: in line with higher-order theories"),
+    ])
+
+
 def _expect_failure(name, fn, must_contain):
     """Run fn(); it must raise SystemExit whose message contains `must_contain`. Returns a log row."""
     try:
@@ -675,9 +880,9 @@ def _expect_failure(name, fn, must_contain):
     except SystemExit as e:
         msg = str(e)
         ok = must_contain.lower() in msg.lower()
-        return dict(case=name, outcome="aborted as required" if ok else "aborted with UNEXPECTED message", passed=ok, message=msg[:300])
+        return dict(case=name, outcome="aborted as required" if ok else "aborted with UNEXPECTED message", passed=ok, message=msg)
     except Exception as e:  # any other exception is a failure: the error must be a clear, deliberate abort
-        return dict(case=name, outcome=f"raised {type(e).__name__} instead of a validation abort", passed=False, message=str(e)[:300])
+        return dict(case=name, outcome=f"raised {type(e).__name__} instead of a validation abort", passed=False, message=str(e))
     return dict(case=name, outcome="DID NOT ABORT", passed=False, message="")
 
 
@@ -739,17 +944,47 @@ def selftest(out, seed=1, p_agree=0.80, n_reps=200):
     nan = s1a.copy(); nan.loc[11, "code"] = np.nan
     neg.append(_expect_failure("negative: NaN code", run(nan), "empty or invalid code"))
     mism = s1a.drop(index=[0, 1, 2])
-    neg.append(_expect_failure("negative: mismatched row sets", run(mism), "key sets differ"))
+    neg.append(_expect_failure("negative: mismatched row sets", run(mism), "differs from the manifest grid"))
     nodoi = s1a.copy(); i = nodoi.index[nodoi.code.isin(V2_POSITIVE)][0]; nodoi.loc[i, "source_doi"] = np.nan
     neg.append(_expect_failure("negative: DOI NaN in a positive cell", run(nodoi), "without a DOI"))
     baddom = s1a.copy(); baddom.loc[4, "domain_id"] = "M9"
     neg.append(_expect_failure("negative (extra): domain_id not in manifest", run(baddom), "not in the domains manifest"))
     nopol = s1a.copy(); i = nopol.index[nopol.code.isin(V2_POSITIVE)][0]; nopol.loc[i, "polarity"] = np.nan
     neg.append(_expect_failure("negative (extra): EXPLICIT cell without polarity", run(nopol), "without a valid polarity"))
+    # ---- v2.1 negative cases (audit sections 4-7); each defect must be caught
+    neg.append(_expect_failure("negative (v2.1): truncated S1 accepted (both files 2 rows)", run(s1a.iloc[:2], s1b.iloc[:2]), "differs from the manifest grid"))
+    s2 = _sim_s2_v2()
+    f21, f22 = os.path.join(out, "sim_S2v2_coder1.csv"), os.path.join(out, "sim_S2v2_coder2.csv")
+    s2.to_csv(f21, index=False)
+    A2 = load_s2_v2(f21, man)
+    r_none = A2.set_index("key").loc["X-none", "by_authors_flag"]
+    log.append(dict(case="negative (v2.1): none-named attribution flagged True", outcome=f"'none named (abstract-only)' -> by_authors_flag={bool(r_none)}",
+                    passed=not bool(r_none), message="must be False"))
+    ids_found = A2.set_index("key").loc["X-gnwt-iit", "by_authors_ids"]
+    log.append(dict(case="positive (v2.1): theory ids extracted from free text", outcome=f"'GNWT vs IIT — title' -> {sorted(ids_found)}", passed=ids_found == frozenset({"GNWT", "IIT"}), message=""))
+    s2.to_csv(f22, index=False)
+    r_same, d_same = analyse_s2_v2(f21, f22, man)
+    log.append(dict(case="positive (v2.1): S2 v2 pipeline, identical files", outcome=f"n={r_same['S2v2_n_experiments_compared']}, set agreement {r_same['S2v2_attribution_by_authors_set_raw_agreement']}, disagreements {len(d_same)}",
+                    passed=r_same["S2v2_n_experiments_compared"] == len(s2) and len(d_same) == 0 and r_same["S2v2_report_type_n_UNRESOLVED_coder1"] == 1, message="UNRESOLVED kept as its own category"))
+    wrong = s2.copy(); wrong.loc[wrong.experiment_id == "X-gnwt-iit", "theory_attribution_by_authors"] = "SIT"; wrong.to_csv(f22, index=False)
+    r_w, d_w = analyse_s2_v2(f21, f22, man)
+    log.append(dict(case="negative (v2.1): wrong theory id undetected", outcome=f"binary {r_w['S2v2_attribution_by_authors_binary_raw_agreement']}, set {r_w['S2v2_attribution_by_authors_set_raw_agreement']}, in disagreements: {bool((d_w.experiment_id == 'X-gnwt-iit').any())}",
+                    passed=bool((d_w.experiment_id == "X-gnwt-iit").any()) and r_w["S2v2_attribution_by_authors_set_raw_agreement"] == f"{len(s2) - 1} of {len(s2)}", message="binary flag alone cannot see this"))
+    banana = s2.copy(); banana.loc[0, "modality"] = "BANANA"; fb = os.path.join(out, "neg_s2_banana.csv"); banana.to_csv(fb, index=False)
+    neg.append(_expect_failure("negative (v2.1): invalid modality accepted (BANANA)", lambda: analyse_s2_v2(f21, fb, man), "modality"))
+    short = s2.iloc[:-1]; fs = os.path.join(out, "neg_s2_short.csv"); short.to_csv(fs, index=False)
+    neg.append(_expect_failure("negative (v2.1): S2 id set mismatch accepted", lambda: analyse_s2_v2(f21, fs, man), "experiment_id set"))
+    badid = s2.copy(); badid[IDS_COLUMN] = ""; badid.loc[0, IDS_COLUMN] = "GWT"; fi = os.path.join(out, "neg_s2_badid.csv"); badid.to_csv(fi, index=False)
+    neg.append(_expect_failure("negative (v2.1, extra): ids column with a theory_id not in the manifest", lambda: analyse_s2_v2(f21, fi, man), "not a theory_id"))
+    badc = s2.copy(); badc.loc[1, "contested_inclusion"] = "maybe"; fc = os.path.join(out, "neg_s2_contested.csv"); badc.to_csv(fc, index=False)
+    neg.append(_expect_failure("negative (v2.1, extra): contested_inclusion outside {True, False}", lambda: analyse_s2_v2(f21, fc, man), "contested_inclusion"))
     log += neg
-    n_neg_required = 6; n_neg_total = len(neg)
-    # ---- write log
+    n_neg_required = 6 + 5; n_neg_total = len(neg) + 2   # 2 detection cases are logged above as pass/fail rows rather than aborts
+    # ---- write log (messages made independent of the output directory so that the log is hash-stable across runs)
     logdf = pd.DataFrame(log)
+    for pre in sorted({os.path.abspath(out) + os.sep, out.rstrip(os.sep) + os.sep}, key=len, reverse=True):
+        logdf["message"] = logdf["message"].astype(str).str.replace(pre, "<out>/", regex=False)
+    logdf["message"] = logdf["message"].str[:300]
     logdf.to_csv(os.path.join(out, "selftest_log.csv"), index=False)
     res = {"selftest_version": __version__, "selftest_seed": seed, "selftest_p_agree_simulated": p_agree, "selftest_n_reps": n_reps,
            "selftest_kappa_mean": k_mean, "selftest_kappa_sd": k_sd, "selftest_kappa_analytic": float(k_th), "selftest_pe_analytic": pe_th,
@@ -771,6 +1006,8 @@ def main(argv=None):
     ap.add_argument("--added-domains", default=",".join(DEFAULT_ADDED_DOMAINS), help="domain_ids treated as added-in-revision when no cell-level origin column exists")
     ap.add_argument("--extra-alias", action="append", default=[], help="'spelling=theory_id', repeatable (e.g. 'HOT / HOSS=HOT' for the merged legacy row)")
     ap.add_argument("--out", default="agreement_out")
+    ap.add_argument("--s2-reference", default=None, help="S2 v2: file whose experiment_id set both coder files must match (default: the --s2a file)")
+    ap.add_argument("--allow-partial-grid", action="store_true", help="S1: warn instead of abort when a file does not cover the full manifest grid (legacy 88-cell comparison only)")
     ap.add_argument("--selftest", action="store_true"); ap.add_argument("--seed", type=int, default=1)
     args = ap.parse_args(argv)
     if args.selftest:
@@ -786,12 +1023,13 @@ def main(argv=None):
     if args.s1a and args.s1b:
         man = load_manifests(args.accounts, args.domains, args.extra_alias)
         added = tuple(x.strip() for x in args.added_domains.split(",") if x.strip())
-        r1, percol, subsets, conf, conf_pol, dis1 = analyse_s1(args.s1a, args.s1b, man, scheme=args.code_scheme, ci=args.ci, seed=args.seed, added_domains=added)
+        r1, percol, subsets, conf, conf_pol, dis1 = analyse_s1(args.s1a, args.s1b, man, scheme=args.code_scheme, ci=args.ci, seed=args.seed, added_domains=added, allow_partial_grid=args.allow_partial_grid)
         res.update(r1)
     if args.s2a and args.s2b:
         cols_a = set(read_csv_strict(args.s2a).columns)
         if "experiment_id" in cols_a:          # S2 v2 (experiment unit) auto-detected
-            r2, dis2 = analyse_s2_v2(args.s2a, args.s2b); res.update(r2)
+            man2 = load_manifests(args.accounts, args.domains, args.extra_alias) if os.path.exists(args.accounts) and os.path.exists(args.domains) else None
+            r2, dis2 = analyse_s2_v2(args.s2a, args.s2b, man2, args.s2_reference); res.update(r2)
         else:                                  # legacy 36-row study-unit form
             r2, dis2 = analyse_s2(args.s2a, args.s2b); res.update(r2)
     if not res:

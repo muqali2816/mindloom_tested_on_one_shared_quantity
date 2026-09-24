@@ -15,7 +15,7 @@
 
 ## Abstract
 
-[The first preregistered adversarial test of consciousness theories compared two theories on three divergent predictions about the cortical signature of conscious content; each passed one criterion and failed one. We ask what the theories have committed to beyond that signature, and what they have left unmeasured. A purposive audit coded the stated predictions of 12 accounts against 10 measurable quantities (120 cells), registered 31 predictions (28 stated, 3 derived by us) and classified the content manipulated in 42 experiments; column classes were derived by script, not assigned by a coder. The result is a concentration. Only 22 of 120 cells carry a stated prediction; 6 of 12 accounts state one about the cortical signature, where the column is contested at locus, timing and connectivity (15 distinguishable pairs, 14 at confidence ≥ 2). Elsewhere commitment is sparse: the number and the incompatibility of competing action policies have one explicit occupant each; interoceptive content, visceral modulation of access and autonomic conflict have two each, whose predictions do not conflict; cortical–autonomic coherence has none. The empirical base mirrors this: 18 of 30 theory-addressed experiments manipulated neutral visual content, 0 of 30 valenced content. The next adversarial test needs a condition on a quantity the theories have committed to and never measured, not another contrast on the cortical signature. We specify one — incompatibility of co-executable action policies at fixed count under no-report access — that tests a stated threshold and a derivation of our own; a null bounds the derivation and refutes no theory.]{.mark}
+[The first preregistered adversarial test of consciousness theories compared two theories on three divergent predictions about the cortical signature of conscious content; each passed one criterion and failed one. We ask what the theories have committed to beyond that signature, and what they have left unmeasured. A purposive audit coded the stated predictions of 12 accounts against 10 measurable quantities (120 cells), registered 27 stated predictions and 6 derived by us and classified the content manipulated in 42 experiments; column classes were derived by script, not by a coder. The result is a concentration. Only 21 of 120 cells carry a stated prediction; 6 of 12 accounts state one about the cortical signature, the one column that is contested — of 54 cross-theory pairs of stated predictions there, 2 are discriminating, 10 jointly compatible and 42 merely different. Elsewhere commitment is sparse: the number and the incompatibility of competing action policies have one explicit occupant each, and so does visceral modulation of access; interoceptive content and autonomic conflict have two each, whose predictions do not conflict; cortical–autonomic coherence has none. The empirical base mirrors this: 18 of 30 theory-addressed experiments manipulated neutral visual content, 0 of 30 valenced content. The next adversarial test needs a condition on a quantity the theories have committed to and never measured, not another contrast on the cortical signature. We specify one — incompatibility of co-executable action policies at fixed count under no-report access — that tests two operationalisations we derived (P32, P23) from one account's stated commitments; a null bounds the derivations and refutes no theory.]{.mark}
 
 **Keywords:** [consciousness; adversarial collaboration; conscious access; theory audit; stated predictions; action-policy competition; interoception; column typology]{.mark}
 
@@ -52,11 +52,7 @@ not because the measurements are unavailable but because no theory has said what
 claim needs a vocabulary, since "unmeasured" covers cases that license different inferences. We
 classify each measurable quantity — each *column* of the audit in Section 7 — by what the coded
 theories have stated over it, and the class is computed from the coded cells rather than assigned
-by a reader. A column is *contested* when at least two accounts state predictions over it and some
-pair of them differs in sign, magnitude, locus, timing, distribution or condition; only there can an
-experiment make a stated prediction lose. It is *occupied but not contested* when at least two
-accounts state predictions that differ in none of these respects, so an experiment can corroborate
-or disconfirm them together but not separate them. It is *single-occupant* when exactly one account
+by a reader. A column is *contested* when at least two accounts state predictions over it and at least one pair of those predictions is *discriminating*: both speak to a shared observable under a shared condition, and some value of it is predicted by one and excluded by the other. Descriptions that merely differ — a prediction about locus beside one about timing, or a claim about one axis of judgement beside a claim about the structure of experience — are recorded in the deposited pair register as *different* or *jointly compatible* and do not make a column contested. It is *occupied but not contested* when at least two accounts state predictions and no pair is discriminating, so an experiment can corroborate or disconfirm them but not separate them. A single stated prediction can of course fail on its own; what only a contested column offers is a result that favours one occupant over another. It is *single-occupant* when exactly one account
 states a prediction; a positive result confirms that account and leaves the others where they were,
 and the informative outcome is the null. It is *thin* when no account states a prediction but at
 least one is compatible with the quantity mattering, and *unoccupied* when none is. Silence is not
@@ -68,14 +64,10 @@ Locating such a quantity requires knowing what the theories actually predict, as
 they are said to predict in review-article summaries; that is this review's contribution. [We
 carried out a purposive audit. The stated predictions of 12 accounts — 10 trial-level theories of
 conscious access and 2 origin-level accounts reported apart — were coded against 10 measurable
-quantities (120 cells) from primary statements and the theories' own self-profiling reviews; each
-stated prediction was entered in a register with its source, condition, outcome measure and the
-predictions it can be distinguished from (31 predictions, 28 stated by the theories and 3 derived
-by us and labelled as such); and the content whose access was manipulated in 42 experiments from 32
+quantities (120 cells) from primary statements and the theories' own self-profiling reviews; each stated prediction was entered in a register with its source, condition, outcome measure and expected result (27 stated by the theories, 6 derived by us and labelled as such), and every cross-theory pair of stated predictions in the columns with two or more was entered in a pair register with its relation; and the content whose access was manipulated in 42 experiments from 32
 publications that these theories are tested by or built on was classified separately. The audit is
 not a systematic review, and it reports counts of coded accounts rather than estimates of a
-population; its codes are those of a single coder until the second coding now in progress is
-complete, and every count is provisional to that extent. It is evidence for a claim otherwise easy
+population; its codes are those of a single coder until the scheduled blind second coding is complete, and every count is provisional to that extent. It is evidence for a claim otherwise easy
 to assert and hard to check: that the field's stated predictions are concentrated on the cortical
 signature of access, where they are contested; that the quantities the surrounding biology treats
 as fundamental to arbitration and allostasis are single-occupant or thin; and that the column we had
@@ -86,24 +78,12 @@ Three conventions govern what follows. This is an evaluative review, not a censu
 closes with a judgement about which position the evidence supports, and where a widely repeated
 claim is weaker than its reputation we say so. We distinguish throughout between claims about
 *access* — content becoming available to many consumers, and claims about *phenomenal experience*.
-We use two definitions of "conscious access" and keep them apart, because one of them is not
-neutral with respect to our own conclusion. The *field definition* is the one in general use:
-content is accessed when it is reportable and available to multiple downstream cognitive systems.
-The *working definition* we prefer adds a second clause — that access measurably alters organism
-state, whether or not it produces fronto-parietal ignition. The second clause builds M5 into the
-dependent variable, so a reader may reasonably object that the [thinness]{.mark} of
-column M5 is partly definitional. It is not, and the coding shows why: each M5 cell asks whether
-*that theory* states a prediction over organism-wide cortical–autonomic coherence, which is a
-question about its predictive apparatus and not about our definition of access. [Among the 12 coded
+[We use one definition of "conscious access" throughout, the one in general use: content is accessed when it is reportable and available to multiple downstream cognitive systems. We do not build any further clause into it. The proposal that access measurably alters organism state, whether or not it produces fronto-parietal ignition, is a hypothesis we advance — it is what column M5 asks about — and it is kept outside the definition so that the coding of M5 cannot be definitional: each M5 cell asks whether *that theory* states a prediction over organism-wide cortical–autonomic coherence, which is a question about its predictive apparatus and not about how access is defined.]{.mark} [Among the 12 coded
 accounts, 5 are coded INTERPRETED there because organism-wide integration is in their spirit but is
 operationalised cortically, through a single visceral channel, or not at all, and 7 NOT_LOCATED
-because no statement bearing on the quantity was found in their primary sources. Neither coding
-would change under the field definition. What the working definition does affect is how much a
-thin column *matters*, and that is an argument we make openly rather than smuggle through a
-definition; Section 7.4 also states why the heartbeat-evoked-response literature, which does
+because no statement bearing on the quantity was found in their primary sources. Neither coding depends on the definition of access. What our hypothesis affects is how much a thin column *matters*, and that is an argument we make openly rather than smuggle through a definition; Section 7.4 also states why the heartbeat-evoked-response literature, which does
 couple a cortical measure to a visceral signal, is coded as compatible with M5 rather than as a
-stated prediction over it, and why M5 is a construct we propose rather than part of the working
-definition of access.]{.mark} Where a formulation
+stated prediction over it, and why M5 is a construct we propose, not part of the definition of access.]{.mark} Where a formulation
 carrying neither commitment is needed we use *global availability*, in the descriptive sense of
 content being available to many consumers rather than in the theoretical sense the term has
 inside global workspace theory [4].
@@ -242,10 +222,7 @@ are encoded. [Section 6 traced the consequence: the first adversarial test separ
 locus, timing and connectivity of one quantity, and its challenges extend to other theories sharing
 the predictions tested [2]. To establish how far stated commitments extend beyond that quantity,
 rather than assert it, we carried out a purposive audit: the stated predictions of 12 accounts were coded against 10
-measurable quantities from primary statements and self-profiling reviews (Table 1; 120 cells), each
-stated prediction was entered in a register that records its source, condition, outcome measure,
-expected result and the predictions it can be distinguished from (Table S4; 31 predictions, 28
-stated and 3 derived by us), and the content whose access was manipulated in 42 experiments from 32
+measurable quantities from primary statements and self-profiling reviews (Table 1; 120 cells), each stated prediction was entered in a register that records its source, condition, outcome measure and expected result (Table S4; 27 stated and 6 derived by us), with a pair register recording the relation between every cross-theory pair of stated predictions in a column, and the content whose access was manipulated in 42 experiments from 32
 publications these theories are tested by or built on was classified (Table 2). The word
 *purposive* is doing work. The audit is not a systematic review; there was no registered search, no
 PRISMA flow and, at the time of writing, one completed coder (Section 7.2). Its tallies are counts
@@ -335,28 +312,15 @@ the count of NOT_LOCATED cells is a lower bound on the field's silence.]{.mark}
 [The earlier table's 96 cells carry codes under the previous four-code scheme (48 NO, 26
 IMPLICIT, 20 YES, 2 YES (negative)); these were mapped — YES to EXPLICIT positive, YES (negative)
 to EXPLICIT null, IMPLICIT to INTERPRETED, NO to NOT_LOCATED or, where the source states a scope
-exclusion, NOT_APPLICABLE — and never recoded, so the legacy code stands beside the mapped one in
-the deposited table. The 12 legacy cells of the single "autonomic involvement" column are
+exclusion, NOT_APPLICABLE — and not recoded, with two exceptions on the split higher-order rows (HOT × M6 and HOSS × M3, where the legacy code rested on the other account's source and the cell is entered NOT_LOCATED and flagged); the legacy code stands beside the current one in the deposited table — 84 cells in the cell-level file and the 12 cells of the superseded autonomic column in the long-form file. The 12 legacy cells of the single "autonomic involvement" column are
 superseded by the 36 cells of M4a, M4b and M4c, all coded from the sources afresh, and enter no
-count; the two rows added in revision were coded from their own sources. The result: 22 EXPLICIT
-cells (20 positive, 2 null), 32 INTERPRETED (25 positive, 7 null), 64 NOT_LOCATED, 2 NOT_APPLICABLE
-and 0 UNRESOLVED. Fifty cells are provisional (every cell of the M4a–M4c columns and of the
-separated HOT and HOSS rows) and 15 are flagged for adjudication with a written reason, the first
-of them predictive processing × M4c, where the mechanism is stated but the condition is not named.
-The evidence base is uneven: 62 cells rest on full text and 58 on abstracts, and 28 of the 54
-EXPLICIT and INTERPRETED cells — the cells that carry a code at all — rest on abstracts alone
-(Section 7.7).]{.mark}
+count; the two rows added in revision were coded from their own sources. The result: 21 EXPLICIT cells (19 positive, 2 stated null), 29 INTERPRETED (22 positive, 7 stated null), 68 NOT_LOCATED, 2 NOT_APPLICABLE and 0 UNRESOLVED. Fifty cells are provisional (every cell of the M4a–M4c columns and of the separated HOT and HOSS rows) and 16 are flagged for adjudication with a written reason, the first of them predictive processing × M4c, where the mechanism is stated but the condition is not named. Five cells were re-coded by the first coder on 24 September 2026 after a second pass and carry the previous code beside the current one: two (HOSS × M4a, HOSS × M4c) had inherited the merged higher-order row's code although the cell's own note said the HOSS source contains no such statement; one (predictive processing × M4b) had been kept EXPLICIT against the boundary rule the note itself applied; two (Feinberg–Mallatt × M4c, predictive processing × M2) went from INTERPRETED to NOT_LOCATED on a full-text reading that found no passage from which the prediction follows in one step.
+The evidence base is uneven: 63 cells rest on full text and 57 on abstracts, and 27 of the 50 EXPLICIT and INTERPRETED cells — the cells that carry a code at all — rest on abstracts alone (Section 7.7); a full-text pass over the flagged cells on 24 September 2026 reached 3 of 12 sources, the rest being closed to us, and the codes that still rest on abstracts are marked provisional in the table.]{.mark}
 
-[The column class is not coded. It is derived by script from Table S1 and the register after
-coding: *contested* if at least two EXPLICIT cells and at least one pair of stated predictions that
-differ in sign, magnitude, locus, timing, distribution or condition; *single-occupant* if exactly
-one EXPLICIT cell; *occupied but not contested* if at least two and no distinguishable pair; *thin*
-if none but at least one INTERPRETED; *unoccupied* if none. Each pair carries a confidence from 1 to
-3, and the class is reported over all pairs and over pairs at confidence ≥ 2. The script was run
-only after the first coding was frozen.]{.mark}
+[The column class is not coded. It is derived by script from Table S1, the register and a pair register after coding: *contested* if at least two EXPLICIT cells and at least one cross-theory pair of stated predictions whose relation is *discriminating* or *incompatible* — a shared observable under a shared condition, with a value predicted by one and excluded by the other; *single-occupant* if exactly one EXPLICIT cell; *occupied but not contested* if at least two and no such pair; *thin* if none but at least one INTERPRETED; *unoccupied* if none. Every cross-theory pair in a column with two or more stated predictions is entered in the pair register with its relation (different, jointly compatible, discriminating, incompatible), the result that would favour each side, and a pair-level confidence from 1 to 3; the class is reported over all pairs and over pairs at confidence ≥ 2. The script was run only after the first coding was frozen.]{.mark}
 
-[The first coding was carried out by the first author. A blind second coding by the second author is scheduled against the frozen codebook (version 2.0, hash deposited) and blank forms, without access to the first author's codes or justifications, on all 120 cells of Table S1 and all rows of Table S2; disagreements will be adjudicated by discussion and the pre-adjudication agreement reported.]{.mark} [The second author had read the submitted manuscript, including its condensed Table 1, before the second coding began. Blindness is therefore complete for the per-cell justifications and for the cells added in revision (the M4a–M4c columns and the passive frame and neural subjective frame rows) and partial for the cells whose condensed codes appeared in the submitted version; agreement is reported for the two subsets separately as well as overall.]{.mark} [The distinguishability judgements in Table S4 — which pairs of stated predictions differ in sign, magnitude, locus, timing, distribution or condition, and at what confidence — were made by the first coder alone; they are the basis of the contested class for M8 and M6. The second coder receives Table S4 only after returning Table S1 and then codes `distinguishable_from` independently; until then the pair counts are single-coder judgements.]{.mark} [[κ = …, raw agreement … of 120 cells overall; κ = … for the submitted-version cells; κ = … for the cells added in revision; … disagreements adjudicated by discussion; S2 κ = … — to be completed when the second coding is finished]]{.mark} [Tables S1–S4, Supplementary Protocol S5, the codebook, the
-inclusion criteria and the scripts that produce every count in this section are deposited at [repository] under DOI [10.xxxx/PLACEHOLDER — archive assembled; DOI to be inserted on public deposit] and accompany the
+[The first coding was carried out by the first author. A blind second coding by the second author is scheduled against the frozen codebook (version 2.2; the hash of the file above its footer is printed in the footer and can be checked with one shell command) and blank forms, without access to the first author's codes or justifications, on all 120 cells of Table S1 and all rows of Table S2; disagreements will be adjudicated by discussion and the pre-adjudication agreement reported.]{.mark} [The second author had read the submitted manuscript, including its condensed Table 1, before the second coding began. Blindness is therefore complete for the per-cell justifications and for the cells added in revision (the M4a–M4c columns and the passive frame and neural subjective frame rows) and partial for the cells whose condensed codes appeared in the submitted version; agreement is reported for the two subsets separately as well as overall.]{.mark} [The distinguishability judgements in Table S4 — which pairs of stated predictions differ in sign, magnitude, locus, timing, distribution or condition, and at what confidence — were made by the first coder alone; they are the basis of the contested class for M8. Every cross-theory pair of stated predictions in M8 and M6 (55 pairs) is entered in a deposited pair register with its shared condition, shared observable and a four-way relation — different, jointly compatible, discriminating, incompatible — and a pair-level confidence; the class is derived from that register. The second coder receives Table S4 and the register only after returning Table S1 and then codes the relations independently; until then the pair judgements are single-coder.]{.mark} [[κ = …, raw agreement … of 120 cells overall; κ = … for the submitted-version cells; κ = … for the cells added in revision; … disagreements adjudicated by discussion; S2 κ = … — to be completed when the second coding is finished]]{.mark} [Tables S1–S4, Supplementary Protocol S5, the codebook, the
+inclusion criteria and the scripts that produce every count in this section will be deposited at [repository] under DOI [10.xxxx/PLACEHOLDER — archive assembled; DOI to be inserted on public deposit] and accompany the
 submission.]{.mark}
 
 ### 7.3 Table 1: theories by measurable quantity
@@ -366,15 +330,9 @@ Trial-level accounts are tallied first; the two origin-level accounts form a sep
 their own tally. **E** = EXPLICIT, positive polarity; **E∅** = EXPLICIT, null polarity (a stated
 prediction that the quantity makes no difference, or its exclusion from the theory's function);
 *i* = INTERPRETED, positive; *i*∅ = INTERPRETED, null; · = NOT_LOCATED (no statement found; not a
-prediction of no effect); n/a = NOT_APPLICABLE. † marks a cell flagged for adjudication (15 cells).
+prediction of no effect); n/a = NOT_APPLICABLE. † marks a cell flagged for adjudication (16 cells).
 Every cell of the M4a–M4c columns and of the HOT and HOSS rows is provisional pending the second
-coding. The last three rows are outputs of the typology script, not codes: stated predictions in
-the register, pairs of stated predictions that differ in sign, magnitude, locus, timing,
-distribution or condition (in brackets, at distinguishability confidence ≥ 2), and the derived
-class. Three further register entries are derived by the authors and not counted here: P23 (the
-supramodular M2 prediction extended to access, Section 9.1), P24 (a feeling accompanying purely
-autonomic conflict, derived from the interoceptive-inference mechanism, pending its proponents'
-view) and P25 (a load effect of policy count, derived from GNWT with a capacity assumption it has
+coding. The last three rows are outputs of the typology script, not codes: stated predictions in the register, discriminating pairs among the cross-theory pairs of stated predictions entered in the pair register (a dash where the column holds fewer than two stated predictions), and the derived class. Six further register entries are derived by the authors and not counted here: P23 (the supramodular M2 prediction extended to access, Section 9.1), P24 (a feeling accompanying purely autonomic conflict, derived from the interoceptive-inference mechanism, pending its proponents' view), P32 and P33 (the threshold and its equivalence half, Section 9.1), P34 (the Study 2 valence hypothesis, Protocol S5) and P25 (a load effect of policy count, derived from GNWT with a capacity assumption it has
 not made). IIT (3.0/4.0) denotes integrated information theory in its 3.0 and 4.0 formulations, coded as one account because their stated predictions over these quantities coincide. Condensed from Table S1.]{.mark}
 
 | Account | M1 N policies | M2 Incompat. | M3 Valence | M4a Intero. content | M4b Visceral modul. | M4c Autonomic conflict | M5 Org-wide coh. | M6 Dim. phen. | M7 Metarep. precision | M8 Cortical signature |
@@ -384,26 +342,24 @@ not made). IIT (3.0/4.0) denotes integrated information theory in its 3.0 and 4.
 | IIT (3.0/4.0) | · | · | ·† | · | · | · | · | **E** | · | **E** |
 | Recurrent processing (RPT) | · | · | · | · | · | · | ·† | · | · | **E** |
 | Higher-order thought (HOT) | · | · | *i*∅ | *i* | · | *i* | · | ·† | **E** | **E** |
-| Higher-order state space (HOSS) | · | · | ·† | *i*† | ·† | *i*† | · | **E** | **E** | **E** |
+| Higher-order state space (HOSS) | · | · | ·† | ·† | ·† | ·† | · | **E** | **E** | **E** |
 | Attention schema (AST) | · | · | · | · | · | · | · | *i* | *i* | **E**† |
-| Predictive processing / beast machine (PP) | · | *i*† | **E** | **E** | **E**† | *i*† | *i* | *i* | **E** | *i* |
+| Predictive processing / beast machine (PP) | · | ·† | **E** | **E** | *i*† | *i*† | *i* | *i* | **E** | *i* |
 | Supramodular interaction theory (SIT) | **E** | **E** | *i*∅ | *i* | · | **E∅** | · | · | · | *i* |
 | Passive frame theory (PFT) | *i*∅ | *i*∅ | *i*∅ | *i* | · | **E∅** | · | · | ·† | n/a |
-| Neural subjective frame (NSF) | · | · | *i* | *i*∅ | **E** | · | *i* | *i*† | · | *i* |
-| **Tally, trial-level (n = 10)** | 1 E / 1 i∅ / 8 · | 1 E / 1 i / 1 i∅ / 7 · | 1 E / 1 i / 4 i∅ / 4 · | 1 E / 4 i / 1 i∅ / 4 · | 2 E / 8 · | 0 E / 2 E∅ / 3 i / 5 · | 0 E / 3 i / 7 · | 2 E / 3 i / 5 · | 3 E / 2 i / 5 · | 6 E / 3 i / 0 · / 1 n/a |
+| Neural subjective frame (NSF) | · | · | *i* | *i*∅ | **E**† | · | *i* | *i*† | · | *i* |
+| **Tally, trial-level (n = 10)** | 1 E / 1 i∅ / 8 · | 1 E / 1 i∅ / 8 · | 1 E / 1 i / 4 i∅ / 4 · | 1 E / 3 i / 1 i∅ / 5 · | 1 E / 1 i / 8 · | 0 E / 2 E∅ / 2 i / 6 · | 0 E / 3 i / 7 · | 2 E / 3 i / 5 · | 3 E / 2 i / 5 · | 6 E / 3 i / 0 · / 1 n/a |
 | *Origin-level accounts (n = 2)* | | | | | | | | | | |
 | Unlimited associative learning (UAL) | · | · | **E** | *i* | · | · | *i* | · | · | n/a |
-| Feinberg & Mallatt (FM) | · | · | **E** | **E**† | · | *i*† | *i* | · | · | *i* |
-| **Tally, origin-level (n = 2)** | 0 E / 2 · | 0 E / 2 · | 2 E / 0 · | 1 E / 1 i / 0 · | 0 E / 2 · | 0 E / 1 i / 1 · | 0 E / 2 i / 0 · | 0 E / 2 · | 0 E / 2 · | 0 E / 1 i / 0 · / 1 n/a |
-| **Tally, all rows (n = 12)** | 1 E / 1 i∅ / 10 · | 1 E / 1 i / 1 i∅ / 9 · | 3 E / 1 i / 4 i∅ / 4 · | 2 E / 5 i / 1 i∅ / 4 · | 2 E / 10 · | 0 E / 2 E∅ / 4 i / 6 · | 0 E / 5 i / 7 · | 2 E / 3 i / 7 · | 3 E / 2 i / 7 · | 6 E / 4 i / 0 · / 2 n/a |
-| Stated predictions in the register (Table S4) | 1 | 1 | 3 | 2 | 2 | 2 | 0 | 2 | 3 | 12 |
-| Distinguishable pairs among stated predictions (at confidence ≥ 2) | 0 (0) | 0 (0) | 0 (0) | 0 (0) | 0 (0) | 0 (0) | 0 (0) | 1 (0) | 0 (0) | 15 (14) |
-| **Derived class** | single-occupant | single-occupant | occupied-not-contested | occupied-not-contested | occupied-not-contested | occupied-not-contested | thin | contested (at confidence ≥ 2: occupied-not-contested) | occupied-not-contested | contested |
+| Feinberg & Mallatt (FM) | · | · | **E** | **E**† | · | ·† | *i* | · | · | *i* |
+| **Tally, origin-level (n = 2)** | 0 E / 2 · | 0 E / 2 · | 2 E / 0 · | 1 E / 1 i / 0 · | 0 E / 2 · | 0 E / 2 · | 0 E / 2 i / 0 · | 0 E / 2 · | 0 E / 2 · | 0 E / 1 i / 0 · / 1 n/a |
+| **Tally, all rows (n = 12)** | 1 E / 1 i∅ / 10 · | 1 E / 1 i∅ / 10 · | 3 E / 1 i / 4 i∅ / 4 · | 2 E / 4 i / 1 i∅ / 5 · | 1 E / 1 i / 10 · | 0 E / 2 E∅ / 2 i / 8 · | 0 E / 5 i / 7 · | 2 E / 3 i / 7 · | 3 E / 2 i / 7 · | 6 E / 4 i / 0 · / 2 n/a |
+| Stated predictions in the register (Table S4) | 1 | 1 | 3 | 2 | 1 | 2 | 0 | 2 | 3 | 12 |
+| Discriminating pairs / cross-theory pairs registered (pair register) | — | — | — | — | — | — | — | 0 of 1 | — | 2 of 54 |
+| **Derived class** | single-occupant | single-occupant | occupied-not-contested | occupied-not-contested | single-occupant | occupied-not-contested | thin | occupied-not-contested | occupied-not-contested | contested |
 
 [Every count below is of the form *k* of *n* coded accounts and was recomputed by script from the
-deposited matrix. Across the 120 cells the codes are 22 EXPLICIT (20 positive, 2 null), 32
-INTERPRETED (25 positive, 7 null), 64 NOT_LOCATED and 2 NOT_APPLICABLE. The register holds 28
-stated predictions, of which 12 fall in the M8 column and 16 in the other nine columns together.
+deposited matrix. Across the 120 cells the codes are 21 EXPLICIT (19 positive, 2 stated null), 29 INTERPRETED (22 positive, 7 stated null), 68 NOT_LOCATED and 2 NOT_APPLICABLE. The register holds 27 stated predictions, of which 12 fall in the M8 column and 15 in the other nine columns together.
 The spread across rows is modest; the spread across columns is not, and the columns are the
 result.]{.mark}
 
@@ -417,16 +373,9 @@ earlier version of this review.]{.mark}
 recurrent processing theory, higher-order thought theory, higher-order state space theory and the
 attention schema theory — and is INTERPRETED for 4 more; no account is silent on it, and the two
 NOT_APPLICABLE cells (passive frame theory, unlimited associative learning) decline the level at
-which the question is posed. The register holds 12 stated predictions here, and 15 pairs of them
-differ in locus, timing or connectivity, 14 at confidence 2 or higher: the six preregistered GNWT and IIT predictions of the
-Cogitate protocol [1,2], the local-recurrence prediction of recurrent processing theory [75], the
-dorsolateral prefrontal prediction of higher-order theory [63,116], the temporo-parietal prediction
-of the attention schema theory [117] and the prefrontal awareness-state
-prediction of higher-order state space theory [82]. The column is shared at the level of the
-quantity and contested at the level of its value. The earlier version of this review called M8
+which the question is posed. The register holds 12 stated predictions here — the six preregistered GNWT and IIT predictions of the Cogitate protocol [1,2], the local-recurrence prediction of recurrent processing theory [75], the dorsolateral prefrontal prediction of higher-order theory [63,116], the temporo-parietal prediction of the attention schema theory [117] and the prefrontal awareness-state prediction of higher-order state space theory [82], among others — and the pair register enters all 54 cross-theory pairs of them. Most differ without conflicting: 42 pairs speak to different observables (a locus beside a timing, a decodability claim beside a connectivity claim) and 10 are jointly compatible under a shared observable. Two are discriminating. The GNWT and IIT predictions on temporal profile (P02, P05) name one observable — content-specific activation across a 0.5, 1.0 or 1.5 s stimulus — and predict values that exclude each other, an offset-locked burst against sustained activation with no offset event; this is the pair the Cogitate consortium operationalised and tested [2], and it is the pair on which the column's class rests (pair confidence 2). The second, recurrent processing theory against higher-order theory on the necessity of dorsolateral prefrontal function for awareness at matched first-order performance (P08, P09), is entered at pair confidence 1 and flagged: it discriminates only if the two sources' outcome variables — phenomenal content and metacognitive awareness — are one variable. No pair is incompatible outright. The earlier version of this review counted 15 "distinguishable" pairs here; under the four-way relation 7 of those are different, 6 jointly compatible and 2 discriminating, and the column is contested on the strength of the two, not the fifteen. The column is shared at the level of the quantity and contested at the level of one value, the temporal profile. The earlier version of this review called M8
 "shared and convergent" and said that no occupant could be singled out by a measurement of it; the
-register says otherwise, and so did the experiment. This is the column on which the theories have
-done their work: 12 of the 28 stated predictions fall here.]{.mark}
+register says otherwise, and so did the experiment. This is the column on which the theories have done their work: 12 of the 27 stated predictions fall here.]{.mark}
 
 [**Single-occupant: M1 and M2.** The number of simultaneously competing policies (M1) and their
 degree of incompatibility (M2) are each stated by 1 of 12 accounts, supramodular interaction
@@ -441,7 +390,7 @@ increase, not a prediction that there is none [39]. And its outcome variable is 
 conflict, not access to a stimulus (P17); the extension to access that Section 9 tests is our
 derivation, registered as P23. Passive frame theory is INTERPRETED with null polarity on both
 columns, since the field is said to present its contents whether or not conflict is present
-[39,43]; predictive processing is INTERPRETED on M2, a flagged cell. No other account states or
+[39,43]; predictive processing, INTERPRETED on M2 in the first pass, is NOT_LOCATED after a full-text reading of its source, which treats conflict between affordances without any statement about consciousness. No other account states or
 entails a prediction over either quantity. An experiment varying incompatibility cannot
 adjudicate between GNWT, IIT, recurrent processing theory or the attention schema theory, none of
 which said anything about it; a positive result corroborates the supramodular prediction and
@@ -458,20 +407,15 @@ space theory and predictive processing [63,82,118], all as a dissociation of a m
 from first-order performance, and the register finds no pair that differs. Both columns can
 corroborate or disconfirm their occupants together and cannot separate them.]{.mark}
 
-[**Occupied but not contested, formerly called contested: M4a, M4b, M4c.** The earlier version of
+[**Occupied but not contested, formerly called contested: M4a and M4c; single-occupant: M4b.** The earlier version of
 this review named autonomic involvement as the one column carrying opposed stated predictions —
 supramodular interaction theory's stated negative against the interoceptive-inference positive —
 and prized it as the cell an adversarial test should want. Splitting the column into its three
 questions dissolves the opposition. Access to interoceptive content as content (M4a) is stated by
 predictive processing, for which visceral channels are constitutive of feeling [48], and by the
 Feinberg–Mallatt scheme at lineage level [24], a cell flagged because its explicit interoceptive
-category is in a source we could not read; 5 accounts are INTERPRETED positive and the neural
-subjective frame INTERPRETED null, since the frame is proposed as a referential not itself
-experienced as content [119]. Visceral modulation of access to exteroceptive content (M4b) is
-stated by the neural subjective frame, whose anchor is that pre-stimulus heartbeat-evoked
-responses predict detection of a faint grating independently of measured cardiac parameters
-[120], and by predictive processing, a cell flagged because the coded sentence reviews evidence
-rather than stating a prediction; 10 accounts are NOT_LOCATED. Conscious involvement in purely
+category is in a source we could not read; 4 accounts are INTERPRETED positive and the neural subjective frame INTERPRETED null, since the frame is proposed as a referential not itself
+experienced as content [119]. Visceral modulation of access to exteroceptive content (M4b) is stated by one account, the neural subjective frame, whose anchor is that pre-stimulus heartbeat-evoked responses predict detection of a faint grating independently of measured cardiac parameters [120] — a cell coded from the abstract and provisional until the full text is read; predictive processing is INTERPRETED, re-coded from EXPLICIT because the coded sentence reviews evidence rather than stating a prediction of the framework; 10 accounts are NOT_LOCATED. The column is single-occupant. Conscious involvement in purely
 autonomic conflict (M4c) carries the two stated nulls: supramodular interaction theory predicts,
 and has measured, that conflict within a smooth-muscle effector produces no experienced conflict
 [40], and passive frame theory states the same boundary as scope — the conscious field serves the
@@ -481,9 +425,7 @@ most basic conscious contents [39]. Against these nulls stand no stated positive
 interoceptive-inference sources contain no statement about a conflict resolved by autonomic
 effectors alone [47,48], the prediction that unresolved interoceptive prediction error would
 yield a feeling is our derivation (P24), and the one passage bearing on it names predictions
-rather than prediction errors as the likelier vehicle of conscious feeling [48]. The positives on
-M4a and M4b and the nulls on M4c answer different questions, no pair of stated predictions in any
-of the three columns is distinguishable, and each is occupied but not contested. Were P24
+rather than prediction errors as the likelier vehicle of conscious feeling [48]. The positives on M4a and the nulls on M4c answer different questions, no pair of stated predictions in either column is discriminating, and each is occupied but not contested; M4b, with one stated occupant, is single-occupant. Were P24
 endorsed by its proponents, M4c would become the first contested column outside M8; as coded, it
 is not. What has not changed is the methodological fact: a test of M4a or M4c needs a
 report-independent measure of access to interoceptive content, and none has been validated — such
@@ -513,16 +455,7 @@ than empty. A coder who read the heartbeat-evoked response as a cortical–auton
 metric would fill 1 of 12 cells and make the column single-occupant, and Section 7.7 carries that
 sensitivity.]{.mark}
 
-[**Contested at low confidence only: M6.** Dimensionality of phenomenal space is stated by IIT,
-for which the structure of an experience is identical to the unfolded cause–effect structure of its
-substrate and therefore high-dimensional [74], and by higher-order state space theory, which
-nests a one-dimensional awareness state above a high-dimensional perceptual space [82]. The
-register lists the pair as distinguishable on structure and magnitude, but at confidence 1, because
-whether the two statements address the same variable — the dimensionality of what is experienced,
-or of the state that marks it as experienced — is open. Over all pairs the column is therefore
-contested; at confidence 2 or higher it is occupied but not contested, which is what the earlier
-version said. We report both and let the second coding settle it. Three accounts are INTERPRETED, and two cells of the column are flagged, one in each
-direction.]{.mark}
+[**Occupied but not contested: M6.** Dimensionality of phenomenal space is stated by IIT, for which the structure of an experience is identical to the unfolded cause–effect structure of its substrate and therefore high-dimensional [74], and by higher-order state space theory, which nests a one-dimensional awareness state above a high-dimensional perceptual space [82]. The earlier version of this review listed the pair as distinguishable on structure and magnitude at confidence 1. The pair register enters it as *different*: the two statements address different variables — the geometry of what is experienced in the one case, the dimensionality of the judgement that marks a state as experienced in the other — and no shared observable is named under which one value would exclude the other. The column is therefore occupied but not contested, which is what the submitted version said; it returns to contested only if the first coder rules, on the sources, that the two claims concern one variable, and that ruling goes to adjudication. Three accounts are INTERPRETED, and two cells of the column are flagged, one in each direction.]{.mark}
 
 [The columns that are single-occupant or thin intersect in a cell no study fills:]{.mark} access to valenced or interoceptive content under a
 manipulated number of incompatible policies, measured across cortical and autonomic channels
@@ -657,8 +590,7 @@ coder's own inferred attributions gives 22 of 35. Dropping the theory filter giv
 a written reason. The publication-level counts of the earlier version reproduce from the
 legacy codes — 21 of 27 with the paradigm-defining rows, 19 of 24 without — so the change of unit
 and of attribution rule, not recoding, accounts for the difference between versions. The imbalance survives every scenario; the zero in the valenced cell survives every
-theory-filtered scenario except the one that admits the suppressed-access study; and it is the
-imbalance, not the zero, that the abstract carries. The pattern is corroborated from outside our
+theory-filtered scenario except the one that admits the suppressed-access study; and the abstract states the zero together with the neutral-visual count as one imbalance, under the attribution rule named in this section. The pattern is corroborated from outside our
 own coding: the field's census of 412 experiments codes stimulus modality and category as
 methodological variables and reports no valence breakdown at all [78]. One limitation belongs
 here rather than in Section 7.7: 19 of the 32 publications could be read only as abstracts, so
@@ -683,21 +615,15 @@ cell even without promotion. The claim that M5 is thin therefore rests on the ju
 rhetorical organism-wide commitment without an operationalisation, and a single-channel
 cortico-visceral predictor, are not stated predictions over organism-wide coherence. We think that
 judgement is right and have given the per-cell reasons in Section 7.4, but it is a judgement, which
-is why M5 is a secondary and qualified claim in this review. The M8 class is unaffected by
-promotion, because it rests on 6 EXPLICIT cells and 15 distinguishable pairs of stated
-predictions, and the M4a–M4c classes are unaffected in the other direction: promotion adds
-occupants of the same sign and creates no distinguishable pair. The M6 class turns on a single pair
-at confidence 1 and is reported both ways.]{.mark}
+is why M5 is a secondary and qualified claim in this review. The M8 class is unaffected by promotion, because it rests on 6 EXPLICIT cells and on the discriminating GNWT–IIT pair on temporal profile, and the M4a–M4c classes are unaffected in the other direction: promotion adds occupants of the same sign and creates no discriminating pair. The M6 class turns on whether the IIT and higher-order state space statements concern one variable; the pair register says they do not, and the column is occupied but not contested unless adjudication rules otherwise.]{.mark}
 
-[A second sensitivity runs the other way. Three of the 22 EXPLICIT cells carry an adjudication
-flag: the attention schema theory on M8, whose locus claim is not in the source the earlier version
+[A second sensitivity runs the other way. Three of the 21 EXPLICIT cells carry an adjudication flag: the attention schema theory on M8, whose locus claim is not in the source the earlier version
 cited [84] but in an earlier statement of the theory [117]; the Feinberg–Mallatt
-scheme on M4a, whose explicit interoceptive category is in a book we could not read; and predictive
-processing on M4b, where the coded sentence reviews evidence rather than stating a prediction.
+scheme on M4a, whose explicit interoceptive category is in a book we could not read; and the neural subjective frame on M4b, whose stated prediction is coded from an abstract we could not get behind.
 Downgrading the first leaves M8 contested with 5 EXPLICIT cells. Downgrading either of the other two
 leaves its column with a single EXPLICIT cell and makes it single-occupant rather than occupied but
 not contested; neither downgrade creates a contested column. The 15 flagged cells are listed with
-their reasons in Table S1 and are the first business of the adjudication meeting.]{.mark} The sensitivity analysis is deposited with the coding.
+their reasons in Table S1 and are the first business of the adjudication meeting.]{.mark} The sensitivity analysis is prepared for deposit with the coding.
 
 [Five limitations bear on how much weight Tables 1 and 2 can carry, and we state them without
 mitigation. First, the codes reported here are those of a single coder; the blind second coding is
@@ -755,10 +681,7 @@ The result that matters most is stronger than the standard reconstruction claim:
 ## 9. Conclusion: the minimal measurement
 
 The field's problem is not a shortage of theories or of rigour. [It is that the coded theories
-concentrate their stated predictions on one of ten measurable quantities — the cortical signature
-of access, where they are contested at locus, timing and connectivity and where the first
-adversarial test accordingly separated its two targets — and have stated almost nothing about the
-other nine. Of the 28 stated predictions in the register, 12 fall in that column. The rest of the
+concentrate their stated predictions on one of ten measurable quantities — the cortical signature of access, where one pair of stated predictions, on temporal profile, is discriminating and where the first adversarial test accordingly separated its two targets — and have stated almost nothing about the other nine. Of the 27 stated predictions in the register, 12 fall in that column. The rest of the
 space is not contested; it is, for the most part, unspoken for.]{.mark} That is what
 Cogitate demonstrated, and the consortium said so: the challenges extend to theories sharing the
 predictions tested [2]. [The derived classes of Section 7.4 say what each of the other columns can
@@ -793,76 +716,21 @@ registered as the derived P25 — would predict a decrement.]{.mark}
 
 ### 9.1 [One worked condition: incompatibility at fixed count under no-report]{.mark}
 
-[**What is tested, and by whom it was predicted.** Study 1 tests two predictions and estimates a
-third quantity. P16 is stated: supramodular interaction theory holds that conscious conflict
-arises when two or more incompatible inclinations toward the skeletomotor output system are active
-at once, and states nothing about a further increase beyond two [38,39]. P23 is ours: that access
-to a masked target rises with the incompatibility of the policies it licenses, at fixed count and
-load. It extends the theory's stated outcome, experienced conflict [40], to access; its proponents
-have not endorsed it, and a null on P23 constrains our derivation within the preregistered
-equivalence bound without refuting the theory. The third quantity, cortical–autonomic coupling, is
-estimated and tests nothing, because no coded theory has stated a prediction over it. The condition
-therefore tests one stated single-occupant prediction and one derivation of our own, and it
-discriminates between no two theories.]{.mark}
+[**What is tested, and by whom it was predicted.** Study 1 tests two author-derived operationalisations (P32, P23) of one account's stated commitments and estimates a third quantity. Supramodular interaction theory states P16: conscious conflict arises when two or more incompatible inclinations toward the skeletomotor output system are active at once; nothing is stated beyond two [38,39]. The count branch does not test P16: it varies co-executable, not incompatible, policies and measures access to a masked target, not experienced conflict. P32 is therefore ours: access is higher with two or more co-executable policies than with one. P33, also ours, holds that access does not rise further from two to three — the source is silent beyond two, and silence is not a stated null — and is bounded by an equivalence test, not tested. P23 is ours as well: access rises with the incompatibility of the licensed policies at fixed count and load; the theory's stated outcome is experienced conflict [40]. None is endorsed by the theory's proponents; a null constrains our derivation, not the theory. The condition tests no stated prediction of any theory directly and discriminates between no two theories.]{.mark}
 
-[**Design.** Within-subject, neutral stimuli only, two sessions. Three overlearned rules map a
-target's hue, position and aperture shape to a response; on every trial the three demanded
-responses are mutually distinct, so the number of distinguishable responses is fixed at three.
-Each response is a position of a three-position lever, one lever under each hand and one under
-the dominant foot: responses on different levers can be executed together, responses on the same
-lever cannot. Incompatibility is
-the number of pairs of demanded responses that share a lever — 0, 1 or 3 — and is set by the
-effector mapping in force for the block, so that stimulus set, salience and task relevance are
-identical across levels by construction. The count branch keeps 0 shared pairs and puts one, two
-or three rules in force. Effector assignments are balanced within participant, giving 11
-presentation cells that collapse to 5 analysis cells: count 1, 2 and 3 at 0 shared pairs, and
-count 3 at 1 and at 3 shared pairs. Targets are masked at an individually titrated contrast near
-the visibility threshold; on a quarter of trials a probe names one rule and the participant
-executes it, keeping the rules active and supplying the manipulation check. Each presentation cell
-has 102 presented trials, 561 per session, from which about 65 usable no-report trials per cell
-are expected after probe trials and an assumed 15 % loss; N = 120 (119 required for 90 % power at dz = 0.30, rounded up to a multiple of the six rule-to-effector rotations), fixed in advance, with no
-sequential monitoring. The full protocol is Supplementary Protocol S5.]{.mark}
+[**Design.** Three overlearned rules map a masked target's hue, position and aperture shape to three mutually distinct responses. Responses are positions of three three-position levers (each hand, dominant foot); two responses can be executed together only on different levers. Incompatibility is the number of pairs of demanded responses sharing a lever — 0, 1 or 3 — set by the effector mapping in force for the block. Effector balancing gives 11 presentation cells and 5 analysis cells: the count branch, counts 1, 2 and 3 at 0 shared pairs, and count 3 at 1 and at 3 shared pairs. Cells are blocked, not interleaved: 11 cells × 2 blocks per session, mapping fixed per block and cued at its start, order counterbalanced. On a quarter of trials a probe names one rule and the participant executes that rule alone; joint execution is never required. Whether incompatible intentions form at target onset or rules are merely held until the probe is open; probe-response latency by shared-pairs level is the manipulation check bearing on it, reported not tested.]{.mark}
 
-[**Access index.** Session 1 adds a Perceptual Awareness Scale rating on every trial [154];
-session 2 repeats the stimulation without it. The access index is trial-wise decoded evidence for
-"seen" from a classifier trained on the rating-labelled session-1 trials using posterior EEG in
-the window where the visual awareness negativity survives removal of report [103,200–202]. The
-index is EEG-only and is frozen — weights, channels, window and preprocessing fixed and deposited —
-before session 2 is analysed. Trained at one incompatibility level it must generalise to the
-others, so that it indexes seeing rather than conflict, and it must reproduce session 1's
-rating-based effects under cross-validation. It is a candidate marker of access, not a measure of
-M5; inference from physiology to a conscious state remains theoretical and a no-report participant
-may covertly categorise [102,108], so every contrast is also computed on the session-1 rating and
-a result is claimed only where both arms agree.]{.mark}
+[**Trial budget.** Session 1 supplies titration, a Perceptual Awareness Scale rating on every trial [154] and classifier training: 64 presented trials per presentation cell (a design choice), 704 in all, about 115 min including breaks. Session 2 supplies the confirmatory no-report data without the rating: 104 presented trials per presentation cell (26 probe, 78 no-probe), 1144 in all, about 135 min at 6 s per trial with breaks, giving 78 × 0.85 = 66.3 expected usable no-report trials per cell at an assumed 15 % loss. N = 120 (119 required for 90 % power at dz = 0.30 for one uncorrected contrast, rounded up to a multiple of the six rule-to-effector rotations), fixed in advance, no sequential monitoring (Supplementary Protocol S5).]{.mark}
 
-[**Autonomic recording.** ECG, skin conductance and pupil are recorded throughout. A
-cortical–autonomic coupling index — the per-participant slope of decoded access on pre-stimulus
-heartbeat-evoked amplitude, and its trial-wise correlation with the phasic autonomic responses — is
-reported with estimate and interval in every cell. It is estimation only: no coded theory predicts
-over it, and it is not a measure of M5 in the organism-wide sense of Section 7.]{.mark}
+[**Access index.** Trial-wise decoded evidence for "seen" from a per-participant classifier trained on the rating-labelled session-1 trials: regularised linear discriminant analysis on 100–500 ms post-target amplitudes at 17 parieto-occipital channels of a 64-channel montage, rating binarised as 1 against 2–4, nested cross-validation with block-wise folds, specification to be preregistered and frozen before session 2 is scored [103,200–202]. The index is EEG-only. It is a candidate marker of access, not a measure of M5; because a no-report participant may covertly categorise [102,108], every contrast is also computed on the session-1 rating.]{.mark}
 
-[**Contrasts and power.** C0 tests P16: access at count 1 against the mean of counts 2 and 3
-(weights −1, ½, ½) at 0 shared pairs; a companion equivalence test of count 3 against count 2
-estimates the further increase the theory does not state, within ±0.30 dz by two one-sided tests
-[203]. C1a tests P23: 0 shared pairs against the mean of 1 and 3 at count 3 (weights −1, ½, ½).
-C1b, exploratory, tests a trend linear in the number of shared pairs and a two-degree-of-freedom
-omnibus. Effect sizes are dz on per-participant contrast scores of the cell-mean access index.
-N = 119 is required for 90 % power at dz = 0.30 for C0 and for C1a (dz = 0.20 would need 265, dz = 0.40 68), and the fixed N = 120 gives 0.90;
-equivalence power within ±0.30 dz at N = 120 is 0.895 analytically and 0.896 by Monte Carlo (0.90 at N = 122); the C1b omnibus has power 0.84 (0.90 at N = 144). The mixed-model check and the effect-size anchor are in S5.]{.mark}
+[**Autonomic recording.** ECG, skin conductance and pupil are recorded throughout, with a jittered 2.5–3.5 s inter-trial interval and deconvolution of overlapping responses. A cortical–autonomic coupling index (the per-participant slope of decoded access on pre-stimulus heartbeat-evoked amplitude; its trial-wise correlation with the phasic autonomic responses) is reported with estimate and interval per cell as estimation only; no coded theory predicts over it.]{.mark}
 
-[**Mandatory pilot.** Three criteria must be met before the confirmatory sample is run, each with
-a preregistered threshold in S5: the masking staircase must hold visibility inside its target
-band; the frozen index must transfer across incompatibility levels at the preregistered accuracy;
-and full-contrast probe accuracy, including joint execution of co-executable responses, must reach
-criterion. Failure on any of the three stops the study, and the pilot is reported whatever its
-outcome.]{.mark}
+[**Contrasts, multiplicity and power.** Two confirmatory contrasts, Holm-corrected at family-wise α = 0.05: C0 tests P32, count 1 against the mean of counts 2 and 3 (weights −1, ½, ½) at 0 shared pairs; C1a tests P23, 0 shared pairs against the mean of 1 and 3 at count 3. An equivalence test of count 3 against 2 bounds P33 within ±0.30 dz by two one-sided tests [203]; C1b, a trend linear in shared pairs and a two-degree-of-freedom omnibus, is exploratory. A contrast counts as supported only if its EEG-index and PAS-report versions are both significant after correction, with the same sign. Each confirmatory contrast singly has uncorrected power 0.90 at N = 120 and dz = 0.30; at least 0.84 after Holm correction (the Bonferroni level; 0.89 if the two p-values were independent); for the conjunctive rule the product under independence is 0.71 to 0.80, to be revised from the pilot correlation between versions. Equivalence power within ±0.30 dz at N = 120 is 0.895.]{.mark}
 
-[**Valence.** Study 2 repeats the design with negative, neutral and positive content matched on
-arousal, tests the main effect of negative against positive content at matched arousal, and
-estimates the incompatibility × valence interaction without testing it, because a confirmatory
-test at a plausible effect size would need a sample the study does not have. Its stimuli, sample
-and power are in S5. A valence effect would corroborate the one trial-level account that predicts
-over M3 and separate none of the coded theories.]{.mark}
+[**Mandatory pilot.** Three criteria, thresholds to be preregistered in S5, must be met before the confirmatory sample runs: the masking staircase holds visibility inside its target band; the classifier, trained at one incompatibility level, reaches AUC ≥ 0.70 at each other level — a validity test defining the population to which the result applies (awareness decodable at that accuracy) without selecting for the hypothesised effect; and full-contrast accuracy on the single probed rule reaches criterion in every cell. Failure on any criterion stops the study; the pilot is reported regardless.]{.mark}
+
+[**Valence.** Study 2 repeats the design with negative, neutral and positive content, testing negative against positive at matched arousal. This tests P34, our derivation, not the stated P13, which concerns experienced valence and free-energy change, not sad against happy access. Pupil and skin conductance are manipulation checks for arousal matching and enter only a sensitivity analysis as covariates, being possible consequences of the manipulation. The incompatibility × valence interaction is estimated, not tested, for want of power (S5). A valence effect would corroborate our derivation and separate none of the coded theories.]{.mark}
 
 ### 9.2 [The condition that cannot yet be run, and what would make it adversarial]{.mark}
 
@@ -895,8 +763,7 @@ interoceptive event was accessed, validated against report in a calibration set,
 no-report blocks, and dissociable from afferent strength, arousal and attention to the body, which
 alone modulates the heartbeat-evoked potential [204,205] — and no such measure has been
 validated. The order of work is therefore the reverse of the order of interest. The condition of
-Section 9.1 uses established visual no-report measures and can be run now; it tests a stated
-threshold and a derivation of ours, and its informative outcome for the derivation is a bounded
+Section 9.1 uses established visual no-report measures and can be run now; it tests two author-derived operationalisations (P32, P23) of one account's stated commitments and estimates a third quantity, and its informative outcome for the derivations is a bounded
 null. The autonomic condition would need both a validation study and a stated prediction from the
 other side before it could adjudicate anything. That is the actual conclusion of this review, and
 it is a smaller claim than an adversarial test on a new quantity — but it names both the
@@ -906,8 +773,8 @@ of overclaim this review has been criticising.
 A closing note on what this review has and has not done. We have not proposed a theory. We have
 [documented, by coding, that the field's stated predictions are concentrated on one quantity and
 that most of the remaining quantities are single-occupant, thin or occupied by accounts that do
-not disagree, and specified the experiment that tests the one stated prediction the audit found
-outside that quantity.]{.mark} A theory that does make predictions about the [single-occupant
+not disagree, and specified the experiment built on the one stated prediction the audit found
+outside that quantity, which tests two author-derived operationalisations of it rather than the prediction itself.]{.mark} A theory that does make predictions about the [single-occupant
 and thin coordinates]{.mark} —
 about the format in which incommensurable local evaluations become comparable, its dimensionality
 as a function of the number and heterogeneity of conflicting domains, and organism-wide
@@ -915,15 +782,15 @@ reconfiguration breadth as a second condition on access, exists and is set out s
 Arbitration Format Theory, in a companion paper. It does not propose an alternative physical basis
 for consciousness, and its claims are stated over observables rather than over experience. Whether
 it is right is a separate question from whether the [columns are single-occupant or thin. They are so]{.mark} either way,
-and the experiment that [tests the one stated prediction among them]{.mark} is worth running whoever turns out to have predicted the answer.
+and the experiment that [operationalises the one stated prediction among them]{.mark} is worth running whoever turns out to have predicted the answer.
 
 ## Supplementary Materials
 
-[**Supplementary Materials:** The following are deposited at [repository] under DOI [10.xxxx/PLACEHOLDER — archive assembled; DOI to be inserted on public deposit] and accompany the submission. Table S1: theory-by-quantity coding matrix (120 cells: 12 coded accounts by 10 quantities, with code, polarity, relation, per-cell justification, source DOI and locus, evidence status, confidence, provisional and adjudication flags, and the legacy code of the earlier version where one exists). Table S2: content inventory (42 experiments from 32 publications, with paradigm, modality, affective status, derived content class, the three attribution columns and the derived theory-addressed flag, contested-inclusion flags with reasons, and evidence status), with `paradigm_sources.csv` (the four paradigm-defining publications and the rows that rely on them) and `s2_sensitivity.csv` (every scenario reported in Section 7.6). Table S3: coding of ten theory rows against the twelve ConTraSt annotation dimensions (120 cells). Table S4: register of 31 predictions (28 stated, 3 derived by the authors and labelled so) with source, locus, condition, outcome measure, expected result, distinguishable pairs and confidence. Supplementary Protocol S5: full protocol of Study 1 and Study 2 (stimuli, task, effector mapping, cell list, presented and usable trials, exclusions, index freezing, autonomic channels and coupling metric, contrasts and weights, power tables, pilot criteria). Codebook v2 (frozen; version and hash printed in its footer), the inclusion criteria for Tables S1 and S2, the blank second-coder forms, and the scripts that produce every count in Section 7 and every power figure in Section 9 (`column_typology.py`, `agreement.py`, `section9_power.py`, `reproduce.py`).]{.mark}
+[**Supplementary Materials:** The following will be deposited at [repository] under DOI [10.xxxx/PLACEHOLDER — archive assembled; DOI to be inserted on public deposit] and accompany the submission. Table S1: theory-by-quantity coding matrix (120 cells: 12 coded accounts by 10 quantities, with code, polarity, relation, per-cell justification, source DOI and locus, evidence status, confidence, provisional and adjudication flags, and the legacy code of the earlier version where one exists). Table S2: content inventory (42 experiments from 32 publications, with paradigm, modality, affective status, derived content class, the three attribution columns and the derived theory-addressed flag, contested-inclusion flags with reasons, and evidence status), with `paradigm_sources.csv` (the four paradigm-defining publications and the rows that rely on them) and `s2_sensitivity.csv` (every scenario reported in Section 7.6). Table S3: coding of ten theory rows against the twelve ConTraSt annotation dimensions (120 cells). Table S4: register of 34 entries (27 stated predictions, 1 kept for provenance after re-coding to INTERPRETED, 6 derived by the authors and labelled so) with source, locus, condition, outcome measure, expected result and confidence; `pair_register.csv`: every cross-theory pair of stated predictions in M8 and M6 (55 pairs) with shared condition, shared observable, four-way relation, favouring results and pair-level confidence. Supplementary Protocol S5: full protocol of Study 1 and Study 2 (stimuli, task, effector mapping, cell list, presented and usable trials, exclusions, index freezing, autonomic channels and coupling metric, contrasts and weights, power tables, pilot criteria). Codebook v2 (frozen; version and hash printed in its footer), the inclusion criteria for Tables S1 and S2, the blank second-coder forms, and the scripts that produce every count in Section 7 and every power figure in Section 9 (`column_typology.py`, `agreement.py`, `section9_power.py`, `reproduce.py`).]{.mark}
 
 ## Data Availability Statement
 
-[**Data Availability Statement:** Tables S1–S4, Supplementary Protocol S5, the codebook, the inclusion criteria and the scripts are deposited at [repository] under DOI [10.xxxx/PLACEHOLDER]; the archive is assembled and the DOI will be inserted on public deposit. No new empirical data were generated.]{.mark}
+[**Data Availability Statement:** Tables S1–S4, Supplementary Protocol S5, the codebook, the inclusion criteria and the scripts will be deposited at [repository] under DOI [10.xxxx/PLACEHOLDER]; the archive is assembled and the DOI will be inserted on public deposit. No new empirical data were generated.]{.mark}
 
 ## Declarations
 

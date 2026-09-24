@@ -2,10 +2,13 @@
 
 Manuscript: *What theories of consciousness commit to, and what they leave unmeasured: an audit of stated predictions after the first adversarial test* (Brain Sciences, MDPI, under review).
 
-Reproduce every count: `python reproduce.py --deposit . --out out --skip-mixed` (6 steps; `--update-hashes` only when tables change).
+Reproduce every count: `python reproduce.py --deposit . --out out` (10 steps, about 1 min with the 200-simulation mixed-model check; `--skip-mixed` runs without statsmodels and says so; `--update-hashes` only when tables change).
 
 | File | Contents |
 |---|---|
+| pair_register.csv | Every cross-theory pair of stated predictions in M8 and M6 (55 pairs): shared condition, shared observable, relation (different / jointly compatible / discriminating / incompatible), favouring results, pair confidence. The manuscript's column class is derived from this file by column_typology_pairs.py; column_typology.py and column_typology_v2_legacy_rule.csv keep the earlier distinguishable_from rule as a diagnostic. |
+| Table_S2_v2_publications.csv | Table S2 at publication level (32 publications; class, theory-addressed, contested), the second unit at which Table 2 is reported. |
+| reading_results_20260924.csv, reading_log_20260924.md | Full-text pass over eight flagged S1 cells: sources reached, quotes, proposed codes. |
 | Table_S1_v2.csv | Table S1 — 120 cells: 12 accounts (`accounts_manifest.csv`; HOT and HOSS separate; 10 trial-level, 2 origin-level) × 10 domains (`domains_manifest.csv`; M4 split into M4a/M4b/M4c). One row per cell; `prediction_id` lists Table S4 rows. Codes EXPLICIT / INTERPRETED / NOT_LOCATED / NOT_APPLICABLE / UNRESOLVED with `polarity`; `provisional`, `flag_for_adjudication`, `evidence_status`, `legacy_code`, `origin` (submitted-v1 / added-in-revision). |
 | Table_S1_v2_long.csv | Same, plus the superseded legacy M4 rows (`superseded_by`). |
 | Table_S1_round0_72cells.csv, Table_S1_v13_88cells.csv | Earlier versions kept for provenance. |
@@ -23,4 +26,4 @@ Reproduce every count: `python reproduce.py --deposit . --out out --skip-mixed` 
 | recompute_table1.py, column_typology.py, section9_power.py, reproduce.py, expected_hashes.json, README_code.md | Scripts. |
 | source_verification_v4.md / .csv | Source-by-source verification with evidence status (full text / abstract only / not resolvable). |
 
-Coding status at deposit: first coding complete and provisional (50 cells added in revision, 15 flagged for adjudication, 58 cells coded from abstracts); blind second coding by the second author not yet begun — κ will be added in v2.1. DOIs resolved against CrossRef on 24 September 2026. Licence: data CC BY 4.0, code MIT.
+Coding status at deposit: first coding complete and provisional (50 cells added in revision, 16 flagged for adjudication, 57 cells coded from abstracts, 5 cells re-coded on 24 September 2026 with the previous code kept); blind second coding by the second author not yet begun — κ will be added in v2.1. Codebook v2.2 frozen (hash in codebook_v2.sha256). DOIs resolved against CrossRef on 24 September 2026. Licence: data CC BY 4.0, code MIT.

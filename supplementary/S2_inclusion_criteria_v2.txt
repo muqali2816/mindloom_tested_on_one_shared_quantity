@@ -74,4 +74,5 @@ SPECIFIC DECISIONS CARRIED IN v2 (each visible in the table, none applied silent
   Nieuwenhuis et al. 2001       re-coded motor-conflict (awareness of one's own saccade error is the accessed content);
                                 flagged for the second coder.
   Morsella, Gray & Krieger 2009, control study
-                                pupillary (smooth-muscle) conflict → interoceptive by the coding rule; ancillary.
+                                intention against the pupillary reflex → motor-conflict (autonomic effector) under v2.1;
+                                re-coded from interoceptive by the first coder on 24 Sep 2026; ancillary.

@@ -1,10 +1,10 @@
 scope,domain_id,n_EXPLICIT_positive,n_EXPLICIT_stated_null,n_EXPLICIT_negative,n_INTERPRETED_positive,n_INTERPRETED_stated_null,n_INTERPRETED_negative,n_NOT_LOCATED,n_NOT_APPLICABLE,n_UNRESOLVED,n_cells,occupants_EXPLICIT,occupants_INTERPRETED,UNRESOLVED_theories,occupancy_summary,n_stated_or_interpreted_le2
 trial-level,M1,1,0,0,0,1,0,8,0,0,10,SIT (positive),PFT (stated_null),,one-EXPLICIT,True
-trial-level,M2,1,0,0,1,1,0,7,0,0,10,SIT (positive),PFT (stated_null); PP (positive),,one-EXPLICIT,False
+trial-level,M2,1,0,0,0,1,0,8,0,0,10,SIT (positive),PFT (stated_null),,one-EXPLICIT,True
 trial-level,M3,1,0,0,1,4,0,4,0,0,10,PP (positive),GNWT (stated_null); HOT (stated_null); NSF (positive); PFT (stated_null); SIT (stated_null),,one-EXPLICIT,False
-trial-level,M4a,1,0,0,4,1,0,4,0,0,10,PP (positive),HOT (positive); HOSS (positive); NSF (stated_null); PFT (positive); SIT (positive),,one-EXPLICIT,False
-trial-level,M4b,2,0,0,0,0,0,8,0,0,10,NSF (positive); PP (positive),,,multi-EXPLICIT-same-sign,True
-trial-level,M4c,0,2,0,3,0,0,5,0,0,10,PFT (stated_null); SIT (stated_null),HOT (positive); HOSS (positive); PP (positive),,multi-EXPLICIT-same-sign,False
+trial-level,M4a,1,0,0,3,1,0,5,0,0,10,PP (positive),HOT (positive); NSF (stated_null); PFT (positive); SIT (positive),,one-EXPLICIT,False
+trial-level,M4b,1,0,0,1,0,0,8,0,0,10,NSF (positive),PP (positive),,one-EXPLICIT,True
+trial-level,M4c,0,2,0,2,0,0,6,0,0,10,PFT (stated_null); SIT (stated_null),HOT (positive); PP (positive),,multi-EXPLICIT-same-sign,False
 trial-level,M5,0,0,0,3,0,0,7,0,0,10,,GNWT (positive); NSF (positive); PP (positive),,no-EXPLICIT,False
 trial-level,M6,2,0,0,3,0,0,5,0,0,10,HOSS (positive); IIT (positive),AST (positive); NSF (positive); PP (positive),,multi-EXPLICIT-same-sign,False
 trial-level,M7,3,0,0,2,0,0,5,0,0,10,HOT (positive); HOSS (positive); PP (positive),AST (positive); GNWT (positive),,multi-EXPLICIT-same-sign,False
@@ -14,23 +14,23 @@ origin-level,M2,0,0,0,0,0,0,2,0,0,2,,,,no-EXPLICIT,True
 origin-level,M3,2,0,0,0,0,0,0,0,0,2,FM (positive); UAL (positive),,,multi-EXPLICIT-same-sign,True
 origin-level,M4a,1,0,0,1,0,0,0,0,0,2,FM (positive),UAL (positive),,one-EXPLICIT,True
 origin-level,M4b,0,0,0,0,0,0,2,0,0,2,,,,no-EXPLICIT,True
-origin-level,M4c,0,0,0,1,0,0,1,0,0,2,,FM (positive),,no-EXPLICIT,True
+origin-level,M4c,0,0,0,0,0,0,2,0,0,2,,,,no-EXPLICIT,True
 origin-level,M5,0,0,0,2,0,0,0,0,0,2,,FM (positive); UAL (positive),,no-EXPLICIT,True
 origin-level,M6,0,0,0,0,0,0,2,0,0,2,,,,no-EXPLICIT,True
 origin-level,M7,0,0,0,0,0,0,2,0,0,2,,,,no-EXPLICIT,True
 origin-level,M8,0,0,0,1,0,0,0,1,0,2,,FM (positive),,no-EXPLICIT,True
 all rows,M1,1,0,0,0,1,0,10,0,0,12,SIT (positive),PFT (stated_null),,one-EXPLICIT,True
-all rows,M2,1,0,0,1,1,0,9,0,0,12,SIT (positive),PFT (stated_null); PP (positive),,one-EXPLICIT,False
+all rows,M2,1,0,0,0,1,0,10,0,0,12,SIT (positive),PFT (stated_null),,one-EXPLICIT,True
 all rows,M3,3,0,0,1,4,0,4,0,0,12,FM (positive); PP (positive); UAL (positive),GNWT (stated_null); HOT (stated_null); NSF (positive); PFT (stated_null); SIT (stated_null),,multi-EXPLICIT-same-sign,False
-all rows,M4a,2,0,0,5,1,0,4,0,0,12,FM (positive); PP (positive),HOT (positive); HOSS (positive); NSF (stated_null); PFT (positive); SIT (positive); UAL (positive),,multi-EXPLICIT-same-sign,False
-all rows,M4b,2,0,0,0,0,0,10,0,0,12,NSF (positive); PP (positive),,,multi-EXPLICIT-same-sign,True
-all rows,M4c,0,2,0,4,0,0,6,0,0,12,PFT (stated_null); SIT (stated_null),FM (positive); HOT (positive); HOSS (positive); PP (positive),,multi-EXPLICIT-same-sign,False
+all rows,M4a,2,0,0,4,1,0,5,0,0,12,FM (positive); PP (positive),HOT (positive); NSF (stated_null); PFT (positive); SIT (positive); UAL (positive),,multi-EXPLICIT-same-sign,False
+all rows,M4b,1,0,0,1,0,0,10,0,0,12,NSF (positive),PP (positive),,one-EXPLICIT,True
+all rows,M4c,0,2,0,2,0,0,8,0,0,12,PFT (stated_null); SIT (stated_null),HOT (positive); PP (positive),,multi-EXPLICIT-same-sign,False
 all rows,M5,0,0,0,5,0,0,7,0,0,12,,FM (positive); GNWT (positive); NSF (positive); PP (positive); UAL (positive),,no-EXPLICIT,False
 all rows,M6,2,0,0,3,0,0,7,0,0,12,HOSS (positive); IIT (positive),AST (positive); NSF (positive); PP (positive),,multi-EXPLICIT-same-sign,False
 all rows,M7,3,0,0,2,0,0,7,0,0,12,HOT (positive); HOSS (positive); PP (positive),AST (positive); GNWT (positive),,multi-EXPLICIT-same-sign,False
 all rows,M8,6,0,0,4,0,0,0,2,0,12,AST (positive); GNWT (positive); HOT (positive); HOSS (positive); IIT (positive); RPT (positive),FM (positive); NSF (positive); PP (positive); SIT (positive),,multi-EXPLICIT-same-sign,False
 "trial-level, submitted-v1 cells",M1,1,0,0,0,0,0,7,0,0,8,SIT (positive),,,one-EXPLICIT,True
-"trial-level, submitted-v1 cells",M2,1,0,0,1,0,0,6,0,0,8,SIT (positive),PP (positive),,one-EXPLICIT,True
+"trial-level, submitted-v1 cells",M2,1,0,0,0,0,0,7,0,0,8,SIT (positive),,,one-EXPLICIT,True
 "trial-level, submitted-v1 cells",M3,1,0,0,0,3,0,4,0,0,8,PP (positive),GNWT (stated_null); HOT (stated_null); SIT (stated_null),,one-EXPLICIT,False
 "trial-level, submitted-v1 cells",M4a,0,0,0,0,0,0,0,0,0,0,,,,no-EXPLICIT,True
 "trial-level, submitted-v1 cells",M4b,0,0,0,0,0,0,0,0,0,0,,,,no-EXPLICIT,True
@@ -42,9 +42,9 @@ all rows,M8,6,0,0,4,0,0,0,2,0,12,AST (positive); GNWT (positive); HOT (positive)
 "trial-level, added-in-revision cells",M1,0,0,0,0,1,0,1,0,0,2,,PFT (stated_null),,no-EXPLICIT,True
 "trial-level, added-in-revision cells",M2,0,0,0,0,1,0,1,0,0,2,,PFT (stated_null),,no-EXPLICIT,True
 "trial-level, added-in-revision cells",M3,0,0,0,1,1,0,0,0,0,2,,NSF (positive); PFT (stated_null),,no-EXPLICIT,True
-"trial-level, added-in-revision cells",M4a,1,0,0,4,1,0,4,0,0,10,PP (positive),HOT (positive); HOSS (positive); NSF (stated_null); PFT (positive); SIT (positive),,one-EXPLICIT,False
-"trial-level, added-in-revision cells",M4b,2,0,0,0,0,0,8,0,0,10,NSF (positive); PP (positive),,,multi-EXPLICIT-same-sign,True
-"trial-level, added-in-revision cells",M4c,0,2,0,3,0,0,5,0,0,10,PFT (stated_null); SIT (stated_null),HOT (positive); HOSS (positive); PP (positive),,multi-EXPLICIT-same-sign,False
+"trial-level, added-in-revision cells",M4a,1,0,0,3,1,0,5,0,0,10,PP (positive),HOT (positive); NSF (stated_null); PFT (positive); SIT (positive),,one-EXPLICIT,False
+"trial-level, added-in-revision cells",M4b,1,0,0,1,0,0,8,0,0,10,NSF (positive),PP (positive),,one-EXPLICIT,True
+"trial-level, added-in-revision cells",M4c,0,2,0,2,0,0,6,0,0,10,PFT (stated_null); SIT (stated_null),HOT (positive); PP (positive),,multi-EXPLICIT-same-sign,False
 "trial-level, added-in-revision cells",M5,0,0,0,1,0,0,1,0,0,2,,NSF (positive),,no-EXPLICIT,True
 "trial-level, added-in-revision cells",M6,0,0,0,1,0,0,1,0,0,2,,NSF (positive),,no-EXPLICIT,True
 "trial-level, added-in-revision cells",M7,0,0,0,0,0,0,2,0,0,2,,,,no-EXPLICIT,True

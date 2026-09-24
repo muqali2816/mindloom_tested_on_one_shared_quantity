@@ -1,12 +1,12 @@
 version,study,contrast,test,dz,target_power,n_participants,achieved_power,role
-2.0,2,valence_main_negative_minus_positive_matched_arousal,"paired t, two-sided",0.2,0.8,199,0.8017,sensitivity
-2.0,2,valence_main_negative_minus_positive_matched_arousal,"paired t, two-sided",0.2,0.9,265,0.9004,sensitivity
-2.0,2,valence_main_negative_minus_positive_matched_arousal,"paired t, two-sided",0.3,0.8,90,0.8038,sensitivity
-2.0,2,valence_main_negative_minus_positive_matched_arousal,"paired t, two-sided",0.3,0.9,119,0.9008,confirmatory
-2.0,2,valence_main_negative_minus_positive_matched_arousal,"paired t, two-sided",0.4,0.8,52,0.8078,sensitivity
-2.0,2,valence_main_negative_minus_positive_matched_arousal,"paired t, two-sided",0.4,0.9,68,0.9016,sensitivity
-2.0,2,incompatibility_x_valence_interaction,paired t on the contrast-of-contrasts score,0.2,0.9,265,0.9004,estimation_only_N_that_would_be_needed
-2.0,2,incompatibility_x_valence_interaction,paired t on the contrast-of-contrasts score,0.2,,119,0.5808,estimation_only_power_at_study2_N
-2.0,2,incompatibility_x_valence_interaction,paired t on the contrast-of-contrasts score,0.3,0.9,119,0.9008,estimation_only_N_that_would_be_needed
-2.0,2,incompatibility_x_valence_interaction,paired t on the contrast-of-contrasts score,0.3,,119,0.9008,estimation_only_power_at_study2_N
-2.0,2,any_paired_contrast,paired t,0.2996,0.9,119,0.9,MDES
+2.1,2,valence_main_negative_minus_positive_matched_arousal,"paired t, two-sided",0.2,0.8,199,0.8017,sensitivity
+2.1,2,valence_main_negative_minus_positive_matched_arousal,"paired t, two-sided",0.2,0.9,265,0.9004,sensitivity
+2.1,2,valence_main_negative_minus_positive_matched_arousal,"paired t, two-sided",0.3,0.8,90,0.8038,sensitivity
+2.1,2,valence_main_negative_minus_positive_matched_arousal,"paired t, two-sided",0.3,0.9,119,0.9008,confirmatory
+2.1,2,valence_main_negative_minus_positive_matched_arousal,"paired t, two-sided",0.4,0.8,52,0.8078,sensitivity
+2.1,2,valence_main_negative_minus_positive_matched_arousal,"paired t, two-sided",0.4,0.9,68,0.9016,sensitivity
+2.1,2,incompatibility_x_valence_interaction,paired t on the contrast-of-contrasts score,0.2,0.9,265,0.9004,estimation_only_N_that_would_be_needed
+2.1,2,incompatibility_x_valence_interaction,paired t on the contrast-of-contrasts score,0.2,,119,0.5808,estimation_only_power_at_study2_N
+2.1,2,incompatibility_x_valence_interaction,paired t on the contrast-of-contrasts score,0.3,0.9,119,0.9008,estimation_only_N_that_would_be_needed
+2.1,2,incompatibility_x_valence_interaction,paired t on the contrast-of-contrasts score,0.3,,119,0.9008,estimation_only_power_at_study2_N
+2.1,2,any_paired_contrast,paired t,0.2996,0.9,119,0.9,MDES

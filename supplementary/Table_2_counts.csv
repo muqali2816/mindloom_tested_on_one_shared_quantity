@@ -1,0 +1,34 @@
+unit,block,category,k,n,k_of_n,ids
+publication,denominator,"theory-addressed, content-bearing, Whalen excluded",21,21,21 of 21,P01;P03;P04;P06;P07;P08;P09;P10;P11;P16;P17;P18;P19;P20;P21;P22;P23;P24;P30;P31;P32
+publication,all_publications,publications in Table S2 v2,32,32,32 of 32,P01;P03;P04;P06;P07;P08;P09;P10;P11;P12;P13;P14;P16;P17;P18;P19;P20;P21;P22;P23;P24;P26;P27;P28;P29;P30;P31;P32;P33;P34;P35;P36
+publication,excluded,"Whalen et al. 1998 (access suppressed, not manipulated)",1,32,1 of 32,P29
+publication,excluded,not theory-addressed,10,32,10 of 32,P12;P13;P14;P26;P27;P28;P33;P34;P35;P36
+publication,excluded,state (no content),2,32,2 of 32,P35;P36
+publication,class,neutral-visual,15,21,15 of 21,P01;P03;P04;P06;P07;P09;P10;P11;P16;P17;P18;P19;P20;P21;P30
+publication,class,neutral-nonvisual,1,21,1 of 21,P08
+publication,class,motor-conflict (skeletal),3,21,3 of 21,P23;P24;P31
+publication,class,motor-conflict (autonomic effector),0,21,0 of 21,
+publication,class,motor-conflict (skeletal + autonomic effector),1,21,1 of 21,P22
+publication,class,valenced,0,21,0 of 21,
+publication,class,interoceptive,1,21,1 of 21,P32
+publication,class_collapsed,motor-conflict (any effector),4,21,4 of 21,P22;P23;P24;P31
+publication,unit_type_composition,publications whose rows are all 'experiment',10,21,10 of 21,P01;P03;P06;P08;P18;P19;P20;P22;P24;P30
+publication,unit_type_composition,publications whose rows are all 'experiment-group',1,21,1 of 21,P21
+publication,unit_type_composition,publications whose rows are all 'publication-as-one (partition unverified)',10,21,10 of 21,P04;P07;P09;P10;P11;P16;P17;P23;P31;P32
+publication,unit_type_composition,publications with more than one row,6,21,6 of 21,P08;P20;P21;P22;P24;P30
+experiment,denominator,"rows with content manipulation, theory-addressed, Whalen excluded (contested and ancillary rows included)",30,30,30 of 30,P01-E1;P03-E1;P04-E1;P06-E1;P07-E1;P08-E1;P08-E2;P08-E3;P09-E1;P10-E1;P11-E1;P16-E1;P17-E1;P18-E1;P19-E1;P20-E1;P20-E2;P21-E1;P21-E2;P22-E1;P22-E2;P22-E3;P23-E1;P24-E1;P24-E2;P24-E3;P30-E1;P30-E2;P31-E1;P32-E1
+experiment,all_rows,rows in Table S2 v2,42,42,42 of 42,
+experiment,class,neutral-visual,18,30,18 of 30,P01-E1;P03-E1;P04-E1;P06-E1;P07-E1;P09-E1;P10-E1;P11-E1;P16-E1;P17-E1;P18-E1;P19-E1;P20-E1;P20-E2;P21-E1;P21-E2;P30-E1;P30-E2
+experiment,class,neutral-nonvisual,3,30,3 of 30,P08-E1;P08-E2;P08-E3
+experiment,class,motor-conflict (skeletal),7,30,7 of 30,P22-E1;P22-E2;P23-E1;P24-E1;P24-E2;P24-E3;P31-E1
+experiment,class,motor-conflict (autonomic effector),1,30,1 of 30,P22-E3
+experiment,class,valenced,0,30,0 of 30,
+experiment,class,interoceptive,1,30,1 of 30,P32-E1
+experiment,class_collapsed,motor-conflict (any effector),8,30,8 of 30,P22-E1;P22-E2;P22-E3;P23-E1;P24-E1;P24-E2;P24-E3;P31-E1
+experiment,publications_in_denominator,distinct publication_id,21,30,21 of 30,P01;P03;P04;P06;P07;P08;P09;P10;P11;P16;P17;P18;P19;P20;P21;P22;P23;P24;P30;P31;P32
+experiment,unit_heterogeneity,experiment rows in the denominator,18,30,18 of 30,P01-E1;P03-E1;P06-E1;P08-E1;P08-E2;P08-E3;P18-E1;P19-E1;P20-E1;P20-E2;P22-E1;P22-E2;P22-E3;P24-E1;P24-E2;P24-E3;P30-E1;P30-E2
+experiment,unit_heterogeneity,experiment-group rows in the denominator,2,30,2 of 30,P21-E1;P21-E2
+experiment,unit_heterogeneity,publication-as-one (partition unverified) rows in the denominator,10,30,10 of 30,P04-E1;P07-E1;P09-E1;P10-E1;P11-E1;P16-E1;P17-E1;P23-E1;P31-E1;P32-E1
+experiment,unit_heterogeneity_all_rows,experiment rows in the whole table,22,42,22 of 42,
+experiment,unit_heterogeneity_all_rows,experiment-group rows in the whole table,2,42,2 of 42,
+experiment,unit_heterogeneity_all_rows,publication-as-one (partition unverified) rows in the whole table,18,42,18 of 42,

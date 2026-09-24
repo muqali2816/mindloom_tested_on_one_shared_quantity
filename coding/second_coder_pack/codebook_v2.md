@@ -79,10 +79,10 @@ Every EXPLICIT or INTERPRETED cell carries: `relation` ∈ {effect, modulation, 
 
 **Legacy mapping (for the 96 cells carried from v1.3, HOT/HOSS split):** YES → EXPLICIT positive; YES (negative) → EXPLICIT stated_null; IMPLICIT → INTERPRETED; NO → NOT_LOCATED, unless the source states a scope exclusion → NOT_APPLICABLE. The legacy code stays in `legacy_code` and is never overwritten.
 
-**What the column class means and who assigns it.** No coder assigns a column class. `column_typology.py` derives it from S1 and S4 after both codings: contested (≥ 2 EXPLICIT and ≥ 1 pair of stated predictions that differ in sign, magnitude, locus, timing, distribution or condition), single-occupant (exactly 1 EXPLICIT), occupied-not-contested (≥ 2 EXPLICIT, no distinguishable pair), thin (0 EXPLICIT, ≥ 1 INTERPRETED), unoccupied (none). Do not let the expected class influence a code.
+**What the column class means and who assigns it.** No coder assigns a column class. `column_typology_pairs.py` derives it from S1, S4 and a pair register after both codings: contested (≥ 2 EXPLICIT and ≥ 1 cross-theory pair of stated predictions whose relation is *discriminating* or *incompatible* — a shared observable under a shared condition, with a value predicted by one and excluded by the other; pairs that merely *differ* or are *jointly compatible* do not count), single-occupant (exactly 1 EXPLICIT), occupied-not-contested (≥ 2 EXPLICIT, no discriminating pair), thin (0 EXPLICIT, ≥ 1 INTERPRETED), unoccupied (none). The pair relations are coded in a second step, after S1 is returned. Do not let the expected class influence a code.
 ## 4. Rules for Table S2 v2.1 (study inventory)
 
-The unit of analysis, inclusion rules, content classes and the attribution rule are given verbatim in `S2_inclusion_criteria_v2.txt` (v2.1), reproduced here.
+The unit of analysis, inclusion rules, content classes and the attribution rule are given in `S2_inclusion_criteria_v2.txt` (v2.1) and reproduced here without the first coder's row-level decisions.
 
 ```
 INCLUSION CRITERIA, TABLE S2 v2.1 (content inventory) — supersedes v2 (24 Sep 2026: content classes sharpened) and S2_inclusion_criteria.txt (v1.3)
@@ -139,7 +139,7 @@ CONTENT CODING (two orthogonal fields; the five-way class used in counts is deri
                       the accessed content, codebook §4.2 rule ii); motor-conflict (autonomic effector) = an intention
                       directed at an autonomic (smooth-muscle, glandular) effector against a reflex or a competing
                       intention — the accessed content is the experienced conflict of intentions, not a visceral
-                      signal (Morsella et al. 2009 control study); valenced = affective_status valenced;
+                      signal; valenced = affective_status valenced;
                       interoceptive = the accessed content originates in visceral AFFERENTS (heartbeat, respiration,
                       gastric rhythm, thermal/homeostatic state) or an autonomic signal modulates access to another
                       content; state (no content) = no content contrast, outside the content denominators.
@@ -148,20 +148,7 @@ CONTENT CODING (two orthogonal fields; the five-way class used in counts is deri
   Boundary rules of codebook §4.2 (i)–(iii) apply unchanged. Code by the content whose access is manipulated
   or measured, not by any content that merely appears in the display.
 
-SPECIFIC DECISIONS CARRIED IN v2 (each visible in the table, none applied silently)
-  Sergent et al. 2021           auditory, neutral (three experiments: main, control 1 no-report only, control 2 tones).
-  Whalen et al. 1998            contested_inclusion = True: access suppressed by masking, not manipulated; excluded
-                                from the baseline scenario; its reference-list citation in Dehaene & Naccache 2001
-                                makes it theory-addressed under I2 if included (scenario S1).
-  Farb et al. 2013              contested_inclusion = True: attentional focus contrast, awareness of the interoceptive
-                                content neither manipulated nor measured; not theory-addressed.
-  Maniscalco & Lau 2012, Rounis et al. 2010, Fleming et al. 2010, Fleming et al. 2014, Garfinkel et al. 2015
-                                kept in the baseline, contested_inclusion = True: metacognitive index, not access
-                                manipulation.
-  Nieuwenhuis et al. 2001       re-coded motor-conflict (awareness of one's own saccade error is the accessed content);
-                                flagged for the second coder.
-  Morsella, Gray & Krieger 2009, control study
-                                pupillary (smooth-muscle) conflict → interoceptive by the coding rule; ancillary.
+(Row-level decisions of the first coder are withheld from this blind copy; they are listed in the deposit version of this file and released with Table S4 after the second coding is returned.)
 ```
 
 Coder 2 fills, for every experiment row: `modality`, `affective_status`, `manipulation`, `measured_outcome`, `report_type`, `theory_attribution_by_authors` (with locus) and `contested_inclusion` + `contested_reason`. Code by the content whose access is manipulated or measured: an intention directed at an autonomic effector is motor conflict (autonomic effector), not interoceptive content; interoceptive content originates in visceral afferents. `theory_attribution_later`, `theory_attribution_coder` and `theory_addressed` are derived or first-coder fields and are never typed by coder 2.
@@ -190,7 +177,7 @@ Sources are listed most-recent-empirical-statement first; that is the canonical 
 - Lamme 2006 — doi:10.1016/j.tics.2006.09.001
 - Lamme & Roelfsema 2000 — doi:10.1016/s0166-2236(00)01657-x
 
-**HOT / HOSS — Higher-order theory (representational / HOROR family) and higher-order state space, coded as one row** (content-level)
+**HOT — Higher-order theory (representational / HOROR family)** and **HOSS — Higher-order state space**, coded as two separate rows (content-level); HOT sources first, HOSS sources (Fleming and colleagues) second
 - Brown, Lau & LeDoux 2019 — doi:10.1016/j.tics.2019.06.009
 - LeDoux & Brown 2017 — doi:10.1073/pnas.1619316114
 - Lau & Rosenthal 2011 — doi:10.1016/j.tics.2011.05.009
@@ -241,7 +228,7 @@ Sources are listed most-recent-empirical-statement first; that is the canonical 
 - Park & Tallon-Baudry 2014 — doi:10.1098/rstb.2013.0208
 
 ---
-## 6. Files in this pack (v2)
+## 6. Files in this pack (v3.1)
 
 | File | Purpose |
 |---|---|
@@ -249,7 +236,6 @@ Sources are listed most-recent-empirical-statement first; that is the canonical 
 | domains_manifest.csv | 10 domains M1, M2, M3, M4a, M4b, M4c, M5, M6, M7, M8. |
 | S1_blank_for_coder2_v2.csv | 120 rows (theory_id × domain_id) with code, polarity, relation, claim_text, source_label, source_doi, source_locus, evidence_status, confidence empty. |
 | S2_blank_for_coder2_v2.csv | One row per empirical experiment (from Table S2 v2), coding columns empty. |
-| Table_S4_v2.csv | Prediction register — reference only; do not edit while coding. |
 | agreement.py | `python agreement.py --s1a <coder1> --s1b <coder2> --accounts accounts_manifest.csv --domains domains_manifest.csv --code-scheme v2 --out agreement_out/` — raw agreement, confusion matrix, nominal κ, per-domain κ, κ by origin subset. No interval unless `--ci` is given. |
 | coder2_timing_log.csv | Start/end time per block. |
 
@@ -278,4 +264,4 @@ Sources are listed most-recent-empirical-statement first; that is the canonical 
 Anchor every non-NO cell to a citable source, as in S1. If the theory says nothing that bears on the dimension, code NO and state what you looked for.
 
 ---
-**Codebook v2.1 — frozen 24 September 2026. sha256 of everything above this line (all bytes up to and including the newline that precedes it): `7dd78645d6bc14de70820e3e20984aaa13371326af180ec647db657d0648e524`.** Changes after the second coder starts → `codebook_changelog.md` and re-coding of affected cells.
+**Codebook v2.2 — frozen 24 September 2026. sha256 of everything above this line (all bytes up to and including the newline that precedes it): `aa72e4229c1271d5be8622502ea40280b6de8059957db070870b66fc27e3a8f1`.** Changes after the second coder starts → `codebook_changelog.md` and re-coding of affected cells.

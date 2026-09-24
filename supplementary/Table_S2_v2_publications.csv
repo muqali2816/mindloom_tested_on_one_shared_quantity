@@ -1,0 +1,33 @@
+publication_id,citation_label,n_rows_in_S2,theory_addressed,contested,evidence,pub_class
+P01,Cogitate Consortium et al. 2025,1,True,False,full text read,neutral-visual
+P03,"Del Cul, Baillet & Dehaene 2007",1,True,False,full text read,neutral-visual
+P04,Dehaene et al. 2001,1,True,False,abstract only (full text not accessible in sandbox),neutral-visual
+P06,Salti et al. 2015,1,True,False,full text read,neutral-visual
+P07,"Sergent, Baillet & Dehaene 2005",1,True,False,abstract only (full text not accessible in sandbox),neutral-visual
+P08,Sergent et al. 2021,3,True,False,full text read,neutral-nonvisual
+P09,"Lumer, Friston & Rees 1998",1,True,False,abstract only (full text not accessible in sandbox),neutral-visual
+P10,Frässle et al. 2014,1,True,False,abstract only (full text not accessible in sandbox),neutral-visual
+P11,Tsuchiya & Koch 2005,1,True,False,abstract only (full text not accessible in sandbox),neutral-visual
+P12,Pitts et al. 2014,1,False,False,full text read,neutral-visual
+P13,Kronemer et al. 2022,2,False,False,full text read,neutral-visual
+P14,Dellert et al. 2025,1,False,False,abstract only (full text not accessible in sandbox),neutral-nonvisual
+P16,Maniscalco & Lau 2012,1,True,True,abstract only (full text not accessible in sandbox),neutral-visual
+P17,Rounis et al. 2010,1,True,True,abstract only (full text not accessible in sandbox),neutral-visual
+P18,Fleming et al. 2010,1,True,True,full text read,neutral-visual
+P19,Fleming et al. 2014,1,True,True,full text read,neutral-visual
+P20,Dijkstra & Fleming 2023,2,True,False,full text read,neutral-visual
+P21,Wilterson et al. 2020,2,True,False,abstract only (full text not accessible in sandbox),neutral-visual
+P22,"Morsella, Gray & Krieger 2009",3,True,False,full text read,motor-conflict (skeletal + autonomic effector)
+P23,"Gray, Bargh & Morsella 2013",1,True,False,abstract only (full text not accessible in sandbox),motor-conflict (skeletal)
+P24,Morsella et al. 2009b,3,True,False,full text read,motor-conflict (skeletal)
+P26,"Yang, Zald & Blake 2007",1,False,False,abstract only (full text not accessible in sandbox),valenced
+P27,Sheth & Pham 2008,1,False,False,abstract only (full text not accessible in sandbox),valenced
+P28,Gayet et al. 2016,1,False,False,abstract only (full text not accessible in sandbox),valenced
+P29,Whalen et al. 1998,1,True,True,abstract only (full text not accessible in sandbox),valenced
+P30,Charles et al. 2013,2,True,False,full text read,neutral-visual
+P31,Nieuwenhuis et al. 2001,1,True,False,abstract only (full text not accessible in sandbox),motor-conflict (skeletal)
+P32,Garfinkel et al. 2015,1,True,True,abstract only (full text not accessible in sandbox),interoceptive
+P33,Farb et al. 2013,1,False,True,abstract only (full text not accessible in sandbox),interoceptive
+P34,Pinto et al. 2017,1,False,False,abstract only (full text not accessible in sandbox),neutral-visual
+P35,Boulakis et al. 2023,1,False,False,full text read,state (no content)
+P36,Kawagoe et al. 2019,1,False,False,abstract only (full text not accessible in sandbox),state (no content)

@@ -1,4 +1,8 @@
-"""Derive the column typology from Table S1 v2 (cell-level) and Table S4 v2 (prediction register).
+"""LEGACY RULE (v2.0): column typology from Table S1 v2 and the distinguishable_from field of Table S4 v2.
+The manuscript's column class is derived by column_typology_pairs.py from pair_register.csv (four-way relation);
+this script is kept as a diagnostic so that the change of rule is reproducible.
+
+Derive the column typology from Table S1 v2 (cell-level) and Table S4 v2 (prediction register).
 
     python column_typology.py Table_S1_v2.csv Table_S4_v2.csv [out.csv]
 

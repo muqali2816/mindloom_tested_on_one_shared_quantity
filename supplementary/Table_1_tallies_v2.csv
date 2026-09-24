@@ -12,10 +12,10 @@ trial-level,M1,ALL,,10
 trial-level,M2,EXPLICIT,positive,1
 trial-level,M2,EXPLICIT,stated_null,0
 trial-level,M2,EXPLICIT,negative,0
-trial-level,M2,INTERPRETED,positive,1
+trial-level,M2,INTERPRETED,positive,0
 trial-level,M2,INTERPRETED,stated_null,1
 trial-level,M2,INTERPRETED,negative,0
-trial-level,M2,NOT_LOCATED,,7
+trial-level,M2,NOT_LOCATED,,8
 trial-level,M2,NOT_APPLICABLE,,0
 trial-level,M2,UNRESOLVED,,0
 trial-level,M2,ALL,,10
@@ -32,17 +32,17 @@ trial-level,M3,ALL,,10
 trial-level,M4a,EXPLICIT,positive,1
 trial-level,M4a,EXPLICIT,stated_null,0
 trial-level,M4a,EXPLICIT,negative,0
-trial-level,M4a,INTERPRETED,positive,4
+trial-level,M4a,INTERPRETED,positive,3
 trial-level,M4a,INTERPRETED,stated_null,1
 trial-level,M4a,INTERPRETED,negative,0
-trial-level,M4a,NOT_LOCATED,,4
+trial-level,M4a,NOT_LOCATED,,5
 trial-level,M4a,NOT_APPLICABLE,,0
 trial-level,M4a,UNRESOLVED,,0
 trial-level,M4a,ALL,,10
-trial-level,M4b,EXPLICIT,positive,2
+trial-level,M4b,EXPLICIT,positive,1
 trial-level,M4b,EXPLICIT,stated_null,0
 trial-level,M4b,EXPLICIT,negative,0
-trial-level,M4b,INTERPRETED,positive,0
+trial-level,M4b,INTERPRETED,positive,1
 trial-level,M4b,INTERPRETED,stated_null,0
 trial-level,M4b,INTERPRETED,negative,0
 trial-level,M4b,NOT_LOCATED,,8
@@ -52,10 +52,10 @@ trial-level,M4b,ALL,,10
 trial-level,M4c,EXPLICIT,positive,0
 trial-level,M4c,EXPLICIT,stated_null,2
 trial-level,M4c,EXPLICIT,negative,0
-trial-level,M4c,INTERPRETED,positive,3
+trial-level,M4c,INTERPRETED,positive,2
 trial-level,M4c,INTERPRETED,stated_null,0
 trial-level,M4c,INTERPRETED,negative,0
-trial-level,M4c,NOT_LOCATED,,5
+trial-level,M4c,NOT_LOCATED,,6
 trial-level,M4c,NOT_APPLICABLE,,0
 trial-level,M4c,UNRESOLVED,,0
 trial-level,M4c,ALL,,10
@@ -152,10 +152,10 @@ origin-level,M4b,ALL,,2
 origin-level,M4c,EXPLICIT,positive,0
 origin-level,M4c,EXPLICIT,stated_null,0
 origin-level,M4c,EXPLICIT,negative,0
-origin-level,M4c,INTERPRETED,positive,1
+origin-level,M4c,INTERPRETED,positive,0
 origin-level,M4c,INTERPRETED,stated_null,0
 origin-level,M4c,INTERPRETED,negative,0
-origin-level,M4c,NOT_LOCATED,,1
+origin-level,M4c,NOT_LOCATED,,2
 origin-level,M4c,NOT_APPLICABLE,,0
 origin-level,M4c,UNRESOLVED,,0
 origin-level,M4c,ALL,,2
@@ -212,10 +212,10 @@ all rows,M1,ALL,,12
 all rows,M2,EXPLICIT,positive,1
 all rows,M2,EXPLICIT,stated_null,0
 all rows,M2,EXPLICIT,negative,0
-all rows,M2,INTERPRETED,positive,1
+all rows,M2,INTERPRETED,positive,0
 all rows,M2,INTERPRETED,stated_null,1
 all rows,M2,INTERPRETED,negative,0
-all rows,M2,NOT_LOCATED,,9
+all rows,M2,NOT_LOCATED,,10
 all rows,M2,NOT_APPLICABLE,,0
 all rows,M2,UNRESOLVED,,0
 all rows,M2,ALL,,12
@@ -232,17 +232,17 @@ all rows,M3,ALL,,12
 all rows,M4a,EXPLICIT,positive,2
 all rows,M4a,EXPLICIT,stated_null,0
 all rows,M4a,EXPLICIT,negative,0
-all rows,M4a,INTERPRETED,positive,5
+all rows,M4a,INTERPRETED,positive,4
 all rows,M4a,INTERPRETED,stated_null,1
 all rows,M4a,INTERPRETED,negative,0
-all rows,M4a,NOT_LOCATED,,4
+all rows,M4a,NOT_LOCATED,,5
 all rows,M4a,NOT_APPLICABLE,,0
 all rows,M4a,UNRESOLVED,,0
 all rows,M4a,ALL,,12
-all rows,M4b,EXPLICIT,positive,2
+all rows,M4b,EXPLICIT,positive,1
 all rows,M4b,EXPLICIT,stated_null,0
 all rows,M4b,EXPLICIT,negative,0
-all rows,M4b,INTERPRETED,positive,0
+all rows,M4b,INTERPRETED,positive,1
 all rows,M4b,INTERPRETED,stated_null,0
 all rows,M4b,INTERPRETED,negative,0
 all rows,M4b,NOT_LOCATED,,10
@@ -252,10 +252,10 @@ all rows,M4b,ALL,,12
 all rows,M4c,EXPLICIT,positive,0
 all rows,M4c,EXPLICIT,stated_null,2
 all rows,M4c,EXPLICIT,negative,0
-all rows,M4c,INTERPRETED,positive,4
+all rows,M4c,INTERPRETED,positive,2
 all rows,M4c,INTERPRETED,stated_null,0
 all rows,M4c,INTERPRETED,negative,0
-all rows,M4c,NOT_LOCATED,,6
+all rows,M4c,NOT_LOCATED,,8
 all rows,M4c,NOT_APPLICABLE,,0
 all rows,M4c,UNRESOLVED,,0
 all rows,M4c,ALL,,12
@@ -312,10 +312,10 @@ all rows,M8,ALL,,12
 "trial-level, submitted-v1 cells",M2,EXPLICIT,positive,1
 "trial-level, submitted-v1 cells",M2,EXPLICIT,stated_null,0
 "trial-level, submitted-v1 cells",M2,EXPLICIT,negative,0
-"trial-level, submitted-v1 cells",M2,INTERPRETED,positive,1
+"trial-level, submitted-v1 cells",M2,INTERPRETED,positive,0
 "trial-level, submitted-v1 cells",M2,INTERPRETED,stated_null,0
 "trial-level, submitted-v1 cells",M2,INTERPRETED,negative,0
-"trial-level, submitted-v1 cells",M2,NOT_LOCATED,,6
+"trial-level, submitted-v1 cells",M2,NOT_LOCATED,,7
 "trial-level, submitted-v1 cells",M2,NOT_APPLICABLE,,0
 "trial-level, submitted-v1 cells",M2,UNRESOLVED,,0
 "trial-level, submitted-v1 cells",M2,ALL,,8
@@ -432,17 +432,17 @@ all rows,M8,ALL,,12
 "trial-level, added-in-revision cells",M4a,EXPLICIT,positive,1
 "trial-level, added-in-revision cells",M4a,EXPLICIT,stated_null,0
 "trial-level, added-in-revision cells",M4a,EXPLICIT,negative,0
-"trial-level, added-in-revision cells",M4a,INTERPRETED,positive,4
+"trial-level, added-in-revision cells",M4a,INTERPRETED,positive,3
 "trial-level, added-in-revision cells",M4a,INTERPRETED,stated_null,1
 "trial-level, added-in-revision cells",M4a,INTERPRETED,negative,0
-"trial-level, added-in-revision cells",M4a,NOT_LOCATED,,4
+"trial-level, added-in-revision cells",M4a,NOT_LOCATED,,5
 "trial-level, added-in-revision cells",M4a,NOT_APPLICABLE,,0
 "trial-level, added-in-revision cells",M4a,UNRESOLVED,,0
 "trial-level, added-in-revision cells",M4a,ALL,,10
-"trial-level, added-in-revision cells",M4b,EXPLICIT,positive,2
+"trial-level, added-in-revision cells",M4b,EXPLICIT,positive,1
 "trial-level, added-in-revision cells",M4b,EXPLICIT,stated_null,0
 "trial-level, added-in-revision cells",M4b,EXPLICIT,negative,0
-"trial-level, added-in-revision cells",M4b,INTERPRETED,positive,0
+"trial-level, added-in-revision cells",M4b,INTERPRETED,positive,1
 "trial-level, added-in-revision cells",M4b,INTERPRETED,stated_null,0
 "trial-level, added-in-revision cells",M4b,INTERPRETED,negative,0
 "trial-level, added-in-revision cells",M4b,NOT_LOCATED,,8
@@ -452,10 +452,10 @@ all rows,M8,ALL,,12
 "trial-level, added-in-revision cells",M4c,EXPLICIT,positive,0
 "trial-level, added-in-revision cells",M4c,EXPLICIT,stated_null,2
 "trial-level, added-in-revision cells",M4c,EXPLICIT,negative,0
-"trial-level, added-in-revision cells",M4c,INTERPRETED,positive,3
+"trial-level, added-in-revision cells",M4c,INTERPRETED,positive,2
 "trial-level, added-in-revision cells",M4c,INTERPRETED,stated_null,0
 "trial-level, added-in-revision cells",M4c,INTERPRETED,negative,0
-"trial-level, added-in-revision cells",M4c,NOT_LOCATED,,5
+"trial-level, added-in-revision cells",M4c,NOT_LOCATED,,6
 "trial-level, added-in-revision cells",M4c,NOT_APPLICABLE,,0
 "trial-level, added-in-revision cells",M4c,UNRESOLVED,,0
 "trial-level, added-in-revision cells",M4c,ALL,,10

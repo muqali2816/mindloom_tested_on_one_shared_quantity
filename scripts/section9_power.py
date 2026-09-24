@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-section9_power.py (v2.0) -- a priori power for the worked condition of Section 9.1, NEW design
+section9_power.py (v2.1) -- a priori power for the worked condition of Section 9.1, NEW design
 (Supplementary Protocol S5).  Every number is recomputed here; nothing from the previous
 3 x 3 incompatibility x valence design (including its N = 126 / N = 68 / N = 119 values) is carried
 forward.
@@ -47,9 +47,19 @@ Fixed N: the smallest N with >= 90 % power at dz = 0.30 for C0 and for C1a (iden
 construction since both are paired t at the same dz); dz = 0.20 and 0.40 also reported.  No
 sequential Bayes-factor monitoring.
 
-Trials: 25 % of presented trials are probe trials (they carry a report probe and are not part of
-the no-report dependent variable), 15 % expected loss (artefact / exclusions); target >= 64 usable
-trials per cell; presented trials rounded up to a multiple of the number of sessions (2).
+Trials (v2.1, audit section 4): the no-report access estimate comes from SESSION 2 ONLY; session 1
+collects a PAS rating on every trial and trains the classifier, so its trials are not no-report
+trials.  The budget is therefore computed for session 2 alone: 25 % of presented trials are probe
+trials (they carry a report probe and are not part of the no-report dependent variable), 15 %
+expected loss (artefact / exclusions); target >= 64 usable trials per ANALYSIS cell from session 2.
+presented_session2_per_cell is the smallest integer with exactly one quarter probe trials whose
+no-probe trials survive the loss rate at >= 64 (104 = 26 probe + 78 no-probe; 78 x 0.85 = 66.3).
+Session 1 presents the same number per cell (equal sessions, planning choice; --session1-per-cell
+overrides).  Session duration = trials x --trial-seconds (default 6 s) + (blocks - 1) breaks of
+--break-minutes (default 2 min) with --block-trials (default 104) trials per block.  Analysis cells
+that pool three presentation cells receive three times the per-presentation-cell count.  The
+mixed-model check stays calibrated at the 64-usable-trials floor (USABLE_TARGET), not at the
+expected 66.3, and says so in its output.
 
 Study 2 (valence; Supplementary only)
 -------------------------------------
@@ -70,11 +80,14 @@ import numpy as np
 import pandas as pd
 from scipy import stats, integrate, optimize
 
-__version__ = "2.0"
+__version__ = "2.1"
 ALPHA, TARGET_POWER = 0.05, 0.90
 DZ_PLAN, DZ_ALT = 0.30, (0.20, 0.40)
 TOST_BOUNDS = (0.20, 0.30, 0.40)
 USABLE_TARGET, PROBE_FRAC, LOSS_RATE, N_SESSIONS = 64, 0.25, 0.15, 2
+TRIAL_SECONDS, BLOCK_TRIALS, BREAK_MINUTES = 6.0, 104, 2.0    # planning values for session duration (v2.1); CLI-adjustable
+# analysis cell -> number of effector-balanced presentation cells pooled into it (sums to CELLS_STUDY1_PRESENTATION = 11)
+ANALYSIS_CELL_POOLING = {"count1@0": 3, "count2@0": 3, "count3@0": 1, "count3@1": 3, "count3@3": 1}
 CELLS_STUDY1_ANALYSIS, CELLS_STUDY1_PRESENTATION = 5, 11
 CELLS_STUDY2 = 9   # 3 incompatibility levels (0/1/3 shared pairs at count 3) x 3 valence (negative, neutral, positive); assumption, see summary
 SHARED_PAIRS = np.array([0.0, 1.0, 3.0])
@@ -204,10 +217,31 @@ def mixed_check(n_sub, dz, n_trials, w, n_sims, seed, beta_trial=0.10, sigma_e=1
 
 # ---------------------------------------------------------------- trials budget
 def presented_per_cell(usable=USABLE_TARGET, probe=PROBE_FRAC, loss=LOSS_RATE, sessions=N_SESSIONS):
+    """v2.0 rule (both sessions pooled) -- kept for reference only; it over-counted usable no-report trials by a factor of two."""
     raw = usable / ((1 - probe) * (1 - loss))
     n = math.ceil(raw)
     n += (-n) % sessions           # multiple of the session count so cells split evenly
     return n, raw
+
+
+def presented_session2_per_cell(usable=USABLE_TARGET, probe=PROBE_FRAC, loss=LOSS_RATE):
+    """Smallest integer n such that exactly a fraction `probe` of n are probe trials (n divisible by the probe denominator)
+    and the remaining no-probe trials survive the loss rate with expectation >= usable:  n (1 - probe)(1 - loss) >= usable.
+    Returns (n, n_probe, n_noprobe, expected_usable, raw_minimum)."""
+    from fractions import Fraction
+    step = Fraction(probe).limit_denominator(100).denominator      # 0.25 -> 4
+    raw = usable / ((1 - probe) * (1 - loss))
+    n = math.ceil(raw); n += (-n) % step
+    n_probe = round(n * probe); n_noprobe = n - n_probe
+    exp_usable = n_noprobe * (1 - loss)
+    assert exp_usable >= usable and n_probe == n * probe, (n, n_probe, exp_usable)
+    return n, n_probe, n_noprobe, exp_usable, raw
+
+
+def session_minutes(n_trials, trial_seconds=TRIAL_SECONDS, block_trials=BLOCK_TRIALS, break_minutes=BREAK_MINUTES):
+    n_blocks = math.ceil(n_trials / block_trials)
+    breaks = max(n_blocks - 1, 0) * break_minutes
+    return n_trials * trial_seconds / 60.0 + breaks, n_blocks, breaks
 
 
 # ---------------------------------------------------------------- main
@@ -218,6 +252,9 @@ def main(argv=None):
     ap.add_argument("--skip-mixed", action="store_true")
     ap.add_argument("--mc", type=int, default=200_000, help="Monte Carlo replicates for the TOST check")
     ap.add_argument("--seed", type=int, default=20260924)
+    ap.add_argument("--trial-seconds", type=float, default=TRIAL_SECONDS); ap.add_argument("--block-trials", type=int, default=BLOCK_TRIALS)
+    ap.add_argument("--break-minutes", type=float, default=BREAK_MINUTES)
+    ap.add_argument("--session1-per-cell", type=int, default=None, help="presented trials per presentation cell in session 1 (default: equal to session 2)")
     a = ap.parse_args(argv)
     os.makedirs(a.out, exist_ok=True)
     t0 = time.time()
@@ -277,37 +314,59 @@ def main(argv=None):
     s2 = pd.DataFrame(rows2); s2.insert(0, "version", __version__)
     s2.to_csv(os.path.join(a.out, "power_study2.csv"), index=False)
 
-    # ---- trials budget
-    ppc, raw = presented_per_cell()
-    usable_expected = ppc * (1 - PROBE_FRAC) * (1 - LOSS_RATE)
+    # ---- trials budget (v2.1): session 2 alone carries the no-report estimate
+    ppc, raw = presented_per_cell()                      # v2.0 pooled rule, reported for comparison only
+    ppc2, n_probe2, n_noprobe2, usable2, raw2 = presented_session2_per_cell()
+    ppc1 = a.session1_per_cell if a.session1_per_cell is not None else ppc2
+    smin = lambda n: session_minutes(n, a.trial_seconds, a.block_trials, a.break_minutes)
     brows = []
-    for study, grouping, ncells in [(1, "analysis cells (count1@0, count2@0, count3@0, count3@1, count3@3)", CELLS_STUDY1_ANALYSIS),
-                                    (1, "presentation cells, effector-balanced", CELLS_STUDY1_PRESENTATION),
-                                    (2, "valence (3) x shared pairs (3) at count 3 [assumed]", CELLS_STUDY2)]:
-        brows.append(dict(study=study, cell_grouping=grouping, n_cells=ncells, usable_target_per_cell=USABLE_TARGET, probe_fraction=PROBE_FRAC, loss_rate=LOSS_RATE,
-                          presented_per_cell_raw=round(raw, 2), presented_per_cell=ppc, expected_usable_per_cell=round(usable_expected, 1), probe_trials_per_cell=round(ppc * PROBE_FRAC, 1),
-                          n_sessions=N_SESSIONS, presented_per_session=ppc * ncells // N_SESSIONS, presented_total=ppc * ncells,
-                          usable_total_expected=round(usable_expected * ncells, 1)))
+    def budget_row(study, grouping, ncells, pooled=1):
+        p2 = ppc2 * pooled; p1 = ppc1 * pooled
+        m2, nb2, br2 = smin(p2 * ncells); m1, nb1, br1 = smin(p1 * ncells)
+        return dict(study=study, cell_grouping=grouping, n_cells=ncells, presentation_cells_pooled_per_cell=pooled,
+                    usable_target_per_cell=USABLE_TARGET, probe_fraction=PROBE_FRAC, loss_rate=LOSS_RATE,
+                    presented_session2_per_cell_raw_min=round(raw2 * pooled, 2), presented_session2_per_cell=p2,
+                    probe_trials_session2_per_cell=n_probe2 * pooled, noprobe_trials_session2_per_cell=n_noprobe2 * pooled,
+                    usable_session2_per_cell_expected=round(usable2 * pooled, 2),
+                    presented_session1_per_cell=p1, presented_both_sessions_per_cell=p1 + p2,
+                    presented_session2_total=p2 * ncells, presented_session1_total=p1 * ncells, presented_both_sessions_total=(p1 + p2) * ncells,
+                    usable_session2_total_expected=round(usable2 * pooled * ncells, 2),
+                    trial_seconds=a.trial_seconds, block_trials=a.block_trials, break_minutes=a.break_minutes,
+                    n_blocks_session2=nb2, break_minutes_session2_total=br2, session2_minutes=round(m2, 1),
+                    n_blocks_session1=nb1, session1_minutes=round(m1, 1),
+                    v20_presented_per_cell_both_sessions_pooled=presented_per_cell()[0])
+    brows.append(budget_row(1, "presentation cells, effector-balanced (this is the budget that is run)", CELLS_STUDY1_PRESENTATION))
+    brows.append(budget_row(1, "analysis cells if run unpooled (count1@0, count2@0, count3@0, count3@1, count3@3)", CELLS_STUDY1_ANALYSIS))
+    for cell, pooled in ANALYSIS_CELL_POOLING.items():
+        brows.append(budget_row(1, f"analysis cell {cell} (pools {pooled} presentation cell{'s' if pooled > 1 else ''})", 1, pooled))
+    brows.append(budget_row(2, "valence (3) x shared pairs (3) at count 3 [assumed]", CELLS_STUDY2))
     tb = pd.DataFrame(brows); tb.insert(0, "version", __version__)
     tb.to_csv(os.path.join(a.out, "trials_budget.csv"), index=False)
 
-    # ---- mixed-model convergence check (C1a at the fixed N, 64 usable trials per cell)
+    # ---- mixed-model convergence check (C1a and C0 at the fixed N, calibrated at USABLE_TARGET = 64 usable session-2 trials per analysis cell)
+    CALIB_NOTE = (f"calibrated at the planning floor of {USABLE_TARGET} usable session-2 no-report trials per analysis cell "
+                  f"(expected count for a single-presentation-cell analysis cell: {usable2:.1f}); a convergence check on the analytic value, not an independent estimate")
     mixed = None
     if not a.skip_mixed:
         try:
             import statsmodels  # noqa
-            mc_rows = []
-            for i, (contrast, w) in enumerate([("C1a_compatible_vs_incompatible_at_count3", W_C1A), ("C0_threshold_count1_vs_ge2", W_C0)]):
-                r = mixed_check(N_FIXED, DZ_PLAN, USABLE_TARGET, w, a.mixed_sims, a.seed + i)
-                mc_rows.append(dict(version=__version__, contrast=contrast, n_participants=N_FIXED, dz_calibrated=DZ_PLAN, trials_per_cell=USABLE_TARGET, n_sims=a.mixed_sims,
-                                    power_analytic=round(power_paired_t(N_FIXED, DZ_PLAN), 4), power_two_stage_sim=r["power_two_stage"], power_mixed_sim=r["power_mixed"],
-                                    mc_se=round(math.sqrt(0.9 * 0.1 / a.mixed_sims), 4), n_nonconverged=r["n_nonconverged"], sd_slope=round(r["sd_slope"], 4), beta_trial=r["beta_trial"]))
-            mixed = pd.DataFrame(mc_rows)
         except ImportError:
-            print("statsmodels not installed; mixed-model check skipped", file=sys.stderr)
+            sys.exit("section9_power.py: statsmodels is not importable but the mixed-model check was requested; "
+                     "install statsmodels or pass --skip-mixed to run without it (the check is then reported as skipped, never as done)")
+        if a.mixed_sims < 1:
+            sys.exit("section9_power.py: --mixed-sims must be >= 1 (or pass --skip-mixed)")
+        mc_rows = []
+        for i, (contrast, w) in enumerate([("C1a_compatible_vs_incompatible_at_count3", W_C1A), ("C0_threshold_count1_vs_ge2", W_C0)]):
+            r = mixed_check(N_FIXED, DZ_PLAN, USABLE_TARGET, w, a.mixed_sims, a.seed + i)
+            mc_rows.append(dict(version=__version__, contrast=contrast, n_participants=N_FIXED, dz_calibrated=DZ_PLAN, trials_per_cell=USABLE_TARGET, n_sims=a.mixed_sims,
+                                power_analytic=round(power_paired_t(N_FIXED, DZ_PLAN), 4), power_two_stage_sim=r["power_two_stage"], power_mixed_sim=r["power_mixed"],
+                                mc_se=round(math.sqrt(0.9 * 0.1 / a.mixed_sims), 4), n_nonconverged=r["n_nonconverged"], sd_slope=round(r["sd_slope"], 4), beta_trial=r["beta_trial"],
+                                statsmodels_version=statsmodels.__version__, seed=a.seed + i, calibration_note=CALIB_NOTE))
+        mixed = pd.DataFrame(mc_rows)
     if mixed is None:
         mixed = pd.DataFrame([dict(version=__version__, contrast="skipped", n_participants=N_FIXED, dz_calibrated=DZ_PLAN, trials_per_cell=USABLE_TARGET, n_sims=0,
-                                   power_analytic=round(power_paired_t(N_FIXED, DZ_PLAN), 4), power_two_stage_sim=np.nan, power_mixed_sim=np.nan, mc_se=np.nan, n_nonconverged=np.nan, sd_slope=np.nan, beta_trial=np.nan)])
+                                   power_analytic=round(power_paired_t(N_FIXED, DZ_PLAN), 4), power_two_stage_sim=np.nan, power_mixed_sim=np.nan, mc_se=np.nan, n_nonconverged=np.nan, sd_slope=np.nan, beta_trial=np.nan,
+                                   statsmodels_version="", seed=a.seed, calibration_note="--skip-mixed given: no simulation was run")])
     mixed.to_csv(os.path.join(a.out, "power_mixed_check.csv"), index=False)
 
     # ---- summary in prose, all numbers read back from the tables
@@ -327,7 +386,8 @@ def main(argv=None):
     ix_n = g(s2r, contrast="incompatibility_x_valence_interaction", dz=0.2, role="estimation_only_N_that_would_be_needed")
     ix_p = g(s2r, contrast="incompatibility_x_valence_interaction", dz=0.2, role="estimation_only_power_at_study2_N")
     ix_p30 = g(s2r, contrast="incompatibility_x_valence_interaction", dz=0.3, role="estimation_only_power_at_study2_N")
-    b_an = tbr[(tbr.study == 1) & tbr.cell_grouping.str.startswith("analysis")].iloc[0]; b_pr = tbr[(tbr.study == 1) & tbr.cell_grouping.str.startswith("presentation")].iloc[0]; b2 = tbr[tbr.study == 2].iloc[0]
+    b_an = tbr[(tbr.study == 1) & tbr.cell_grouping.str.startswith("analysis cells if")].iloc[0]; b_pr = tbr[(tbr.study == 1) & tbr.cell_grouping.str.startswith("presentation")].iloc[0]; b2 = tbr[tbr.study == 2].iloc[0]
+    b_cells = tbr[(tbr.study == 1) & tbr.cell_grouping.str.startswith("analysis cell ")]
     L = [f"# Section 9.1 power analysis, new design (section9_power.py v{__version__})", "",
          f"All values below are read from power_study1.csv, power_study2.csv, trials_budget.csv and power_mixed_check.csv written by this script (seed {a.seed}); none is typed by hand. "
          f"alpha = {ALPHA} two-sided; target power {int(TARGET_POWER * 100)} %; effect sizes are dz on per-participant contrast scores.", "",
@@ -344,27 +404,33 @@ def main(argv=None):
          + ", ".join(f"{int(lin[d].n_participants)} at dz = {d}" for d in dzs) + f". The two-df omnibus (Hotelling T^2, effect on one contrast direction) needs N = "
          + ", ".join(f"{int(omn[d].n_participants)} at dz = {d}" for d in dzs) + f"; at the fixed N = {int(c0.n_participants)} its power is "
          + ", ".join(f"{omn_at[d].achieved_power:.3f} at dz = {d}" for d in dzs) + ". The ordinal weights (-1, 0, +1) are not used: they would treat the step from 1 to 3 shared pairs as equal to the step from 0 to 1.", "",
-         "### Trials", "",
-         f"With {int(PROBE_FRAC * 100)} % probe trials and an expected loss of {int(LOSS_RATE * 100)} %, {int(b_an.presented_per_cell)} presented trials per cell (raw {b_an.presented_per_cell_raw}, rounded up to a multiple of {N_SESSIONS} sessions) "
-         f"yield an expected {b_an.expected_usable_per_cell} usable no-report trials per cell (target >= {USABLE_TARGET}). "
-         f"For the {int(b_an.n_cells)} analysis cells this is {int(b_an.presented_total)} presented trials, {int(b_an.presented_per_session)} per session; "
-         f"for the {int(b_pr.n_cells)} effector-balanced presentation cells it is {int(b_pr.presented_total)} presented trials, {int(b_pr.presented_per_session)} per session. "
+         "### Trials (session 2 carries the no-report estimate)", "",
+         f"Session 1 collects a PAS rating on every trial and trains the access classifier; only session-2 trials enter the no-report estimate. "
+         f"With {int(PROBE_FRAC * 100)} % probe trials and an expected loss of {int(LOSS_RATE * 100)} %, the smallest session-2 count per presentation cell with exactly one quarter probe trials that leaves an expected >= {USABLE_TARGET} usable trials is "
+         f"{int(b_pr.presented_session2_per_cell)} = {int(b_pr.probe_trials_session2_per_cell)} probe + {int(b_pr.noprobe_trials_session2_per_cell)} no-probe (raw minimum {b_pr.presented_session2_per_cell_raw_min}; expected usable {b_pr.usable_session2_per_cell_expected}). "
+         f"Session 1 presents {int(b_pr.presented_session1_per_cell)} per cell (equal sessions). "
+         f"For the {int(b_pr.n_cells)} effector-balanced presentation cells that is {int(b_pr.presented_session2_total)} presented trials in session 2 and {int(b_pr.presented_both_sessions_total)} over both sessions; "
+         f"at {b_pr.trial_seconds:g} s per trial in {int(b_pr.n_blocks_session2)} blocks of {int(b_pr.block_trials)} with {b_pr.break_minutes:g}-min breaks, session 2 lasts about {b_pr.session2_minutes} min (session 1: {b_pr.session1_minutes} min). "
+         f"The previous rule pooled both sessions ({int(b_pr.v20_presented_per_cell_both_sessions_pooled)} presented per cell) and over-counted usable no-report trials by a factor of two.",
+         "Expected usable session-2 trials per analysis cell: " + "; ".join(f"{r.cell_grouping.split(' (')[0].replace('analysis cell ', '')} pools {int(r.presentation_cells_pooled_per_cell)} -> {r.usable_session2_per_cell_expected}" for _, r in b_cells.iterrows())
+         + f". The mixed-model check below is calibrated at the floor of {USABLE_TARGET} usable trials per analysis cell, the target that the single-presentation-cell analysis cells (count3@0, count3@3) just meet. "
          "No sequential Bayes-factor monitoring is used; N is fixed in advance.", "",
          "### Mixed-model convergence check", ""]
     if mxr.contrast.iloc[0] != "skipped":
         for _, r in mxr.iterrows():
-            L.append(f"{r.contrast}: at N = {int(r.n_participants)}, {int(r.trials_per_cell)} usable trials per cell, {int(r.n_sims)} simulated data sets calibrated to dz = {r.dz_calibrated}: "
+            L.append(f"{r.contrast}: at N = {int(r.n_participants)}, {int(r.trials_per_cell)} usable session-2 trials per analysis cell (calibration floor), {int(r.n_sims)} simulated data sets calibrated to dz = {r.dz_calibrated} (statsmodels {r.statsmodels_version}): "
                      f"analytic power {r.power_analytic:.3f}; two-stage (paired t on contrast scores) {r.power_two_stage_sim:.3f}; linear mixed model with random slopes {r.power_mixed_sim:.3f} "
                      f"(Monte Carlo SE about {r.mc_se}); non-converged fits: {int(r.n_nonconverged)}. Agreement with the analytic value is expected by construction; the check confirms the calibration.")
     else:
-        L.append("Skipped (--skip-mixed or statsmodels missing).")
+        L.append("Skipped: --skip-mixed was given; no simulation was run (n_sims = 0 in power_mixed_check.csv).")
     L += ["", "## Study 2 (valence; Supplementary Protocol S5 only)", "",
           f"**Main effect negative - positive at matched arousal.** N = {int(v.n_participants)} at dz = {DZ_PLAN} ({int(TARGET_POWER * 100)} % power); N = {int(v20.n_participants)} at dz = 0.20 and N = {int(v40.n_participants)} at dz = 0.40.",
           f"**Incompatibility x valence interaction: estimation only.** A confirmatory test at dz = 0.20 would need N = {int(ix_n.n_participants)}; at the Study 2 sample of N = {int(v.n_participants)} the power for that interaction is "
           f"{ix_p.achieved_power:.3f} at dz = 0.20 and {ix_p30.achieved_power:.3f} at dz = 0.30. The interaction is therefore reported with its estimate and interval, not tested.",
-          f"Trials: {int(b2.n_cells)} cells ({b2.cell_grouping}) x {int(b2.presented_per_cell)} presented = {int(b2.presented_total)} trials, {int(b2.presented_per_session)} per session.", "",
+          f"Trials: {int(b2.n_cells)} cells ({b2.cell_grouping}) x {int(b2.presented_session2_per_cell)} presented in session 2 = {int(b2.presented_session2_total)} session-2 trials (about {b2.session2_minutes} min); {int(b2.presented_both_sessions_total)} over both sessions.", "",
           "## Assumptions to state in the protocol", "",
-          "- dz is defined on per-participant contrast scores of the cell-mean access index; the mixed-model check is calibrated to the same dz at 64 usable trials per cell and is not an independent estimate.",
+          f"- dz is defined on per-participant contrast scores of the cell-mean access index; the mixed-model check is calibrated to the same dz at {USABLE_TARGET} usable session-2 trials per analysis cell (the planning floor) and is not an independent estimate.",
+          f"- Session duration uses {a.trial_seconds:g} s per trial, {a.block_trials} trials per block and {a.break_minutes:g}-min breaks; these are planning values to be replaced by pilot timing.",
           "- TOST power is computed under a true effect of exactly zero; if P16's trigger leaves a small residual increase, equivalence power falls.",
           "- The two-df omnibus power assumes the whole effect lies along one standardised contrast direction (the conservative allocation for a fixed dz).",
           f"- Study 2 cell count ({CELLS_STUDY2}) assumes three valence levels crossed with the three shared-pair levels at count 3; the confirmatory contrast uses only the negative and positive cells.",
@@ -372,7 +438,14 @@ def main(argv=None):
           f"", f"Runtime of this script: {time.time() - t0:.1f} s."]
     open(os.path.join(a.out, "section9_power_summary.md"), "w").write("\n".join(L) + "\n")
     key = dict(N_fixed_study1=int(N_FIXED), N_required_dz030=int(N_REQUIRED), rotations=ROTATIONS, N_C0_dz030=int(c0.n_participants), N_C1a_dz030=int(c1a.n_participants), N_C0_dz020=int(c0_20.n_participants), N_C0_dz040=int(c0_40.n_participants),
-               presented_per_cell=int(ppc), presented_per_session_11_cells=int(b_pr.presented_per_session), presented_per_session_5_cells=int(b_an.presented_per_session),
+               usable_target_per_analysis_cell=USABLE_TARGET, presented_session2_per_cell=int(ppc2), probe_trials_session2_per_cell=int(n_probe2), noprobe_trials_session2_per_cell=int(n_noprobe2),
+               usable_session2_per_cell_expected=round(float(usable2), 2), presented_session1_per_cell=int(ppc1),
+               presented_session2_total=int(b_pr.presented_session2_total), presented_both_sessions_total=int(b_pr.presented_both_sessions_total),
+               session2_minutes=float(b_pr.session2_minutes), session1_minutes=float(b_pr.session1_minutes), n_blocks_session2=int(b_pr.n_blocks_session2),
+               usable_session2_pooled_analysis_cells={r.cell_grouping.split(" (")[0].replace("analysis cell ", ""): float(r.usable_session2_per_cell_expected) for _, r in b_cells.iterrows()},
+               v20_presented_per_cell_both_sessions_pooled=int(ppc), presented_session2_total_5_analysis_cells_unpooled=int(b_an.presented_session2_total),
+               study2_presented_session2_total=int(b2.presented_session2_total), study2_session2_minutes=float(b2.session2_minutes),
+               mixed_check_n_sims={r.contrast: int(r.n_sims) for _, r in mxr.iterrows()}, mixed_check_power_mixed={r.contrast: (None if pd.isna(r.power_mixed_sim) else float(r.power_mixed_sim)) for _, r in mxr.iterrows()},
                tost_power_at_N_bound030_analytic=float(to[0.30].achieved_power), tost_power_at_N_bound030_mc=float(to[0.30].tost_power_mc),
                N_study2_valence_dz030=int(v.n_participants), N_interaction_dz020=int(ix_n.n_participants), runtime_s=round(time.time() - t0, 1))
     json.dump(key, open(os.path.join(a.out, "section9_key_numbers.json"), "w"), indent=1)
