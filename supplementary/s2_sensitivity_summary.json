@@ -1,0 +1,37 @@
+{
+ "version": "2.1",
+ "n_experiments_total": 42,
+ "n_publications_total": 32,
+ "n_rows_by_unit_type": {
+  "experiment": 22,
+  "experiment-group": 2,
+  "publication-as-one (partition unverified)": 18
+ },
+ "baseline_publication": {
+  "n_denominator": 21,
+  "neutral-visual": "15 of 21",
+  "neutral-nonvisual": "1 of 21",
+  "motor-conflict": "4 of 21",
+  "valenced": "0 of 21",
+  "interoceptive": "1 of 21",
+  "motor-conflict (autonomic effector)": "0 of 21",
+  "motor-conflict (skeletal + autonomic effector)": "1 of 21",
+  "mixed": "0 of 21"
+ },
+ "n_content_experiments": 40,
+ "baseline": {
+  "n_denominator": 30,
+  "n_publications": 21,
+  "neutral-visual": "18 of 30",
+  "neutral-nonvisual": "3 of 30",
+  "motor-conflict": "8 of 30",
+  "valenced": "0 of 30",
+  "interoceptive": "1 of 30"
+ },
+ "n_contested_inclusion_rows": 7,
+ "n_contested_publications": 7,
+ "n_abstract_only_rows": 20,
+ "n_abstract_only_publications": 19,
+ "smallest_neutral_visual_share": "S10_strict_minus_all_contested",
+ "largest_neutral_visual_share": "S7_minus_ancillary"
+}

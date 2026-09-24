@@ -1,0 +1,42 @@
+{
+ "N_fixed_study1": 120,
+ "N_required_dz030": 119,
+ "rotations": 6,
+ "N_C0_dz030": 119,
+ "N_C1a_dz030": 119,
+ "N_C0_dz020": 265,
+ "N_C0_dz040": 68,
+ "usable_target_per_analysis_cell": 64,
+ "presented_session2_per_cell": 104,
+ "probe_trials_session2_per_cell": 26,
+ "noprobe_trials_session2_per_cell": 78,
+ "usable_session2_per_cell_expected": 66.3,
+ "presented_session1_per_cell": 64,
+ "presented_session2_total": 1144,
+ "presented_both_sessions_total": 1848,
+ "session2_minutes": 135.4,
+ "session1_minutes": 114.9,
+ "n_blocks_session2": 22,
+ "usable_session2_pooled_analysis_cells": {
+  "count1@0": 198.9,
+  "count2@0": 198.9,
+  "count3@0": 66.3,
+  "count3@1": 198.9,
+  "count3@3": 66.3
+ },
+ "v20_presented_per_cell_both_sessions_pooled": 102,
+ "presented_session2_total_5_analysis_cells_unpooled": 520,
+ "study2_presented_session2_total": 936,
+ "study2_session2_minutes": 110.6,
+ "mixed_check_n_sims": {
+  "skipped": 0
+ },
+ "mixed_check_power_mixed": {
+  "skipped": null
+ },
+ "tost_power_at_N_bound030_analytic": 0.8953,
+ "tost_power_at_N_bound030_mc": 0.8958,
+ "N_study2_valence_dz030": 119,
+ "N_interaction_dz020": 265,
+ "runtime_s": 3.7
+}

@@ -22,10 +22,11 @@ import pandas as pd
 RELATIONS = ["different", "jointly compatible", "discriminating", "incompatible"]
 CONTESTING = {"discriminating", "incompatible"}
 
-s1_path = sys.argv[1] if len(sys.argv) > 1 else "Table_S1_v2.csv"
-s4_path = sys.argv[2] if len(sys.argv) > 2 else "Table_S4_v2.csv"
-pr_path = sys.argv[3] if len(sys.argv) > 3 else "pair_register.csv"
-out = sys.argv[4] if len(sys.argv) > 4 else "column_typology_pairs.csv"
+ARGS = [x for x in sys.argv[1:] if not x.startswith("--")]
+s1_path = ARGS[0] if len(ARGS) > 0 else "Table_S1_v2.csv"
+s4_path = ARGS[1] if len(ARGS) > 1 else "Table_S4_v2.csv"
+pr_path = ARGS[2] if len(ARGS) > 2 else "pair_register.csv"
+out = ARGS[3] if len(ARGS) > 3 else "column_typology_pairs.csv"
 
 cells = pd.read_csv(s1_path, dtype=str, keep_default_na=False)
 if "superseded_by" in cells:
@@ -71,13 +72,25 @@ for r in pr.itertuples(index=False):
     if key in seen_pairs:
         sys.exit(f"VALIDATION FAILED: duplicate pair {key}")
     seen_pairs.add(key)
-# completeness: every cross-theory pair of stated predictions in a covered domain must have a row
-covered = sorted(pr.domain_id.unique())
-for d in covered:
+# completeness: the set of REQUIRED pairs is derived from S4 alone (every cross-theory pair of stated predictions in
+# every column with >= 2 stated predictions) and checked against the register; a domain absent from the register is
+# therefore caught, and a column with any missing pair is classed 'pair assessment incomplete', never
+# 'occupied-not-contested' (absence of a row is not evidence of absence of a discriminating pair).
+required = {}
+for d in sorted(reg.quantity_id.unique()):
     ids = sorted(reg[(reg.quantity_id == d) & (reg.status == "stated")].id)
-    for a, b in itertools.combinations(ids, 2):
-        if s4.loc[a, "theory_id"] != s4.loc[b, "theory_id"] and (a, b) not in seen_pairs:
-            sys.exit(f"VALIDATION FAILED: pair register incomplete for {d}: missing {a}-{b}")
+    req = [(a, b) for a, b in itertools.combinations(ids, 2) if s4.loc[a, "theory_id"] != s4.loc[b, "theory_id"]]
+    if req:
+        required[d] = req
+incomplete = {}
+for d, req in required.items():
+    missing = [f"{a}-{b}" for a, b in req if (a, b) not in seen_pairs and (b, a) not in seen_pairs]
+    if missing:
+        incomplete[d] = missing
+        print(f"WARNING: pair register incomplete for {d}: {len(missing)} of {len(req)} required pairs missing ({'; '.join(missing[:6])}{'...' if len(missing) > 6 else ''}) -> class 'pair assessment incomplete'")
+if incomplete and "--allow-incomplete" not in sys.argv:
+    sys.exit("VALIDATION FAILED: pair register incomplete for " + ", ".join(incomplete) + " (pass --allow-incomplete to derive classes with 'pair assessment incomplete' for those columns)")
+covered = sorted(set(pr.domain_id.unique()) | set(required))   # columns whose class depends on pairs: from S4, not from the register
 
 # ---- old definition: symmetric stated-only pairs from distinguishable_from --------------------------
 for r in reg.itertuples(index=False):
@@ -139,8 +152,10 @@ for d in sorted(cells.domain_id.unique(), key=lambda x: (len(x), x)):
         old_class_conf2_both_ends=classify(n_exp, n_int, len(o_both)),
         new_n_contesting=len(n_all), new_contesting_pairs=";".join("-".join(p) for p in sorted(n_all)),
         new_n_contesting_conf2=len(n_c2),
-        new_class=classify(n_exp, n_int, len(n_all)), new_class_conf2=classify(n_exp, n_int, len(n_c2)),
-        pair_register_coverage="yes" if d in covered else "no",
+        new_class=("pair assessment incomplete" if d in incomplete and classify(n_exp, n_int, len(n_all)) == "occupied-not-contested" else classify(n_exp, n_int, len(n_all))),
+        new_class_conf2=("pair assessment incomplete" if d in incomplete and classify(n_exp, n_int, len(n_c2)) == "occupied-not-contested" else classify(n_exp, n_int, len(n_c2))),
+        n_required_pairs=len(required.get(d, [])), n_missing_pairs=len(incomplete.get(d, [])),
+        pair_register_coverage=("complete" if d in required and d not in incomplete else "incomplete" if d in incomplete else "n/a (fewer than two stated predictions)"),
     ))
 typ = pd.DataFrame(rows)
 typ.to_csv(out, index=False)

@@ -1,0 +1,56 @@
+{
+ "version": "2.1",
+ "pub_level_baseline": {
+  "neutral-visual": "15 of 21",
+  "neutral-nonvisual": "1 of 21",
+  "motor-conflict (skeletal)": "3 of 21",
+  "motor-conflict (autonomic effector)": "0 of 21",
+  "motor-conflict (skeletal + autonomic effector)": "1 of 21",
+  "valenced": "0 of 21",
+  "interoceptive": "1 of 21"
+ },
+ "pub_level_n": 21,
+ "pub_level_ids": [
+  "P01",
+  "P03",
+  "P04",
+  "P06",
+  "P07",
+  "P08",
+  "P09",
+  "P10",
+  "P11",
+  "P16",
+  "P17",
+  "P18",
+  "P19",
+  "P20",
+  "P21",
+  "P22",
+  "P23",
+  "P24",
+  "P30",
+  "P31",
+  "P32"
+ ],
+ "exp_level_baseline": {
+  "neutral-visual": "18 of 30",
+  "neutral-nonvisual": "3 of 30",
+  "motor-conflict (skeletal)": "7 of 30",
+  "motor-conflict (autonomic effector)": "1 of 30",
+  "valenced": "0 of 30",
+  "interoceptive": "1 of 30"
+ },
+ "exp_level_n": 30,
+ "unit_heterogeneity_in_exp_denominator": {
+  "experiment": "18 of 30",
+  "experiment-group": "2 of 30",
+  "publication-as-one (partition unverified)": "10 of 30"
+ },
+ "unit_heterogeneity_all_rows": {
+  "experiment": "22 of 42",
+  "experiment-group": "2 of 42",
+  "publication-as-one (partition unverified)": "18 of 42"
+ },
+ "mixed_publications": []
+}

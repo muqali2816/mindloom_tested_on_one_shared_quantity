@@ -64,5 +64,15 @@ Baseline: manuscript v3 (sha256 dec8007fb39d42e2), deposit v1.3 (e7ea015ce7b9171
 - Manuscript §11 contradictions fixed: one definition of access; second coding 'scheduled'; abstract/§7.6 zero-vs-imbalance sentence; legacy-code sentence (84 + 12, two departures); 'deposited' → 'will be deposited'. Response: E5 rewritten (status PREPARED), §4 (a), (b), (e) rewritten, (g), (h) added.
 - NOT done: length (18 084 words with tables); reading of the 9 closed sources (list in reading_log_20260924.md) — PDFs needed from the authors; the interoceptive-inference query letters.
 
+## v4.5 — after the v4.4 recheck (GPT) and the parallel Claude review
+- Protocol arithmetic has one source: `section9_power.py` v2.2 (per-session configuration) → `protocol_numbers.py` (deposited; multiplicity, success-rule powers, retention) → S5 and §9.1. The deposited trial budget now matches the protocol text (session 1: 64 per cell; session 2: 104). Study 2 N = 120 with power at that N. Success rule requires the predicted direction; C0-eq is a secondary TOST outside the family; retention probabilities and a repeat-block rule added to S5.8.
+- `reproduce.py` v2.2: `power_mixed_check.csv` no longer hashed (content-checked in step 4); step 4b `protocol_numbers`; `protocol_numbers.json` and the power tables hashed; full run 11 of 11.
+- `column_typology_pairs.py`: required pairs derived from S4, 'pair assessment incomplete' class; eight pairs in M3, M7, M4a, M4c added to the register (63 pairs).
+- `agreement.py` v2.2: stated_null counter, UNRESOLVED excluded from the binary κ with its own n, later-attribution-only disagreements listed.
+- `build_table2.py`: content class derived from raw fields (`effector_type` added to S2) and checked. Publication is the primary unit of Table 2, the abstract and §7.6; experiment-row counts beside it.
+- Three distinct recode notes for the integration-pass recodes; `recompute_table1.py` legacy self-test finds the deposited v1.3 file.
+- Coder pack v3.3: codebook v2.3 (instructions match the forms; S3 blank; later attribution and own partition coded by coder 2), changelog copy without the row-level decision, README rewritten.
+- Manuscript: §7.6 rewritten at publication level; §7.2 counts (57 abstract-only, 27 of 50; 34 register entries, 63 pairs; 16 flagged; "has not begun"); Table 1 legend states the six derived entries in the text, not the caption; abstract 250 words; codebook v2.3 named. Response: R1-8, E5 numbers, §4(a),(e),(h),(i); no stale version, hash or count remains.
+
 ## Still with the authors
 Send extension request; send proponent letters (record dates); second coding → agreement.py → fill κ; upload deposit_v2 → DOI into 4 places; names, CRediT confirmation, funding, CoI, AI tool; decide on length cuts; confirm Poznanski DOI.

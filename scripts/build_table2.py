@@ -63,7 +63,29 @@ def load(path):
     ids = [r["experiment_id"] for r in rows]
     if len(set(ids)) != len(ids):
         fail("duplicated experiment_id in " + path)
+    # content_class_v2 is DERIVED from the raw coded fields (modality, affective_status, effector_type) by the codebook
+    # rule below; a stored class that disagrees with its raw fields aborts, so the class cannot drift from the coding.
+    if {"modality", "affective_status", "effector_type"} <= set(rows[0].keys()):
+        bad = [(r["experiment_id"], r["content_class_v2"], derive_class(r)) for r in rows if r["content_class_v2"].strip() != derive_class(r)]
+        if bad:
+            fail("content_class_v2 disagrees with the raw fields (experiment_id, stored, derived): " + "; ".join(map(str, bad[:8])))
+    else:
+        print("WARNING: raw fields modality/affective_status/effector_type absent; content_class_v2 taken as given", file=sys.stderr)
     return rows
+
+
+def derive_class(r):
+    """Codebook v2.2 rule: class from the raw coded fields, never assigned directly."""
+    m, aff, eff = r["modality"].strip(), r["affective_status"].strip(), r.get("effector_type", "").strip()
+    if m == "not applicable (state)":
+        return "state (no content)"
+    if aff == "valenced":
+        return "valenced"
+    if m == "interoceptive" or aff == "interoceptive":
+        return "interoceptive"
+    if m == "motor":
+        return "motor-conflict (autonomic effector)" if eff == "autonomic" else "motor-conflict (skeletal)"
+    return "neutral-visual" if m == "visual" else "neutral-nonvisual"
 
 
 def build(rows):

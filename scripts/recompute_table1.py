@@ -348,8 +348,8 @@ def selftest(out, seed=3):
     log.append(("legacy view counts exactly the cells carrying legacy_code", numbers["legacy_view_n_cells"] == int((sim.legacy_code != "").sum())))
     log.append(("origin split: 2 x 10 + 10 x 3 = 50 added cells", numbers["n_cells_added_in_revision"] == 50))
     # legacy schema path on the deposit v1.3 file, if present next to the manifests
-    leg = os.path.join(here, "Table_S1_theory_by_quantity.csv")
-    if os.path.exists(leg):
+    leg = next((p for p in (os.path.join(here, "Table_S1_theory_by_quantity.csv"), os.path.join(here, "Table_S1_v13_88cells.csv")) if os.path.exists(p)), None)
+    if leg:
         n = run_legacy(leg, out)
         log.append(("legacy v1.3 file: 88 cells", n["n_cells"] == 88))
     # negative: duplicated key must abort

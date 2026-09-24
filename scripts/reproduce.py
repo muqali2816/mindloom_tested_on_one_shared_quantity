@@ -37,15 +37,15 @@ Writes <out>/reproduce_log.txt and <out>/reproduce_report.json.
 from __future__ import annotations
 import argparse, hashlib, json, os, platform, subprocess, sys, time
 
-__version__ = "2.1"
+__version__ = "2.2"
 HERE = os.path.dirname(os.path.abspath(__file__))
-EXACT = ["typology/column_typology_v2.csv", "typology/column_typology_pairs.csv", "recompute/table1_tallies_v2.csv", "recompute/table1_wide_v2.csv", "recompute/table1_tallies_legacy_view.csv",
+EXACT = ["typology/column_typology_v2.csv", "typology/column_typology_pairs.csv", "power/protocol_numbers.json", "power/trials_budget.csv", "power/power_study1.csv", "power/power_study2.csv", "recompute/table1_tallies_v2.csv", "recompute/table1_wide_v2.csv", "recompute/table1_tallies_legacy_view.csv",
          "recompute_selftest/table1_tallies_v2.csv", "recompute_selftest/recompute_selftest_log.csv",
          "table2/Table_2_counts.csv", "s2/s2_sensitivity.csv",
          "power/power_study1.csv", "power/power_study2.csv", "power/trials_budget.csv",
          "agreement_selftest/selftest_log.csv"]
 EXACT_LEGACY_INPUT_ONLY = ["recompute/table1_tallies_legacy.csv"]     # produced only when step 1 ran on the legacy v1.3 file
-STOCHASTIC = ["power/power_mixed_check.csv", "agreement_selftest/agreement_summary.csv"]
+STOCHASTIC = ["agreement_selftest/agreement_summary.csv"]   # power/power_mixed_check.csv is NOT hashed: its content is checked in step 4 (n_sims, power values)
 MIXED_CONTRASTS = {"C0": "C0_threshold_count1_vs_ge2", "C1a": "C1a_compatible_vs_incompatible_at_count3"}
 
 
@@ -241,7 +241,16 @@ def main(argv=None):
             k = json.load(open(kn))
             params["trials_budget"] = {x: k[x] for x in ["presented_session2_per_cell", "usable_session2_per_cell_expected", "presented_session2_total", "session2_minutes", "usable_target_per_analysis_cell"] if x in k}
         step("4 section9_power", rc == 0 and ok, dt, (note if rc == 0 else f"section9_power.py exited {rc}: {err.strip()[-200:]}"), params)
-    # 5. consistency
+
+    # 4b. protocol numbers (v2.2): session arithmetic, multiplicity, success-rule powers and retention, from the step-4 outputs
+    if os.path.exists(os.path.join(a.out, "power", "trials_budget.csv")):
+        rc, dt, out, err = run(["protocol_numbers.py", "--power-dir", os.path.join(a.out, "power"), "--out", os.path.join(a.out, "power", "protocol_numbers.json")], log)
+        pn = json.load(open(os.path.join(a.out, "power", "protocol_numbers.json"))) if rc == 0 else {}
+        note = (f"session 2: {pn['study1']['session2']['presented_per_cell']} per cell, {pn['study1']['session2']['blocks']} blocks, {pn['study1']['session2']['total_minutes']} min; usable {pn['study1']['usable_expected_per_cell']}; "
+                f"Holm {pn['power']['holm_independence_approx']}, rule A {pn['power']['rule_A_per_contrast_both_modalities']}, rule C {pn['power']['rule_C_both_contrasts_both_modalities']}; P(cell >= floor) {pn['retention']['P_cell_reaches_target']}") if rc == 0 else err.strip()[-300:]
+        step("4b protocol_numbers", rc == 0, dt, note)
+    else:
+        step("4b protocol_numbers", False, 0.0, "power/trials_budget.csv absent (step 4 did not run)")    # 5. consistency
     t = time.time()
     exact = EXACT + (EXACT_LEGACY_INPUT_ONLY if legacy_input else [])
     hashes = {}

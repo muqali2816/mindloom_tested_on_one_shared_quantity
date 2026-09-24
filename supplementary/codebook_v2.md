@@ -11,10 +11,10 @@ Purpose of this pack: an independent second application of the coding scheme beh
 1. **Code independently.** Do not discuss cells with the first coder before the forms are returned. Do not open the manuscript's §7 results, the filled S1/S2, or any draft of the response to reviewers.
 2. **Read the sources, not the summaries.** For each theory, read the primary sources listed in §5 of this codebook (3–5 per theory). You may add further sources, but each code must be anchored to a specific citable text; record it in the `source_label` / `source_doi` columns.
 3. **Fill `S1_blank_for_coder2_v2.csv` (120 rows).** For every account × domain cell enter exactly one code from {EXPLICIT, INTERPRETED, NOT_LOCATED, NOT_APPLICABLE, UNRESOLVED} in `code`, `polarity` (positive / stated_null / negative) for EXPLICIT and INTERPRETED, `relation`, a one- or two-sentence `claim_text` in your own words, and `source_label`, `source_doi`, `source_locus`. If the code is NOT_LOCATED, `claim_text` should state what you looked for and did not find. `confidence` is optional (1 = guess, 2 = defensible, 3 = certain).
-4. **Fill `S2_blank_for_coder2.csv` (36 rows).** For each study enter the `content` category (§4.2) and the `theory_addressed` value (§4.1). You will need to look at the study's methods (stimuli and task), not only its abstract.
+4. **Fill `S2_blank_for_coder2_v2.csv` (42 rows, one per row of the first coder's partition of 32 publications).** For each row enter the raw fields `modality`, `affective_status`, `effector_type` (skeletal / autonomic, motor rows only), `manipulation`, `measured_outcome`, `report_type`; the attribution fields `theory_attribution_by_authors` (with `by_authors_locus`), `theory_attribution_later` (post-publication attribution by others, with `later_attribution_evidence` — a citable DOI or 'none found'); and `contested_inclusion`. The content class is not entered: it is derived from the raw fields by script (§4). **Your own partition:** in `unit_type_coder2` state whether the row is, in your reading of the paper, one experiment, a group of experiments, or the whole publication treated as one because the paper's partition could not be verified; in `n_experiments_identified` give the number of separately analysed experiments you find in the publication, and in `partition_note` say where they differ from the row structure. You will need the methods (stimuli and task), not only the abstract.
 5. **Time yourself.** Record start and end times per theory block and for the S2 form in `coder2_timing_log.csv`. The time is reported in the manuscript's method section as a property of the scheme, not as an assessment of you.
 6. **Do not resolve doubt by looking for the "expected" answer.** When a cell is genuinely ambiguous, choose the code the decision rules in §3 require, and flag the cell with `confidence = 1`. Ambiguous cells are exactly what the adjudication meeting is for.
-7. **Return** the three CSV files. Agreement is then computed by `agreement.py` (unweighted and linearly weighted kappa, per-column kappa, disagreement list) and the disagreements are adjudicated jointly, with the adjudication record deposited alongside the tables.
+7. **Return** the S1 and S2 forms, the timing log and, if you took it on, the S3 form. Agreement is then computed by `agreement.py` (raw agreement, confusion matrix, nominal κ for code and for code × polarity, per-domain κ, κ by origin subset; for S2 agreement on the raw fields, on the by-authors attribution and separately on the later attribution and its evidence; disagreement lists) and the disagreements are adjudicated jointly, with the adjudication record deposited alongside the tables. **Second step, after S1 is returned:** you receive the prediction register (Table S4) and a pair list with the assessment fields empty, and code the relation of every cross-theory pair of stated predictions (different / jointly compatible / discriminating / incompatible) with a pair confidence; that step checks the first coder's pair judgements, not the completeness of the register's extraction, which only your S1 can check.
 
 Expected effort: roughly 6–10 hours for S1 and 2–3 hours for S2, spread over several sittings.
 
@@ -151,7 +151,7 @@ CONTENT CODING (two orthogonal fields; the five-way class used in counts is deri
 (Row-level decisions of the first coder are withheld from this blind copy; they are listed in the deposit version of this file and released with Table S4 after the second coding is returned.)
 ```
 
-Coder 2 fills, for every experiment row: `modality`, `affective_status`, `manipulation`, `measured_outcome`, `report_type`, `theory_attribution_by_authors` (with locus) and `contested_inclusion` + `contested_reason`. Code by the content whose access is manipulated or measured: an intention directed at an autonomic effector is motor conflict (autonomic effector), not interoceptive content; interoceptive content originates in visceral afferents. `theory_attribution_later`, `theory_attribution_coder` and `theory_addressed` are derived or first-coder fields and are never typed by coder 2.
+Coder 2 fills, for every experiment row: `modality`, `affective_status`, `effector_type` (motor rows), `manipulation`, `measured_outcome`, `report_type`, `theory_attribution_by_authors` (with locus), `theory_attribution_later` with `later_attribution_evidence` (search the coded theories' primary statements in §5 for citations of the study; enter 'none found' when none), `contested_inclusion` + `contested_reason`, and the partition fields `unit_type_coder2`, `n_experiments_identified`, `partition_note`. The later attribution is coded independently by both coders because it moves the theory-addressed denominator; agreement on it is reported separately. Code by the content whose access is manipulated or measured: an intention directed at an autonomic effector is motor conflict (autonomic effector), not interoceptive content; interoceptive content originates in visceral afferents. `theory_attribution_later`, `theory_attribution_coder` and `theory_addressed` are derived or first-coder fields and are never typed by coder 2.
 
 ## 5. Theories and primary sources
 
@@ -228,14 +228,15 @@ Sources are listed most-recent-empirical-statement first; that is the canonical 
 - Park & Tallon-Baudry 2014 — doi:10.1098/rstb.2013.0208
 
 ---
-## 6. Files in this pack (v3.1)
+## 6. Files in this pack (v3.3)
 
 | File | Purpose |
 |---|---|
 | accounts_manifest.csv | 12 accounts with `theory_id`, `row_class`, `origin`. Labels must match exactly. |
 | domains_manifest.csv | 10 domains M1, M2, M3, M4a, M4b, M4c, M5, M6, M7, M8. |
 | S1_blank_for_coder2_v2.csv | 120 rows (theory_id × domain_id) with code, polarity, relation, claim_text, source_label, source_doi, source_locus, evidence_status, confidence empty. |
-| S2_blank_for_coder2_v2.csv | One row per empirical experiment (from Table S2 v2), coding columns empty. |
+| S2_blank_for_coder2_v2.csv | 42 rows (the first coder's partition of 32 publications into experiment-level rows), all coding columns empty; includes your own partition fields (`unit_type_coder2`, `n_experiments_identified`, `partition_note`), `effector_type` and the later-attribution fields. |
+| S3_blank_for_coder2.csv | Optional: 120 rows (10 theory blocks × 12 ConTraSt dimensions), coding columns empty (§7). |
 | agreement.py | `python agreement.py --s1a <coder1> --s1b <coder2> --accounts accounts_manifest.csv --domains domains_manifest.csv --code-scheme v2 --out agreement_out/` — raw agreement, confusion matrix, nominal κ, per-domain κ, κ by origin subset. No interval unless `--ci` is given. |
 | coder2_timing_log.csv | Start/end time per block. |
 
@@ -244,7 +245,7 @@ Sources are listed most-recent-empirical-statement first; that is the canonical 
 **Freeze.** This codebook is frozen at the version and hash printed in the footer. Any change to a definition, code or rule after the second coder has started requires re-coding the affected cells by both coders and is logged in `codebook_changelog.md`.
 ## 7. Table S3 — the same theories against the ConTraSt annotation dimensions (optional)
 
-`S3_blank_for_coder2.csv` has 120 rows: the ten theory blocks of the submitted manuscript (HOT/HOSS as one block; the neural subjective frame is not part of S3) × the twelve annotation dimensions of the ConTraSt database (Yaron et al. 2022, *Nature Human Behaviour* 6, 593–604). The codes are the same four as in S1. The question in each cell: *does the theory's canonical empirical statement — or, for GNWT and IIT, the preregistered Cogitate predictions — state which value of this dimension an experiment should observe, or state that the dimension should make no difference?* An explicit invariance claim ("the signature does not depend on the task") is a stated prediction: code YES and set `invariance_based_YES = TRUE`, so that the strictly differential count can be computed.
+`S3_blank_for_coder2.csv` (in this pack) has 120 rows: the ten theory blocks of the submitted manuscript (HOT/HOSS as one block; the neural subjective frame is not part of S3) × the twelve annotation dimensions of the ConTraSt database (Yaron et al. 2022, *Nature Human Behaviour* 6, 593–604). The codes are the same four as in S1. The question in each cell: *does the theory's canonical empirical statement — or, for GNWT and IIT, the preregistered Cogitate predictions — state which value of this dimension an experiment should observe, or state that the dimension should make no difference?* An explicit invariance claim ("the signature does not depend on the task") is a stated prediction: code YES and set `invariance_based_YES = TRUE`, so that the strictly differential count can be computed.
 
 | Dimension | What a stated prediction looks like |
 |---|---|
@@ -264,4 +265,4 @@ Sources are listed most-recent-empirical-statement first; that is the canonical 
 Anchor every non-NO cell to a citable source, as in S1. If the theory says nothing that bears on the dimension, code NO and state what you looked for.
 
 ---
-**Codebook v2.2 — frozen 24 September 2026. sha256 of everything above this line (all bytes up to and including the newline that precedes it): `aa72e4229c1271d5be8622502ea40280b6de8059957db070870b66fc27e3a8f1`.** Changes after the second coder starts → `codebook_changelog.md` and re-coding of affected cells.
+**Codebook v2.3 — frozen 24 September 2026. sha256 of everything above this line (all bytes up to and including the newline that precedes it): `3b4b0cac6995df03c730b211d5d4d3dae3b070e252308610dae730f08ab479f1`.** Changes after the second coder starts → `codebook_changelog.md` and re-coding of affected cells.

@@ -1,0 +1,85 @@
+{
+ "version": "3.1",
+ "source": "section9_power.py v2.2 outputs (trials_budget.csv, power_study1.csv, power_study2.csv)",
+ "study1": {
+  "session2": {
+   "presented_per_cell": 104,
+   "blocks": 22,
+   "trials_per_block": 52,
+   "probe_per_block": 13,
+   "presented_total": 1144,
+   "total_minutes": 135.4,
+   "break_minutes": 21.0
+  },
+  "session1": {
+   "presented_per_cell": 64,
+   "blocks": 22,
+   "trials_per_block": 32,
+   "probe_per_block": 8,
+   "presented_total": 704,
+   "total_minutes": 114.9,
+   "break_minutes": 21.0
+  },
+  "session2_probe_per_cell": 26,
+  "session2_noprobe_per_cell": 78,
+  "usable_expected_per_cell": 66.3,
+  "usable_expected_pooled_3cells": 198.9,
+  "session1_usable_per_cell_expected": 54.4,
+  "presented_both_sessions": 1848
+ },
+ "study2": {
+  "session2": {
+   "presented_per_cell": 104,
+   "blocks": 18,
+   "trials_per_block": 52,
+   "probe_per_block": 13,
+   "presented_total": 936,
+   "total_minutes": 110.6,
+   "break_minutes": 17.0
+  },
+  "session1": {
+   "presented_per_cell": 64,
+   "blocks": 18,
+   "trials_per_block": 32,
+   "probe_per_block": 8,
+   "presented_total": 576,
+   "total_minutes": 93.8,
+   "break_minutes": 17.0
+  },
+  "presented_both_sessions": 1512
+ },
+ "power": {
+  "N_fixed": 120,
+  "N_required": 119,
+  "dz_plan": 0.3,
+  "single_alpha05": 0.9032,
+  "bonferroni_alpha025": 0.8438,
+  "holm_independence_approx": 0.8939,
+  "rule_A_per_contrast_both_modalities": 0.799,
+  "rule_B_both_contrasts_one_modality": 0.8122,
+  "rule_C_both_contrasts_both_modalities": 0.6596,
+  "N_for_90_alpha025": 141,
+  "N_for_90_rule_A": 170,
+  "pas_sign_agreement_prob": 0.9995,
+  "n_confirmatory_contrasts_study1": 2,
+  "note": "independence between contrasts and between EEG and PAS versions is assumed; the pilot covariance replaces these values"
+ },
+ "study2_power": {
+  "N_fixed": 120,
+  "N_required": 119,
+  "single_alpha05": 0.9032,
+  "rule_A_both_modalities": 0.8157
+ },
+ "retention": {
+  "model": "independent Bernoulli loss at the planning rate; illustrative, losses are correlated in practice",
+  "usable_target": 64,
+  "noprobe_per_cell": 78,
+  "loss_rate": 0.15,
+  "P_cell_reaches_target": 0.8151,
+  "P_two_unpooled_cells_study1": 0.6644,
+  "P_nine_cells_study2": 0.1588,
+  "noprobe_per_cell_for_target_prob": 82,
+  "presented_per_cell_for_target_prob": 110,
+  "rule": "S5.8: a cell that ends session 2 below the floor is completed by one repeated block of that cell at the end of the session (pre-specified); participants still below the floor after the repeat are excluded and replaced"
+ }
+}

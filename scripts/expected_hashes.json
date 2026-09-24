@@ -1,17 +1,17 @@
 {
  "typology/column_typology_v2.csv": "42569e2f5532d11def479a0a77b7ae9ef0a89cc8e5b68477010e663609e57ff7",
- "typology/column_typology_pairs.csv": "53828f8941ae93bc415cc8106558f62ecde970f054a44ab170141a3a18e4877d",
+ "typology/column_typology_pairs.csv": "7186e2c3644cbb2b730ab0ff9f6998ee14dbb563cf76bb1654a1b678e820f822",
+ "power/protocol_numbers.json": "9571037404cc4762b73812bc80d79f3e963d9a4e3462dd736915a58e3c364457",
+ "power/trials_budget.csv": "43f21ce7efa336eb2ae9579561ae870bc032073fc3e5fa7079bfa438d7beca2d",
+ "power/power_study1.csv": "51914ca9c14e0f67ee7fb5e116d5470db8361d1ff2b624ec6a43cffb5e29f0c9",
+ "power/power_study2.csv": "ce7ab205478cc7ed5d84eb2aa57624e1e4ac1ac49755b48e165a5969750aa0aa",
  "recompute/table1_tallies_v2.csv": "b518bbe84a9eddd830a92b1d55d8b9be2d0fd03b18e9e3612c34c55011569aa4",
  "recompute/table1_wide_v2.csv": "632254089512af4a82c08270cf4933f391710dcda6990d2f91572cf74583da55",
  "recompute/table1_tallies_legacy_view.csv": "7fc8214811c6b20eaef31998d985d256bcc2411d00fcae4c794a838739b58e61",
  "recompute_selftest/table1_tallies_v2.csv": "81d2f530f684244046b26faf0d5d0b0cd4307b41f340b6956497316d3e13d8ad",
- "recompute_selftest/recompute_selftest_log.csv": "6d4f7f3c1e606fc5fb2dc74f59f73c24965384565f06979fdc714ce2c4c6f15d",
+ "recompute_selftest/recompute_selftest_log.csv": "c0e3b4320942d538d90ce9fe295073ecb2215bdb2c83b6083d9e1b9d099356b3",
  "table2/Table_2_counts.csv": "aed5187a80eae9c498702734c32d3b3bf3fc8aa9541af2acde283903571d3138",
  "s2/s2_sensitivity.csv": "d524f62b823a3e15307d414fa7a87528cd6d9f018103980bc44c3ba338eebbce",
- "power/power_study1.csv": "42cdd2e46cc816012eea2786009495ad44f774141623dd9c7ca146d5f1933679",
- "power/power_study2.csv": "2702d75d410f1d2f6dcf13c297e0af0a2af252ba6d0915c4140458cb1fd6d321",
- "power/trials_budget.csv": "6d164df3c167fb73db0fa22903e84e17ebe3b81a2b68edc368e041d7a9814f49",
  "agreement_selftest/selftest_log.csv": "8414880fc11cc24f05e663660dccb6e217b14ed3ea1cd84667cac2e56dacaed6",
- "power/power_mixed_check.csv": "3ea91a3a8bcefb156ea744a2044a7a2ea555d23c269723c27d6c819aa0402a91",
- "agreement_selftest/agreement_summary.csv": "105f861a52f6345cc568ebc5b2eba3e47d115dee22e12115f7f158f9264e13a0"
+ "agreement_selftest/agreement_summary.csv": "db7e4b4db060258f0aa51a64c70a239e525248ab47cd7a608141f0a843dc2bb3"
 }

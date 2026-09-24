@@ -1,5 +1,5 @@
 {
- "reproduce_version": "2.1",
+ "reproduce_version": "2.2",
  "environment": {
   "python": "3.11.15",
   "numpy": "2.4.6",
@@ -10,7 +10,7 @@
  },
  "arguments": {
   "deposit": ".",
-  "out": "reproduce_out_full",
+  "out": "_full",
   "mixed_sims": 200,
   "skip_mixed": false
  },
@@ -25,10 +25,10 @@
    }
   },
   {
-   "step": "1b column_typology",
+   "step": "1b column_typology (legacy distinguishable_from rule; NOT the manuscript class -- see 1f)",
    "passed": true,
    "seconds": 0.5,
-   "note": "derived classes: M1=single-occupant, M2=single-occupant, M3=occupied-not-contested, M5=thin, M6=contested, M7=occupied-not-contested, M8=contested, M4a=occupied-not-contested, M4b=single-occupant, M4c=occupied-not-contested",
+   "note": "legacy-rule classes: M1=single-occupant, M2=single-occupant, M3=occupied-not-contested, M5=thin, M6=contested, M7=occupied-not-contested, M8=contested, M4a=occupied-not-contested, M4b=single-occupant, M4c=occupied-not-contested",
    "parameters": {}
   },
   {
@@ -37,7 +37,7 @@
    "seconds": 0.0,
    "note": "publication-level baseline n = 21: neutral-visual 15 of 21; neutral-nonvisual 1 of 21; motor-conflict (skeletal) 3 of 21; motor-conflict (skeletal + autonomic effector) 1 of 21; interoceptive 1 of 21; experiment-level baseline n = 30: neutral-visual 18 of 30; neutral-nonvisual 3 of 30; motor-conflict (skeletal) 7 of 30; motor-conflict (autonomic effector) 1 of 30; interoceptive 1 of 30",
    "parameters": {
-    "input": "Table_S2_v2.csv",
+    "input": "Table_S2_v2_experiments.csv",
     "pub_level_n": 21,
     "pub_level_baseline": {
      "neutral-visual": "15 of 21",
@@ -71,7 +71,7 @@
    "seconds": 0.0,
    "note": "unit=experiment  n=30 neutral-visual 18 of 30; neutral-nonvisual 3 of 30; motor-conflict 8 of 30; valenced 0 of 30; interoceptive 1 of 30; motor-conflict (autonomic effector) 1 of 30 | unit=publication n=21 neutral-visual 15 of 21; neutral-nonvisual 1 of 21; motor-conflict 4 of 21; valenced 0 of 21; interoceptive 1 of 21; motor-conflict (autonomic effector) 0 of 21; motor-conflict (skeletal + autonomic effector) 1 of 21; mixed 0 of 21",
    "parameters": {
-    "input": "Table_S2_v2.csv",
+    "input": "Table_S2_v2_experiments.csv",
     "baseline_experiment": {
      "n_denominator": 30,
      "n_publications": 21,
@@ -120,7 +120,7 @@
    "step": "1f column_typology_pairs",
    "passed": true,
    "seconds": 0.5,
-   "note": "pair-register classes: NEW  class: occupied-not-contested  | pair_confidence>=2: occupied-not-contested | NEW  class: contested  | pair_confidence>=2: contested",
+   "note": "pair-register classes: NEW  class: occupied-not-contested  | pair_confidence>=2: occupied-not-contested | NEW  class: occupied-not-contested  | pair_confidence>=2: occupied-not-contested | NEW  class: occupied-not-contested  | pair_confidence>=2: occupied-not-contested | NEW  class: contested  | pair_confidence>=2: contested | NEW  class: occupied-not-contested  | pair_confidence>=2: occupied-not-contested | NEW  class: occupied-not-contested  | pair_confidence>=2: occupied-not-contested",
    "parameters": {
     "pair_register": "pair_register.csv"
    }
@@ -144,12 +144,12 @@
   {
    "step": "4 section9_power",
    "passed": true,
-   "seconds": 60.4,
+   "seconds": 60.2,
    "note": "C0: n_sims=200 (requested 200), mixed power 0.900, two-stage 0.900, analytic 0.903, n_nonconverged=0; C1a: n_sims=200 (requested 200), mixed power 0.935, two-stage 0.935, analytic 0.903, n_nonconverged=0; statsmodels 0.14.6",
    "parameters": {
     "rows": [
      {
-      "version": 2.1,
+      "version": 2.2,
       "contrast": "C1a_compatible_vs_incompatible_at_count3",
       "n_participants": 120,
       "dz_calibrated": 0.3,
@@ -166,7 +166,7 @@
       "seed": 20260924
      },
      {
-      "version": 2.1,
+      "version": 2.2,
       "contrast": "C0_threshold_count1_vs_ge2",
       "n_participants": 120,
       "dz_calibrated": 0.3,
@@ -208,20 +208,31 @@
      "presented_session2_per_cell": 104,
      "usable_session2_per_cell_expected": 66.3,
      "presented_session2_total": 1144,
-     "session2_minutes": 134.4,
+     "session2_minutes": 135.4,
      "usable_target_per_analysis_cell": 64
     }
    }
   },
   {
+   "step": "4b protocol_numbers",
+   "passed": true,
+   "seconds": 1.1,
+   "note": "session 2: 104 per cell, 22 blocks, 135.4 min; usable 66.3; Holm 0.8939, rule A 0.799, rule C 0.6596; P(cell >= floor) 0.8151",
+   "parameters": {}
+  },
+  {
    "step": "5 consistency check",
    "passed": true,
    "seconds": 0.0,
-   "note": "14 of 15 files match; WARN: power/power_mixed_check.csv: differs (stochastic / platform-sensitive; content checked in step 4)",
+   "note": "15 of 15 files match",
    "parameters": {
     "exact": [
      "typology/column_typology_v2.csv",
      "typology/column_typology_pairs.csv",
+     "power/protocol_numbers.json",
+     "power/trials_budget.csv",
+     "power/power_study1.csv",
+     "power/power_study2.csv",
      "recompute/table1_tallies_v2.csv",
      "recompute/table1_wide_v2.csv",
      "recompute/table1_tallies_legacy_view.csv",
@@ -235,17 +246,20 @@
      "agreement_selftest/selftest_log.csv"
     ],
     "stochastic": [
-     "power/power_mixed_check.csv",
      "agreement_selftest/agreement_summary.csv"
     ],
-    "n_match": 14,
+    "n_match": 15,
     "n_files": 15
    }
   }
  ],
  "hashes": {
   "typology/column_typology_v2.csv": "42569e2f5532d11def479a0a77b7ae9ef0a89cc8e5b68477010e663609e57ff7",
-  "typology/column_typology_pairs.csv": "53828f8941ae93bc415cc8106558f62ecde970f054a44ab170141a3a18e4877d",
+  "typology/column_typology_pairs.csv": "7186e2c3644cbb2b730ab0ff9f6998ee14dbb563cf76bb1654a1b678e820f822",
+  "power/protocol_numbers.json": "9571037404cc4762b73812bc80d79f3e963d9a4e3462dd736915a58e3c364457",
+  "power/trials_budget.csv": "43f21ce7efa336eb2ae9579561ae870bc032073fc3e5fa7079bfa438d7beca2d",
+  "power/power_study1.csv": "51914ca9c14e0f67ee7fb5e116d5470db8361d1ff2b624ec6a43cffb5e29f0c9",
+  "power/power_study2.csv": "ce7ab205478cc7ed5d84eb2aa57624e1e4ac1ac49755b48e165a5969750aa0aa",
   "recompute/table1_tallies_v2.csv": "b518bbe84a9eddd830a92b1d55d8b9be2d0fd03b18e9e3612c34c55011569aa4",
   "recompute/table1_wide_v2.csv": "632254089512af4a82c08270cf4933f391710dcda6990d2f91572cf74583da55",
   "recompute/table1_tallies_legacy_view.csv": "7fc8214811c6b20eaef31998d985d256bcc2411d00fcae4c794a838739b58e61",
@@ -253,17 +267,11 @@
   "recompute_selftest/recompute_selftest_log.csv": "c0e3b4320942d538d90ce9fe295073ecb2215bdb2c83b6083d9e1b9d099356b3",
   "table2/Table_2_counts.csv": "aed5187a80eae9c498702734c32d3b3bf3fc8aa9541af2acde283903571d3138",
   "s2/s2_sensitivity.csv": "d524f62b823a3e15307d414fa7a87528cd6d9f018103980bc44c3ba338eebbce",
-  "power/power_study1.csv": "42cdd2e46cc816012eea2786009495ad44f774141623dd9c7ca146d5f1933679",
-  "power/power_study2.csv": "2702d75d410f1d2f6dcf13c297e0af0a2af252ba6d0915c4140458cb1fd6d321",
-  "power/trials_budget.csv": "6d164df3c167fb73db0fa22903e84e17ebe3b81a2b68edc368e041d7a9814f49",
   "agreement_selftest/selftest_log.csv": "8414880fc11cc24f05e663660dccb6e217b14ed3ea1cd84667cac2e56dacaed6",
-  "power/power_mixed_check.csv": "8fa5402ec828e4157af77d8bd5c9d6f70622a822532d2d43ad323eccb26d608e",
-  "agreement_selftest/agreement_summary.csv": "105f861a52f6345cc568ebc5b2eba3e47d115dee22e12115f7f158f9264e13a0"
+  "agreement_selftest/agreement_summary.csv": "db7e4b4db060258f0aa51a64c70a239e525248ab47cd7a608141f0a843dc2bb3"
  },
- "hash_warnings": [
-  "power/power_mixed_check.csv: differs (stochastic / platform-sensitive; content checked in step 4)"
- ],
+ "hash_warnings": [],
  "hash_failures": [],
- "total_seconds": 63.2,
+ "total_seconds": 64.0,
  "all_passed": true
 }

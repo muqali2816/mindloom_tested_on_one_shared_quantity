@@ -104,7 +104,7 @@ import argparse, os, re, sys
 import numpy as np
 import pandas as pd
 
-__version__ = "2.1"
+__version__ = "2.2"
 
 # ---------------------------------------------------------------- code schemes
 V2_CODES = ["EXPLICIT", "INTERPRETED", "NOT_LOCATED", "NOT_APPLICABLE", "UNRESOLVED"]
@@ -463,10 +463,13 @@ def analyse_s1(pa, pb, man, scheme="v2", ci="none", seed=1, added_domains=DEFAUL
         kp = cohen_kappa(m.code_pol_A, m.code_pol_B)
         res["S1_3_kappa_nominal_code_polarity"] = kp["kappa"]
         # located vs not: {EXPLICIT, INTERPRETED} vs {NOT_LOCATED, NOT_APPLICABLE, UNRESOLVED}
-        la, lb = m.code_n_A.isin(V2_POSITIVE), m.code_n_B.isin(V2_POSITIVE)
+        # UNRESOLVED is neither located nor not-located: cells where either coder wrote UNRESOLVED are excluded here (own denominator)
+        keep = (m.code_n_A != "UNRESOLVED") & (m.code_n_B != "UNRESOLVED")
+        la, lb = m.code_n_A[keep].isin(V2_POSITIVE), m.code_n_B[keep].isin(V2_POSITIVE)
         res["S1_3_kappa_binary_located_vs_not"] = cohen_kappa(la, lb, [False, True])["kappa"]
-        res["S1_3_n_EXPLICIT_null_coder1"] = int(((m.code_n_A == "EXPLICIT") & (m.polarity_n_A == "null")).sum())
-        res["S1_3_n_EXPLICIT_null_coder2"] = int(((m.code_n_B == "EXPLICIT") & (m.polarity_n_B == "null")).sum())
+        res["S1_3_kappa_binary_located_vs_not_n_cells"] = int(keep.sum())
+        res["S1_3_n_EXPLICIT_null_coder1"] = int(((m.code_n_A == "EXPLICIT") & (m.polarity_n_A == "stated_null")).sum())
+        res["S1_3_n_EXPLICIT_null_coder2"] = int(((m.code_n_B == "EXPLICIT") & (m.polarity_n_B == "stated_null")).sum())
         res["S1_3_n_UNRESOLVED_either_coder"] = int(((m.code_n_A == "UNRESOLVED") | (m.code_n_B == "UNRESOLVED")).sum())
         res["S1_3_n_UNRESOLVED_coder1"] = int((m.code_n_A == "UNRESOLVED").sum()); res["S1_3_n_UNRESOLVED_coder2"] = int((m.code_n_B == "UNRESOLVED").sum())
     else:
@@ -762,9 +765,15 @@ def analyse_s2_v2(pa, pb, man=None, reference=None):
         diff |= m[f + "_n_A"] != m[f + "_n_B"]
     diff |= m.by_authors_flag_A != m.by_authors_flag_B
     diff |= set_a != set_b
+    if "later_ids_A" in m.columns and "later_ids_B" in m.columns:
+        diff |= la != lb                                    # later (post-publication) attribution: sets differ
+        diff |= m.later_status_A != m.later_status_B
     cols = ["key", "label_A"] + [f + s for f in S2V2_FIELDS for s in ("_n_A", "_n_B")] + ["by_authors_flag_A", "by_authors_flag_B"]
     dis = m.loc[diff, cols].rename(columns={"key": "experiment_id", "label_A": "citation_label"})
     dis["by_authors_ids_coder1"] = set_a[diff].values; dis["by_authors_ids_coder2"] = set_b[diff].values
+    if "later_ids_A" in m.columns and "later_ids_B" in m.columns:
+        dis["later_ids_coder1"] = la[diff].values; dis["later_ids_coder2"] = lb[diff].values
+        dis["later_status_coder1"] = m.later_status_A[diff].values; dis["later_status_coder2"] = m.later_status_B[diff].values
     dis["adjudication_note"] = ""
     res["S2v2_n_disagreements"] = len(dis)
     return res, dis
