@@ -21,7 +21,7 @@ A null on C1a (P23) constrains the authors' derivation within the preregistered 
 
 ## S5.3 Participants
 
-Healthy right-handed adults aged 18–40, normal or corrected acuity and colour vision (hue is a rule feature), no neurological, psychiatric or cardiovascular history or related medication (design choice, carried from the earlier version). Confirmatory sample N = 119, fixed in advance; no sequential monitoring. Recruitment continues until 119 participants have complete, non-excluded data for both sessions; the number recruited is reported.
+Healthy right-handed adults aged 18–40, normal or corrected acuity and colour vision (hue is a rule feature), no neurological, psychiatric or cardiovascular history or related medication (design choice, carried from the earlier version). Confirmatory sample N = 120 (119 required for 90 % power at dz = 0.30, rounded up to a multiple of the six rule-to-effector rotations), fixed in advance; no sequential monitoring. Recruitment continues until 120 participants have complete, non-excluded data for both sessions; the number recruited is reported.
 
 ## S5.4 Stimuli
 
@@ -38,6 +38,8 @@ Three three-position levers: left hand, right hand, dominant foot. A response is
 | 3 | all three rules on one lever | none jointly |
 
 The mapping is announced at the start of each block and overlearned in training; the stimulus set is identical across mappings. The count branch keeps all rules on separate levers (0 shared pairs) and puts one, two or three rules in force.
+
+**Effector identity is rotated within participant.** In the 3-shared cells all rules sit on one lever, in the 0-shared cells on three; if the shared lever were fixed for a participant, the incompatibility contrast would also be a contrast between one effector and three (and between hand and foot). Each participant therefore completes the 1-shared and 3-shared cells with each of the three levers as the shared lever in different blocks (block order counterbalanced), and the rule-to-lever assignment for the 0-shared cells is rotated across participants in six orders — the rotation count that fixes N at a multiple of six. Cell means are taken over levers, so effector identity is balanced within every analysis cell rather than confounded with incompatibility; any residual lever effect is reported as an exploratory factor.
 
 ## S5.6 Cell list
 
@@ -70,7 +72,7 @@ The 11-cell budget is what is run: 561 presented trials per session. Analysis ce
 
 ## S5.9 Exclusions (preregistered)
 
-Below 90 % accuracy on full-contrast probe trials after training; titrated visibility outside 35–65 % on the Perceptual Awareness Scale in session 1; cross-validated decoder AUC below 0.70 in session 1; more than 30 % of trials lost to artefact in either session (thresholds carried from the earlier version as design choices). A participant excluded on any criterion is replaced until N = 119 is reached.
+Below 90 % accuracy on full-contrast probe trials after training; titrated visibility outside 35–65 % on the Perceptual Awareness Scale in session 1; cross-validated decoder AUC below 0.70 in session 1; more than 30 % of trials lost to artefact in either session (thresholds carried from the earlier version as design choices). A participant excluded on any criterion is replaced until N = 120 is reached.
 
 ## S5.10 The access index and its freezing
 
@@ -92,7 +94,7 @@ Effect sizes are dz on per-participant contrast scores of the cell-mean access i
 | C1b-lin | shared 0, 1, 3 at count 3 | −1.3333, −0.3333, 1.6667 (linear in shared pairs) | paired t | exploratory |
 | C1b-omni | shared 0, 1, 3 at count 3 | two orthogonal contrasts | Hotelling T², F(2, N − 2) | exploratory |
 
-Ordinal weights (−1, 0, +1) are not used for C1b because they would treat the step from 1 to 3 shared pairs as equal to the step from 0 to 1. A null on C1a is interpreted through a TOST with the same ±0.30 dz bound, whose power at N = 119 is that given for C0-eq below. Analyses are mirrored on the session-1 rating.
+Ordinal weights (−1, 0, +1) are not used for C1b because they would treat the step from 1 to 3 shared pairs as equal to the step from 0 to 1. A null on C1a is interpreted through a TOST with the same ±0.30 dz bound, whose power at N = 120 is that given for C0-eq below. Analyses are mirrored on the session-1 rating.
 
 ## S5.13 Power (from `power_study1.csv`)
 
@@ -104,13 +106,13 @@ Paired-t sample sizes for C0 and C1a (identical computations):
 | 0.30 | 90 | 119 |
 | 0.40 | 52 | 68 |
 
-Fixed sample N = 119: achieved power 0.9008 at dz = 0.30 for C0 and C1a; minimum detectable dz at 90 % power 0.2996.
+Fixed sample N = 120 (119 required; rounded up to a multiple of the six rotations): achieved power 0.9032 at dz = 0.30 for C0 and C1a; minimum detectable dz at 90 % power 0.2983.
 
-Exploratory C1b at N = 119: linear-in-shared-pairs power 0.5808 (dz 0.20), 0.9008 (0.30), 0.9911 (0.40); N for 90 % 265 / 119 / 68. Two-df omnibus power 0.4727 / 0.8326 / 0.978; N for 90 % 320 / 144 / 83.
+Exploratory C1b at N = 120: linear-in-shared-pairs power 0.5844 (dz 0.20), 0.9032 (0.30), 0.9915 (0.40); N for 90 % 265 / 119 / 68. Two-df omnibus power 0.4762 / 0.8359 / 0.979; N for 90 % 320 / 144 / 83.
 
-Equivalence (C0-eq) at N = 119, true effect 0: bounds ±0.20 dz, power 0.400 (Monte Carlo 0.399 ± 0.001), N for 90 % 272; bounds ±0.30, power 0.892 (Monte Carlo 0.892 ± 0.001), N for 90 % 122; bounds ±0.40, power 0.993 (Monte Carlo 0.993), N for 90 % 70. The ±0.30 bound is the planning effect size itself; the equivalence claim is adequately powered at the fixed N only for that bound or wider, and if P16's trigger leaves a small residual increase the equivalence power falls.
+Equivalence (C0-eq) at N = 120, true effect 0: bounds ±0.20 dz, power 0.406, N for 90 % 272; bounds ±0.30, power 0.895 (Monte Carlo 0.896), N for 90 % 122; bounds ±0.40, power 0.993, N for 90 % 70. The ±0.30 bound is the planning effect size itself; the equivalence claim is adequately powered at the fixed N only for that bound or wider, and if P16's trigger leaves a small residual increase the equivalence power falls.
 
-Mixed-model check (`power_mixed_check.csv`): at N = 119 and 64 usable trials per cell, 200 simulated data sets calibrated to dz = 0.30 — C1a: analytic 0.901, two-stage paired t 0.930, linear mixed model with random slopes 0.930 (Monte Carlo SE about 0.0212), 0 non-converged; C0: 0.901 / 0.920 / 0.920, 0 non-converged. Agreement with the analytic value is expected by construction; the check confirms the calibration and is not an independent estimate. The two-df omnibus power assumes the whole effect lies along one contrast direction.
+Mixed-model check (`power_mixed_check.csv`): at N = 119 (the required N; the fixed N = 120 differs negligibly) and 64 usable trials per cell, 200 simulated data sets calibrated to dz = 0.30 — C1a: analytic 0.901, two-stage paired t 0.930, linear mixed model with random slopes 0.930 (Monte Carlo SE about 0.0212), 0 non-converged; C0: 0.901 / 0.920 / 0.920, 0 non-converged. Agreement with the analytic value is expected by construction; the check confirms the calibration and is not an independent estimate. The two-df omnibus power assumes the whole effect lies along one contrast direction.
 
 Effect-size anchor: incompatible against compatible intentions on report-based ratings, t(13) = 6.21 [15], an upper bound that retained variance this design removes; the planning value dz = 0.30 sits below it.
 

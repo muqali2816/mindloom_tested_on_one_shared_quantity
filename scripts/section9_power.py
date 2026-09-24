@@ -231,7 +231,9 @@ def main(argv=None):
                 n = n_for_power(dz, pw)
                 rows.append(dict(study=1, contrast=contrast, hypothesis=hyp, weights=str(w.tolist()), test="paired t, two-sided", dz=dz, target_power=pw,
                                  n_participants=n, achieved_power=round(power_paired_t(n, dz), 4), role="confirmatory" if (dz == DZ_PLAN and pw == TARGET_POWER) else "sensitivity"))
-    N_FIXED = n_for_power(DZ_PLAN, TARGET_POWER)
+    N_REQUIRED = n_for_power(DZ_PLAN, TARGET_POWER)            # smallest N reaching the target (119 at dz 0.30)
+    ROTATIONS = 6                                              # rule-to-effector assignments rotated across participants
+    N_FIXED = int(math.ceil(N_REQUIRED / ROTATIONS) * ROTATIONS) # rounded UP to a multiple of the rotation count (120); power can only rise
     # C1b: linear-in-shared-pairs (one df) and the omnibus (two df)
     for dz in dzs:
         n1 = n_for_power(dz, TARGET_POWER); n2 = n_for_omnibus(dz, TARGET_POWER)
@@ -369,7 +371,7 @@ def main(argv=None):
           "- The 25 % probe-trial fraction and 15 % loss are planning values; the presented-trial count should be re-derived if piloting changes either.",
           f"", f"Runtime of this script: {time.time() - t0:.1f} s."]
     open(os.path.join(a.out, "section9_power_summary.md"), "w").write("\n".join(L) + "\n")
-    key = dict(N_fixed_study1=int(N_FIXED), N_C0_dz030=int(c0.n_participants), N_C1a_dz030=int(c1a.n_participants), N_C0_dz020=int(c0_20.n_participants), N_C0_dz040=int(c0_40.n_participants),
+    key = dict(N_fixed_study1=int(N_FIXED), N_required_dz030=int(N_REQUIRED), rotations=ROTATIONS, N_C0_dz030=int(c0.n_participants), N_C1a_dz030=int(c1a.n_participants), N_C0_dz020=int(c0_20.n_participants), N_C0_dz040=int(c0_40.n_participants),
                presented_per_cell=int(ppc), presented_per_session_11_cells=int(b_pr.presented_per_session), presented_per_session_5_cells=int(b_an.presented_per_session),
                tost_power_at_N_bound030_analytic=float(to[0.30].achieved_power), tost_power_at_N_bound030_mc=float(to[0.30].tost_power_mc),
                N_study2_valence_dz030=int(v.n_participants), N_interaction_dz020=int(ix_n.n_participants), runtime_s=round(time.time() - t0, 1))

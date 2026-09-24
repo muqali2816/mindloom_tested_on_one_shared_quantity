@@ -27,7 +27,7 @@ silently dropped.  Domain ids are accepted as `domain_id` or the legacy `quantit
 Code schemes (--code-scheme)
 ----------------------------
   v2 (default)  EXPLICIT / INTERPRETED / NOT_LOCATED / NOT_APPLICABLE / UNRESOLVED, plus a
-                `polarity` column (positive / null / negative) that is REQUIRED for EXPLICIT and
+                `polarity` column (positive / stated_null / negative) that is REQUIRED for EXPLICIT and
                 INTERPRETED cells and ignored otherwise.  NOT_LOCATED is "no statement found in
                 the examined corpus"; it is not a prediction of no effect (that is EXPLICIT + null).
   legacy        YES / IMPLICIT / NO / YES (negative) as used in deposit v1.3 (88 cells).
@@ -89,7 +89,7 @@ __version__ = "2.0"
 # ---------------------------------------------------------------- code schemes
 V2_CODES = ["EXPLICIT", "INTERPRETED", "NOT_LOCATED", "NOT_APPLICABLE", "UNRESOLVED"]
 V2_POSITIVE = {"EXPLICIT", "INTERPRETED"}            # cells that must carry a DOI and a polarity
-POLARITIES = ["positive", "null", "negative"]
+POLARITIES = ["positive", "stated_null", "negative"]
 LEGACY_CODES = ["NO", "IMPLICIT", "YES", "Y(neg)"]
 LEGACY_POSITIVE = {"YES", "IMPLICIT", "Y(neg)"}
 NONE_LABEL = "none of the coded theories"
@@ -141,7 +141,7 @@ def norm_polarity(x) -> str:
         return ""
     s = str(x).strip().lower()
     aliases = {"positive": "positive", "pos": "positive", "+": "positive",
-               "null": "null", "zero": "null", "no effect": "null", "0": "null",
+               "stated_null": "stated_null", "null": "stated_null", "zero": "stated_null", "no effect": "stated_null", "0": "stated_null",
                "negative": "negative", "neg": "negative", "-": "negative"}
     return aliases.get(s, "INVALID")
 

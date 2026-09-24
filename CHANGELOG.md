@@ -43,5 +43,13 @@ Baseline: manuscript v3 (sha256 dec8007fb39d42e2), deposit v1.3 (e7ea015ce7b9171
 - §7.2 and CRediT: second coding described as scheduled, not in progress.
 - deposit_v2/README.md: Table S3 covers 10 accounts (v1.3 set without NSF, before the HOT/HOSS split), not the S1 set.
 
+## v4.2 — after the second internal check (24 Sep, 13:30)
+- Coder pack v3.1: Table S4 removed (it lists every EXPLICIT cell); released to the second coder only after S1 is returned. README states this.
+- Codebook re-frozen with a verifiable rule: `sed '$d' codebook_v2.md | shasum -a 256` (GNU: `head -n -1 … | sha256sum`) = value in codebook_v2.sha256. Definitions unchanged; polarity token `null` → `stated_null` (pandas reads bare `null` as missing) in Table S1, scripts and codebook.
+- §9.1 / S5 / response: fixed N = 120 (119 required, rounded to a multiple of six rule-to-effector rotations); power at 120: C0/C1a 0.903, TOST ±0.30 0.895, C1b omnibus 0.84. Within-participant rotation of the shared lever added to S5.5 (effector-identity confound).
+- Pair counts stated as "15 (14 at confidence ≥ 2)"; §7.2 now says the S4 distinguishability judgements are single-coder until the second coder codes them.
+- Ref 84 left as Graziano & Webb 2015: CrossRef and OpenAlex both give Graziano as first author for 10.3389/fpsyg.2015.00500.
+- NOT done (author decisions): reclassification of Morsella 2009 E3 (interoceptive → motor-conflict) and the abstract sentence that rests on it; length cut to ≤ 13 500; full-text reading of the 54 EXPLICIT/INTERPRETED cells; abstract rewrite.
+
 ## Still with the authors
 Send extension request; send proponent letters (record dates); second coding → agreement.py → fill κ; upload deposit_v2 → DOI into 4 places; names, CRediT confirmation, funding, CoI, AI tool; decide on length cuts; confirm Poznanski DOI.

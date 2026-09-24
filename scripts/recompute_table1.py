@@ -18,7 +18,7 @@ Input schema, v2 (long format; one row per theory x domain cell; auto-detected b
   theory_id        key, must exist in accounts_manifest.csv (12 accounts: AST, FM, GNWT, HOT, HOSS, IIT, NSF, PFT, PP, RPT, SIT, UAL)
   domain_id        key, must exist in domains_manifest.csv (10 domains: M1, M2, M3, M4a, M4b, M4c, M5, M6, M7, M8)
   code             EXPLICIT | INTERPRETED | NOT_LOCATED | NOT_APPLICABLE | UNRESOLVED
-  polarity         positive | null | negative  -- required when code is EXPLICIT or INTERPRETED; empty otherwise
+  polarity         positive | stated_null | negative  -- required when code is EXPLICIT or INTERPRETED; empty otherwise
   relation         free text (e.g. effect / threshold / locus / sufficiency); carried through, not tallied
   source_label, source_doi, source_locus, evidence_status   -- source_doi required for EXPLICIT/INTERPRETED
   justification    one or two sentences
@@ -29,7 +29,7 @@ Input schema, v2 (long format; one row per theory x domain cell; auto-detected b
   row_class        trial-level | origin-level  -- optional in the file, always taken from the manifest if absent
 Any other column is carried through untouched.  Codes and polarity are validated; duplicated keys,
 unknown theory_id/domain_id, missing polarity on positive cells and missing DOI on positive cells abort.
-The file is read with keep_default_na=False so that the polarity value 'null' survives as a string.
+The file is read with keep_default_na=False; the null polarity is spelled 'stated_null' because pandas treats the bare token 'null' as missing by default.
 
 Input schema, legacy (deposit v1.3; auto-detected by `theory` + `quantity_id`)
 -------------------------------------------------------------------------------
@@ -51,7 +51,7 @@ Column status (v2, computed -- never an input)
 ----------------------------------------------
 For each domain, over trial-level accounts:
   n_explicit_pos      EXPLICIT cells with polarity positive or negative (a stated directional prediction)
-  n_explicit_null     EXPLICIT cells with polarity null (a stated prediction of no involvement)
+  n_explicit_null     EXPLICIT cells with polarity stated_null (a stated prediction of no involvement)
   n_interpreted       INTERPRETED cells
   occupancy_summary   'no-EXPLICIT' | 'one-EXPLICIT' | 'multi-EXPLICIT-same-sign' | 'sign-disagreement'
                       (>= 2 EXPLICIT cells whose polarities disagree, or any UNRESOLVED cell).
@@ -69,12 +69,12 @@ import pandas as pd
 __version__ = "2.0"
 V2_CODES = ["EXPLICIT", "INTERPRETED", "NOT_LOCATED", "NOT_APPLICABLE", "UNRESOLVED"]
 V2_POSITIVE = {"EXPLICIT", "INTERPRETED"}
-POLARITIES = ["positive", "null", "negative"]
+POLARITIES = ["positive", "stated_null", "negative"]
 LEGACY_CODES = ["YES", "YES (negative)", "IMPLICIT", "NO"]
 LEGACY_SHORT = {"YES": "YES", "YES (negative)": "YES(neg)", "IMPLICIT": "IMPLICIT", "NO": "NO"}
 DEFAULT_ADDED_DOMAINS = ("M4a", "M4b", "M4c")
-SYM_V2 = {"EXPLICIT:positive": "**E+**", "EXPLICIT:null": "**E0**", "EXPLICIT:negative": "**E−**",
-          "INTERPRETED:positive": "*i+*", "INTERPRETED:null": "*i0*", "INTERPRETED:negative": "*i−*",
+SYM_V2 = {"EXPLICIT:positive": "**E+**", "EXPLICIT:stated_null": "**E0**", "EXPLICIT:negative": "**E−**",
+          "INTERPRETED:positive": "*i+*", "INTERPRETED:stated_null": "*i0*", "INTERPRETED:negative": "*i−*",
           "NOT_LOCATED": "·", "NOT_APPLICABLE": "n/a", "UNRESOLVED": "?"}
 
 
@@ -181,7 +181,7 @@ def wide_v2(df, scope_name, dom_order):
         # Occupancy summary ONLY (how many EXPLICIT cells, and whether their signs disagree).
         # The manuscript's column class is NOT this field: it is derived by column_typology.py from
         # Table S1 together with the distinguishable-prediction pairs of Table S4.
-        if (sub.code == "UNRESOLVED").any() or (n_exp >= 2 and directional and "null" in pols):
+        if (sub.code == "UNRESOLVED").any() or (n_exp >= 2 and directional and "stated_null" in pols):
             status = "sign-disagreement"
         elif n_exp == 0:
             status = "no-EXPLICIT"
@@ -241,7 +241,7 @@ def run_v2(path, accounts, domains, out):
         for d in dom_order:
             sub = scope_df[scope_df.domain_id == d]
             e_dir = int(((sub.code == "EXPLICIT") & sub.polarity.isin(["positive", "negative"])).sum())
-            e_null = int(((sub.code == "EXPLICIT") & (sub.polarity == "null")).sum())
+            e_null = int(((sub.code == "EXPLICIT") & (sub.polarity == "stated_null")).sum())
             i_ = int((sub.code == "INTERPRETED").sum()); nl = int((sub.code == "NOT_LOCATED").sum())
             na = int((sub.code == "NOT_APPLICABLE").sum()); un = int((sub.code == "UNRESOLVED").sum())
             s = f"{e_dir} E"
@@ -333,7 +333,7 @@ def selftest(out, seed=3):
     sim = pd.DataFrame(rows)
     # one hand-planted contested column and one single-occupant column so the status logic is exercised deterministically
     sim.loc[(sim.domain_id == "M8") & (sim.theory_id == "GNWT"), ["code", "polarity", "source_doi"]] = ["EXPLICIT", "positive", "10.0/sim"]
-    sim.loc[(sim.domain_id == "M8") & (sim.theory_id == "SIT"), ["code", "polarity", "source_doi"]] = ["EXPLICIT", "null", "10.0/sim"]
+    sim.loc[(sim.domain_id == "M8") & (sim.theory_id == "SIT"), ["code", "polarity", "source_doi"]] = ["EXPLICIT", "stated_null", "10.0/sim"]
     sim.loc[sim.domain_id == "M6", ["code", "polarity", "source_doi"]] = ["NOT_LOCATED", "", ""]
     sim.loc[(sim.domain_id == "M6") & (sim.theory_id == "IIT"), ["code", "polarity", "source_doi"]] = ["EXPLICIT", "positive", "10.0/sim"]
     p = os.path.join(out, "selftest_S1_v2_synthetic.csv"); sim.to_csv(p, index=False)

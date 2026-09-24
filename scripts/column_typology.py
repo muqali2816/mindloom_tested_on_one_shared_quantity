@@ -69,7 +69,7 @@ rows = []
 for d in sorted(cells.domain_id.unique(), key=lambda x: (len(x), x)):
     c = cells[cells.domain_id == d]
     n_pos = int(((c.code == "EXPLICIT") & (c.polarity == "positive")).sum())
-    n_null = int(((c.code == "EXPLICIT") & (c.polarity == "null")).sum())
+    n_null = int(((c.code == "EXPLICIT") & (c.polarity == "stated_null")).sum())
     n_neg = int(((c.code == "EXPLICIT") & (c.polarity == "negative")).sum())
     n_exp = n_pos + n_null + n_neg
     n_int = int((c.code == "INTERPRETED").sum())

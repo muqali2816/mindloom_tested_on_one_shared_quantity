@@ -10,7 +10,7 @@ Purpose of this pack: an independent second application of the coding scheme beh
 
 1. **Code independently.** Do not discuss cells with the first coder before the forms are returned. Do not open the manuscript's §7 results, the filled S1/S2, or any draft of the response to reviewers.
 2. **Read the sources, not the summaries.** For each theory, read the primary sources listed in §5 of this codebook (3–5 per theory). You may add further sources, but each code must be anchored to a specific citable text; record it in the `source_label` / `source_doi` columns.
-3. **Fill `S1_blank_for_coder2_v2.csv` (120 rows).** For every account × domain cell enter exactly one code from {EXPLICIT, INTERPRETED, NOT_LOCATED, NOT_APPLICABLE, UNRESOLVED} in `code`, `polarity` (positive / null / negative) for EXPLICIT and INTERPRETED, `relation`, a one- or two-sentence `claim_text` in your own words, and `source_label`, `source_doi`, `source_locus`. If the code is NOT_LOCATED, `claim_text` should state what you looked for and did not find. `confidence` is optional (1 = guess, 2 = defensible, 3 = certain).
+3. **Fill `S1_blank_for_coder2_v2.csv` (120 rows).** For every account × domain cell enter exactly one code from {EXPLICIT, INTERPRETED, NOT_LOCATED, NOT_APPLICABLE, UNRESOLVED} in `code`, `polarity` (positive / stated_null / negative) for EXPLICIT and INTERPRETED, `relation`, a one- or two-sentence `claim_text` in your own words, and `source_label`, `source_doi`, `source_locus`. If the code is NOT_LOCATED, `claim_text` should state what you looked for and did not find. `confidence` is optional (1 = guess, 2 = defensible, 3 = certain).
 4. **Fill `S2_blank_for_coder2.csv` (36 rows).** For each study enter the `content` category (§4.2) and the `theory_addressed` value (§4.1). You will need to look at the study's methods (stimuli and task), not only its abstract.
 5. **Time yourself.** Record start and end times per theory block and for the S2 form in `coder2_timing_log.csv`. The time is reported in the manuscript's method section as a property of the scheme, not as an assessment of you.
 6. **Do not resolve doubt by looking for the "expected" answer.** When a cell is genuinely ambiguous, choose the code the decision rules in §3 require, and flag the cell with `confidence = 1`. Ambiguous cells are exactly what the adjudication meeting is for.
@@ -42,13 +42,13 @@ The extent to which cortical activity and autonomic/visceral activity (cardiac, 
 The affective sign and magnitude of the content whose access is at issue (positive/negative, threat/reward, pain/pleasure). A theory predicts over M3 if it states that valence changes access (its threshold, priority, timing or neural signature), or that valence is itself a constitutive dimension of what becomes conscious.
 
 **M4a — Access to interoceptive content as content.**
-Whether the theory states that interoceptive or visceral signals (heartbeat, respiration, gastric rhythm, thermal and homeostatic states) can themselves become the accessed content, and whether such content is accessed by the same mechanism as exteroceptive content. A stated prediction that interoceptive content is accessed like any other content is EXPLICIT positive; a stated prediction that it is not experienced as content is EXPLICIT null.
+Whether the theory states that interoceptive or visceral signals (heartbeat, respiration, gastric rhythm, thermal and homeostatic states) can themselves become the accessed content, and whether such content is accessed by the same mechanism as exteroceptive content. A stated prediction that interoceptive content is accessed like any other content is EXPLICIT positive; a stated prediction that it is not experienced as content is EXPLICIT stated_null.
 
 **M4b — Visceral modulation of access to exteroceptive content.**
 Whether the theory states that the state or phase of an autonomic signal (cardiac phase, heartbeat-evoked response amplitude, respiratory phase, arousal level) changes the probability or quality of access to an *exteroceptive* content. This is a modulation claim, not a content claim: the accessed content is visual or auditory, the modulator is visceral.
 
 **M4c — Conscious involvement in purely autonomic conflict.**
-Whether the theory states that a conflict resolved wholly by autonomic (smooth-muscle, glandular) effectors, with no skeletomotor plan at any point, involves conscious experience. A stated exclusion of autonomic conflict from the function of consciousness is EXPLICIT null — record in `claim_text` that this is an exclusion from the theory's function, not a denial that bodily states can be felt. A mechanism that would produce a feeling here but is not stated for this condition is INTERPRETED positive. Coding requires the source to define conflict and to exclude skeletomotor involvement; if it does neither, code NOT_LOCATED.
+Whether the theory states that a conflict resolved wholly by autonomic (smooth-muscle, glandular) effectors, with no skeletomotor plan at any point, involves conscious experience. A stated exclusion of autonomic conflict from the function of consciousness is EXPLICIT stated_null — record in `claim_text` that this is an exclusion from the theory's function, not a denial that bodily states can be felt. A mechanism that would produce a feeling here but is not stated for this condition is INTERPRETED positive. Coding requires the source to define conflict and to exclude skeletomotor involvement; if it does neither, code NOT_LOCATED.
 
 *Coding note for all three:* a legacy M4 code (v1.3) does not transfer. Each M4a/M4b/M4c cell is coded from the source anew; the v1.3 justification is reference material only.
 ### 2C. The format and signature of access (how it is accessed)
@@ -60,7 +60,7 @@ The number of independent dimensions along which conscious experience can vary a
 The reliability with which the system represents its own first-order states — confidence calibration, metacognitive sensitivity (e.g. meta-d′), the precision or variance of a higher-order estimate. A theory predicts over M7 if it states that the presence, degree or content of conscious experience depends on the precision of the higher-order representation, or that a metacognitive measure indexes it.
 
 **M8 — Cortical signature of access.**
-A specific, localisable neural correlate of conscious access in cortex: a region (prefrontal, posterior "hot zone", sensory cortex), a temporal marker (P3b, late ignition, recurrent feedback in a given window), or a connectivity pattern. A theory predicts over M8 if it names such a signature and states that it should be present when content is accessed and absent when it is not (or vice versa). A stated prediction that a cortical signature is **not** necessary for experience is also a prediction (EXPLICIT null).
+A specific, localisable neural correlate of conscious access in cortex: a region (prefrontal, posterior "hot zone", sensory cortex), a temporal marker (P3b, late ignition, recurrent feedback in a given window), or a connectivity pattern. A theory predicts over M8 if it names such a signature and states that it should be present when content is accessed and absent when it is not (or vice versa). A stated prediction that a cortical signature is **not** necessary for experience is also a prediction (EXPLICIT stated_null).
 
 ---
 ## 3. The codes and their decision rules (scheme v2)
@@ -69,7 +69,7 @@ Each cell = one account × one domain. Code the **statement**, not your belief a
 
 | Code | Meaning | Decision rule |
 |---|---|---|
-| **EXPLICIT** | The source states a prediction over this domain. | You can quote a sentence (or a preregistered prediction) that names the quantity or its operationalisation and says what should happen to access/awareness when it varies. Record `polarity`: **positive** (involvement/effect predicted), **null** (the source states that the quantity makes *no* difference, or excludes the domain from the theory's function), **negative** (access predicted to *decrease*). A stated null is a stated prediction. |
+| **EXPLICIT** | The source states a prediction over this domain. | You can quote a sentence (or a preregistered prediction) that names the quantity or its operationalisation and says what should happen to access/awareness when it varies. Record `polarity`: **positive** (involvement/effect predicted), **stated_null** (the source states that the quantity makes *no* difference, or excludes the domain from the theory's function), **negative** (access predicted to *decrease*). A stated null is a stated prediction. |
 | **INTERPRETED** | The prediction follows from the stated mechanism but the source does not state it for this domain. | You can name the mechanism and the inference step in one sentence. Record `polarity` as above. This is the old IMPLICIT. |
 | **NOT_LOCATED** | No statement found in the examined corpus. | Applies only to the sources listed in §5 plus any you name in `source_locus`. NOT_LOCATED is **not** a prediction of no effect and is never counted as a null. |
 | **NOT_APPLICABLE** | The theory itself places the domain outside its scope. | The source says so (e.g. an origin-level account that declines trial-level predictions). Quote the scope statement. |
@@ -77,7 +77,7 @@ Each cell = one account × one domain. Code the **statement**, not your belief a
 
 Every EXPLICIT or INTERPRETED cell carries: `relation` ∈ {effect, modulation, necessity, sufficiency, constitution, marker, scope}, `source_label`, `source_doi`, `source_locus` (section / page / figure / preregistered-prediction number), `evidence_status` (full-text / abstract-only / secondary), `confidence` (1–3). Several distinct predictions in one cell are **not** separate S1 rows: S1 holds one row per cell with the code of the strongest statement; each prediction is a row of Table S4 (register) with its own P-id, listed in `prediction_id` separated by `;`.
 
-**Legacy mapping (for the 96 cells carried from v1.3, HOT/HOSS split):** YES → EXPLICIT positive; YES (negative) → EXPLICIT null; IMPLICIT → INTERPRETED; NO → NOT_LOCATED, unless the source states a scope exclusion → NOT_APPLICABLE. The legacy code stays in `legacy_code` and is never overwritten.
+**Legacy mapping (for the 96 cells carried from v1.3, HOT/HOSS split):** YES → EXPLICIT positive; YES (negative) → EXPLICIT stated_null; IMPLICIT → INTERPRETED; NO → NOT_LOCATED, unless the source states a scope exclusion → NOT_APPLICABLE. The legacy code stays in `legacy_code` and is never overwritten.
 
 **What the column class means and who assigns it.** No coder assigns a column class. `column_typology.py` derives it from S1 and S4 after both codings: contested (≥ 2 EXPLICIT and ≥ 1 pair of stated predictions that differ in sign, magnitude, locus, timing, distribution or condition), single-occupant (exactly 1 EXPLICIT), occupied-not-contested (≥ 2 EXPLICIT, no distinguishable pair), thin (0 EXPLICIT, ≥ 1 INTERPRETED), unoccupied (none). Do not let the expected class influence a code.
 ## 4. Rules for Table S2 v2 (study inventory)
@@ -270,6 +270,5 @@ Sources are listed most-recent-empirical-statement first; that is the canonical 
 
 Anchor every non-NO cell to a citable source, as in S1. If the theory says nothing that bears on the dimension, code NO and state what you looked for.
 
-
 ---
-**Codebook v2.0 — frozen 24 September 2026. sha256 of this file above this line: `1c18deae68ccf69b0acd5fcaab47cb127a1fbd62dd52c07b1552e668c1cc1d06`.** Changes after the second coder starts → `codebook_changelog.md` and re-coding of affected cells.
+**Codebook v2.0 — frozen 24 September 2026. sha256 of everything above this line (all bytes up to and including the newline that precedes it): `365e5a59b4c36d1c01df84936c31ca5cc7fc5000d8c88d2c8b63d1bfcf09718e`.** Changes after the second coder starts → `codebook_changelog.md` and re-coding of affected cells.
