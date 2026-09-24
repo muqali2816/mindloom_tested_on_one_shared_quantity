@@ -18,10 +18,11 @@ Presentation cells (11, effector-balanced): count 1 on each of 3 effectors (3), 
 count 3 all on the designated effector (1).  The per-cell trial budget is given for both groupings.
 
 Contrasts (per-participant scores on the cell means of the report-independent access index):
-  C0   threshold, count 1 vs >= 2 at 0 shared pairs (P16, a trigger and not a monotonic count effect):
+  C0   threshold, count 1 vs >= 2 at 0 shared pairs (P32, author-derived from SIT's stated threshold P16, which concerns
+       experienced conflict, not access; a trigger and not a monotonic count effect):
        w = (-1, +1/2, +1/2) over (count 1, 2, 3).
-       Companion equivalence test for the 'not monotonic' half of P16: count 3 - count 2, TOST with
-       bound +/- delta (in dz units), true effect 0 under P16.
+       Companion equivalence test for the 'not monotonic' half (P33, author-derived): count 3 - count 2, TOST with
+       bound +/- delta (in dz units), true effect 0 under P33.
   C1a  compatible vs incompatible pairs at count = 3 (P23, author-derived): w = (-1, +1/2, +1/2) over
        (0, 1, 3 shared pairs).
   C1b  0 / 1 / 3 shared pairs with UNEQUAL steps.  The manipulated quantity is the number of shared
@@ -80,7 +81,7 @@ import numpy as np
 import pandas as pd
 from scipy import stats, integrate, optimize
 
-__version__ = "2.2"
+__version__ = "2.3"
 ALPHA, TARGET_POWER = 0.05, 0.90
 DZ_PLAN, DZ_ALT = 0.30, (0.20, 0.40)
 TOST_BOUNDS = (0.20, 0.30, 0.40)
@@ -268,7 +269,7 @@ def main(argv=None):
 
     # ---- Study 1: N for the two confirmatory contrasts
     rows = []
-    for contrast, w, hyp in [("C0_threshold_count1_vs_ge2", W_C0, "P16 (stated, SIT)"), ("C1a_compatible_vs_incompatible_at_count3", W_C1A, "P23 (author-derived)")]:
+    for contrast, w, hyp in [("C0_threshold_count1_vs_ge2", W_C0, "P32 (author-derived from SIT P16)"), ("C1a_compatible_vs_incompatible_at_count3", W_C1A, "P23 (author-derived)")]:
         for dz in dzs:
             for pw in (0.80, 0.90):
                 n = n_for_power(dz, pw)
@@ -295,7 +296,7 @@ def main(argv=None):
         p_an = power_tost_exact(N_FIXED, delta)
         p_mc, se_mc = power_tost_mc(N_FIXED, delta, n_sim=a.mc, seed=a.seed)
         n_t = n_for_tost(delta)
-        tost_rows.append(dict(study=1, contrast="C0_equivalence_count3_vs_count2", hypothesis="P16: no further increase beyond the trigger (true effect 0)", weights=str(W_EQUIV.tolist()),
+        tost_rows.append(dict(study=1, contrast="C0_equivalence_count3_vs_count2", hypothesis="P33 (author-derived): no further increase beyond the trigger (true effect 0)", weights=str(W_EQUIV.tolist()),
                               test=f"TOST, bounds +/-{delta} dz, alpha {ALPHA} each side", dz=delta, target_power=TARGET_POWER, n_participants=N_FIXED,
                               achieved_power=round(p_an, 4), role="equivalence_at_fixed_N", tost_power_mc=round(p_mc, 4), tost_mc_se=round(se_mc, 5), n_for_90pct_tost=n_t))
     s1 = pd.DataFrame(rows + tost_rows)
@@ -328,8 +329,10 @@ def main(argv=None):
     brows = []
     def budget_row(study, grouping, ncells, pooled=1):
         p2 = ppc2 * pooled; p1 = ppc1 * pooled
-        m2, nb2, br2, bt2 = session_minutes(ppc2, ncells, a.blocks_per_cell, a.trial_seconds, 0.0, a.break_minutes)
-        m1, nb1, br1, bt1 = session_minutes(ppc1, ncells, a.blocks_per_cell, a.trial_seconds, a.pas_seconds, a.break_minutes)
+        # duration for this grouping: the underlying presentation cells (ncells x pooled), each in blocks_per_cell blocks; pooled sets are
+        # sequences with their own internal breaks and are NOT additive with the full-session rows
+        m2, nb2, br2, bt2 = session_minutes(ppc2, ncells * pooled, a.blocks_per_cell, a.trial_seconds, 0.0, a.break_minutes)
+        m1, nb1, br1, bt1 = session_minutes(ppc1, ncells * pooled, a.blocks_per_cell, a.trial_seconds, a.pas_seconds, a.break_minutes)
         return dict(study=study, cell_grouping=grouping, n_cells=ncells, presentation_cells_pooled_per_cell=pooled,
                     usable_target_per_cell=USABLE_TARGET, probe_fraction=PROBE_FRAC, loss_rate=LOSS_RATE,
                     presented_session2_per_cell_raw_min=round(raw2 * pooled, 2), presented_session2_per_cell=p2,
@@ -400,17 +403,17 @@ def main(argv=None):
          f"All values below are read from power_study1.csv, power_study2.csv, trials_budget.csv and power_mixed_check.csv written by this script (seed {a.seed}); none is typed by hand. "
          f"alpha = {ALPHA} two-sided; target power {int(TARGET_POWER * 100)} %; effect sizes are dz on per-participant contrast scores.", "",
          "## Study 1 (neutral stimuli, three effectors, 0 / 1 / 3 shared pairs, count branch 1 / 2 / 3)", "",
-         f"**C0 (P16, threshold: count 1 vs >= 2 at 0 shared pairs; weights {c0.weights}).** N = {int(c0.n_participants)} participants give {int(TARGET_POWER * 100)} % power at dz = {DZ_PLAN} "
+         f"**C0 (P32, author-derived threshold: count 1 vs >= 2 at 0 shared pairs; weights {c0.weights}).** N = {int(c0.n_participants)} participants are required for {int(TARGET_POWER * 100)} % power at dz = {DZ_PLAN} "
          f"(achieved {c0.achieved_power:.3f}); N = {int(c0_20.n_participants)} at dz = 0.20 and N = {int(c0_40.n_participants)} at dz = 0.40.",
          f"**C1a (P23, author-derived: 0 shared pairs vs mean of 1 and 3 shared pairs at count 3; weights {c1a.weights}).** The same paired-t computation applies: N = {int(c1a.n_participants)} at dz = {DZ_PLAN}. "
-         f"The fixed sample is therefore N = {int(c0.n_participants)}; its minimum detectable dz at {int(TARGET_POWER * 100)} % power is {md_.dz:.3f}.",
-         f"**Equivalence half of P16 (count 3 - count 2, TOST).** At N = {int(c0.n_participants)} and a true effect of zero, exact TOST power is "
+         f"The fixed sample is N = {N_FIXED} (the required {int(c0.n_participants)} rounded up to a multiple of the {ROTATIONS} rule-to-effector rotations); its minimum detectable dz at {int(TARGET_POWER * 100)} % power is {md_.dz:.3f}.",
+         f"**Equivalence half, P33 (count 3 - count 2, TOST).** At N = {N_FIXED} and a true effect of zero, exact TOST power is "
          + "; ".join(f"{to[d].achieved_power:.3f} (Monte Carlo {to[d].tost_power_mc:.3f} +/- {to[d].tost_mc_se:.3f}) for bounds +/-{d}" for d in TOST_BOUNDS)
          + f". To reach {int(TARGET_POWER * 100)} % TOST power one would need N = " + ", ".join(f"{int(to[d].n_for_90pct_tost)} at +/-{d}" for d in TOST_BOUNDS) + ". "
          f"The bound +/-{DZ_PLAN} is the planning effect size itself; the equivalence claim is thus adequately powered at the fixed N only for that bound or wider.",
          f"**C1b (0 / 1 / 3 shared pairs, unequal steps).** With weights linear in the number of shared pairs ({lin[DZ_PLAN].weights}, i.e. -4, -1, +5 up to scale) the one-df test needs N = "
          + ", ".join(f"{int(lin[d].n_participants)} at dz = {d}" for d in dzs) + f". The two-df omnibus (Hotelling T^2, effect on one contrast direction) needs N = "
-         + ", ".join(f"{int(omn[d].n_participants)} at dz = {d}" for d in dzs) + f"; at the fixed N = {int(c0.n_participants)} its power is "
+         + ", ".join(f"{int(omn[d].n_participants)} at dz = {d}" for d in dzs) + f"; at the fixed N = {N_FIXED} its power is "
          + ", ".join(f"{omn_at[d].achieved_power:.3f} at dz = {d}" for d in dzs) + ". The ordinal weights (-1, 0, +1) are not used: they would treat the step from 1 to 3 shared pairs as equal to the step from 0 to 1.", "",
          "### Trials (session 2 carries the no-report estimate)", "",
          f"Session 1 collects a PAS rating on every trial and trains the access classifier; only session-2 trials enter the no-report estimate. "

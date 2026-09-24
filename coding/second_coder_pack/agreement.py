@@ -104,7 +104,7 @@ import argparse, os, re, sys
 import numpy as np
 import pandas as pd
 
-__version__ = "2.2"
+__version__ = "2.3"
 
 # ---------------------------------------------------------------- code schemes
 V2_CODES = ["EXPLICIT", "INTERPRETED", "NOT_LOCATED", "NOT_APPLICABLE", "UNRESOLVED"]
@@ -665,6 +665,29 @@ def parse_ids_column(raw, man, key, path):
     return frozenset(ids)
 
 
+EVIDENCE_STATUS = ["CONTEXT_NAMED", "CONTEXT_READ_NOT_NAMED", "REFLIST", "NONE_FOUND", "NOT_CHECKED"]
+_EVIDENCE_PATTERNS = [(re.compile(r"context.*named|named in (?:the )?(?:citing )?sentence|sentence names", re.I), "CONTEXT_NAMED"),
+                      (re.compile(r"context.*(?:read|checked).*not named|not named in", re.I), "CONTEXT_READ_NOT_NAMED"),
+                      (re.compile(r"ref(?:erence)?[ _-]?list|reflist|cited in the reference", re.I), "REFLIST"),
+                      (re.compile(r"^(none|none found|no citation|not cited|-|n/a)\b", re.I), "NONE_FOUND"),
+                      (re.compile(r"not checked|not verified|unverified", re.I), "NOT_CHECKED")]
+
+
+def normalise_evidence(v):
+    """later_attribution_evidence -> one of EVIDENCE_STATUS (or UNRESOLVED). The DOI and free explanation are not compared here;
+    they are carried into the disagreement list for adjudication."""
+    s = re.sub(r"\s+", " ", str(v).strip())
+    if s == "" or s.lower() == "nan":
+        return "NONE_FOUND"
+    head = s.split(";")[0].split("(")[0].strip().upper().replace(" ", "_")
+    if head in EVIDENCE_STATUS:
+        return head
+    for pat, lab in _EVIDENCE_PATTERNS:
+        if pat.search(s):
+            return lab
+    return UNRESOLVED
+
+
 def load_s2_v2(path, man=None):
     """Load and validate one S2 v2 (experiment-unit) coding file.  Adds: key, <field>_n (canonical labels), by_authors_ids
     (frozenset), by_authors_status, by_authors_flag (bool), attribution_source, later_ids / later_status when the later column exists."""
@@ -708,6 +731,21 @@ def load_s2_v2(path, man=None):
     if "theory_attribution_later" in df.columns:
         lp = [parse_attribution(v, man, pats) for v in df["theory_attribution_later"]]
         df["later_status"] = [p["status"] for p in lp]; df["later_ids"] = [p["ids"] for p in lp]
+    # v2.3 optional fields (codebook v2.3): effector_type (motor rows), later_attribution_evidence (normalised status),
+    # and the coder's own partition of each publication (unit_type / unit_type_coder2, n_experiments_identified)
+    if "effector_type" in df.columns:
+        eff = df["effector_type"].astype(str).str.strip().str.lower().replace({"nan": "", "autonomic effector": "autonomic", "smooth muscle": "autonomic", "skeletomotor": "skeletal"})
+        bad = df[(df.modality_n == "motor") & ~eff.isin(["skeletal", "autonomic", UNRESOLVED.lower()])]
+        if len(bad):
+            raise ValidationError(f"{path}: {len(bad)} motor row(s) without effector_type in {{skeletal, autonomic, UNRESOLVED}}: {bad.key.tolist()[:5]}")
+        df["effector_n"] = [(e.upper() if e == UNRESOLVED.lower() else e) if mo == "motor" else "(not motor)" for e, mo in zip(eff, df.modality_n)]
+    if "later_attribution_evidence" in df.columns:
+        df["later_evidence_n"] = [normalise_evidence(v) for v in df["later_attribution_evidence"]]
+    ut_col = "unit_type_coder2" if "unit_type_coder2" in df.columns else "unit_type" if "unit_type" in df.columns else None
+    if ut_col:
+        df["unit_type_n"] = df[ut_col].astype(str).str.strip().str.lower().str.replace(r"\s*\(.*\)$", "", regex=True).replace({"nan": "", "publication-as-one": "publication-as-one", "publication as one": "publication-as-one", "experiment group": "experiment-group"})
+    if "n_experiments_identified" in df.columns:
+        df["n_exp_n"] = pd.to_numeric(df["n_experiments_identified"], errors="coerce")
     df["label"] = df["citation_label"] if "citation_label" in df.columns else df["key"]
     return df
 
@@ -760,9 +798,46 @@ def analyse_s2_v2(pa, pb, man=None, reference=None):
         for c, d in (("coder1", "A"), ("coder2", "B")):
             unp = m.loc[m[f"later_status_{d}"] == "unparseable", "key"].tolist()
             res[f"S2v2_attribution_later_unparseable_rows_{c}"] = ";".join(unp) if unp else "(none)"
+    # optional v2.3 fields: compared only when BOTH files carry them; otherwise reported as 'not compared' (never as agreement)
+    opt = {}
+    if "effector_n_A" in m.columns and "effector_n_B" in m.columns:
+        mot = m[(m.effector_n_A != "(not motor)") | (m.effector_n_B != "(not motor)")]
+        k, n, p = raw_agreement(mot.effector_n_A, mot.effector_n_B)
+        res["S2v2_effector_type_motor_rows_raw_agreement"] = f"{k} of {n}"
+        res["S2v2_effector_type_motor_rows_kappa_nominal"] = cohen_kappa(mot.effector_n_A, mot.effector_n_B, ["skeletal", "autonomic", UNRESOLVED, "(not motor)"])["kappa"] if n else float("nan")
+        opt["effector"] = m.effector_n_A != m.effector_n_B
+    else:
+        res["S2v2_effector_type"] = "not compared (field absent in at least one file)"
+    if "later_evidence_n_A" in m.columns and "later_evidence_n_B" in m.columns:
+        k, n, p = raw_agreement(m.later_evidence_n_A, m.later_evidence_n_B)
+        res["S2v2_later_attribution_evidence_status_raw_agreement"] = f"{k} of {n}"
+        res["S2v2_later_attribution_evidence_status_kappa_nominal"] = cohen_kappa(m.later_evidence_n_A, m.later_evidence_n_B, EVIDENCE_STATUS + [UNRESOLVED])["kappa"]
+        opt["evidence"] = m.later_evidence_n_A != m.later_evidence_n_B
+    else:
+        res["S2v2_later_attribution_evidence"] = "not compared (field absent in at least one file)"
+    if "unit_type_n_A" in m.columns and "unit_type_n_B" in m.columns:
+        k, n, p = raw_agreement(m.unit_type_n_A, m.unit_type_n_B)
+        res["S2v2_unit_type_raw_agreement"] = f"{k} of {n}"
+        res["S2v2_unit_type_kappa_nominal"] = cohen_kappa(m.unit_type_n_A, m.unit_type_n_B)["kappa"]
+        opt["unit_type"] = m.unit_type_n_A != m.unit_type_n_B
+    else:
+        res["S2v2_unit_type"] = "not compared (coder-2 partition field absent in at least one file)"
+    nexp_col = "n_exp_n_B" if "n_exp_n_B" in m.columns else ("n_exp_n" if ("n_exp_n" in m.columns and "n_exp_n" in B.columns) else None)   # unsuffixed when only coder 2 has the column
+    if nexp_col and "publication_id_A" in m.columns:   # coder 1 supplies the partition as rows; coder 2 states the count
+        # publication-level: coder 1's row count per publication vs coder 2's stated number of experiments
+        pub = m.groupby("publication_id_A").agg(rows_coder1=("key", "size"), n_exp_coder2=(nexp_col, "max")).reset_index()
+        pub_diff = pub[pub.n_exp_coder2.notna() & (pub.rows_coder1 != pub.n_exp_coder2)]
+        res["S2v2_publication_partition_publications_compared"] = int(pub.n_exp_coder2.notna().sum())
+        res["S2v2_publication_partition_disagreements"] = int(len(pub_diff))
+        res["S2v2_publication_partition_disagreeing_publications"] = ";".join(pub_diff.publication_id_A.astype(str)) if len(pub_diff) else "(none)"
+        opt["partition"] = m.publication_id_A.isin(pub_diff.publication_id_A)
+    else:
+        res["S2v2_publication_partition"] = "not compared (coder-2 n_experiments_identified or publication_id absent)"
     diff = pd.Series(False, index=m.index)
     for f in S2V2_FIELDS:
         diff |= m[f + "_n_A"] != m[f + "_n_B"]
+    for v in opt.values():
+        diff |= v
     diff |= m.by_authors_flag_A != m.by_authors_flag_B
     diff |= set_a != set_b
     if "later_ids_A" in m.columns and "later_ids_B" in m.columns:
@@ -774,6 +849,18 @@ def analyse_s2_v2(pa, pb, man=None, reference=None):
     if "later_ids_A" in m.columns and "later_ids_B" in m.columns:
         dis["later_ids_coder1"] = la[diff].values; dis["later_ids_coder2"] = lb[diff].values
         dis["later_status_coder1"] = m.later_status_A[diff].values; dis["later_status_coder2"] = m.later_status_B[diff].values
+    if "effector" in opt:
+        dis["effector_coder1"] = m.effector_n_A[diff].values; dis["effector_coder2"] = m.effector_n_B[diff].values
+    if "evidence" in opt:
+        dis["later_evidence_status_coder1"] = m.later_evidence_n_A[diff].values; dis["later_evidence_status_coder2"] = m.later_evidence_n_B[diff].values
+        dis["later_evidence_text_coder1"] = m.later_attribution_evidence_A[diff].values; dis["later_evidence_text_coder2"] = m.later_attribution_evidence_B[diff].values
+    if "unit_type" in opt:
+        dis["unit_type_coder1"] = m.unit_type_n_A[diff].values; dis["unit_type_coder2"] = m.unit_type_n_B[diff].values
+    if "partition" in opt:
+        dis["partition_disagreement"] = opt["partition"][diff].values
+        pn_col = "partition_note_B" if "partition_note_B" in m.columns else "partition_note" if "partition_note" in m.columns else None
+        if pn_col:
+            dis["partition_note_coder2"] = m[pn_col][diff].values
     dis["adjudication_note"] = ""
     res["S2v2_n_disagreements"] = len(dis)
     return res, dis

@@ -74,5 +74,11 @@ Baseline: manuscript v3 (sha256 dec8007fb39d42e2), deposit v1.3 (e7ea015ce7b9171
 - Coder pack v3.3: codebook v2.3 (instructions match the forms; S3 blank; later attribution and own partition coded by coder 2), changelog copy without the row-level decision, README rewritten.
 - Manuscript: §7.6 rewritten at publication level; §7.2 counts (57 abstract-only, 27 of 50; 34 register entries, 63 pairs; 16 flagged; "has not begun"); Table 1 legend states the six derived entries in the text, not the caption; abstract 250 words; codebook v2.3 named. Response: R1-8, E5 numbers, §4(a),(e),(h),(i); no stale version, hash or count remains.
 
+## v4.6 — after the v4.5 recheck (GPT) and Claude's third pass
+- Response R1-1 rewritten on the pair-register rule; R1-6, E1, §6 counts and pack version corrected; §4(j) on length added.
+- Manuscript: 63 pairs everywhere; Table 1 pair row filled for M3, M7, M4a, M4c; M7 'no discriminating pair'; Table 2 caption composition; §7.2 subset sizes 70/50; §7.7 M2 count corrected (PP × M2 NOT_LOCATED). Body trimmed 18 481 → 16 407 words by removing repetition only (trim_log.md); ≤ 13 500 needs content cuts — open.
+- S5: S5.16 contradiction removed; S5.8 reserve budget on the feasible grid (112, P ≈ 0.989).
+- Code: section9_power.py v2.3, protocol_numbers.py v3.2, agreement.py v2.3 (new second-coder fields compared, 'not compared' when absent); summary regenerated without P16/N = 119 labels; pair_register_notes.md scope note; README_coder2 subset sizes.
+
 ## Still with the authors
 Send extension request; send proponent letters (record dates); second coding → agreement.py → fill κ; upload deposit_v2 → DOI into 4 places; names, CRediT confirmation, funding, CoI, AI tool; decide on length cuts; confirm Poznanski DOI.

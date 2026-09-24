@@ -22,7 +22,7 @@ import argparse, json, math, os
 import pandas as pd
 from scipy import stats
 
-__version__ = "3.1"
+__version__ = "3.2"
 
 
 def paired_power(N, dz, alpha):
@@ -89,11 +89,25 @@ def main():
     need = n_noprobe
     while 1 - stats.binom.cdf(usable_target - 1, need, 1 - loss) < a.retention_target:
         need += 1
+    blocks = int(b1.blocks_per_cell) if "blocks_per_cell" in b1 else 2
+    from fractions import Fraction
+    step = int(blocks / Fraction(probe).limit_denominator(100))           # smallest presented-per-cell step with integer probe trials per block (8 at 2 blocks, 1/4 probe)
+    pres_feasible = int(b1.presented_session2_per_cell)
+    while True:
+        noprobe_feasible = int(round(pres_feasible * (1 - probe)))
+        if 1 - stats.binom.cdf(usable_target - 1, noprobe_feasible, 1 - loss) >= a.retention_target:
+            break
+        pres_feasible += step
     out["retention"] = dict(model="independent Bernoulli loss at the planning rate; illustrative, losses are correlated in practice",
                             usable_target=usable_target, noprobe_per_cell=n_noprobe, loss_rate=loss,
                             P_cell_reaches_target=round(p_cell, 4),
                             P_two_unpooled_cells_study1=round(p_cell ** 2, 4), P_nine_cells_study2=round(p_cell ** 9, 4),
-                            noprobe_per_cell_for_target_prob=need, presented_per_cell_for_target_prob=int(math.ceil(need / (1 - probe))),
+                            noprobe_per_cell_for_target_prob_theoretical=need,
+                            presented_per_cell_for_target_prob_theoretical=int(math.ceil(need / (1 - probe))),
+                            # feasible budget: 2 blocks per cell with an integer number of probe trials per block at the probe fraction
+                            presented_per_cell_for_target_prob_feasible=pres_feasible, noprobe_per_cell_feasible=noprobe_feasible,
+                            P_cell_reaches_target_at_feasible=round(float(1 - stats.binom.cdf(usable_target - 1, noprobe_feasible, 1 - loss)), 4),
+                            feasibility_rule="presented per cell must be a multiple of blocks_per_cell / probe_fraction so that each block holds an integer number of probe trials",
                             rule="S5.8: a cell that ends session 2 below the floor is completed by one repeated block of that cell at the end of the session (pre-specified); participants still below the floor after the repeat are excluded and replaced")
     json.dump(out, open(a.out, "w"), indent=1)
     print(json.dumps(out, indent=1))

@@ -1,3 +1,5 @@
+> **Scope note (24 Sep 2026, integration pass).** This file documents the first build of the register — the 55 pairs of M8 and M6 produced by `build_pair_register.py`. The deposited `pair_register.csv` now holds 63 pairs: the eight cross-theory pairs of M3 (3), M7 (3), M4a (1) and M4c (1) were assessed by hand by the first coder from the Table S4 text and are marked in the `coder` column; all eight are *different* or *jointly compatible* (P18–P19, the two stated nulls on autonomic conflict, are the clearest jointly compatible pair). Completeness against S4 is enforced by `column_typology_pairs.py`.
+
 # Pair register for Table S4 — method and mapping (audit §9, gpt_audit_v4.txt)
 
 Coder: first coder, reading assistant. Input: `Table_S4_v2.csv` only (fields condition, manipulation_or_contrast,
