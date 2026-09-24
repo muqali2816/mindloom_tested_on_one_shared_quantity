@@ -1,89 +1,89 @@
-theory,theory_level,quantity_id,quantity,code,justification,source_label,source_doi,confidence
-GNWT,content-level,M1,N of simultaneously competing policies,,,,,
-GNWT,content-level,M2,Degree of incompatibility between policies,,,,,
-GNWT,content-level,M3,Valence of conscious content,,,,,
-GNWT,content-level,M4,Autonomic / interoceptive channel involvement,,,,,
-GNWT,content-level,M5,Organism-wide coherence (cortical + autonomic),,,,,
-GNWT,content-level,M6,Dimensionality of phenomenal space,,,,,
-GNWT,content-level,M7,Precision of metarepresentation,,,,,
-GNWT,content-level,M8,Cortical signature of access,,,,,
-IIT (3.0/4.0),content-level,M1,N of simultaneously competing policies,,,,,
-IIT (3.0/4.0),content-level,M2,Degree of incompatibility between policies,,,,,
-IIT (3.0/4.0),content-level,M3,Valence of conscious content,,,,,
-IIT (3.0/4.0),content-level,M4,Autonomic / interoceptive channel involvement,,,,,
-IIT (3.0/4.0),content-level,M5,Organism-wide coherence (cortical + autonomic),,,,,
-IIT (3.0/4.0),content-level,M6,Dimensionality of phenomenal space,,,,,
-IIT (3.0/4.0),content-level,M7,Precision of metarepresentation,,,,,
-IIT (3.0/4.0),content-level,M8,Cortical signature of access,,,,,
-Recurrent processing (RPT),content-level,M1,N of simultaneously competing policies,,,,,
-Recurrent processing (RPT),content-level,M2,Degree of incompatibility between policies,,,,,
-Recurrent processing (RPT),content-level,M3,Valence of conscious content,,,,,
-Recurrent processing (RPT),content-level,M4,Autonomic / interoceptive channel involvement,,,,,
-Recurrent processing (RPT),content-level,M5,Organism-wide coherence (cortical + autonomic),,,,,
-Recurrent processing (RPT),content-level,M6,Dimensionality of phenomenal space,,,,,
-Recurrent processing (RPT),content-level,M7,Precision of metarepresentation,,,,,
-Recurrent processing (RPT),content-level,M8,Cortical signature of access,,,,,
-HOT / HOSS,content-level,M1,N of simultaneously competing policies,,,,,
-HOT / HOSS,content-level,M2,Degree of incompatibility between policies,,,,,
-HOT / HOSS,content-level,M3,Valence of conscious content,,,,,
-HOT / HOSS,content-level,M4,Autonomic / interoceptive channel involvement,,,,,
-HOT / HOSS,content-level,M5,Organism-wide coherence (cortical + autonomic),,,,,
-HOT / HOSS,content-level,M6,Dimensionality of phenomenal space,,,,,
-HOT / HOSS,content-level,M7,Precision of metarepresentation,,,,,
-HOT / HOSS,content-level,M8,Cortical signature of access,,,,,
-AST,content-level,M1,N of simultaneously competing policies,,,,,
-AST,content-level,M2,Degree of incompatibility between policies,,,,,
-AST,content-level,M3,Valence of conscious content,,,,,
-AST,content-level,M4,Autonomic / interoceptive channel involvement,,,,,
-AST,content-level,M5,Organism-wide coherence (cortical + autonomic),,,,,
-AST,content-level,M6,Dimensionality of phenomenal space,,,,,
-AST,content-level,M7,Precision of metarepresentation,,,,,
-AST,content-level,M8,Cortical signature of access,,,,,
-Predictive processing / beast machine,content-level,M1,N of simultaneously competing policies,,,,,
-Predictive processing / beast machine,content-level,M2,Degree of incompatibility between policies,,,,,
-Predictive processing / beast machine,content-level,M3,Valence of conscious content,,,,,
-Predictive processing / beast machine,content-level,M4,Autonomic / interoceptive channel involvement,,,,,
-Predictive processing / beast machine,content-level,M5,Organism-wide coherence (cortical + autonomic),,,,,
-Predictive processing / beast machine,content-level,M6,Dimensionality of phenomenal space,,,,,
-Predictive processing / beast machine,content-level,M7,Precision of metarepresentation,,,,,
-Predictive processing / beast machine,content-level,M8,Cortical signature of access,,,,,
-Supramodular interaction theory (SIT),content-level,M1,N of simultaneously competing policies,,,,,
-Supramodular interaction theory (SIT),content-level,M2,Degree of incompatibility between policies,,,,,
-Supramodular interaction theory (SIT),content-level,M3,Valence of conscious content,,,,,
-Supramodular interaction theory (SIT),content-level,M4,Autonomic / interoceptive channel involvement,,,,,
-Supramodular interaction theory (SIT),content-level,M5,Organism-wide coherence (cortical + autonomic),,,,,
-Supramodular interaction theory (SIT),content-level,M6,Dimensionality of phenomenal space,,,,,
-Supramodular interaction theory (SIT),content-level,M7,Precision of metarepresentation,,,,,
-Supramodular interaction theory (SIT),content-level,M8,Cortical signature of access,,,,,
-Passive frame theory,content-level,M1,N of simultaneously competing policies,,,,,
-Passive frame theory,content-level,M2,Degree of incompatibility between policies,,,,,
-Passive frame theory,content-level,M3,Valence of conscious content,,,,,
-Passive frame theory,content-level,M4,Autonomic / interoceptive channel involvement,,,,,
-Passive frame theory,content-level,M5,Organism-wide coherence (cortical + autonomic),,,,,
-Passive frame theory,content-level,M6,Dimensionality of phenomenal space,,,,,
-Passive frame theory,content-level,M7,Precision of metarepresentation,,,,,
-Passive frame theory,content-level,M8,Cortical signature of access,,,,,
-UAL,origin-level,M1,N of simultaneously competing policies,,,,,
-UAL,origin-level,M2,Degree of incompatibility between policies,,,,,
-UAL,origin-level,M3,Valence of conscious content,,,,,
-UAL,origin-level,M4,Autonomic / interoceptive channel involvement,,,,,
-UAL,origin-level,M5,Organism-wide coherence (cortical + autonomic),,,,,
-UAL,origin-level,M6,Dimensionality of phenomenal space,,,,,
-UAL,origin-level,M7,Precision of metarepresentation,,,,,
-UAL,origin-level,M8,Cortical signature of access,,,,,
-Feinberg & Mallatt,origin-level,M1,N of simultaneously competing policies,,,,,
-Feinberg & Mallatt,origin-level,M2,Degree of incompatibility between policies,,,,,
-Feinberg & Mallatt,origin-level,M3,Valence of conscious content,,,,,
-Feinberg & Mallatt,origin-level,M4,Autonomic / interoceptive channel involvement,,,,,
-Feinberg & Mallatt,origin-level,M5,Organism-wide coherence (cortical + autonomic),,,,,
-Feinberg & Mallatt,origin-level,M6,Dimensionality of phenomenal space,,,,,
-Feinberg & Mallatt,origin-level,M7,Precision of metarepresentation,,,,,
-Feinberg & Mallatt,origin-level,M8,Cortical signature of access,,,,,
-Neural subjective frame,content-level (supplementary block),M1,N of simultaneously competing policies,,,,,
-Neural subjective frame,content-level (supplementary block),M2,Degree of incompatibility between policies,,,,,
-Neural subjective frame,content-level (supplementary block),M3,Valence of conscious content,,,,,
-Neural subjective frame,content-level (supplementary block),M4,Autonomic / interoceptive channel involvement,,,,,
-Neural subjective frame,content-level (supplementary block),M5,Organism-wide coherence (cortical + autonomic),,,,,
-Neural subjective frame,content-level (supplementary block),M6,Dimensionality of phenomenal space,,,,,
-Neural subjective frame,content-level (supplementary block),M7,Precision of metarepresentation,,,,,
-Neural subjective frame,content-level (supplementary block),M8,Cortical signature of access,,,,,
+theory,theory_level,quantity_id,quantity,code,justification,source_label,source_doi,confidence,cell_origin
+GNWT,content-level,M1,N of simultaneously competing policies,,,,,,submitted-v1
+GNWT,content-level,M2,Degree of incompatibility between policies,,,,,,submitted-v1
+GNWT,content-level,M3,Valence of conscious content,,,,,,submitted-v1
+GNWT,content-level,M4,Autonomic / interoceptive channel involvement,,,,,,submitted-v1
+GNWT,content-level,M5,Organism-wide coherence (cortical + autonomic),,,,,,submitted-v1
+GNWT,content-level,M6,Dimensionality of phenomenal space,,,,,,submitted-v1
+GNWT,content-level,M7,Precision of metarepresentation,,,,,,submitted-v1
+GNWT,content-level,M8,Cortical signature of access,,,,,,submitted-v1
+IIT (3.0/4.0),content-level,M1,N of simultaneously competing policies,,,,,,submitted-v1
+IIT (3.0/4.0),content-level,M2,Degree of incompatibility between policies,,,,,,submitted-v1
+IIT (3.0/4.0),content-level,M3,Valence of conscious content,,,,,,submitted-v1
+IIT (3.0/4.0),content-level,M4,Autonomic / interoceptive channel involvement,,,,,,submitted-v1
+IIT (3.0/4.0),content-level,M5,Organism-wide coherence (cortical + autonomic),,,,,,submitted-v1
+IIT (3.0/4.0),content-level,M6,Dimensionality of phenomenal space,,,,,,submitted-v1
+IIT (3.0/4.0),content-level,M7,Precision of metarepresentation,,,,,,submitted-v1
+IIT (3.0/4.0),content-level,M8,Cortical signature of access,,,,,,submitted-v1
+Recurrent processing (RPT),content-level,M1,N of simultaneously competing policies,,,,,,submitted-v1
+Recurrent processing (RPT),content-level,M2,Degree of incompatibility between policies,,,,,,submitted-v1
+Recurrent processing (RPT),content-level,M3,Valence of conscious content,,,,,,submitted-v1
+Recurrent processing (RPT),content-level,M4,Autonomic / interoceptive channel involvement,,,,,,submitted-v1
+Recurrent processing (RPT),content-level,M5,Organism-wide coherence (cortical + autonomic),,,,,,submitted-v1
+Recurrent processing (RPT),content-level,M6,Dimensionality of phenomenal space,,,,,,submitted-v1
+Recurrent processing (RPT),content-level,M7,Precision of metarepresentation,,,,,,submitted-v1
+Recurrent processing (RPT),content-level,M8,Cortical signature of access,,,,,,submitted-v1
+HOT / HOSS,content-level,M1,N of simultaneously competing policies,,,,,,submitted-v1
+HOT / HOSS,content-level,M2,Degree of incompatibility between policies,,,,,,submitted-v1
+HOT / HOSS,content-level,M3,Valence of conscious content,,,,,,submitted-v1
+HOT / HOSS,content-level,M4,Autonomic / interoceptive channel involvement,,,,,,submitted-v1
+HOT / HOSS,content-level,M5,Organism-wide coherence (cortical + autonomic),,,,,,submitted-v1
+HOT / HOSS,content-level,M6,Dimensionality of phenomenal space,,,,,,submitted-v1
+HOT / HOSS,content-level,M7,Precision of metarepresentation,,,,,,submitted-v1
+HOT / HOSS,content-level,M8,Cortical signature of access,,,,,,submitted-v1
+AST,content-level,M1,N of simultaneously competing policies,,,,,,submitted-v1
+AST,content-level,M2,Degree of incompatibility between policies,,,,,,submitted-v1
+AST,content-level,M3,Valence of conscious content,,,,,,submitted-v1
+AST,content-level,M4,Autonomic / interoceptive channel involvement,,,,,,submitted-v1
+AST,content-level,M5,Organism-wide coherence (cortical + autonomic),,,,,,submitted-v1
+AST,content-level,M6,Dimensionality of phenomenal space,,,,,,submitted-v1
+AST,content-level,M7,Precision of metarepresentation,,,,,,submitted-v1
+AST,content-level,M8,Cortical signature of access,,,,,,submitted-v1
+Predictive processing / beast machine,content-level,M1,N of simultaneously competing policies,,,,,,submitted-v1
+Predictive processing / beast machine,content-level,M2,Degree of incompatibility between policies,,,,,,submitted-v1
+Predictive processing / beast machine,content-level,M3,Valence of conscious content,,,,,,submitted-v1
+Predictive processing / beast machine,content-level,M4,Autonomic / interoceptive channel involvement,,,,,,submitted-v1
+Predictive processing / beast machine,content-level,M5,Organism-wide coherence (cortical + autonomic),,,,,,submitted-v1
+Predictive processing / beast machine,content-level,M6,Dimensionality of phenomenal space,,,,,,submitted-v1
+Predictive processing / beast machine,content-level,M7,Precision of metarepresentation,,,,,,submitted-v1
+Predictive processing / beast machine,content-level,M8,Cortical signature of access,,,,,,submitted-v1
+Supramodular interaction theory (SIT),content-level,M1,N of simultaneously competing policies,,,,,,submitted-v1
+Supramodular interaction theory (SIT),content-level,M2,Degree of incompatibility between policies,,,,,,submitted-v1
+Supramodular interaction theory (SIT),content-level,M3,Valence of conscious content,,,,,,submitted-v1
+Supramodular interaction theory (SIT),content-level,M4,Autonomic / interoceptive channel involvement,,,,,,submitted-v1
+Supramodular interaction theory (SIT),content-level,M5,Organism-wide coherence (cortical + autonomic),,,,,,submitted-v1
+Supramodular interaction theory (SIT),content-level,M6,Dimensionality of phenomenal space,,,,,,submitted-v1
+Supramodular interaction theory (SIT),content-level,M7,Precision of metarepresentation,,,,,,submitted-v1
+Supramodular interaction theory (SIT),content-level,M8,Cortical signature of access,,,,,,submitted-v1
+Passive frame theory,content-level,M1,N of simultaneously competing policies,,,,,,added-in-revision
+Passive frame theory,content-level,M2,Degree of incompatibility between policies,,,,,,added-in-revision
+Passive frame theory,content-level,M3,Valence of conscious content,,,,,,added-in-revision
+Passive frame theory,content-level,M4,Autonomic / interoceptive channel involvement,,,,,,added-in-revision
+Passive frame theory,content-level,M5,Organism-wide coherence (cortical + autonomic),,,,,,added-in-revision
+Passive frame theory,content-level,M6,Dimensionality of phenomenal space,,,,,,added-in-revision
+Passive frame theory,content-level,M7,Precision of metarepresentation,,,,,,added-in-revision
+Passive frame theory,content-level,M8,Cortical signature of access,,,,,,added-in-revision
+UAL,origin-level,M1,N of simultaneously competing policies,,,,,,submitted-v1
+UAL,origin-level,M2,Degree of incompatibility between policies,,,,,,submitted-v1
+UAL,origin-level,M3,Valence of conscious content,,,,,,submitted-v1
+UAL,origin-level,M4,Autonomic / interoceptive channel involvement,,,,,,submitted-v1
+UAL,origin-level,M5,Organism-wide coherence (cortical + autonomic),,,,,,submitted-v1
+UAL,origin-level,M6,Dimensionality of phenomenal space,,,,,,submitted-v1
+UAL,origin-level,M7,Precision of metarepresentation,,,,,,submitted-v1
+UAL,origin-level,M8,Cortical signature of access,,,,,,submitted-v1
+Feinberg & Mallatt,origin-level,M1,N of simultaneously competing policies,,,,,,submitted-v1
+Feinberg & Mallatt,origin-level,M2,Degree of incompatibility between policies,,,,,,submitted-v1
+Feinberg & Mallatt,origin-level,M3,Valence of conscious content,,,,,,submitted-v1
+Feinberg & Mallatt,origin-level,M4,Autonomic / interoceptive channel involvement,,,,,,submitted-v1
+Feinberg & Mallatt,origin-level,M5,Organism-wide coherence (cortical + autonomic),,,,,,submitted-v1
+Feinberg & Mallatt,origin-level,M6,Dimensionality of phenomenal space,,,,,,submitted-v1
+Feinberg & Mallatt,origin-level,M7,Precision of metarepresentation,,,,,,submitted-v1
+Feinberg & Mallatt,origin-level,M8,Cortical signature of access,,,,,,submitted-v1
+Neural subjective frame,content-level (supplementary block),M1,N of simultaneously competing policies,,,,,,added-in-revision
+Neural subjective frame,content-level (supplementary block),M2,Degree of incompatibility between policies,,,,,,added-in-revision
+Neural subjective frame,content-level (supplementary block),M3,Valence of conscious content,,,,,,added-in-revision
+Neural subjective frame,content-level (supplementary block),M4,Autonomic / interoceptive channel involvement,,,,,,added-in-revision
+Neural subjective frame,content-level (supplementary block),M5,Organism-wide coherence (cortical + autonomic),,,,,,added-in-revision
+Neural subjective frame,content-level (supplementary block),M6,Dimensionality of phenomenal space,,,,,,added-in-revision
+Neural subjective frame,content-level (supplementary block),M7,Precision of metarepresentation,,,,,,added-in-revision
+Neural subjective frame,content-level (supplementary block),M8,Cortical signature of access,,,,,,added-in-revision

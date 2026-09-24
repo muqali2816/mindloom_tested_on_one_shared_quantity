@@ -1,6 +1,6 @@
 # Codebook for the independent second coding (blind pack)
 
-Manuscript: *One quantity, nine theories: what adversarial tests of consciousness are not yet able to measure* (Brain Sciences, ms. brainsci-4583950, revision round 1).
+Manuscript: *Tested on one shared quantity: what adversarial tests of consciousness can and cannot yet measure* (Brain Sciences, ms. brainsci-4583950, revision round 1; submitted under the title *One quantity, nine theories*).
 Purpose of this pack: an independent second application of the coding scheme behind Tables 1 and 2 (Supplementary Tables S1 and S2), so that inter-coder agreement (Cohen's kappa) can be reported.
 
 **This pack is blind.** It contains the definitions, the decision rules, the theory list with primary sources, and blank forms. It does not contain the first coder's codes, justifications, or the results reported in the manuscript's §7. Please do not consult §7.3–§7.8 of the manuscript, the filled Supplementary Tables, or the first coder until both forms are returned.
@@ -138,7 +138,7 @@ Record a one-sentence `justification` for each row (which condition and which an
 
 ## 5. Theories and primary sources
 
-Twelve row blocks appear in `S1_blank_for_coder2.csv`. The first nine correspond to the manuscript's theory set; in the blind form two composite labels are split so that their components can be coded separately (HOT and HOSS; SIT and passive frame theory), and one supplementary block (neural subjective frame) is added for a robustness check. The `theory_level` column marks two accounts as **origin-level**: they are theories of how and when consciousness arose in evolution rather than theories of moment-to-moment access. For origin-level accounts, read each quantity's question as "does the theory state that this quantity is a marker or condition of the *presence* of consciousness in an organism?"
+Eleven row blocks appear in `S1_blank_for_coder2.csv` (88 rows). Nine are trial-level accounts and two are origin-level. Relative to the submitted manuscript, one composite label is split so that its components are coded separately (supramodular interaction theory and passive frame theory), and one block (neural subjective frame) is added; HOT and HOSS remain a single block, coded on the more recent state-space statement, and you may record in the justification where the two formulations would differ. The `theory_level` column marks two accounts as **origin-level**: they are theories of how and when consciousness arose in evolution rather than theories of moment-to-moment access. For origin-level accounts, read each quantity's question as "does the theory state that this quantity is a marker or condition of the *presence* of consciousness in an organism?"
 
 Sources are listed most-recent-empirical-statement first; that is the canonical statement for the "which formulation" rule in §3. DOIs were resolved through CrossRef on the day this pack was prepared.
 
@@ -220,8 +220,33 @@ Sources are listed most-recent-empirical-statement first; that is the canonical 
 | `S1_blank_for_coder2.csv` | 88 rows = 11 theory blocks × 8 quantities; columns `theory, theory_level, quantity_id, quantity, code, justification, source_label, source_doi, confidence` |
 | `S2_blank_for_coder2.csv` | 36 rows with `citation_label, doi` prefilled; fill `content, theory_addressed, justification` |
 | `coder2_timing_log.csv` | One row per block; record start/end/minutes |
+| `S3_blank_for_coder2.csv` | 120 rows = 10 theory blocks × 12 ConTraSt dimensions (§7); optional second coding, same four codes |
 | `agreement.py` | Agreement script (run after both codings are complete): `python agreement.py --s1a S1_coder1.csv --s1b S1_coder2.csv --s2a S2_coder1.csv --s2b S2_coder2.csv --out agreement_out/` (add `--exclude-theories tallon` to report the headline kappa without the supplementary block; `python agreement.py --selftest` reproduces the synthetic check) |
 
 Before comparison the first coder completes the same 88-row form (the split SIT/passive-frame block and the supplementary block) without access to your form; the script matches rows by theory name and quantity, so both files must contain the same blocks. Rows without a counterpart are reported, not silently dropped.
 
 Codes are accepted in any of the spellings `YES`, `IMPLICIT`, `NO`, `Y(neg)` / `YES (negative)` / `YES(neg)`; the script normalises case and spacing.
+
+
+---
+
+## 7. Table S3 — the same theories against the ConTraSt annotation dimensions (optional)
+
+`S3_blank_for_coder2.csv` has 120 rows: the ten theory blocks of the submitted manuscript (HOT/HOSS as one block; the neural subjective frame is not part of S3) × the twelve annotation dimensions of the ConTraSt database (Yaron et al. 2022, *Nature Human Behaviour* 6, 593–604). The codes are the same four as in S1. The question in each cell: *does the theory's canonical empirical statement — or, for GNWT and IIT, the preregistered Cogitate predictions — state which value of this dimension an experiment should observe, or state that the dimension should make no difference?* An explicit invariance claim ("the signature does not depend on the task") is a stated prediction: code YES and set `invariance_based_YES = TRUE`, so that the strictly differential count can be computed.
+
+| Dimension | What a stated prediction looks like |
+|---|---|
+| C1 Type of consciousness (content / state) | Predicts differently for content-NCC and state-NCC paradigms, or claims invariance across them |
+| C2 Report / no-report | Predicts what changes, or does not change, when report is removed |
+| C3 Consciousness measure type (objective / subjective / condition assessment / none) | Commits to a measure type, or predicts divergence between measure types |
+| C4 Experimental paradigm (family / specific) | Names paradigms in which its signature should, or should not, appear |
+| C5 Task type | Predicts dependence of the signature on task (e.g. task relevance), or invariance to it |
+| C6 Stimulus (modality / category / duration / contrast) | Predicts dependence on a stimulus property, or invariance to it |
+| C7 Sample / population (healthy adults / patients / non-human / computer) | Makes a prediction for a population other than healthy adults, including artificial systems |
+| C8 Neuroscientific technique | Predicts which technique should detect the signature (e.g. intracranial gamma, fMRI, EEG) |
+| C9 Dependent measure / analysis type (activation, connectivity, complexity, Φ, cardiac tags …) | Commits to a dependent measure or analysis |
+| C10 Temporal findings (component / time window) | Predicts a time window or ERP component |
+| C11 Spatial findings (region / lobe / stream) | Predicts a location |
+| C12 Frequency findings (delta–gamma) | Predicts a frequency band |
+
+Anchor every non-NO cell to a citable source, as in S1. If the theory says nothing that bears on the dimension, code NO and state what you looked for.

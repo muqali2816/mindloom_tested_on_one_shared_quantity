@@ -2,7 +2,7 @@
 """
 agreement.py -- inter-coder agreement for the S1 (theory x quantity) and
 S2 (study inventory) codings of the manuscript
-"One quantity, nine theories" (Brain Sciences, brainsci-4583950).
+"Tested on one shared quantity" (Brain Sciences, brainsci-4583950; submitted as "One quantity, nine theories").
 
 Dependencies: numpy, pandas only (kappa is implemented here; no sklearn).
 
@@ -172,7 +172,8 @@ def load_s1(path):
     df["_just"] = df[just] if just else ""
     df["_src"] = df[src] if src else ""
     df["_doi"] = df[doi] if doi else ""
-    return df[["theory", "theory_k", "quantity_id", "q_k", "code_n", "_just", "_src", "_doi"]]
+    df["cell_origin"] = df["cell_origin"] if "cell_origin" in df.columns else np.nan
+    return df[["theory", "theory_k", "quantity_id", "q_k", "code_n", "_just", "_src", "_doi", "cell_origin"]]
 
 
 def analyse_s1(pa, pb, exclude=()):
@@ -193,7 +194,7 @@ def analyse_s1(pa, pb, exclude=()):
     res["S1_theory_blocks_only_in_file2"] = "; ".join(only_b) if only_b else "-"
     if unmatched:
         print(f"WARNING: {unmatched} S1 rows had no counterpart (theory blocks only in file 1: {only_a}; only in file 2: {only_b}). "
-              "Both coders must fill the same row set (the 96-row form) before the headline kappa is meaningful.", file=sys.stderr)
+              "Both coders must fill the same row set (the 88-row form) before the headline kappa is meaningful.", file=sys.stderr)
     # 4-level nominal
     k4 = cohen_kappa(m.code_n_A, m.code_n_B, CODES4)
     res["S1_code4_pct_agreement"] = pct_agree(m.code_n_A, m.code_n_B)
@@ -230,6 +231,23 @@ def analyse_s1(pa, pb, exclude=()):
         rows.append(dict(unit="theory", level=t, n=len(g), pct_agreement=pct_agree(g.code_n_A, g.code_n_B),
                          kappa_4level=kk["kappa"], pe=kk["pe"],
                          kappa_ord3_linear=cohen_kappa(g.code_n_A.map(collapse_ord), g.code_n_B.map(collapse_ord), ORD3, "linear")["kappa"]))
+    # blindness subsets: cells whose condensed codes appeared in the submitted manuscript vs cells added in revision.
+    # Uses a cell_origin column if either file carries one; otherwise infers from theory names added in revision.
+    oc = next((c for c in ("cell_origin_A", "cell_origin_B", "cell_origin") if c in m.columns and m[c].notna().any()), None)
+    origin = m[oc].astype(str) if oc else m.theory_A.astype(str).str.lower().apply(
+        lambda t: "added-in-revision" if any(k in t for k in ("passive frame", "subjective frame")) else "submitted-v1")
+    for sub_name, g in m.groupby(origin):
+        if len(g) < 2:
+            continue
+        kk = cohen_kappa(g.code_n_A, g.code_n_B, CODES4)
+        rows.append(dict(unit="subset", level=sub_name, n=len(g), pct_agreement=pct_agree(g.code_n_A, g.code_n_B),
+                         kappa_4level=kk["kappa"], pe=kk["pe"],
+                         kappa_ord3_linear=cohen_kappa(g.code_n_A.map(collapse_ord), g.code_n_B.map(collapse_ord), ORD3, "linear")["kappa"]))
+        tag = "submitted" if sub_name.startswith("submitted") else "added"
+        res[f"S1_subset_{tag}_n"] = len(g)
+        res[f"S1_subset_{tag}_pct_agreement"] = pct_agree(g.code_n_A, g.code_n_B)
+        res[f"S1_subset_{tag}_kappa_4level"] = kk["kappa"]
+        res[f"S1_subset_{tag}_kappa_ord3_linear"] = rows[-1]["kappa_ord3_linear"]
     percol = pd.DataFrame(rows)
     conf = pd.DataFrame(confusion(m.code_n_A, m.code_n_B, CODES4), index=[f"A:{c}" for c in CODES4], columns=[f"B:{c}" for c in CODES4]).astype(int)
     dis = m[m.code_n_A != m.code_n_B][["theory_A", "quantity_id_A", "code_n_A", "code_n_B", "_just_A", "_just_B", "_src_A", "_doi_A", "_src_B", "_doi_B"]]
