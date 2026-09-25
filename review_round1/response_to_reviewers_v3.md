@@ -5,9 +5,9 @@
 **Title as revised:** What theories of consciousness commit to, and what they leave unmeasured: an audit of stated predictions after the first adversarial test
 **Decision:** Major revision (23 September 2026)
 
-We thank the Editor and both Reviewers. Reviewer 1's first two points identified an equivocation in the central argument — between a column no theory occupies and a column theories disagree about — and the revision is built around removing it. In removing it we also re-audited our own tables, and that re-audit changed several claims the Reviewers did not challenge; those changes are reported separately in Section 4, because a reviewer should not have to discover them by comparison.
+We thank the Editor and both Reviewers. Reviewer 2's first two points identified an equivocation in the central argument — between a column no theory occupies and a column theories disagree about — and the revision is built around removing it. In removing it we also re-audited our own tables, and that re-audit changed several claims the Reviewers did not challenge; those changes are reported separately in Section 4, because a reviewer should not have to discover them by comparison.
 
-**How to read this document.** Every comment is quoted verbatim, in the order in which it appears in the decision letter, followed by our response, a status and the location of the change in the revised manuscript. Four statuses are used and used strictly:
+**How to read this document.** Every comment is quoted verbatim, in the order in which it appears in the decision letter (Reviewer 1, Reviewer 2, then the Editor's own comments, which we place first because they frame the revision), followed by our response, a status and the location of the change in the revised manuscript. Four statuses are used and used strictly:
 
 - **DONE** — the change is in the revised text now.
 - **PREPARED** — the material exists (files, scripts, placeholders) but the item awaits an action only the authors can take (a second coding, a deposit, a letter), and the manuscript says so.
@@ -26,9 +26,9 @@ Two kinds of number remain as bracketed placeholders in the text and are never r
 
 > Well written, and Sections 3–5 are a genuinely useful synthesis. But the paper's only original evidence — the 72-cell coding and the 36-study classification — was not supplied, so no reviewer could check a single cell.
 
-**Response.** We apologise. The tables existed at submission and were not uploaded. Because the Editor and Reviewer 1 both ask for a public deposit with a DOI, we distinguish three things that are at different stages, so that no statement in the manuscript or in this letter outruns what has actually happened:
+**Response.** We apologise. The tables existed at submission and were not uploaded. Because the Editor and Reviewer 2 both ask for a public deposit with a DOI, we distinguish three things that are at different stages, so that no statement in the manuscript or in this letter outruns what has actually happened:
 
-1. *Assembled archive* — exists. The deposit package (v2) contains: Table S1 v2, the theory-by-quantity matrix, now 120 cells (12 accounts × 10 domains; see R1-6 and Section 4b), each with code, polarity, claim text, source, source locus and evidence status; Table S2 v2, the content inventory rebuilt with one row per experiment where the partition could be read (42 inventory rows from 32 publications; publication-level counts are primary; see R1-8), with the four paradigm-defining papers listed separately in `paradigm_sources.csv` and the sensitivity scenarios in `s2_sensitivity.csv`; Table S3, the ConTraSt-dimension coding (see R1-2); Table S4 v2, a register of 34 entries (27 predictions stated by proponents, 1 kept for provenance after re-coding, 6 derived by us and labelled as such), and a pair register of every cross-theory pair of stated predictions in a column (63 pairs) with its relation, on which the column classes rest; the frozen codebook v2.3 with its hash; the inclusion criteria; and the scripts (`agreement.py`, `column_typology.py`, `section9_power.py`, `reproduce.py`) with a README. Of the 120 cells, 96 carry the codes of the earlier scheme, mapped to the new code set by rule and never recoded; the remainder are new cells created by the splits described in Section 4, and the earlier undivided M4 cells are superseded by the three-way split and kept in the file for traceability.
+1. *Assembled archive* — exists. The deposit package (v2) contains: Table S1 v2, the theory-by-quantity matrix, now 120 cells (12 accounts × 10 domains; see R2-6 and Section 4b), each with code, polarity, claim text, source, source locus and evidence status; Table S2 v2, the content inventory rebuilt with one row per experiment where the partition could be read (42 inventory rows from 32 publications; publication-level counts are primary; see R2-8), with the four paradigm-defining papers listed separately in `paradigm_sources.csv` and the sensitivity scenarios in `s2_sensitivity.csv`; Table S3, the ConTraSt-dimension coding (see R2-2); Table S4 v2, a register of 34 entries (27 predictions stated by proponents, 1 kept for provenance after re-coding, 6 derived by us and labelled as such), and a pair register of every cross-theory pair of stated predictions in a column (63 pairs) with its relation, on which the column classes rest; the frozen codebook v2.4 with its hash; the inclusion criteria; and the scripts (`agreement.py`, `column_typology.py`, `section9_power.py`, `reproduce.py`) with a README. Of the 120 cells, 96 carry the codes of the earlier scheme, mapped to the new code set by rule and never recoded; the remainder are new cells created by the splits described in Section 4, and the earlier undivided M4 cells are superseded by the three-way split and kept in the file for traceability.
 2. *Reserved DOI* — not yet reserved. The authors will reserve a DOI (Zenodo or OSF) before resubmission so that the same identifier can be written into all three statements the Editor names in E3.
 3. *Public deposit* — not yet made. It is made by the authors when the archive is uploaded; the manuscript carries `[10.xxxx/PLACEHOLDER]` until then.
 
@@ -41,7 +41,7 @@ The archive is also supplied as supplementary files with this resubmission, so t
 
 > **Author count vs. single coder.** Two authors are listed, but the text says one reader and the AI statement uses the singular. There is also no Author Contributions section. Reconcile this.
 
-**Response.** §7.2 now states that the first coding was carried out by the first author and that the second author will carry out an independent second coding against the frozen codebook (see R1-5 for what exists and what does not). The Use of Generative AI statement is in the plural. An Author Contributions statement in CRediT form has been added to the Declarations. We have been deliberate about one entry: the *validation* role (the second coding) is not attributed to the second author until the second coding has been done; the statement carries it as a bracketed line to be activated at that point, so that the CRediT entry does not describe work that has not yet happened. Author names and affiliations are placeholders for the authors to complete.
+**Response.** §7.2 now states that the first coding was carried out by the first author and that the second author will carry out an independent second coding against the frozen codebook (see R2-5 for what exists and what does not). The Use of Generative AI statement is in the plural. An Author Contributions statement in CRediT form has been added to the Declarations. We have been deliberate about one entry: the *validation* role (the second coding) is not attributed to the second author until the second coding has been done; the statement carries it as a bracketed line to be activated at that point, so that the CRediT entry does not describe work that has not yet happened. Author names and affiliations are placeholders for the authors to complete.
 
 **Status:** PARTLY (plural and CRediT section in place; the validation entry and the names await the authors).
 **Location of change:** §7.2 Coding procedure; Declarations — Author Contributions; Declarations — Use of Generative AI.
@@ -61,7 +61,7 @@ The archive is also supplied as supplementary files with this resubmission, so t
 
 **Response.** The omission was a fault and the argument is now made explicitly. We read and cite the literature the Editor names: pre-stimulus heartbeat-evoked responses predict visual detection (Park et al., 2014) and somatosensory detection (Al et al., 2020, 2021); respiratory phase aligns perception with cortical excitability (Kluger et al., 2021; Grund et al., 2022); heartbeat-evoked responses have been used to detect residual consciousness after coma (Candia-Rivera et al., 2021). We then added the neural subjective frame programme (Park and Tallon-Baudry, 2014; Tallon-Baudry et al., 2018; Azzalini et al., 2019) as a coded account of Table S1, since it states an empirical prediction and meets the inclusion rule.
 
-The argument, made in §7.4: these studies show that a cortical response to *one* visceral signal predicts detection, and the original authors' own control analyses separate that response from the measured autonomic state. They do not state a prediction over organism-wide coherence between cortical and autonomic channels as a joint measure. The neural subjective frame is therefore coded EXPLICIT on M4b (visceral modulation of access to exteroceptive content) and INTERPRETED on M5. The sentence "none operationalises it" has been withdrawn. M5 is now described as *thin*, the class the coding script derives for it: 0 EXPLICIT and 5 INTERPRETED cells among the 12 accounts. The text says in so many words that a coder who read the heartbeat-evoked response as a cortical–autonomic coherence metric would fill one cell of the column, and M5 has been demoted from the headline to a qualified secondary claim (see R1-3).
+The argument, made in §7.4: these studies show that a cortical response to *one* visceral signal predicts detection, and the original authors' own control analyses separate that response from the measured autonomic state. They do not state a prediction over organism-wide coherence between cortical and autonomic channels as a joint measure. The neural subjective frame is therefore coded EXPLICIT on M4b (visceral modulation of access to exteroceptive content) and INTERPRETED on M5. The sentence "none operationalises it" has been withdrawn. M5 is now described as *thin*, the class the coding script derives for it: 0 EXPLICIT and 5 INTERPRETED cells among the 12 accounts. The text says in so many words that a coder who read the heartbeat-evoked response as a cortical–autonomic coherence metric would fill one cell of the column, and M5 has been demoted from the headline to a qualified secondary claim (see R2-3).
 
 **Status:** DONE.
 **Location of change:** §7.4 Reading the columns ("Thin, not empty: M5"); Table 1; Table S1 v2 (neural subjective frame row); §7.7 What survives reclassification; Abstract.
@@ -94,10 +94,10 @@ The argument, made in §7.4: these studies show that a cortical response to *one
 
 > **Article type.** Submitted as a Review but reporting original percentages. Either adopt systematic-review methodology (protocol, search strategy, PRISMA, two coders, κ) or drop the percentages and frame the coding consistently as a purposive audit.
 
-**Response.** We took the second route, and the title now says "audit". Every percentage has been removed; every count is given as *k of n*, with the denominator named, and never as an estimate of a population quantity. §7.1 states that the audit is not a systematic review — no registered search, no PRISMA flow — and describes both the theory sample and the study sample as purposive. One element of the first route is also adopted because Reviewer 1 asked for it and because the coding cannot otherwise be endorsed: a second, independent coding against a frozen codebook, with agreement reported. Its status is PREPARED, not DONE, and is described at R1-5. One further change belongs under this heading: the *class* of a column (contested, single-occupant, occupied-not-contested, thin) is no longer a judgement written into the text by the first author. It is derived by a script (`column_typology.py`) from Table S1 and the prediction register S4 under a rule stated in the codebook, and the text reports the classes as results of the coding.
+**Response.** We took the second route, and the title now says "audit". Every percentage has been removed; every count is given as *k of n*, with the denominator named, and never as an estimate of a population quantity. §7.1 states that the audit is not a systematic review — no registered search, no PRISMA flow — and describes both the theory sample and the study sample as purposive. One element of the first route is also adopted because Reviewer 2 asked for it and because the coding cannot otherwise be endorsed: a second, independent coding against a frozen codebook, with agreement reported. Its status is PREPARED, not DONE, and is described at R2-5. One further change belongs under this heading: the *class* of a column (contested, single-occupant, occupied-not-contested, thin) is no longer a judgement written into the text by the first author. It is derived by a script (`column_typology.py`) from Table S1 and the prediction register S4 under a rule stated in the codebook, and the text reports the classes as results of the coding.
 
-**Status:** DONE (percentages removed, purposive audit framing throughout); the second coding is PREPARED (R1-5).
-**Location of change:** Title; Abstract; §7.1 What is coded and why; §7.2 Coding procedure; §7.4; §7.6; §7.7; codebook v2.3 §3.
+**Status:** DONE (percentages removed, purposive audit framing throughout); the second coding is PREPARED (R2-5).
+**Location of change:** Title; Abstract; §7.1 What is coded and why; §7.2 Coding procedure; §7.4; §7.6; §7.7; codebook v2.4 §3.
 
 ### E7
 
@@ -112,9 +112,38 @@ The argument, made in §7.4: these studies show that a cortical response to *one
 
 ## 2. Reviewer 1
 
-We are grateful for a review that was both severe and exact, and we have taken the Reviewer's own ordering: points 1 and 2 are the substance.
+> The manuscript is well written and comprehensive. However, the authors have neglected the two most significant works on consciousness: 1. Kuhn, R.L. (2024) A landscape of consciousness: toward a taxonomy of explanations and implications. Progress in Biophysics and Molecular Biology 190, 28–169. 2. Poznanski, R.R. (2026) Processual relational geometry: generative unfolding and self-intending closure constituting consciousness — a transscale ontophysical framework. Journal of Multiscale Neuroscience 5, 30–53. Both papers deal with ontological predictors of consciousness, not necessarily cortical signatures. The second reference in particular is required where the author claims on p8 that "few theories predict phenomenality rather than access". In addition, the word "nine" should be removed from the title.
 
 ### R1-1
+
+> Cite Kuhn (2024).
+
+**Response.** Added and used substantively in §6.2. Kuhn's taxonomy is the natural frame for the distinction §6.2 draws between frameworks that address phenomenality at the ontological level and theories that state a measurable prediction; we note that the taxonomy does not attempt to adjudicate among theories, and that whole regions of it contribute no row to Table 1 because they state no measurable quantity — which is a fact about the inclusion rule of §7, not a judgement on those frameworks.
+**Status:** DONE. **Location of change:** §6.2 Who predicts phenomenality; References.
+
+### R1-2
+
+> Cite Poznanski (2026) at the "few theories predict phenomenality rather than access" passage.
+
+**Response.** Cited at that passage in §6.2, in one sentence, as an example of a framework that addresses phenomenality at the ontological level and, as presented, states no measurable prediction — and so falls outside the inclusion rule of §7. We should be clear about the scope of the change: the sentence the Reviewer points to concerns predictive content, not the number of frameworks that address phenomenality, and the added citation illustrates that distinction rather than altering it. The full text was not accessible to us; the characterisation rests on the published abstract, hence "as presented". The bibliographic record (volume 5, pages 30–53) is as the Reviewer gives it; confirming the DOI against the journal's record before final submission is on the authors' list (Section 6).
+**Status:** DONE. **Location of change:** §6.2 Who predicts phenomenality; References.
+
+### R1-3
+
+> Remove "nine" from the title.
+
+**Response.** Done. The title no longer contains a count of theories; see R2-3 for the reasoning behind the new title.
+**Status:** DONE. **Location of change:** Title; running head.
+
+---
+
+---
+
+## 3. Reviewer 2
+
+We are grateful for a review that was both severe and exact, and we have taken the Reviewer's own ordering: points 1 and 2 are the substance.
+
+### R2-1
 
 > The diagnosis in §1 (ll. 49–54) is that a prediction shared with competitors cannot discriminate, since the experiment testing it tests everyone at once. I agree. The prescription is to find a quantity "at least two live theories disagree about" (ll. 52–53), which is also right, and then the ms. proceeds as though "unoccupied" and "disagreed about" were the same thing. They are not. A column that eight theories are silent on cannot adjudicate between them. If the crossed manipulation in §9 returns a clean effect of incompatibility, GNWT is untouched, IIT is untouched, RPT and AST are untouched, because none of them said anything either way. Silence is not a contrary prediction, and the ms. needs to confront that squarely rather than slide between the two senses of "gap."
 >
@@ -134,7 +163,7 @@ We are grateful for a review that was both severe and exact, and we have taken t
 **Location of change:** Abstract; §1 Introduction (diagnosis paragraph); §7.2 (class rule); §7.4 Reading the columns; §7.7 What survives reclassification; §9 Conclusion; §9.1; Supplementary Protocol S5; Table S4 v2; `pair_register.csv`; `column_typology_pairs.csv`.
 
 
-### R1-2
+### R2-2
 
 > Three of the eight columns are the author's own. This is disclosed (ll. 476–479), and I am glad it was, but the sensitivity analysis offered in response tests the wrong proposition. Dropping M1, M2 and M5 and rechecking that M8 still dominates (ll. 479–484) establishes something nobody was going to contest. What it does not establish is that M5 is empty for an interesting reason. If M5 was specified as a coordinate of Arbitration Format Theory, then its emptiness across nine frameworks that all predate that theory is close to a tautology, and Table 1 records the fact rather than discovering it.
 >
@@ -146,12 +175,12 @@ We are grateful for a review that was both severe and exact, and we have taken t
 
 *Second route — prepared, not taken.* Two letters to proponents have been drafted, each asking one answerable question about one register row (P24, the derived interoceptive-inference prediction over M4c, to its proponents; and the skeletomotor boundary of the conscious field, register rows P18 and P19, to the proponents of supramodular interaction and passive frame theory). They have not been sent at the time of writing. The manuscript says the route has not been taken and names it as the next check; if a reply arrives before final submission its content enters Table S4 verbatim, with permission, and the relevant cell is recoded from derived to stated.
 
-*What we did instead to remove the author from the classification.* The column classes are now derived by script from the coding under a rule fixed in the codebook before the second coding starts (see R1-1); the codebook instructs the second coder not to let an expected class influence a code. This does not make the column *set* independent — only the second route does that — and §7.7 says so among the limitations.
+*What we did instead to remove the author from the classification.* The column classes are now derived by script from the coding under a rule fixed in the codebook before the second coding starts (see R2-1); the codebook instructs the second coder not to let an expected class influence a code. This does not make the column *set* independent — only the second route does that — and §7.7 says so among the limitations.
 
 **Status:** PARTLY (ConTraSt coding done for 10 of 12 accounts and reported; letters drafted but not sent; the author-chosen column set remains a stated limitation).
 **Location of change:** §7.1 What is coded and why (column-set paragraph); §7.5 An independently generated column set; §7.7 limitations; Table S3; `s3_coverage_note.md`.
 
-### R1-3
+### R2-3
 
 > §7.8 (ll. 647–653) states that the M5 result does not survive the least favorable reclassification: promote the four IMPLICIT cells and the empty column becomes four of nine. The abstract (ll. 13–14) carries the claim unqualified. One of those two has to change. My preference is that the M1/M2 result, which does survive, becomes the headline, and M5 is demoted to a secondary claim stated with the qualification attached.
 
@@ -160,22 +189,22 @@ We are grateful for a review that was both severe and exact, and we have taken t
 **Status:** DONE.
 **Location of change:** Title; Abstract; §7.4 ("Single-occupant: M1 and M2"; "Thin, not empty: M5"); §7.7 What survives reclassification.
 
-### R1-4
+### R2-4
 
 > Tables S1 and S2 were not supplied. The captions say they "should be supplied" (ll. 503–504, 536), the Supplementary Materials section says they "should accompany the submission" (l. 829), and the Data Availability Statement says they are provided (ll. 837–839). Whatever the explanation, the consequence is that the entire evidential content of §7 was unavailable to me. I could not check a single cell, could not see which studies were counted as theory-addressed, and could not evaluate the IMPLICIT/NO boundary that the author himself identifies as bearing the weight. Everything I say about §7 below is about the argument as written, not about whether the coding supports it.
 
-**Response.** See E1 for the three stages. What matters for this point: every cell the Reviewer could not check is supplied with this resubmission as a supplementary file, with its code, the claim in our words, the source, the source locus and whether the source was read in full or as an abstract (63 of the 120 cells rest on full text, 57 on abstracts; 27 of the 50 EXPLICIT and INTERPRETED cells rest on abstracts, and the text says so; a full-text pass on 24 September 2026 reached 3 of 12 closed sources and re-coded two cells). The IMPLICIT/NO boundary the Reviewer names is now the INTERPRETED/NOT_LOCATED boundary of codebook v2.3, with its decision rules written down so that the second coder — and the Reviewer — can apply them. Which studies count as theory-addressed is visible row by row in Table S2 v2, with the attribution split into three columns (R1-8). The captions of Tables 1 and 2 now point to the supplementary tables with no conditional wording.
+**Response.** See E1 for the three stages. What matters for this point: every cell the Reviewer could not check is supplied with this resubmission as a supplementary file, with its code, the claim in our words, the source, the source locus and whether the source was read in full or as an abstract (63 of the 120 cells rest on full text, 57 on abstracts; 27 of the 50 EXPLICIT and INTERPRETED cells rest on abstracts, and the text says so; a full-text pass on 24 September 2026 reached 3 of 12 closed sources and re-coded two cells). The IMPLICIT/NO boundary the Reviewer names is now the INTERPRETED/NOT_LOCATED boundary of codebook v2.4, with its decision rules written down so that the second coder — and the Reviewer — can apply them. Which studies count as theory-addressed is visible row by row in Table S2 v2, with the attribution split into three columns (R2-8). The captions of Tables 1 and 2 now point to the supplementary tables with no conditional wording.
 
 **Status:** PREPARED (supplied with the resubmission; public deposit and DOI pending, as at E1).
 **Location of change:** Table 1 and Table 2 captions; Supplementary Materials; Data Availability Statement; Table S1 v2; Table S2 v2.
 
-### R1-5
+### R2-5
 
 > On the single coder: the author says a second coding and a kappa are "the necessary next step rather than an optional robustness check" (ll. 625–634). I would say necessary now. Seventy-two cells and thirty-six studies is a couple of afternoons for a competent second reader, the scheme is written down, and the whole argument turns on the judgment call the author has already flagged as the most contestable. I am not willing to endorse the coding without it.
 
 **Response.** Accepted, and we will not ask the Reviewer to endorse the coding until the numbers are in. We report exactly what exists and what does not.
 
-*Exists.* Codebook v2.3, frozen on 24 September 2026 with its SHA-256 hash printed in its footer (`3b4b0cac…b479f1`; the hash covers the file above the footer line and is checked with one shell command); any change after the second coder starts is logged and forces re-coding of the affected cells by both coders. It contains operational definitions of the ten quantities, the decision rules for the five codes (EXPLICIT, INTERPRETED, NOT_LOCATED, NOT_APPLICABLE, UNRESOLVED), the attribution and inclusion rules for Table S2, and the primary sources per account. Blank forms: 120 rows for Table S1 and one row per experiment for Table S2. A second-coder pack (v3.3) that contains the frozen codebook (hash verifiable with `sed '$d' codebook_v2.md | shasum -a 256`), the blank forms, the manifests and the agreement script, and does *not* contain the first coder's codes, justifications, the prediction register (Table S4 lists every EXPLICIT cell and is released to the second coder only after Table S1 is returned) or the manuscript's results section. An agreement script (`agreement.py`) that computes raw agreement, the confusion matrix and nominal κ for the whole matrix and for stated subsets (per account, per column, positive versus null predictions, the INTERPRETED/NOT_LOCATED boundary), and writes the disagreement list for adjudication.
+*Exists.* Codebook v2.4, frozen on 24 September 2026 with its SHA-256 hash printed in its footer (`6b2e7ad9…ab8dcc`; the hash covers the file above the footer line and is checked with one shell command); any change after the second coder starts is logged and forces re-coding of the affected cells by both coders. It contains operational definitions of the ten quantities, the decision rules for the five codes (EXPLICIT, INTERPRETED, NOT_LOCATED, NOT_APPLICABLE, UNRESOLVED), the attribution and inclusion rules for Table S2, and the primary sources per account. Blank forms: 120 rows for Table S1 and one row per experiment for Table S2. A second-coder pack (v3.4) that contains the frozen codebook (hash verifiable with `sed '$d' codebook_v2.md | shasum -a 256`), the blank forms, the manifests and the agreement script, and does *not* contain the first coder's codes, justifications, the prediction register (Table S4 lists every EXPLICIT cell and is released to the second coder only after Table S1 is returned) or the manuscript's results section. An agreement script (`agreement.py`) that computes raw agreement, the confusion matrix and nominal κ for the whole matrix and for stated subsets (per account, per column, positive versus null predictions, the INTERPRETED/NOT_LOCATED boundary), and writes the disagreement list for adjudication.
 
 *Does not exist.* The second coding itself. It is planned, to be carried out by the second author, and has not begun at the time of writing. Every κ, agreement and disagreement count in §7.2 is a bracketed placeholder, and the Author Contributions statement does not yet credit validation (E2). We do not report the coding as validated anywhere.
 
@@ -186,7 +215,7 @@ We are grateful for a review that was both severe and exact, and we have taken t
 **Status:** PREPARED (codebook frozen, forms and script exist; the second coding and κ are outstanding).
 **Location of change:** §7.2 Coding procedure; §7.7 limitations (first limitation); Declarations — Author Contributions; deposit files `codebook_v2.md`, `agreement.py`, second-coder pack v3.
 
-### R1-6
+### R2-6
 
 > The nine theories. The stated rule (ll. 472–474) does not pick out these nine and no others — dendritic integration theory, temporo-spatial theory and active inference treated separately from predictive processing would all qualify on the same criterion. More importantly, two of the rows are doing a different job from the other seven. UAL and the Feinberg–Mallatt scheme are accounts of when and in which lineages consciousness appeared. They are not accounts of what makes a particular content accessible on a particular trial, and coding them silent on M8 records a difference of subject matter rather than a hole in a predictive apparatus. Since they contribute four of the absent cells in the M8 column and several elsewhere, this inflates exactly the unevenness the paper is arguing for.
 >
@@ -207,7 +236,7 @@ We are grateful for a review that was both severe and exact, and we have taken t
 **Status:** DONE (the split cells are provisional pending the second coding, and are labelled so).
 **Location of change:** §7.1 What is coded and why; §7.2; Table 1 (origin-level block; separate HOT and HOSS rows; SIT and PFT rows); §7.7 limitations (fourth limitation); Table S1 v2; `accounts_manifest.csv`.
 
-### R1-7
+### R2-7
 
 > I may be wrong about this and the author may have a reason, but the claim that nobody operationalizes cortical–autonomic coherence as an access criterion (ll. 526–532) needs to be checked against the heartbeat-evoked response work, where cortical responses to a visceral signal are used to predict whether a stimulus is consciously detected, and against Tallon-Baudry's visceral-self proposal more generally. Respiratory-phase modulation of detection is adjacent. None of it is cited. An omitted literature is always awkward; an omitted literature sitting in the one column the paper says is empty is worse than awkward.
 
@@ -216,7 +245,7 @@ We are grateful for a review that was both severe and exact, and we have taken t
 **Status:** DONE.
 **Location of change:** §7.4 ("Thin, not empty: M5"); Table 1; Table S1 v2 (neural subjective frame row); §7.7.
 
-### R1-8
+### R2-8
 
 > The zeros in Table 2 appear only when the denominator drops from 33 to 27 (ll. 545–549), and the category that does the dropping, "theory-addressed," is never given an operational definition. Yang et al. (2007) and Gayet et al. (2016) turn up routinely in access debates, so excluding them is a substantive decision and it is the decision that produces the result. Give the inclusion rule, list which of the 36 fell on each side, and state how sensitive the zeros are to moving one study. If 0 of 27 becomes 1 of 27 under a reasonable alternative reading, the reader is entitled to know that before the abstract tells them the cell is empty.
 >
@@ -240,7 +269,7 @@ We are grateful for a review that was both severe and exact, and we have taken t
 **Location of change:** §7.6 Table 2: content inventory (rule, baseline, sensitivity paragraph); Table 2; §7.2 (polarity); Table 1 tally rows; Abstract; Table S2 v2 (`unit_type`, `effector_type`); `Table_S2_v2_publications.csv`; `build_table2.py`; `paradigm_sources.csv`; `s2_sensitivity.csv`; `S2_inclusion_criteria_v2.txt`.
 
 
-### R1-9
+### R2-9
 
 > §7.7 (ll. 604–623) corrects a formulation in the author's companion framework. It may well be a good correction. It is theory development and it does not belong in a review that insists four times over that it is not arguing for the theory. Move it to the companion paper. The single sentence at ll. 822–825 is the right amount of signposting and should be the only such passage in the manuscript.
 
@@ -251,56 +280,56 @@ We are grateful for a review that was both severe and exact, and we have taken t
 
 ### Minor and editorial issues
 
-#### R1-m1
+#### R2-m1
 
 > Three different 2020 items by Birch sit in the reference list (refs 21, 22, 23) and the in-text form "Birch et al., 2020" is used for at least two of them, l. 116 and again l. 179. Needs a/b/c.
 
 **Response.** Resolved by the change to numbered citations (E7); each item has its own number.
 **Status:** DONE. **Location of change:** References; §2 and §3 citations.
 
-#### R1-m2
+#### R2-m2
 
 > Percentages to one decimal on denominators of 27 and 33, single-coded, from a purposive sample (ll. 537–549). 81.5% is 22 of 27. Use the fractions and drop the decimals throughout; the false precision undercuts the candor of §7.8.
 
 **Response.** Every percentage is removed; all counts are *k* of *n* with the denominator named. [Statistical planning parameters in §9.1 and Protocol S5 (power, loss rate, visibility band, intervals) are written as proportions or as dz, not as percentages.]{.mark}
 **Status:** DONE. **Location of change:** §7.3; §7.4; §7.6; §7.7; Abstract; §9; [Protocol S5.]{.mark}
 
-#### R1-m3
+#### R2-m3
 
 > Spelling switches between conventions, and in one case switches on the same word: "operationalized" at l. 14 of the abstract against "operationalised" at l. 78. "judgement," "organisation" and "synchronisation" are British throughout. MDPI takes either. Pick one and run it through.
 
 **Response.** British spelling throughout; the text was searched for the American forms of the words the Reviewer names and none remains.
 **Status:** DONE. **Location of change:** throughout.
 
-#### R1-m4
+#### R2-m4
 
 > Words have lost spaces or hyphens in the file I received: "metaanalysis" (l. 319), "loadbearing" (l. 313), "noreport" (l. 439), "corticaland-autonomic" (l. 526), "reportindependent" (l. 573), "secondorder" (l. 658), and "Conflicts of Interest:The" (l. 844). Some of these may be conversion artifacts rather than the author's.
 
 **Response.** They were conversion artefacts: "meta-analysis", "load-bearing", "no-report", "cortical and autonomic", "report-independent", "second-order" and "Conflicts of Interest: The" are correct in the source. The PDF for this resubmission is generated by a different route (markdown → DOCX/PDF) and the joined forms are searched for before upload; that check is listed among the author actions in Section 6 because it has to be repeated on the final build.
 **Status:** PARTLY (source correct; the check on the final PDF is an author action). **Location of change:** throughout; production check.
 
-#### R1-m5
+#### R2-m5
 
 > Maturana and Varela is given inline with full bibliographic detail and a "no DOI" note at ll. 141–143, and the New York Declaration the same way at ll. 188–189. Both should go in the reference list in the normal format.
 
 **Response.** Both are in the reference list in MDPI form and are cited by number.
 **Status:** DONE. **Location of change:** §3; §3 (Declaration); References.
 
-#### R1-m6
+#### R2-m6
 
 > §3–5 run to something like 40% of the text and are largely separable from the coding contribution. They are good, but a reader who has come for the measurement argument waits a long time for it. I would cut them by roughly a third, keeping the closing judgments, which are the parts that earn their keep.
 
-**Response.** Done. Counted on the current text against the submitted version: §3 from 814 to 490 words, §4 from 1,067 to 663, §5 from 932 to 677 — 2,813 to 1,830 in all, a cut of roughly a third. The closing judgement of each section is kept, and the passage in §4 that separates supramodular interaction theory from passive frame theory is kept intact because Table 1 now depends on it (R1-6). References cited only in the removed passages have dropped out of the list.
-**Status:** DONE. **Location of change:** §3 From regulation to a minimal bearer; §4 Arbitration as a function; §5 Valence and organism-wide reconfiguration.
+**Response.** Cut, but by less than a third once the revision's own additions are counted. Against the submitted version, on the current text: §3 from 822 to 498 words, §4 from 1 073 to 909, §5 from 938 to 771 — 2 833 to 2 178 in all. §3 and §5 are each cut by about a third; §4 is cut less because the passage separating supramodular interaction theory from passive frame theory, on which Table 1 now rests (R2-6), was kept and a paragraph on the experienced-conflict measure that §9.1 now uses was added. The closing judgement of each section is kept. References cited only in the removed passages have dropped out of the list. The closing judgement of each section is kept, and the passage in §4 that separates supramodular interaction theory from passive frame theory is kept intact because Table 1 now depends on it (R2-6). References cited only in the removed passages have dropped out of the list.
+**Status:** PARTLY. **Location of change:** §3 From regulation to a minimal bearer; §4 Arbitration as a function; §5 Valence and organism-wide reconfiguration.
 
-#### R1-m7
+#### R2-m7
 
 > The judgment-at-the-end-of-every-section device works, but by §8 it has become a tic, and at l. 748 ("Three dissociations are named and none measured") it overstates what §8.2 has just conceded about option generation at ll. 714–719. Vary it.
 
 **Response.** The §8 closing is rewritten under a new heading, "What is measured and what is not", as an uneven ledger that matches what §8.2 concedes about option generation: metacognitive precision has validated instruments and no experiment asking whether precision gates access; policy candidacy is measured in part; write-back has been demonstrated but not turned into a measure. "Three dissociations are named and none measured" is removed, and the closing device is varied across §8.
 **Status:** DONE. **Location of change:** §8.4 What is measured and what is not.
 
-#### R1-m8
+#### R2-m8
 
 > Mudrik et al. 2026, Dellert et al. 2025 and the two 2025 Nature Neuroscience pieces have load-bearing and too recent for me to have verified pagination or attribution. Flagging for the production check, not as errors.
 
@@ -309,93 +338,6 @@ We are grateful for a review that was both severe and exact, and we have taken t
 
 ---
 
-
-### Minor and editorial issues
-
-#### R1-m1
-
-> Three different 2020 items by Birch sit in the reference list (refs 21, 22, 23) and the in-text form "Birch et al., 2020" is used for at least two of them, l. 116 and again l. 179. Needs a/b/c.
-
-**Response.** Resolved by the change to numbered citations (E7); each item has its own number.
-**Status:** DONE. **Location of change:** References; §2 and §3 citations.
-
-#### R1-m2
-
-> Percentages to one decimal on denominators of 27 and 33, single-coded, from a purposive sample (ll. 537–549). 81.5% is 22 of 27. Use the fractions and drop the decimals throughout; the false precision undercuts the candor of §7.8.
-
-**Response.** Every percentage is removed; all counts are *k* of *n* with the denominator named.
-**Status:** DONE. **Location of change:** §7.3; §7.4; §7.6; §7.7; Abstract; §9.
-
-#### R1-m3
-
-> Spelling switches between conventions, and in one case switches on the same word: "operationalized" at l. 14 of the abstract against "operationalised" at l. 78. "judgement," "organisation" and "synchronisation" are British throughout. MDPI takes either. Pick one and run it through.
-
-**Response.** British spelling throughout; the text was searched for the American forms of the words the Reviewer names and none remains.
-**Status:** DONE. **Location of change:** throughout.
-
-#### R1-m4
-
-> Words have lost spaces or hyphens in the file I received: "metaanalysis" (l. 319), "loadbearing" (l. 313), "noreport" (l. 439), "corticaland-autonomic" (l. 526), "reportindependent" (l. 573), "secondorder" (l. 658), and "Conflicts of Interest:The" (l. 844). Some of these may be conversion artifacts rather than the author's.
-
-**Response.** They were conversion artefacts: "meta-analysis", "load-bearing", "no-report", "cortical and autonomic", "report-independent", "second-order" and "Conflicts of Interest: The" are correct in the source. The PDF for this resubmission is generated by a different route (markdown → DOCX/PDF) and the joined forms are searched for before upload; that check is listed among the author actions in Section 6 because it has to be repeated on the final build.
-**Status:** PARTLY (source correct; the check on the final PDF is an author action). **Location of change:** throughout; production check.
-
-#### R1-m5
-
-> Maturana and Varela is given inline with full bibliographic detail and a "no DOI" note at ll. 141–143, and the New York Declaration the same way at ll. 188–189. Both should go in the reference list in the normal format.
-
-**Response.** Both are in the reference list in MDPI form and are cited by number.
-**Status:** DONE. **Location of change:** §3; §3 (Declaration); References.
-
-#### R1-m6
-
-> §3–5 run to something like 40% of the text and are largely separable from the coding contribution. They are good, but a reader who has come for the measurement argument waits a long time for it. I would cut them by roughly a third, keeping the closing judgments, which are the parts that earn their keep.
-
-**Response.** Done. Counted on the current text against the submitted version: §3 from 814 to 490 words, §4 from 1,067 to 663, §5 from 932 to 677 — 2,813 to 1,830 in all, a cut of roughly a third. The closing judgement of each section is kept, and the passage in §4 that separates supramodular interaction theory from passive frame theory is kept intact because Table 1 now depends on it (R1-6). References cited only in the removed passages have dropped out of the list.
-**Status:** DONE. **Location of change:** §3 From regulation to a minimal bearer; §4 Arbitration as a function; §5 Valence and organism-wide reconfiguration.
-
-#### R1-m7
-
-> The judgment-at-the-end-of-every-section device works, but by §8 it has become a tic, and at l. 748 ("Three dissociations are named and none measured") it overstates what §8.2 has just conceded about option generation at ll. 714–719. Vary it.
-
-**Response.** The §8 closing is rewritten under a new heading, "What is measured and what is not", as an uneven ledger that matches what §8.2 concedes about option generation: metacognitive precision has validated instruments and no experiment asking whether precision gates access; policy candidacy is measured in part; write-back has been demonstrated but not turned into a measure. "Three dissociations are named and none measured" is removed, and the closing device is varied across §8.
-**Status:** DONE. **Location of change:** §8.4 What is measured and what is not.
-
-#### R1-m8
-
-> Mudrik et al. 2026, Dellert et al. 2025 and the two 2025 Nature Neuroscience pieces have load-bearing and too recent for me to have verified pagination or attribution. Flagging for the production check, not as errors.
-
-**Response.** All four were re-verified against CrossRef records while preparing this response: Mudrik, Faivre, Pitts and Schurger (2026), *Trends in Cognitive Sciences* 30(8), 687–699; Dellert et al. (2025), *Current Biology* 35(23), 5721–5733.e3; IIT-Concerned et al. (2025), *Nature Neuroscience* 28(4), 689–693; Tononi et al. (2025), *Nature Neuroscience* 28(4), 694–702. No discrepancy in volume, issue, pages or attribution.
-**Status:** DONE. **Location of change:** References.
-
----
-
-## 3. Reviewer 2
-
-> The manuscript is well written and comprehensive. However, the authors have neglected the two most significant works on consciousness: 1. Kuhn, R.L. (2024) A landscape of consciousness: toward a taxonomy of explanations and implications. Progress in Biophysics and Molecular Biology 190, 28–169. 2. Poznanski, R.R. (2026) Processual relational geometry: generative unfolding and self-intending closure constituting consciousness — a transscale ontophysical framework. Journal of Multiscale Neuroscience 5, 30–53. Both papers deal with ontological predictors of consciousness, not necessarily cortical signatures. The second reference in particular is required where the author claims on p8 that "few theories predict phenomenality rather than access". In addition, the word "nine" should be removed from the title.
-
-### R2-1
-
-> Cite Kuhn (2024).
-
-**Response.** Added and used substantively in §6.2. Kuhn's taxonomy is the natural frame for the distinction §6.2 draws between frameworks that address phenomenality at the ontological level and theories that state a measurable prediction; we note that the taxonomy does not attempt to adjudicate among theories, and that whole regions of it contribute no row to Table 1 because they state no measurable quantity — which is a fact about the inclusion rule of §7, not a judgement on those frameworks.
-**Status:** DONE. **Location of change:** §6.2 Who predicts phenomenality; References.
-
-### R2-2
-
-> Cite Poznanski (2026) at the "few theories predict phenomenality rather than access" passage.
-
-**Response.** Cited at that passage in §6.2, in one sentence, as an example of a framework that addresses phenomenality at the ontological level and, as presented, states no measurable prediction — and so falls outside the inclusion rule of §7. We should be clear about the scope of the change: the sentence the Reviewer points to concerns predictive content, not the number of frameworks that address phenomenality, and the added citation illustrates that distinction rather than altering it. The full text was not accessible to us; the characterisation rests on the published abstract, hence "as presented". The bibliographic record (volume 5, pages 30–53) is as the Reviewer gives it; confirming the DOI against the journal's record before final submission is on the authors' list (Section 6).
-**Status:** DONE. **Location of change:** §6.2 Who predicts phenomenality; References.
-
-### R2-3
-
-> Remove "nine" from the title.
-
-**Response.** Done. The title no longer contains a count of theories; see R1-3 for the reasoning behind the new title.
-**Status:** DONE. **Location of change:** Title; running head.
-
----
 
 ## 4. Changes prompted by internal re-audit
 
@@ -405,21 +347,21 @@ None of the following was requested by a reviewer. Each was found when we rebuil
 
 **(b) M4 split into M4a, M4b, M4c; "the only contested column" withdrawn.** "Autonomic/interoceptive channel involvement" conflated three quantities: access to interoceptive content as content (M4a), visceral modulation of access to exteroceptive content (M4b), and conscious involvement in a purely autonomic conflict (M4c). Once separated, the stated null of supramodular interaction theory and passive frame theory is a prediction over M4c (and, on our reading of the primary text, an exclusion from the *function* of the conscious field rather than a denial that bodily feelings exist — the manuscript's wording has been corrected accordingly), while the positives of predictive processing, the neural subjective frame and the Feinberg–Mallatt scheme are predictions over M4a and M4b. No pair of stated predictions in M4a or M4c is discriminating, so both are *occupied-not-contested* by the derived rule; M4b, after the predictive-processing cell was re-coded from EXPLICIT to INTERPRETED (the coded sentence reviews evidence rather than stating a framework prediction), has one stated occupant and is *single-occupant*. The claim that M4 is the only contested column, and the abstract's description of it as carrying opposed predictions, are withdrawn. What would make M4c contested is a stated interoceptive-inference prediction that a purely autonomic conflict is felt; we have derived it (P24) and labelled it as our derivation pending the proponents. The 36 M4a/b/c cells are provisional pending the second coding. This changes what §9 says about "the condition that discriminates cannot be run": it is now "the condition that *would* discriminate, if the proponents state the prediction we have derived for them, cannot yet be run".
 
-**(c) Table S2 rebuilt at experiment level; paradigm papers out of the denominator; attribution split.** Described at R1-8. The consequences for the numbers: the submitted 21 of 27 (publication level, paradigm-defining rows inside the denominator) becomes 18 of 30 experiments at baseline, with the neutral-visual share ranging from 10 of 21 (strict attribution, all contested rows removed) to 22 of 35 (coder inference admitted) across the sensitivity scenarios; the interoceptive cell is 1 of 21 publications at baseline and 0 under strict attribution; the valenced cell is 0 of 21 at baseline and 1 of 22 or 3 of 29 under alternative readings (experiment-row counts beside them in Table 2). The statement "no theory claims this literature" is withdrawn and replaced by a statement about the checked sample under the stated rule.
+**(c) Table S2 rebuilt at experiment level; paradigm papers out of the denominator; attribution split.** Described at R2-8. The consequences for the numbers: the submitted 21 of 27 (publication level, paradigm-defining rows inside the denominator) becomes 18 of 30 experiments at baseline, with the neutral-visual share ranging from 10 of 21 (strict attribution, all contested rows removed) to 22 of 35 (coder inference admitted) across the sensitivity scenarios; the interoceptive cell is 1 of 21 publications at baseline and 0 under strict attribution; the valenced cell is 0 of 21 at baseline and 1 of 22 or 3 of 29 under alternative readings (experiment-row counts beside them in Table 2). The statement "no theory claims this literature" is withdrawn and replaced by a statement about the checked sample under the stated rule.
 
 **(d) §9.1 redesigned; N recomputed.** Described at E5. The first revision draft's design (three rules over the same keys, N = 126, sequential Bayes-factor monitoring) confounded the number of distinct responses with incompatibility and is replaced by three co-executable responses on three effectors, with incompatibility as the number of shared-effector pairs (0/1/3) and a separate count branch. N = 120 fixed (119 required for 90 % power at dz = 0.30 on C0 and C1a); no sequential monitoring; valence moved to Study 2 in Protocol S5; the coupling index and the interaction preregistered as estimation only. We also withdrew the sentence that "three quantities from Table 1 then become jointly observable for the first time", which the redesigned condition does not support.
 
-**(e) Codebook v2.3 frozen with a verifiable hash; second coding planned with partial blindness stated.** Described at R1-5. The freeze (24 September 2026; SHA-256 of the file above its footer, checkable with one shell command) precedes the second coder's start. Two earlier versions of the coder pack were not blind — the first carried the prediction register, the second reproduced the first coder's row-level Table S2 decisions inside the codebook — and both were caught by internal audit before anything was sent; a third version still carried one row-level decision in its changelog and stale instructions for a 36-row form, also caught by audit; the pack (v3.3) now contains no first-coder codes, decisions or predictions, its instructions match its forms, the second coder codes the later attribution and her own partition of each publication, and the register and a blank pair list are released only after Table S1 is returned; the limit on blindness — the second author has read the submitted manuscript's condensed Table 1 — is stated in §7.2 and agreement will be reported separately for the cells whose codes appeared in the submitted version and for the cells that did not exist then.
+**(e) Codebook v2.4 frozen with a verifiable hash; second coding planned with partial blindness stated.** Described at R2-5. The freeze (24 September 2026; SHA-256 of the file above its footer, checkable with one shell command) precedes the second coder's start. Two earlier versions of the coder pack were not blind — the first carried the prediction register, the second reproduced the first coder's row-level Table S2 decisions inside the codebook — and both were caught by internal audit before anything was sent; a third version still carried one row-level decision in its changelog and stale instructions for a 36-row form, also caught by audit; the pack (v3.4) now contains no first-coder codes, decisions or predictions, its instructions match its forms, the second coder codes the later attribution and partitions each of the 32 publications into experiments herself on a publication-level form, and the register and a blank pair list are released only after Table S1 is returned; the limit on blindness — the second author has read the submitted manuscript's condensed Table 1 — is stated in §7.2 and agreement will be reported separately for the cells whose codes appeared in the submitted version and for the cells that did not exist then.
 
-**(f) Five cells re-coded by the first coder after a second pass; codes from unreachable sources marked provisional.** Three cells carried codes that their own adjudication notes contradicted — two HOSS cells inherited the merged HOT/HOSS row's code although the HOSS source contains no statement, and one predictive-processing cell was kept EXPLICIT against the boundary rule the note applied — and were brought into line (NOT_LOCATED, NOT_LOCATED, INTERPRETED). A full-text pass over the eight flagged cells that rested on abstracts or on an unread book reached 3 of 12 sources; on that reading two INTERPRETED cells (Feinberg–Mallatt × M4c, predictive processing × M2) became NOT_LOCATED, with the sections searched recorded in the table. The codes of the five cells whose sources remain closed to us are marked provisional. The previous code is kept beside the current one in every re-coded cell. Totals moved from 22/32/64 to 21 EXPLICIT / 29 INTERPRETED / 68 NOT_LOCATED; the register's stated count from 28 to 27.
+**(f) Five cells re-coded by the first coder after a second pass; codes from unreachable sources marked provisional.** Three cells carried codes that their own adjudication notes contradicted — two HOSS cells inherited the merged HOT/HOSS row's code although the HOSS source contains no statement, and one predictive-processing cell was kept EXPLICIT against the boundary rule the note applied — and were brought into line (NOT_LOCATED, NOT_LOCATED, INTERPRETED). A full-text pass over the eight flagged cells that rested on abstracts or on an unread book reached 3 of 12 sources; on that reading two INTERPRETED cells (Feinberg–Mallatt × M4c, predictive processing × M2) became NOT_LOCATED, with the sections searched recorded in the table. The codes of the five cells whose sources were not read in full are marked provisional; open-access copies exist for most of them and the reading is scheduled before the codebook freeze. The previous code is kept beside the current one in every re-coded cell. Totals moved from 22/32/64 to 21 EXPLICIT / 29 INTERPRETED / 68 NOT_LOCATED; the register's stated count from 28 to 27.
 
-**(g) One generator for the protocol's arithmetic.** A second audit found that the protocol text, the deposited trial budget and the power script described different sessions (the script defaulted to equal sessions of 104 trials; the protocol said 64 and 104) and that the protocol cited a numbers script that was not deposited. `section9_power.py` (v2.3) now carries the per-session configuration, `protocol_numbers.py` derives every remaining planning number from its outputs, both run inside `reproduce.py` and are hashed, and the Study 2 sample is fixed at N = 120 by the same rule as Study 1 with its power reported at that N. The success rule now requires the predicted direction, the equivalence test is named a secondary TOST outside the confirmatory family, and the trial budget states the probability of reaching the per-cell floor under independent loss with a pre-specified repeat-block rule.
+**(g) One generator for the protocol's arithmetic.** A second audit found that the protocol text, the deposited trial budget and the power script described different sessions (the script defaulted to equal sessions of 104 trials; the protocol said 64 and 104) and that the protocol cited a numbers script that was not deposited. `section9_power.py` (v2.4) now carries the per-session configuration, `protocol_numbers.py` derives every remaining planning number from its outputs, both run inside `reproduce.py` and are hashed, and the Study 2 sample is fixed at N = 120 by the same rule as Study 1 with its power reported at that N. The success rule now requires the predicted direction, the equivalence test is named a secondary TOST outside the confirmatory family, and the trial budget states the probability of reaching the per-cell floor under independent loss with a pre-specified repeat-block rule.
 
-**(h) Scripts hardened after the audit found them permissive.** `agreement.py` had flagged "none named (...)" attributions as attributions, accepted any vocabulary and any incomplete matrix, and let a duplicated row pass; it now parses attribution structurally, compares theory-id sets, enforces the codebook vocabularies and the 12 × 10 grid, keeps UNRESOLVED as its own category (and excludes it from the binary located-versus-not κ, which has its own denominator), counts stated nulls under their current token, lists a disagreement on the later attribution alone, and fails on the planted defects in its self-test. `column_typology_pairs.py` derives the set of required pairs from Table S4 rather than from the register, so a column with any unassessed pair is classed 'pair assessment incomplete' rather than occupied-not-contested; the eight pairs outside M8 and M6 that the first register lacked (M3, M7, M4a, M4c) are now assessed, all as different or jointly compatible. `build_table2.py` derives the content class from the raw coded fields and aborts if a stored class disagrees. After a further external re-check, `agreement.py` (v2.3) also compares the fields added for the second coder — effector type on motor rows, the normalised status of the later-attribution evidence, the coder's own unit type and her count of experiments per publication — and reports a field as 'not compared' when one file lacks it, never as agreement; the pooled analysis-cell rows of the trial budget now carry their own block counts and durations, and the reserve retention budget is stated on the feasible grid (112 presented per cell, not the theoretical 110). `reproduce.py` had reported PASS with the mixed-model simulations skipped; it now fails when statsmodels is absent unless the skip is requested explicitly, checks the simulation count in the output, and adds the Table 2, sensitivity, S3 and pair-register steps to the chain (10 steps). Table S2 now carries a unit-type column (experiment, experiment group, publication-as-one where the partition could not be verified from the abstract); because the experiment-row denominator mixes those units, the publication is the primary unit in Table 2, the abstract and the text (21 publications), with the experiment-row counts (30) beside them.
+**(h) Scripts hardened after the audit found them permissive.** `agreement.py` had flagged "none named (...)" attributions as attributions, accepted any vocabulary and any incomplete matrix, and let a duplicated row pass; it now parses attribution structurally, compares theory-id sets, enforces the codebook vocabularies and the 12 × 10 grid, keeps UNRESOLVED as its own category (and excludes it from the binary located-versus-not κ, which has its own denominator), counts stated nulls under their current token, lists a disagreement on the later attribution alone, and fails on the planted defects in its self-test. `column_typology_pairs.py` derives the set of required pairs from Table S4 rather than from the register, so a column with any unassessed pair is classed 'pair assessment incomplete' rather than occupied-not-contested; the eight pairs outside M8 and M6 that the first register lacked (M3, M7, M4a, M4c) are now assessed, all as different or jointly compatible. `build_table2.py` derives the content class from the raw coded fields and aborts if a stored class disagrees. After a further external re-check, `agreement.py` (v2.4) also compares the fields added for the second coder — effector type on motor rows, the normalised status of the later-attribution evidence, the coder's own unit type and her count of experiments per publication — and reports a field as 'not compared' when one file lacks it, never as agreement; the pooled analysis-cell rows of the trial budget now carry their own block counts and durations, and the reserve retention budget is stated on the feasible grid (112 presented per cell, not the theoretical 110). `reproduce.py` had reported PASS with the mixed-model simulations skipped; it now fails when statsmodels is absent unless the skip is requested explicitly, checks the simulation count in the output, and adds the Table 2, sensitivity, S3 and pair-register steps to the chain (10 steps). Table S2 now carries a unit-type column (experiment, experiment group, publication-as-one where the partition could not be verified from the abstract); because the experiment-row denominator mixes those units, the publication is the primary unit in Table 2, the abstract and the text (21 publications), with the experiment-row counts (30) beside them.
 
 **(i) Reference hygiene, provenance and the Cogitate outcome.** One DOI was broken (Schurger, Sitt and Dehaene, 2012 — a truncated suffix, now `10.1073/pnas.1210467109`); Odegaard, Knight and Lau (2017) is now cited in its *Journal of Neuroscience* form rather than as a preprint; page ranges and article numbers were completed for nine entries; Kelly et al. (2014) was added and the list renumbered by first appearance throughout, which an earlier splice had broken for 88 entries. §7.2 now gives the table's provenance in one paragraph — 72 cells (9 × 8) as submitted, 88 (11 × 8) in the first revision draft, 120 (12 × 10) now — with the code distribution at each state, so that the sentence about 96 legacy entries is exact. §6.4 describes the three Cogitate predictions by their relations in the pair register: one pair, on temporal profile, is discriminating and separated the theories; the other two criteria are jointly compatible, and on them each theory failed its own test. The abstract says the classes are derived by rule from coded pair relations, not assigned by a coder. The AI statement names both systems used and what each did.
 
-**(j) Length.** The revised body had grown to about 18 500 words. Repetition across sections (class definitions stated three times, the Cogitate outcome four times, the interoceptive-measure point three times, the recoding provenance twice) was removed so that each point is stated once where its evidence lives and referenced elsewhere; the body is now about 16 400 words including Tables 1 and 2 (about 15 500 without them). No number, class or citation changed in the cut (the citation set and every count were checked mechanically); one count in §7.7 that had not followed a full-text re-coding (predictive processing on M2) was corrected in the same pass. A second pass moved the description and limits of the ConTraSt column set (§7.5) and the full list of Table 2 sensitivity scenarios (§7.6) to a Supplementary Note S6, keeping the results in the body, and shortened §8.1–8.3 by about a quarter with every citation retained; the body is now about 15 800 words with the two tables (about 14 900 without). What remains is material the Reviewers asked for — the coding procedure and its limits (R1-4, R1-5), the attribution rule and sensitivity (R1-8), the worked condition (E5) — and it stands where it is referenced.
+**(j) Length.** The revised body had grown to about 18 500 words. Repetition across sections (class definitions stated three times, the Cogitate outcome four times, the interoceptive-measure point three times, the recoding provenance twice) was removed so that each point is stated once where its evidence lives and referenced elsewhere; the body is now about 16 400 words including Tables 1 and 2 (about 15 500 without them). No number, class or citation changed in the cut (the citation set and every count were checked mechanically); one count in §7.7 that had not followed a full-text re-coding (predictive processing on M2) was corrected in the same pass. A second pass moved the description and limits of the ConTraSt column set (§7.5) and the full list of Table 2 sensitivity scenarios (§7.6) to a Supplementary Note S6, keeping the results in the body, and shortened §8.1–8.3 by about a quarter with every citation retained; the body is now about 15 800 words with the two tables (about 14 900 without). What remains is material the Reviewers asked for — the coding procedure and its limits (R2-4, R2-5), the attribution rule and sensitivity (R2-8), the worked condition (E5) — and it stands where it is referenced.
 
 **(k) The highlighting is a reconstructed text comparison.** The revised manuscript is authored in markdown; the yellow highlighting in the DOCX and PDF marks every passage inserted or rewritten relative to the submitted text and was produced by comparing the two texts, not by Word Track Changes. Deletions are listed in Section 5. Passages that were only renumbered or re-cited are not highlighted.
 
@@ -448,14 +390,14 @@ Two further corrections from the source check that accompanied the re-audit: the
 
 These items cannot be completed by editing the text and are not reported as done anywhere in the manuscript or in this response.
 
-1. **Second coding of Tables S1 v2 and S2 v2** by the second author from the v3.3 pack; run `agreement.py`; fill the κ, agreement and disagreement placeholders in §7.2 with pre-adjudication values; adjudicate and deposit the adjudication record; then activate the *validation* line in the Author Contributions statement. If the second coding cannot be completed within the deadline, the fallback is to withdraw every provisional count from the abstract and §7 and present the audit as a single-coder inventory.
+1. **Second coding of Tables S1 v2 and S2 v2** by the second author from the v3.4 pack; run `agreement.py`; fill the κ, agreement and disagreement placeholders in §7.2 with pre-adjudication values; adjudicate and deposit the adjudication record; then activate the *validation* line in the Author Contributions statement. If the second coding cannot be completed within the deadline, the fallback is to withdraw every provisional count from the abstract and §7 and present the audit as a single-coder inventory.
 2. **Extension of the revision deadline.** A request has been drafted; it has not been sent. It should go through the editorial system before the current deadline and must not describe the second coding as complete.
 3. **Letters to proponents.** Two letters drafted (P24 to the interoceptive-inference proponents; P18/P19, the skeletomotor boundary, to the supramodular interaction / passive frame proponents); not sent. Record the date sent; if a reply arrives, enter it in Table S4 verbatim with permission and recode the cell from derived to stated.
 4. **Deposit.** Reserve a DOI (Zenodo or OSF); upload deposit package v2; replace `[10.xxxx/PLACEHOLDER]` in Supplementary Materials, §7.2 and the Data Availability Statement with the same identifier.
 5. **Table S3 completion.** Code the neural subjective frame and the separated HOSS row against the twelve ConTraSt dimensions (24 cells) so that S3 matches the 12 accounts of S1 v2; until then any S1–S3 comparison is confined to the ten shared accounts, as the text states.
 6. **Full-text confirmation of abstract-only sources** on which locus claims rest (Lau and Rosenthal, 2011; Lamme, 2006; Lamme and Roelfsema, 2000; Park and Tallon-Baudry, 2014; Azzalini et al., 2019; Morsella, 2005; 21 of the 28 sources under abstract-only EXPLICIT or INTERPRETED cells have an open-access copy, and the reading is scheduled before the codebook freeze). Done in this draft: the author order of Webb and Graziano (2015) corrected from the PDF byline (CrossRef and OpenAlex both list the authors in the wrong order), and the attention-schema temporo-parietal locus re-anchored to Kelly et al. (2014), now cited.
 7. **Names, affiliations, corresponding author, funding**, the conflicts-of-interest sentence (the manuscript argues at length with supramodular interaction theory; any professional relationship with its proponents belongs there), and the name and version of the generative-AI tools.
-8. **Production checks on the final PDF:** search for the joined forms listed at R1-m4; confirm the Poznanski (2026) DOI against the journal's record; confirm that the highlighting in the final PDF is complete after the last edit.
+8. **Production checks on the final PDF:** search for the joined forms listed at R2-m4; confirm the Poznanski (2026) DOI against the journal's record; confirm that the highlighting in the final PDF is complete after the last edit.
 
 ---
 
@@ -463,17 +405,17 @@ These items cannot be completed by editing the text and are not reported as done
 
 | Comment | Status | Comment | Status |
 |---|---|---|---|
-| E1 | PREPARED | R1-7 | DONE |
-| E2 | PARTLY | R1-8 | DONE |
-| E3 | PREPARED | R1-9 | DONE |
-| E4 | DONE | R1-m1 | DONE |
-| E5 | PREPARED | R1-m2 | DONE |
-| E6 | DONE | R1-m3 | DONE |
-| E7 | DONE | R1-m4 | PARTLY |
-| R1-1 | DONE | R1-m5 | DONE |
-| R1-2 | PARTLY | R1-m6 | DONE |
-| R1-3 | DONE | R1-m7 | DONE |
-| R1-4 | PREPARED | R1-m8 | DONE |
-| R1-5 | PREPARED | R2-1 | DONE |
-| R1-6 | DONE | R2-2 | DONE |
-| | | R2-3 | DONE |
+| E1 | PREPARED | R2-7 | DONE |
+| E2 | PARTLY | R2-8 | DONE |
+| E3 | PREPARED | R2-9 | DONE |
+| E4 | DONE | R2-m1 | DONE |
+| E5 | PREPARED | R2-m2 | DONE |
+| E6 | DONE | R2-m3 | DONE |
+| E7 | DONE | R2-m4 | PARTLY |
+| R2-1 | DONE | R2-m5 | DONE |
+| R2-2 | PARTLY | R2-m6 | DONE |
+| R2-3 | DONE | R2-m7 | DONE |
+| R2-4 | PREPARED | R2-m8 | DONE |
+| R2-5 | PREPARED | R1-1 | DONE |
+| R2-6 | DONE | R1-2 | DONE |
+| | | R1-3 | DONE |
