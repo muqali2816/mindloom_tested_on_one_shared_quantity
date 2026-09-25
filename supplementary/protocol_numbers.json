@@ -1,0 +1,245 @@
+{
+ "version": "3.3",
+ "source": "section9_power.py v2.4 outputs (trials_budget.csv, trials_budget_analysis_cells.csv, power_study1.csv, power_study2.csv, section9_key_numbers.json)",
+ "study1": {
+  "n_presentation_cells": 7,
+  "n_analysis_cells": 5,
+  "n_blocks_per_session": 16,
+  "blocks_per_cell": {
+   "count1@0": 2,
+   "count2@0": 2,
+   "count3@0": 3,
+   "count3@1_pairA": 2,
+   "count3@1_pairB": 2,
+   "count3@1_pairC": 2,
+   "count3@3": 3
+  },
+  "session2": {
+   "blocks": 16,
+   "trials_per_block": 52,
+   "probe_per_block": 13,
+   "presented_total": 832,
+   "probe_total": 208,
+   "noprobe_total": 624,
+   "titration_trials": 48,
+   "titration_minutes": 6.4,
+   "trial_minutes": 83.2,
+   "break_minutes": 15.0,
+   "total_minutes": 104.6,
+   "report": "none in blocks (no-report); PAS only in the titration phase"
+  },
+  "session1": {
+   "blocks": 16,
+   "trials_per_block": 32,
+   "probe_per_block": 8,
+   "presented_total": 512,
+   "probe_total": 128,
+   "noprobe_total": 384,
+   "titration_trials": 48,
+   "titration_minutes": 6.4,
+   "trial_minutes": 70.4,
+   "break_minutes": 15.0,
+   "total_minutes": 98.2,
+   "practice_trials": 64,
+   "practice_minutes": 6.4,
+   "urge_ratings_total": 128,
+   "pas_rated_trials": 384,
+   "report": "PAS on no-probe trials (labels; PAS version), urge rating after the probe response on probe trials"
+  },
+  "two_block_cell": {
+   "presented_session2": 104,
+   "probe": 26,
+   "noprobe": 78,
+   "usable_expected": 66.3,
+   "raw_minimum": 100.39
+  },
+  "usable_single_c1a_cell": 99.45,
+  "usable_pooled_c1a_cell": 198.9,
+  "usable_count_cell": 66.3,
+  "precision_ratio_single_to_pooled": 0.5,
+  "v2_precision_ratio_single_to_pooled": 0.333,
+  "presented_both_sessions": 1344,
+  "v2_session2_minutes_22_blocks": 135.4
+ },
+ "cells": {
+  "count1@0": {
+   "presentation_cells_pooled": 1,
+   "blocks_per_session": 2,
+   "presented_session2": 104,
+   "noprobe_session2": 78,
+   "usable_session2_expected": 66.3,
+   "pas_rated_session1_expected": 40.8,
+   "urge_rated_session1": 16,
+   "role": "estimation (count branch)"
+  },
+  "count2@0": {
+   "presentation_cells_pooled": 1,
+   "blocks_per_session": 2,
+   "presented_session2": 104,
+   "noprobe_session2": 78,
+   "usable_session2_expected": 66.3,
+   "pas_rated_session1_expected": 40.8,
+   "urge_rated_session1": 16,
+   "role": "estimation (count branch)"
+  },
+  "count3@0": {
+   "presentation_cells_pooled": 1,
+   "blocks_per_session": 3,
+   "presented_session2": 156,
+   "noprobe_session2": 117,
+   "usable_session2_expected": 99.45,
+   "pas_rated_session1_expected": 61.2,
+   "urge_rated_session1": 24,
+   "role": "confirmatory C1a cell"
+  },
+  "count3@1": {
+   "presentation_cells_pooled": 3,
+   "blocks_per_session": 6,
+   "presented_session2": 312,
+   "noprobe_session2": 234,
+   "usable_session2_expected": 198.9,
+   "pas_rated_session1_expected": 122.4,
+   "urge_rated_session1": 48,
+   "role": "confirmatory C1a cell"
+  },
+  "count3@3": {
+   "presentation_cells_pooled": 1,
+   "blocks_per_session": 3,
+   "presented_session2": 156,
+   "noprobe_session2": 117,
+   "usable_session2_expected": 99.45,
+   "pas_rated_session1_expected": 61.2,
+   "urge_rated_session1": 24,
+   "role": "confirmatory C1a cell"
+  }
+ },
+ "study2": {
+  "n_cells": 9,
+  "n_blocks_per_session": 18,
+  "session2": {
+   "blocks": 18,
+   "trials_per_block": 52,
+   "probe_per_block": 13,
+   "presented_total": 936,
+   "probe_total": 234,
+   "noprobe_total": 702,
+   "titration_trials": 48,
+   "titration_minutes": 6.4,
+   "trial_minutes": 93.6,
+   "break_minutes": 17.0,
+   "total_minutes": 117.0,
+   "report": "none in blocks (no-report); PAS only in the titration phase"
+  },
+  "session1": {
+   "blocks": 18,
+   "trials_per_block": 32,
+   "probe_per_block": 8,
+   "presented_total": 576,
+   "probe_total": 144,
+   "noprobe_total": 432,
+   "titration_trials": 48,
+   "titration_minutes": 6.4,
+   "trial_minutes": 79.2,
+   "break_minutes": 17.0,
+   "total_minutes": 109.8,
+   "practice_trials": 72,
+   "practice_minutes": 7.2,
+   "urge_ratings_total": 144,
+   "pas_rated_trials": 432,
+   "report": "PAS on no-probe trials (labels; PAS version), urge rating after the probe response on probe trials"
+  },
+  "presented_both_sessions": 1512
+ },
+ "power": {
+  "N_fixed": 120,
+  "N_required": 119,
+  "dz_plan": 0.3,
+  "n_confirmatory_contrasts_access_index": 1,
+  "multiplicity_correction": "none (single confirmatory contrast)",
+  "C1a_single_alpha05": 0.9032,
+  "mdes_at_N": 0.2983,
+  "two_version_rule_independence": 0.8157,
+  "N_for_90_two_version_rule": 146,
+  "pas_sign_agreement_prob": 0.9995,
+  "rating_contrast_CR": {
+   "hypothesis": "P16 (stated) on its own outcome variable; register row P35",
+   "assumed_dz": 0.5,
+   "power_at_N": 0.9997,
+   "power_at_dz030": 0.9032,
+   "anchor": {
+    "source": "Morsella et al. 2009, Emotion 9, t(13) = 6.21",
+    "dz": 1.6597
+   },
+   "assumed_over_anchor": 0.301,
+   "urge_ratings_per_cell_session1": {
+    "count3@0": 24,
+    "count3@1": 48,
+    "count3@3": 24
+   },
+   "own_family": "yes: a separately preregistered test of a different hypothesis on a different variable; alpha 0.05, no correction across C1a and CR"
+  },
+  "pilot_stop": {
+   "criterion": "pilot standardised urge difference, 3-shared minus 0-shared at count 3, session-1 probe trials",
+   "threshold_dz": 0.5,
+   "rule": "below the threshold: intentions are not being formed -> stop and redesign",
+   "justification": "equals the dz assumed for CR: below it the confirmatory rating test would not be warranted at the planned N; it is under a third of the anchor"
+  },
+  "note": "independence between the EEG-index and PAS-report versions is assumed for the two-version figure; the pilot covariance replaces it"
+ },
+ "study2_power": {
+  "N_fixed": 120,
+  "N_required": 119,
+  "single_alpha05": 0.9032,
+  "two_version_rule_independence": 0.8157
+ },
+ "retention": {
+  "model": "independent Bernoulli loss at the planning rate; illustrative, losses are correlated in practice",
+  "usable_target": 64,
+  "loss_rate": 0.15,
+  "three_block_c1a_cell": {
+   "noprobe": 117,
+   "P_reaches_target": 1.0,
+   "P_both_single_c1a_cells": 1.0
+  },
+  "two_block_count_cell": {
+   "noprobe": 78,
+   "P_reaches_target": 0.8151,
+   "P_both_count_cells": 0.6644,
+   "presented_for_target_prob_feasible": 112,
+   "P_at_feasible": 0.9887
+  },
+  "v2_two_single_c1a_cells_at_two_blocks": 0.6644,
+  "rule": "S5.9: the usable-trial floor is an exclusion criterion for the three C1a analysis cells; a count cell below the floor is completed by one repeated block at the end of session 2 (pre-specified) and, if still below, the participant is kept for C1a and flagged in the count estimate"
+ },
+ "block_orders": {
+  "n_sequences": 14,
+  "latin_square": "cyclic 7 x 7, row reversed in the second half",
+  "extra_blocks_at": [
+   8,
+   9
+  ],
+  "each_cell_once_in_blocks_1_7": true,
+  "each_cell_once_in_blocks_10_16": true,
+  "mean_block_position_by_cell": {
+   "count1@0": 8.5,
+   "count2@0": 8.5,
+   "count3@0": 8.5,
+   "count3@1_pairA": 8.5,
+   "count3@1_pairB": 8.5,
+   "count3@1_pairC": 8.5,
+   "count3@3": 8.5
+  },
+  "blocks_per_cell_per_session": {
+   "count1@0": 2,
+   "count2@0": 2,
+   "count3@0": 3,
+   "count3@1_pairA": 2,
+   "count3@1_pairB": 2,
+   "count3@1_pairC": 2,
+   "count3@3": 3
+  },
+  "sequences_with_a_consecutive_same_cell_pair": 4,
+  "consecutive_same_cell_pairs_total": 4,
+  "assignment_rule": "sequence = participant index mod 14, lever rotation = participant index mod 6, both from lists fixed at preregistration; realised counts per sequence (8 or 9 at N = 120) are reported"
+ }
+}

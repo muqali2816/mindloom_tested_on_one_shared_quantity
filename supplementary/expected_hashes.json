@@ -1,0 +1,20 @@
+{
+ "typology/column_typology_v2.csv": "4cb470f612afa22e35824fefd478bfde6fe2109308623bb29803b06d5e8465f7",
+ "typology/column_typology_pairs.csv": "051d0745dfb1c81a8b30e0cc7ccff649efd593fdbf75f1a4544a000f1b2ae10b",
+ "power/protocol_numbers.json": "10fd21447ca188c256d0cac51554cdd0c3a614aa57a3b7d406c8fbffab6c12b5",
+ "power/trials_budget.csv": "26fd2f34a0f4511c6ce57d046046430bac59fd47aee64816cb26113675118224",
+ "power/trials_budget_cells.csv": "18d06eb8abf918cd2a11922be6e436b107d885f7b7543eacb223ff4c4fe1a87e",
+ "power/trials_budget_analysis_cells.csv": "2cbc49960c45a8e01ef73667885434f4bdc649add3cbbafd90ba22cc0850b484",
+ "power/block_orders_study1.csv": "fe6137eec5df8231ce60abad218b73b435cb8776602f221387bb89a19de076f7",
+ "power/power_study1.csv": "96a384d4762f65222073907adc7cfab129007edb1e970a29799c8bd89f4bf942",
+ "power/power_study2.csv": "b6e43a968f3305c3aa83a61b59aaa6f40eb42f1826b3b5631a7ebf6fd2c903e8",
+ "recompute/table1_tallies_v2.csv": "179dd943ff629a030a1746696c44224af5ef4a04e3f34ed4f6dbef3deeaa620c",
+ "recompute/table1_wide_v2.csv": "be51ef9bd5b253504ad025a013011eed01154dd6c814bc0862de4a5fc176d209",
+ "recompute/table1_tallies_legacy_view.csv": "7fc8214811c6b20eaef31998d985d256bcc2411d00fcae4c794a838739b58e61",
+ "recompute_selftest/table1_tallies_v2.csv": "81d2f530f684244046b26faf0d5d0b0cd4307b41f340b6956497316d3e13d8ad",
+ "recompute_selftest/recompute_selftest_log.csv": "c0e3b4320942d538d90ce9fe295073ecb2215bdb2c83b6083d9e1b9d099356b3",
+ "table2/Table_2_counts.csv": "4f803b8fcdfd22859e7596b6e93599055cd40b911d23dc3c9b82fd851783523c",
+ "s2/s2_sensitivity.csv": "dc5fa33c91143ea9eb8fb4ec6b3e897f90acb0d7b35363c92ef67a202ce688dc",
+ "agreement_selftest/selftest_log.csv": "8414880fc11cc24f05e663660dccb6e217b14ed3ea1cd84667cac2e56dacaed6",
+ "agreement_selftest/agreement_summary.csv": "36cf9a717c9a982031b5b4c8f0527f4fdcda1b9276fc6ccf1a593af8a1b6b2fe"
+}

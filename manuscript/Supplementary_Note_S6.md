@@ -14,16 +14,17 @@ The sensitivity check of the submitted version — dropping M1, M2 and M5 and co
 
 ## S6.2 Table 2 sensitivity scenarios (Section 7.6)
 
-All scenarios are computed by `s2_sensitivity.py` from `Table_S2_v2_experiments.csv` and written to `s2_sensitivity.csv` (step 1d of `reproduce.py`); publication level first, experiment-row value in brackets. Baseline S0 (theory-addressed, content-bearing, suppressed-access study excluded): 21 publications (30 rows) — neutral visual 15 of 21 (18 of 30), competing motor policies 4 of 21 (8 of 30: 7 skeletal, 1 autonomic-effector), neutral non-visual 1 of 21 (3 of 30), valenced 0 of 21 (0 of 30), interoceptive 1 of 21 (1 of 30).
+All scenarios are computed by `s2_sensitivity.py` from `Table_S2_v2_experiments.csv` and written to `s2_sensitivity.csv` (step 1d of `reproduce.py`); publication level first, experiment-row value in brackets. Baseline S0 (theory-addressed, content-bearing, suppressed-access study excluded): 23 publications (45 rows) — neutral visual 16 of 23 (32 of 45), competing motor policies 4 of 23 (8 of 45: 7 skeletal, 1 autonomic-effector), neutral non-visual 2 of 23 (4 of 45), valenced 0 of 23 (0 of 45), interoceptive 1 of 23 (1 of 45). Counts as of 25 September 2026, after the full-text reading of the inventory (31 of 32 publications partitioned from Methods).
 
 | Scenario | Neutral visual | Valenced | Interoceptive |
 |---|---|---|---|
-| S1 add the suppressed-access study [129] | 15 of 22 (18 of 31) | 1 of 22 (1 of 31) | 1 of 22 (1 of 31) |
-| S2 remove the metacognition studies | 11 of 16 (14 of 25) | 0 of 16 (0 of 25) | 0 of 16 (0 of 25) |
-| S3 remove every contested row | 11 of 16 (14 of 25) | 0 of 16 (0 of 25) | 0 of 16 (0 of 25) |
-| S5 add the coder's inferred attributions | 18 of 25 (22 of 35) | 0 of 25 (0 of 35) | 1 of 25 (1 of 35) |
-| S6 strict later attribution only (citing sentence read and names the theory) | 10 of 15 (13 of 24) | 0 of 15 (0 of 24) | 0 of 15 (0 of 24) |
-| S8 no theory filter | 18 of 29 (22 of 39) | 3 of 29 (3 of 39) | 2 of 29 (2 of 39) |
-| S10 strict attribution and every contested row removed | 7 of 12 (10 of 21) | 0 of 12 (0 of 21) | 0 of 12 (0 of 21) |
+| S1 add the suppressed-access study [129] | 16 of 24 (32 of 46) | 1 of 24 (1 of 46) | 1 of 24 (1 of 46) |
+| S2 remove the metacognition studies | 13 of 19 (29 of 41) | 0 of 19 (0 of 41) | 0 of 19 (0 of 41) |
+| S3 remove every contested row | 12 of 18 (23 of 35) | 0 of 18 (0 of 35) | 0 of 18 (0 of 35) |
+| S5 add the coder's inferred attributions | 18 of 29 (37 of 56) | 3 of 29 (5 of 56) | 2 of 29 (2 of 56) |
+| S6 strict later attribution only (citing sentence read and names the theory) | 11 of 18 (22 of 35) | 0 of 18 (0 of 35) | 1 of 18 (1 of 35) |
+| S8 no theory filter | 18 of 29 (37 of 56) | 3 of 29 (5 of 56) | 2 of 29 (2 of 56) |
+| S10 strict attribution and every contested row removed | 8 of 14 (15 of 27) | 0 of 14 (0 of 27) | 0 of 14 (0 of 27) |
+
 
 Seven rows carry a contested-inclusion flag with a written reason (`contested_reason`). The submitted version's publication-level counts (21 of 27 with the four paradigm-defining rows inside the denominator; 19 of 24 without) are reproduced by the script as the historical scenarios H0 and H1 from the legacy codes, so that the difference between versions is attributable to the change of attribution rule and content classes rather than to re-coding. The two scenarios reported in the body are the ones in which a headline value changes: S1 (the valenced zero does not survive) and S10 (the smallest neutral-visual share).

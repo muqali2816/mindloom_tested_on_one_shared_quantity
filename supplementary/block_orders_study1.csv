@@ -1,0 +1,15 @@
+sequence_id,latin_row,extra_pair_order,session2_sequence_id,block_01,block_02,block_03,block_04,block_05,block_06,block_07,block_08,block_09,block_10,block_11,block_12,block_13,block_14,block_15,block_16
+S1a,1,count3@0-count3@3,S2b,count1@0,count2@0,count3@0,count3@1_pairA,count3@1_pairB,count3@1_pairC,count3@3,count3@0,count3@3,count3@3,count3@1_pairC,count3@1_pairB,count3@1_pairA,count3@0,count2@0,count1@0
+S1b,1,count3@3-count3@0,S2a,count1@0,count2@0,count3@0,count3@1_pairA,count3@1_pairB,count3@1_pairC,count3@3,count3@3,count3@0,count3@3,count3@1_pairC,count3@1_pairB,count3@1_pairA,count3@0,count2@0,count1@0
+S2a,2,count3@0-count3@3,S3b,count2@0,count3@0,count3@1_pairA,count3@1_pairB,count3@1_pairC,count3@3,count1@0,count3@0,count3@3,count1@0,count3@3,count3@1_pairC,count3@1_pairB,count3@1_pairA,count3@0,count2@0
+S2b,2,count3@3-count3@0,S3a,count2@0,count3@0,count3@1_pairA,count3@1_pairB,count3@1_pairC,count3@3,count1@0,count3@3,count3@0,count1@0,count3@3,count3@1_pairC,count3@1_pairB,count3@1_pairA,count3@0,count2@0
+S3a,3,count3@0-count3@3,S4b,count3@0,count3@1_pairA,count3@1_pairB,count3@1_pairC,count3@3,count1@0,count2@0,count3@0,count3@3,count2@0,count1@0,count3@3,count3@1_pairC,count3@1_pairB,count3@1_pairA,count3@0
+S3b,3,count3@3-count3@0,S4a,count3@0,count3@1_pairA,count3@1_pairB,count3@1_pairC,count3@3,count1@0,count2@0,count3@3,count3@0,count2@0,count1@0,count3@3,count3@1_pairC,count3@1_pairB,count3@1_pairA,count3@0
+S4a,4,count3@0-count3@3,S5b,count3@1_pairA,count3@1_pairB,count3@1_pairC,count3@3,count1@0,count2@0,count3@0,count3@0,count3@3,count3@0,count2@0,count1@0,count3@3,count3@1_pairC,count3@1_pairB,count3@1_pairA
+S4b,4,count3@3-count3@0,S5a,count3@1_pairA,count3@1_pairB,count3@1_pairC,count3@3,count1@0,count2@0,count3@0,count3@3,count3@0,count3@0,count2@0,count1@0,count3@3,count3@1_pairC,count3@1_pairB,count3@1_pairA
+S5a,5,count3@0-count3@3,S6b,count3@1_pairB,count3@1_pairC,count3@3,count1@0,count2@0,count3@0,count3@1_pairA,count3@0,count3@3,count3@1_pairA,count3@0,count2@0,count1@0,count3@3,count3@1_pairC,count3@1_pairB
+S5b,5,count3@3-count3@0,S6a,count3@1_pairB,count3@1_pairC,count3@3,count1@0,count2@0,count3@0,count3@1_pairA,count3@3,count3@0,count3@1_pairA,count3@0,count2@0,count1@0,count3@3,count3@1_pairC,count3@1_pairB
+S6a,6,count3@0-count3@3,S7b,count3@1_pairC,count3@3,count1@0,count2@0,count3@0,count3@1_pairA,count3@1_pairB,count3@0,count3@3,count3@1_pairB,count3@1_pairA,count3@0,count2@0,count1@0,count3@3,count3@1_pairC
+S6b,6,count3@3-count3@0,S7a,count3@1_pairC,count3@3,count1@0,count2@0,count3@0,count3@1_pairA,count3@1_pairB,count3@3,count3@0,count3@1_pairB,count3@1_pairA,count3@0,count2@0,count1@0,count3@3,count3@1_pairC
+S7a,7,count3@0-count3@3,S1b,count3@3,count1@0,count2@0,count3@0,count3@1_pairA,count3@1_pairB,count3@1_pairC,count3@0,count3@3,count3@1_pairC,count3@1_pairB,count3@1_pairA,count3@0,count2@0,count1@0,count3@3
+S7b,7,count3@3-count3@0,S1a,count3@3,count1@0,count2@0,count3@0,count3@1_pairA,count3@1_pairB,count3@1_pairC,count3@3,count3@0,count3@1_pairC,count3@1_pairB,count3@1_pairA,count3@0,count2@0,count1@0,count3@3

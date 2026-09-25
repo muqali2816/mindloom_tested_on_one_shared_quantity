@@ -1,3 +1,5 @@
+> **Superseded numbers notice (25 September 2026).** The counts below describe the state at the v4 integration (24 September). After the full-text reading of 25 September the authoritative numbers are those produced by `reproduce.py` over `deposit_v2/`: Table S1 — 21 EXPLICIT (19 positive, 2 stated null), 30 INTERPRETED (21 positive, 9 stated null), 67 NOT_LOCATED, 2 NOT_APPLICABLE; 24 cells flagged; 2 cells abstract-only. Table S2 — 32 publications in 59 rows; baseline S0: 23 publications (45 rows), neutral visual 16 of 23 (32 of 45), motor 4 of 23 (8 of 45), neutral non-visual 2 of 23 (4 of 45), valenced 0 of 23 (0 of 45), interoceptive 1 of 23 (1 of 45). Register: 27 stated, 6 derived, 2 provenance-only, 1 test-of-stated. Column classes unchanged.
+
 # FACTS SHEET v4 — every number below is produced by script from the tables in this bundle (reproduce.py, 6 of 6 PASS). Cite by name; do not retype from memory.
 
 ## Table S1 v2 (Table_S1_v2.csv; 120 cells = 12 accounts × 10 domains; HOT and HOSS separate; M4 → M4a/M4b/M4c)

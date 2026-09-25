@@ -1,0 +1,17 @@
+study,version,cell,analysis_cell,blocks_per_session,balance,presented_session2,probe_session2,noprobe_session2,usable_session2_expected,presented_session1,probe_session1,noprobe_session1,pas_rated_session1_expected,urge_rated_session1
+1,2.4,count1@0,count1@0,2,one rule on one lever; lever rotated between participants,104,26,78,66.3,64,16,48,40.8,16
+1,2.4,count2@0,count2@0,2,two rules on two levers; lever pair rotated between participants,104,26,78,66.3,64,16,48,40.8,16
+1,2.4,count3@0,count3@0,3,three rules on three levers; rule-to-lever assignment rotated between participants (C1a cell),156,39,117,99.45,96,24,72,61.2,24
+1,2.4,count3@1_pairA,count3@1,2,rules 1 and 2 share a lever (shared lever rotated between participants),104,26,78,66.3,64,16,48,40.8,16
+1,2.4,count3@1_pairB,count3@1,2,rules 1 and 3 share a lever (shared lever rotated between participants),104,26,78,66.3,64,16,48,40.8,16
+1,2.4,count3@1_pairC,count3@1,2,rules 2 and 3 share a lever (shared lever rotated between participants),104,26,78,66.3,64,16,48,40.8,16
+1,2.4,count3@3,count3@3,3,all rules on one lever; lever rotated between participants (C1a cell),156,39,117,99.45,96,24,72,61.2,24
+2,2.4,negative@0,negative@0,2,valence x shared pairs at count 3 (assumed cell structure),104,26,78,66.3,64,16,48,40.8,16
+2,2.4,negative@1,negative@1,2,valence x shared pairs at count 3 (assumed cell structure),104,26,78,66.3,64,16,48,40.8,16
+2,2.4,negative@3,negative@3,2,valence x shared pairs at count 3 (assumed cell structure),104,26,78,66.3,64,16,48,40.8,16
+2,2.4,neutral@0,neutral@0,2,valence x shared pairs at count 3 (assumed cell structure),104,26,78,66.3,64,16,48,40.8,16
+2,2.4,neutral@1,neutral@1,2,valence x shared pairs at count 3 (assumed cell structure),104,26,78,66.3,64,16,48,40.8,16
+2,2.4,neutral@3,neutral@3,2,valence x shared pairs at count 3 (assumed cell structure),104,26,78,66.3,64,16,48,40.8,16
+2,2.4,positive@0,positive@0,2,valence x shared pairs at count 3 (assumed cell structure),104,26,78,66.3,64,16,48,40.8,16
+2,2.4,positive@1,positive@1,2,valence x shared pairs at count 3 (assumed cell structure),104,26,78,66.3,64,16,48,40.8,16
+2,2.4,positive@3,positive@3,2,valence x shared pairs at count 3 (assumed cell structure),104,26,78,66.3,64,16,48,40.8,16

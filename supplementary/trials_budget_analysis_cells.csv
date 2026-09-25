@@ -1,0 +1,6 @@
+version,study,analysis_cell,presentation_cells_pooled,blocks_per_session,presented_session2,noprobe_session2,usable_session2_expected,presented_session1,pas_rated_session1_expected,urge_rated_session1,role
+2.4,1,count1@0,1,2,104,78,66.3,64,40.8,16,estimation (count branch)
+2.4,1,count2@0,1,2,104,78,66.3,64,40.8,16,estimation (count branch)
+2.4,1,count3@0,1,3,156,117,99.45,96,61.2,24,confirmatory C1a cell
+2.4,1,count3@1,3,6,312,234,198.9,192,122.4,48,confirmatory C1a cell
+2.4,1,count3@3,1,3,156,117,99.45,96,61.2,24,confirmatory C1a cell

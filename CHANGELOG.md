@@ -94,5 +94,11 @@ Baseline: manuscript v3 (sha256 dec8007fb39d42e2), deposit v1.3 (e7ea015ce7b9171
 - Reported in §7.2 as a reproducibility check, explicitly not the second coding; AI statement and response (R2-5, §4(j)) updated. S1 codes unchanged (frozen for the human comparison).
 - Codebook v2.5: §5 source lists completed with the sources first-coder cells actually rest on (Shea & Frith 2019; Tallon-Baudry 2018, 2022; Azzalini 2021; Kleckner 2017; Seth 2016; Gray et al. 2013; Heredia Cedillo 2024; Melloni 2023 protocol) — found because the AI session could not have consulted them. Pack v3.5.
 
+## v4.10 (25 Sep 2026) — full-text reading applied
+- 43 PDFs supplied by the authors filed under DOI names in `pdfs/` (manifest); together with the 5 Europe PMC texts every wish-list source is present except Brown, Lau & LeDoux 2019, Clark 2013 and Rounis 2010 (the file supplied under that DOI is Bor et al. 2017).
+- Table S1: 55 of 57 abstract-coded cells read in full; 5 codes changed (SIT×M4a i→E, SIT×M4b ·→i∅, RPT×M7 ·→i∅, GNWT×M5 i→·, PP×M7 E→i), 45 confirmed, 6 candidates flagged (incl. PFT×M2, kept as a boundary), stale abstract flags replaced; 24 flagged, 2 abstract-only. Totals 21 E / 30 i / 67 · / 2 n/a. Register: P36 (SIT×M4a) added, P15 demoted; pairs M4a-P14-P36 and M4a-P26-P36 added (jointly compatible), M7 pairs with P15 moved to `pair_register_superseded.csv`. Column classes unchanged.
+- Table S2: 19 abstract rows read; 17 experiment rows added from Methods (59 rows), attribution and analysed N read; Dellert 2025 and Pinto 2017 enter the theory-addressed denominator. Baseline S0 now 23 publications / 45 rows: 16 of 23 neutral visual, 4 of 23 motor, 2 of 23 neutral non-visual, 0 of 23 valenced, 1 of 23 interoceptive. `build_table2.py`/`s2_sensitivity.py` v2.2: ancillary rows (controls, pilots) do not define a publication's class.
+- Manuscript: abstract, Table 1 (regenerated from S1), Table 2, §7.2, §7.4, §7.6, §7.7 and S6 updated to the recomputed numbers; response R2-6/R2-8/§4 updated. Codebook unchanged (no rule changed), so no re-freeze; pack stays v3.5.
+
 ## Still with the authors
 Send extension request; send proponent letters (record dates); second coding → agreement.py → fill κ; upload deposit_v2 → DOI into 4 places; names, CRediT confirmation, funding, CoI, AI tool; decide on length cuts; confirm Poznanski DOI.

@@ -2,10 +2,10 @@ domain_id,domain,n_explicit,n_interpreted,explicit_theories,n_stated_predictions
 M1,number of simultaneously competing action policies,1,1,SIT,1,0,0,0,0,0,0,0,0,0,single-occupant,single-occupant,single-occupant,0,,0,single-occupant,single-occupant,0,0,n/a (fewer than two stated predictions)
 M2,incompatibility of the competing policies,1,1,SIT,1,0,0,0,0,0,0,0,0,0,single-occupant,single-occupant,single-occupant,0,,0,single-occupant,single-occupant,0,0,n/a (fewer than two stated predictions)
 M3,valence,3,5,FM;PP;UAL,3,3,2,1,0,0,3,0,0,0,occupied-not-contested,occupied-not-contested,occupied-not-contested,0,,0,occupied-not-contested,occupied-not-contested,3,0,complete
-M5,organism-wide cortical–autonomic coherence,0,5,,0,0,0,0,0,0,0,0,0,0,thin,thin,thin,0,,0,thin,thin,0,0,n/a (fewer than two stated predictions)
+M5,organism-wide cortical–autonomic coherence,0,4,,0,0,0,0,0,0,0,0,0,0,thin,thin,thin,0,,0,thin,thin,0,0,n/a (fewer than two stated predictions)
 M6,dimensionality of phenomenal structure,2,3,HOSS;IIT,2,1,1,0,0,0,1,1,0,0,contested,occupied-not-contested,occupied-not-contested,0,,0,occupied-not-contested,occupied-not-contested,1,0,complete
-M7,metacognitive sensitivity,3,2,HOSS;HOT;PP,3,3,1,2,0,0,3,0,0,0,occupied-not-contested,occupied-not-contested,occupied-not-contested,0,,0,occupied-not-contested,occupied-not-contested,3,0,complete
+M7,metacognitive sensitivity,2,4,HOSS;HOT,2,1,0,1,0,0,1,0,0,0,occupied-not-contested,occupied-not-contested,occupied-not-contested,0,,0,occupied-not-contested,occupied-not-contested,1,0,complete
 M8,cortical signature of access,6,4,AST;GNWT;HOSS;HOT;IIT;RPT,12,54,42,10,2,0,52,15,14,11,contested,contested,contested,2,P02-P05;P08-P09,1,contested,contested,54,0,complete
-M4a,access to interoceptive content as content,2,5,FM;PP,2,1,0,1,0,0,1,0,0,0,occupied-not-contested,occupied-not-contested,occupied-not-contested,0,,0,occupied-not-contested,occupied-not-contested,1,0,complete
-M4b,visceral modulation of access to exteroceptive content,1,1,NSF,1,0,0,0,0,0,0,0,0,0,single-occupant,single-occupant,single-occupant,0,,0,single-occupant,single-occupant,0,0,n/a (fewer than two stated predictions)
+M4a,access to interoceptive content as content,3,4,FM;PP;SIT,3,3,0,3,0,0,3,0,0,0,occupied-not-contested,occupied-not-contested,occupied-not-contested,0,,0,occupied-not-contested,occupied-not-contested,3,0,complete
+M4b,visceral modulation of access to exteroceptive content,1,2,NSF,1,0,0,0,0,0,0,0,0,0,single-occupant,single-occupant,single-occupant,0,,0,single-occupant,single-occupant,0,0,n/a (fewer than two stated predictions)
 M4c,conscious involvement in purely autonomic conflict,2,2,PFT;SIT,2,1,0,1,0,0,1,0,0,0,occupied-not-contested,occupied-not-contested,occupied-not-contested,0,,0,occupied-not-contested,occupied-not-contested,1,0,complete
