@@ -1,0 +1,64 @@
+﻿table,key,reason
+S1,AST:M3,Emotional salience and valence are not interchangeable; adjudicate the inferential bridge.
+S1,AST:M7,Schema completeness and metacognitive precision may be distinct quantities.
+S1,AST:M4a,General internal attention is extended to visceral content; no direct interoceptive statement located.
+S1,FM:M6,Spatial map dimensions are not a complete quantified phenomenal space.
+S1,FM:M7,Adjudicate whether exclusion of higher-order cognition warrants NOT_APPLICABLE for its possible relation to basic experience.
+S1,GNWT:M2,Workspace recruitment for control is not necessarily variation in conscious experience.
+S1,GNWT:M7,Self-monitoring extension is weaker than a general metacognitive-precision prediction.
+S1,GNWT:M4a,Mechanistic extension from internal contents to visceral afferents.
+S1,HOT:M4b,The source addresses emotional processing more directly than exteroceptive access.
+S1,HOSS:M6,Model dimensionality need not be phenomenal dimensionality.
+S1,HOSS:M7,"Keep sensory noise, higher-order readout noise and confidence calibration separate."
+S1,HOSS:M4a,Bodily evidence used as a cue does not automatically establish bodily content.
+S1,HOSS:M4b,Named bodily cues are broader than an empirically specified visceral modulator.
+S1,IIT:M3,M3 does not explicitly define optional affect as a stated-null necessity claim.
+S1,IIT:M6,This explicit formalization is from IIT 3.0; mapping to the IIT 4.0 formulation should remain version-labelled.
+S1,NSF:M3,A general subjective frame does not fix the sign or magnitude of affect.
+S1,NSF:M5,Local heartbeat responses and organism-wide coherence are different observables.
+S1,PFT:M1,Number and incompatibility of plans are not independently manipulated in the cited account.
+S1,PFT:M3,Conscious motivational content is clearer than a valence-specific access effect.
+S1,PFT:M8,Only the response abstract was accessible; earlier target-article neural discussion warrants adjudication of the scope reading.
+S1,PP:M5,No specific organism-wide coupling index is fixed by the passage.
+S1,PP:M8,PP is explicitly a general framework and does not select a unique cortical signature.
+S1,SIT:M1,Policy count and policy incompatibility must not be conflated.
+S1,SIT:M3,The causal direction differs from a claim that valence alters access.
+S1,SIT:M8,A proposed search region is not an already stated necessary cortical access signature.
+S1,UAL:M3,UAL is a positive marker; do not turn a component of a jointly sufficient package into a individually necessary condition.
+S1,UAL:M4a,Bodily self-representation is broader than interoceptive content.
+S2,P01-E1,GNWT/IIT are primary tests; HOT/RPT are included because I2 also permits explicitly named implications in Discussion. | All critical stimuli were suprathreshold; no seen/unseen manipulation. Admissibility rests on comparing specific conscious contents.
+S2,P04-E1,"Recording modalities do not establish independent samples from the abstract alone. | Only the abstract was available; one publication row is retained provisionally, not a verified one-experiment claim."
+S2,P07-E1,"Only the abstract was available; one publication row is retained provisionally, not a verified one-experiment claim."
+S2,P08-E2,No-report means no immediate auditory task report; occasional retrospective experience probes remain.
+S2,P09-E1,"Only the abstract was available; one publication row is retained provisionally, not a verified one-experiment claim."
+S2,P11-E1,"Primary contrast concerns consequences of suppressed stimulation; an independently measured content-access contrast requires full-method verification. | Only the abstract was available; one publication row is retained provisionally, not a verified one-experiment claim."
+S2,P13-E1,"Two verified visual designs, plus one separately analyzed auditory observation. The auditory data provenance requires supplementary/adjudication review."
+S2,P13-E2,"Two verified visual designs, plus one separately analyzed auditory observation. The auditory data provenance requires supplementary/adjudication review."
+S2,P13-E3,"Provisional unit inclusion by provenance, distinct from the evidence-status provisional flag. | Main text describes data from a separate study; whether this is a previously published dataset could not be established. | Two verified visual designs, plus one separately analyzed auditory observation. The auditory data provenance requires supplementary/adjudication review."
+S2,P14-E1,"Only the abstract was available; one publication row is retained provisionally, not a verified one-experiment claim."
+S2,P16-E1,"Primary measure is metacognitive performance, not conscious access; computational examples add no empirical rows. | Only the abstract was available; one publication row is retained provisionally, not a verified one-experiment claim."
+S2,P17-E1,"Primary dissociation concerns metacognitive sensitivity at controlled first-order performance. | Only the abstract was available; one publication row is retained provisionally, not a verified one-experiment claim."
+S2,P18-E1,"Metacognitive accuracy is the primary variable, not content access."
+S2,P19-E1,"Confidence calibration, including a memory comparison, is primary."
+S2,P20-E1,"Two named new experiments plus the reported initial 4%-contrast study (12% real judgments, 57% correct orientation). The fMRI dataset is a reanalysis and creates no row."
+S2,P20-E2,"Two named new experiments plus the reported initial 4%-contrast study (12% real judgments, 57% correct orientation). The fMRI dataset is a reanalysis and creates no row."
+S2,P20-E3,"Sample size and full design of the initial study are not stated in the main text. | Two named new experiments plus the reported initial 4%-contrast study (12% real judgments, 57% correct orientation). The fMRI dataset is a reanalysis and creates no row."
+S2,P21-E1,Author proof contains Methods/Results for experiments 1–6. Abstract wording suggests six plus two. Six verified units retained; no invented E7/E8. Final-version partition unresolved.
+S2,P21-E2,Author proof contains Methods/Results for experiments 1–6. Abstract wording suggests six plus two. Six verified units retained; no invented E7/E8. Final-version partition unresolved.
+S2,P21-E3,Cue access is held below threshold. | Author proof contains Methods/Results for experiments 1–6. Abstract wording suggests six plus two. Six verified units retained; no invented E7/E8. Final-version partition unresolved.
+S2,P21-E4,Cue access is held below threshold. | Author proof contains Methods/Results for experiments 1–6. Abstract wording suggests six plus two. Six verified units retained; no invented E7/E8. Final-version partition unresolved.
+S2,P21-E5,Author proof contains Methods/Results for experiments 1–6. Abstract wording suggests six plus two. Six verified units retained; no invented E7/E8. Final-version partition unresolved.
+S2,P21-E6,Author proof contains Methods/Results for experiments 1–6. Abstract wording suggests six plus two. Six verified units retained; no invented E7/E8. Final-version partition unresolved.
+S2,P22-E2,"Ancillary ratings assess task difficulty, not access to conflict."
+S2,P22-E4,Autonomic effector is physiological context; do not classify as interoceptive content or intentional autonomic motor conflict automatically. | Reflex–reflex smooth-muscle contrast contains no clear intention directed at an autonomic effector; it fails the stated autonomic motor-conflict definition.
+S2,P23-E1,"Abstract describes one sample and two task contrasts; distinct additional samples cannot be established. Only the abstract was available; one publication row is retained provisionally, not a verified one-experiment claim."
+S2,P27-E1,"Only the abstract was available; one publication row is retained provisionally, not a verified one-experiment claim."
+S2,P28-E1,"Only the abstract was available; one publication row is retained provisionally, not a verified one-experiment claim."
+S2,P29-E1,Critical masked stimuli remain below threshold for the analyzed unaware group; no planned seen/unseen content-access contrast.
+S2,P30-E1,Classified by accessed response error; the displayed digits are not the coding target.
+S2,P31-E1,"Only the abstract was available; one publication row is retained provisionally, not a verified one-experiment claim."
+S2,P32-E1,"Interoceptive awareness is operationalized partly as metacognitive correspondence, not solely access. | Only the abstract was available; one publication row is retained provisionally, not a verified one-experiment claim."
+S2,P33-E1,Attention/training contrast does not directly measure seen/unseen access to breath.
+S2,P33-E2,Pilot validates attention/count performance rather than a content-access contrast.
+S2,P34-E1,"Two patients and several tasks are mentioned; they do not establish a verified experiment partition. | Only the abstract was available; one publication row is retained provisionally, not a verified one-experiment claim."
+S2,P36-E1,"State-level absence of content, outside content denominators."

@@ -1,0 +1,36 @@
+theory_id,domain_id,code_1,polarity_1,code_2,polarity_2,source_relation,direction,source_label_1,source_label_2,evidence_status_1
+PFT,M1,INTERPRETED,stated_null,INTERPRETED,positive,c1 source read by c2,polarity/other,"Morsella, Godwin, Jantz, Krieger & Gazzaley 2016 (BBS target article; cited as Morsella et al. 2015 in v1.3)","Morsella et al. 2015/2016, target article",full-text
+SIT,M1,EXPLICIT,positive,INTERPRETED,positive,c1 source NOT in c2 corpus,c2 weaker,"Morsella 2005; Morsella, Godwin, Jantz, Krieger & Gazzaley 2016 (BBS target article; cited as Morsella et al. 2015 in v1.3)","Morsella, Gray, Krieger & Bargh 2009",abstract-only
+GNWT,M2,NOT_LOCATED,,INTERPRETED,positive,c1 source NOT in c2 corpus,c2 stronger,Dehaene et al. 2006,Mashour et al. 2020,abstract-only
+PFT,M2,INTERPRETED,stated_null,EXPLICIT,positive,c1 source read by c2,c2 stronger,"Heredia Cedillo, Lambert & Morsella 2024; Morsella, Godwin, Jantz, Krieger & Gazzaley 2016 (BBS target article; cited as Morsella et al. 2015 in v1.3)","Morsella et al. 2015/2016, target article",abstract-only
+AST,M3,NOT_LOCATED,,INTERPRETED,positive,c1 source read by c2,c2 stronger,Webb & Graziano 2015,Webb & Graziano 2015,full-text
+GNWT,M3,INTERPRETED,stated_null,NOT_LOCATED,,c1 source read by c2,c2 weaker,Mashour et al. 2020,Mashour et al. 2020,abstract-only
+HOT,M3,INTERPRETED,stated_null,EXPLICIT,positive,c1 source read by c2,c2 stronger,LeDoux & Brown 2017,LeDoux & Brown 2017,abstract-only
+IIT,M3,NOT_LOCATED,,UNRESOLVED,,c1 source read by c2,polarity/other,Albantakis et al. 2023,Albantakis et al. 2023,full-text
+PFT,M3,INTERPRETED,stated_null,INTERPRETED,positive,c1 source read by c2,polarity/other,"Morsella, Godwin & Jantz 2016 (BBS reply)","Morsella et al. 2015/2016, target article",abstract-only
+SIT,M3,INTERPRETED,stated_null,INTERPRETED,positive,c1 source read by c2,polarity/other,"Morsella, Gray, Krieger & Bargh 2009","Morsella, Gray, Krieger & Bargh 2009",full-text
+AST,M4a,NOT_LOCATED,,INTERPRETED,positive,c1 source read by c2,c2 stronger,Webb & Graziano 2015,Webb & Graziano 2015,full-text
+GNWT,M4a,NOT_LOCATED,,INTERPRETED,positive,c1 source read by c2,c2 stronger,Mashour et al. 2020,Mashour et al. 2020,abstract-only
+HOSS,M4a,NOT_LOCATED,,INTERPRETED,positive,c1 source read by c2,c2 stronger,Fleming 2020,Fleming 2020,full-text
+NSF,M4a,INTERPRETED,stated_null,EXPLICIT,positive,c1 source read by c2,c2 stronger,Park & Tallon-Baudry 2014,Park & Tallon-Baudry 2014,abstract-only
+PFT,M4a,INTERPRETED,positive,EXPLICIT,positive,c1 source read by c2,c2 stronger,"Morsella, Godwin, Jantz, Krieger & Gazzaley 2016 (BBS target article; cited as Morsella et al. 2015 in v1.3)","Morsella et al. 2015/2016, target article",full-text
+SIT,M4a,INTERPRETED,positive,EXPLICIT,positive,c1 source NOT in c2 corpus,c2 stronger,"Morsella 2005; Morsella, Godwin, Jantz, Krieger & Gazzaley 2016 (BBS target article; cited as Morsella et al. 2015 in v1.3)","Morsella, Gray, Krieger & Bargh 2009",abstract-only
+HOSS,M4b,NOT_LOCATED,,INTERPRETED,positive,c1 source read by c2,c2 stronger,Fleming 2020,Fleming 2020,full-text
+HOT,M4b,NOT_LOCATED,,INTERPRETED,positive,c1 source NOT in c2 corpus,c2 stronger,Lau & Rosenthal 2011,LeDoux & Brown 2017,abstract-only
+HOT,M4c,INTERPRETED,positive,NOT_LOCATED,,c1 source read by c2,c2 weaker,LeDoux & Brown 2017,LeDoux & Brown 2017,abstract-only
+PP,M4c,INTERPRETED,positive,NOT_LOCATED,,c1 source read by c2,c2 weaker,Seth & Friston 2016; Seth 2016 (BBS commentary e196),Hohwy & Seth 2020,full-text
+FM,M5,INTERPRETED,positive,NOT_LOCATED,,c1 source read by c2,c2 weaker,Feinberg & Mallatt 2013,Feinberg & Mallatt 2020,full-text
+GNWT,M5,INTERPRETED,positive,NOT_LOCATED,,c1 source NOT in c2 corpus,c2 weaker,Dehaene et al. 2006,Mashour et al. 2020,abstract-only
+UAL,M5,INTERPRETED,positive,NOT_LOCATED,,c1 source read by c2,c2 weaker,"Birch, Ginsburg & Jablonka 2020","Birch, Ginsburg & Jablonka 2020",full-text
+AST,M6,INTERPRETED,positive,NOT_LOCATED,,c1 source read by c2,c2 weaker,Webb & Graziano 2015,Webb & Graziano 2015,full-text
+FM,M6,NOT_LOCATED,,INTERPRETED,positive,c1 source read by c2,c2 stronger,Feinberg & Mallatt 2013,Feinberg & Mallatt 2020,full-text
+HOSS,M6,EXPLICIT,positive,INTERPRETED,positive,c1 source read by c2,c2 weaker,Fleming 2020,Fleming 2020,full-text
+NSF,M6,INTERPRETED,positive,NOT_LOCATED,,c1 source NOT in c2 corpus,c2 weaker,Tallon-Baudry 2022,Park & Tallon-Baudry 2014,abstract-only
+PP,M6,INTERPRETED,positive,NOT_LOCATED,,c1 source NOT in c2 corpus,c2 weaker,Seth & Tsakiris 2018,Hohwy & Seth 2020,abstract-only
+FM,M7,NOT_LOCATED,,NOT_APPLICABLE,,c1 source read by c2,polarity/other,Feinberg & Mallatt 2013,Feinberg & Mallatt 2020,full-text
+HOSS,M7,EXPLICIT,positive,INTERPRETED,positive,c1 source read by c2,c2 weaker,Fleming 2020,Fleming 2020; Fleming & Daw 2017,full-text
+HOT,M7,EXPLICIT,positive,NOT_LOCATED,,c1 source NOT in c2 corpus,c2 weaker,Maniscalco & Lau 2012; Lau & Rosenthal 2011,LeDoux & Brown 2017,abstract-only
+PP,M7,EXPLICIT,positive,NOT_LOCATED,,c1 source read by c2,c2 weaker,Garfinkel et al. 2015; Seth & Friston 2016,Hohwy & Seth 2020,abstract-only
+FM,M8,INTERPRETED,positive,EXPLICIT,stated_null,c1 source read by c2,c2 stronger,Feinberg & Mallatt 2013,Feinberg & Mallatt 2013,full-text
+NSF,M8,INTERPRETED,positive,EXPLICIT,positive,c1 source NOT in c2 corpus,c2 stronger,"Park, Correia, Ducorps & Tallon-Baudry 2014",Park & Tallon-Baudry 2014,abstract-only
+PFT,M8,NOT_APPLICABLE,,UNRESOLVED,,c1 source read by c2,polarity/other,"Morsella, Godwin & Jantz 2016 (BBS reply)",Morsella et al. 2016 response; 2015/2016 target article,abstract-only

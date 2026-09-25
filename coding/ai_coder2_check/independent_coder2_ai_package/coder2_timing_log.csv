@@ -1,0 +1,16 @@
+﻿block,start_time,end_time,notes
+Shared source review and annotation,2026-09-25T06:21:00.282391+00:00,2026-09-25T06:48:51.869878+00:00,Observed AI workflow timestamps. S1 and S2 source reading was interleaved. Not a measure of human labour.
+AST,,,Separate start/end were not captured. Shared interleaved stage above; no retrospective duration invented.
+FM,,,Separate start/end were not captured. Shared interleaved stage above; no retrospective duration invented.
+GNWT,,,Separate start/end were not captured. Shared interleaved stage above; no retrospective duration invented.
+HOT,,,Separate start/end were not captured. Shared interleaved stage above; no retrospective duration invented.
+HOSS,,,Separate start/end were not captured. Shared interleaved stage above; no retrospective duration invented.
+IIT,,,Separate start/end were not captured. Shared interleaved stage above; no retrospective duration invented.
+NSF,,,Separate start/end were not captured. Shared interleaved stage above; no retrospective duration invented.
+PFT,,,Separate start/end were not captured. Shared interleaved stage above; no retrospective duration invented.
+PP,,,Separate start/end were not captured. Shared interleaved stage above; no retrospective duration invented.
+RPT,,,Separate start/end were not captured. Shared interleaved stage above; no retrospective duration invented.
+SIT,,,Separate start/end were not captured. Shared interleaved stage above; no retrospective duration invented.
+UAL,,,Separate start/end were not captured. Shared interleaved stage above; no retrospective duration invented.
+S2,,,Separate start/end were not captured. Shared interleaved stage above; no retrospective duration invented.
+Tabulation and validation,2026-09-25T06:48:51.869878+00:00,2026-09-25T06:55:44.696144+00:00,Observed workflow stage only; not human coding time.

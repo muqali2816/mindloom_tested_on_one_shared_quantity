@@ -1,0 +1,228 @@
+{
+  "status": "PASSED",
+  "checks_passed": 54,
+  "codebook_sha256": "6b2e7ad9df83b763c215eb79714fde83cf2a620eff8a9e3e95e80d3980ab8dcc",
+  "S1_rows": 120,
+  "S2_rows": 54,
+  "publications": 32,
+  "checks": [
+    {
+      "check": "Frozen codebook byte hash",
+      "passed": true
+    },
+    {
+      "check": "Exactly 120 unique S1 cells",
+      "passed": true
+    },
+    {
+      "check": "S1 grid equals original template",
+      "passed": true
+    },
+    {
+      "check": "All S1 metadata preserved",
+      "passed": true
+    },
+    {
+      "check": "S1 permitted codes",
+      "passed": true
+    },
+    {
+      "check": "S1 conditional polarity/relation",
+      "passed": true
+    },
+    {
+      "check": "Every S1 decision has claim/source/locus/confidence",
+      "passed": true
+    },
+    {
+      "check": "Provisional flag equals evidence-status rule",
+      "passed": true
+    },
+    {
+      "check": "Every S1/S2 DOI in source audit",
+      "passed": true
+    },
+    {
+      "check": "All 75 supplied DOI identities resolve",
+      "passed": true
+    },
+    {
+      "check": "Every original publication accounted for",
+      "passed": true
+    },
+    {
+      "check": "S2 unique experiment IDs",
+      "passed": true
+    },
+    {
+      "check": "Partition P01",
+      "passed": true
+    },
+    {
+      "check": "Partition P03",
+      "passed": true
+    },
+    {
+      "check": "Partition P04",
+      "passed": true
+    },
+    {
+      "check": "Partition P06",
+      "passed": true
+    },
+    {
+      "check": "Partition P07",
+      "passed": true
+    },
+    {
+      "check": "Partition P08",
+      "passed": true
+    },
+    {
+      "check": "Partition P09",
+      "passed": true
+    },
+    {
+      "check": "Partition P10",
+      "passed": true
+    },
+    {
+      "check": "Partition P11",
+      "passed": true
+    },
+    {
+      "check": "Partition P12",
+      "passed": true
+    },
+    {
+      "check": "Partition P13",
+      "passed": true
+    },
+    {
+      "check": "Partition P14",
+      "passed": true
+    },
+    {
+      "check": "Partition P16",
+      "passed": true
+    },
+    {
+      "check": "Partition P17",
+      "passed": true
+    },
+    {
+      "check": "Partition P18",
+      "passed": true
+    },
+    {
+      "check": "Partition P19",
+      "passed": true
+    },
+    {
+      "check": "Partition P20",
+      "passed": true
+    },
+    {
+      "check": "Partition P21",
+      "passed": true
+    },
+    {
+      "check": "Partition P22",
+      "passed": true
+    },
+    {
+      "check": "Partition P23",
+      "passed": true
+    },
+    {
+      "check": "Partition P24",
+      "passed": true
+    },
+    {
+      "check": "Partition P26",
+      "passed": true
+    },
+    {
+      "check": "Partition P27",
+      "passed": true
+    },
+    {
+      "check": "Partition P28",
+      "passed": true
+    },
+    {
+      "check": "Partition P29",
+      "passed": true
+    },
+    {
+      "check": "Partition P30",
+      "passed": true
+    },
+    {
+      "check": "Partition P31",
+      "passed": true
+    },
+    {
+      "check": "Partition P32",
+      "passed": true
+    },
+    {
+      "check": "Partition P33",
+      "passed": true
+    },
+    {
+      "check": "Partition P34",
+      "passed": true
+    },
+    {
+      "check": "Partition P35",
+      "passed": true
+    },
+    {
+      "check": "Partition P36",
+      "passed": true
+    },
+    {
+      "check": "P35 reanalysis has zero experiment rows",
+      "passed": true
+    },
+    {
+      "check": "S2 vocabularies",
+      "passed": true
+    },
+    {
+      "check": "Motor rows identify effector; nonmotor rows leave it empty",
+      "passed": true
+    },
+    {
+      "check": "Every contested row has a reason",
+      "passed": true
+    },
+    {
+      "check": "S2 manipulation, outcome and attribution provenance populated",
+      "passed": true
+    },
+    {
+      "check": "Attribution tokens match account IDs or explicit missingness",
+      "passed": true
+    },
+    {
+      "check": "Later positive attribution carries context category and DOI",
+      "passed": true
+    },
+    {
+      "check": "CSV outputs retain all decisions",
+      "passed": true
+    },
+    {
+      "check": "Derived classes agree with explicit raw rules",
+      "passed": true
+    },
+    {
+      "check": "Each sensitivity denominator excludes state and unresolved",
+      "passed": true
+    }
+  ],
+  "semantic_limit": "Structural validation is not independent verification of literature judgments. See adjudication notes and evidence limitations.",
+  "intercoder_agreement_computed": false
+}

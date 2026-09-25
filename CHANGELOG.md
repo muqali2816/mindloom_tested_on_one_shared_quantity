@@ -89,5 +89,10 @@ Baseline: manuscript v3 (sha256 dec8007fb39d42e2), deposit v1.3 (e7ea015ce7b9171
 - §7.2 provenance paragraph; one provisional rule (57 cells); §6.4 Cogitate by pair relations; abstract first/last sentences; AI statement names both systems; response E5/R1-9 v4, §4(i), letters a–k.
 - Codebook v2.4; agreement.py v2.4 (publication-level S2); pack v3.4; S2 form at publication level; PDF wish-list for the authors in pdfs/.
 
+## v4.9 (25 Sep 2026) — independent AI coding received and checked
+- An AI coding of Table S1 (120 cells) and S2 (54 rows, own partition) against codebook v2.4 arrived; it is NOT the second author's coding and says so. Recomputed against the real Table_S1_v2.csv: 88 of 120 codes, κ = 0.550 (95 % 0.439–0.661); binary located/not κ = 0.668; 35 disagreements, direction balanced. Deposited in ai_coder2_check/ with the session's own limits.
+- Reported in §7.2 as a reproducibility check, explicitly not the second coding; AI statement and response (R2-5, §4(j)) updated. S1 codes unchanged (frozen for the human comparison).
+- Codebook v2.5: §5 source lists completed with the sources first-coder cells actually rest on (Shea & Frith 2019; Tallon-Baudry 2018, 2022; Azzalini 2021; Kleckner 2017; Seth 2016; Gray et al. 2013; Heredia Cedillo 2024; Melloni 2023 protocol) — found because the AI session could not have consulted them. Pack v3.5.
+
 ## Still with the authors
 Send extension request; send proponent letters (record dates); second coding → agreement.py → fill κ; upload deposit_v2 → DOI into 4 places; names, CRediT confirmation, funding, CoI, AI tool; decide on length cuts; confirm Poznanski DOI.

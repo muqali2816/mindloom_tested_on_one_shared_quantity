@@ -1,0 +1,322 @@
+[
+  {
+    "publication_id": "P01",
+    "doi": "10.1038/s41586-025-08888-1",
+    "n_rows_returned": 1,
+    "n_experiments_identified": 1,
+    "partition_status": "verified-main-text",
+    "evidence_status": "full-text",
+    "partition_note": "One common design, three recording arms (256 recruited in total); no multiplication by recording technique.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P03",
+    "doi": "10.1371/journal.pbio.0050260",
+    "n_rows_returned": 1,
+    "n_experiments_identified": 1,
+    "partition_status": "verified-main-text",
+    "evidence_status": "full-text",
+    "partition_note": "Single design unless distinct samples/contrasts are separately labelled.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P04",
+    "doi": "10.1038/89551",
+    "n_rows_returned": 1,
+    "n_experiments_identified": 1,
+    "partition_status": "unverified-publication-as-one",
+    "evidence_status": "abstract-only",
+    "partition_note": "Only the abstract was available; one publication row is retained provisionally, not a verified one-experiment claim.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P06",
+    "doi": "10.7554/elife.05652",
+    "n_rows_returned": 1,
+    "n_experiments_identified": 1,
+    "partition_status": "verified-main-text",
+    "evidence_status": "full-text",
+    "partition_note": "Single design unless distinct samples/contrasts are separately labelled.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P07",
+    "doi": "10.1038/nn1549",
+    "n_rows_returned": 1,
+    "n_experiments_identified": 1,
+    "partition_status": "unverified-publication-as-one",
+    "evidence_status": "abstract-only",
+    "partition_note": "Only the abstract was available; one publication row is retained provisionally, not a verified one-experiment claim.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P08",
+    "doi": "10.1038/s41467-021-21393-z",
+    "n_rows_returned": 3,
+    "n_experiments_identified": 3,
+    "partition_status": "verified-main-text",
+    "evidence_status": "full-text",
+    "partition_note": "Three new samples: main task and two named controls. An earlier threshold-setting pilot has no separately reported analyzed contrast and is not counted.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P09",
+    "doi": "10.1126/science.280.5371.1930",
+    "n_rows_returned": 1,
+    "n_experiments_identified": 1,
+    "partition_status": "unverified-publication-as-one",
+    "evidence_status": "abstract-only",
+    "partition_note": "Only the abstract was available; one publication row is retained provisionally, not a verified one-experiment claim.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P10",
+    "doi": "10.1523/jneurosci.4403-13.2014",
+    "n_rows_returned": 1,
+    "n_experiments_identified": 1,
+    "partition_status": "verified-main-text",
+    "evidence_status": "full-text",
+    "partition_note": "One sample with two stimulus types and active/passive sessions. Pupil recording does not make the accessed content interoceptive.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P11",
+    "doi": "10.1038/nn1500",
+    "n_rows_returned": 1,
+    "n_experiments_identified": 1,
+    "partition_status": "unverified-publication-as-one",
+    "evidence_status": "abstract-only",
+    "partition_note": "Only the abstract was available; one publication row is retained provisionally, not a verified one-experiment claim.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P12",
+    "doi": "10.3389/fpsyg.2014.01078",
+    "n_rows_returned": 2,
+    "n_experiments_identified": 2,
+    "partition_status": "verified-main-text",
+    "evidence_status": "full-text",
+    "partition_note": "Behavioral and EEG samples are separate. IDs follow the Results presentation (behavioral first); Methods lists EEG participants first. Earlier inattentional studies are background, not new rows.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P13",
+    "doi": "10.1038/s41467-022-35117-4",
+    "n_rows_returned": 3,
+    "n_experiments_identified": 3,
+    "partition_status": "two-verified-plus-one-provenance-unresolved",
+    "evidence_status": "full-text",
+    "partition_note": "Two verified visual designs, plus one separately analyzed auditory observation. The auditory data provenance requires supplementary/adjudication review.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P14",
+    "doi": "10.1016/j.cub.2025.10.026",
+    "n_rows_returned": 1,
+    "n_experiments_identified": 1,
+    "partition_status": "unverified-publication-as-one",
+    "evidence_status": "abstract-only",
+    "partition_note": "Only the abstract was available; one publication row is retained provisionally, not a verified one-experiment claim.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P16",
+    "doi": "10.1016/j.concog.2011.09.021",
+    "n_rows_returned": 1,
+    "n_experiments_identified": 1,
+    "partition_status": "unverified-publication-as-one",
+    "evidence_status": "abstract-only",
+    "partition_note": "Only the abstract was available; one publication row is retained provisionally, not a verified one-experiment claim.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P17",
+    "doi": "10.1080/17588921003632529",
+    "n_rows_returned": 1,
+    "n_experiments_identified": 1,
+    "partition_status": "unverified-publication-as-one",
+    "evidence_status": "abstract-only",
+    "partition_note": "Only the abstract was available; one publication row is retained provisionally, not a verified one-experiment claim.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P18",
+    "doi": "10.1126/science.1191883",
+    "n_rows_returned": 1,
+    "n_experiments_identified": 1,
+    "partition_status": "verified-main-text",
+    "evidence_status": "full-text",
+    "partition_note": "Single design unless distinct samples/contrasts are separately labelled.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P19",
+    "doi": "10.1093/brain/awu221",
+    "n_rows_returned": 1,
+    "n_experiments_identified": 1,
+    "partition_status": "verified-main-text",
+    "evidence_status": "full-text",
+    "partition_note": "One study with three groups and two within-person tasks. Do not duplicate participants as independent perceptual and memory experiments.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P20",
+    "doi": "10.1038/s41467-023-37322-1",
+    "n_rows_returned": 3,
+    "n_experiments_identified": 3,
+    "partition_status": "main-two-verified-ancillary-details-incomplete",
+    "evidence_status": "full-text",
+    "partition_note": "Two named new experiments plus the reported initial 4%-contrast study (12% real judgments, 57% correct orientation). The fMRI dataset is a reanalysis and creates no row.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P21",
+    "doi": "10.1016/j.pneurobio.2020.101844",
+    "n_rows_returned": 6,
+    "n_experiments_identified": 6,
+    "partition_status": "six-methods-versus-abstract-discrepancy",
+    "evidence_status": "full-text",
+    "partition_note": "Author proof contains Methods/Results for experiments 1–6. Abstract wording suggests six plus two. Six verified units retained; no invented E7/E8. Final-version partition unresolved.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P22",
+    "doi": "10.1037/a0017121",
+    "n_rows_returned": 4,
+    "n_experiments_identified": 4,
+    "partition_status": "verified-main-text",
+    "evidence_status": "full-text",
+    "partition_note": "Three named studies plus a separate analyzed sample of eight difficulty judges. IDs follow first occurrence: Study 1, its judges, Study 2, Study 3.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P23",
+    "doi": "10.1007/s00221-013-3566-5",
+    "n_rows_returned": 1,
+    "n_experiments_identified": 1,
+    "partition_status": "unverified-publication-as-one",
+    "evidence_status": "abstract-only",
+    "partition_note": "Abstract describes one sample and two task contrasts; distinct additional samples cannot be established. Only the abstract was available; one publication row is retained provisionally, not a verified one-experiment claim.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P24",
+    "doi": "10.3758/app.71.8.1807",
+    "n_rows_returned": 6,
+    "n_experiments_identified": 6,
+    "partition_status": "verified-main-text",
+    "evidence_status": "full-text",
+    "partition_note": "Studies 1, 2, 3, 4A, 4B and 4C have separate samples/analyses. Substudies are not collapsed into one Study 4 row.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P26",
+    "doi": "10.1037/1528-3542.7.4.882",
+    "n_rows_returned": 3,
+    "n_experiments_identified": 3,
+    "partition_status": "verified-main-text",
+    "evidence_status": "full-text",
+    "partition_note": "Single design unless distinct samples/contrasts are separately labelled.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P27",
+    "doi": "10.1016/j.visres.2008.07.013",
+    "n_rows_returned": 1,
+    "n_experiments_identified": 1,
+    "partition_status": "unverified-publication-as-one",
+    "evidence_status": "abstract-only",
+    "partition_note": "Only the abstract was available; one publication row is retained provisionally, not a verified one-experiment claim.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P28",
+    "doi": "10.1016/j.cognition.2016.01.009",
+    "n_rows_returned": 1,
+    "n_experiments_identified": 1,
+    "partition_status": "unverified-publication-as-one",
+    "evidence_status": "abstract-only",
+    "partition_note": "Only the abstract was available; one publication row is retained provisionally, not a verified one-experiment claim.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P29",
+    "doi": "10.1523/jneurosci.18-01-00411.1998",
+    "n_rows_returned": 1,
+    "n_experiments_identified": 1,
+    "partition_status": "verified-main-text",
+    "evidence_status": "full-text",
+    "partition_note": "Single design unless distinct samples/contrasts are separately labelled.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P30",
+    "doi": "10.1016/j.neuroimage.2013.01.054",
+    "n_rows_returned": 1,
+    "n_experiments_identified": 1,
+    "partition_status": "verified-main-text",
+    "evidence_status": "full-text",
+    "partition_note": "Single design unless distinct samples/contrasts are separately labelled.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P31",
+    "doi": "10.1111/1469-8986.3850752",
+    "n_rows_returned": 1,
+    "n_experiments_identified": 1,
+    "partition_status": "unverified-publication-as-one",
+    "evidence_status": "abstract-only",
+    "partition_note": "Only the abstract was available; one publication row is retained provisionally, not a verified one-experiment claim.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P32",
+    "doi": "10.1016/j.biopsycho.2014.11.004",
+    "n_rows_returned": 1,
+    "n_experiments_identified": 1,
+    "partition_status": "unverified-publication-as-one",
+    "evidence_status": "abstract-only",
+    "partition_note": "Only the abstract was available; one publication row is retained provisionally, not a verified one-experiment claim.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P33",
+    "doi": "10.1093/scan/nss066",
+    "n_rows_returned": 2,
+    "n_experiments_identified": 2,
+    "partition_status": "verified-main-text",
+    "evidence_status": "full-text",
+    "partition_note": "Separate pilot sample is included. Main-task visual response demands do not constitute a report about the accessed respiratory content.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P34",
+    "doi": "10.1093/brain/aww358",
+    "n_rows_returned": 1,
+    "n_experiments_identified": 1,
+    "partition_status": "unverified-publication-as-one",
+    "evidence_status": "abstract-only",
+    "partition_note": "Only the abstract was available; one publication row is retained provisionally, not a verified one-experiment claim.",
+    "exclusion_reason": ""
+  },
+  {
+    "publication_id": "P35",
+    "doi": "10.1523/jneurosci.0696-23.2023",
+    "n_rows_returned": 0,
+    "n_experiments_identified": 0,
+    "partition_status": "excluded-reanalysis",
+    "evidence_status": "full-text",
+    "partition_note": "Methods explicitly reuses a previously collected/published resting-state dataset (Van Calster et al. 2017).",
+    "exclusion_reason": "U1: reanalysis is not a new empirical experiment. Retained here for publication-level alignment."
+  },
+  {
+    "publication_id": "P36",
+    "doi": "10.1002/hbm.24748",
+    "n_rows_returned": 1,
+    "n_experiments_identified": 1,
+    "partition_status": "verified-main-text",
+    "evidence_status": "full-text",
+    "partition_note": "The study reports a new sample while describing a previous behavioral finding; it is not excluded as a reanalysis.",
+    "exclusion_reason": ""
+  }
+]

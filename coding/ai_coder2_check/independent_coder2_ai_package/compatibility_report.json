@@ -1,0 +1,9 @@
+{
+  "S1_loader": "PASSED",
+  "S1_manifest_grid": "PASSED",
+  "S2_v2_loader": "PASSED",
+  "S1_rows": 120,
+  "S2_rows": 54,
+  "comparison_or_kappa_run": false,
+  "note": "Only each file was loaded and validated; no self-comparison and no coder1 file."
+}

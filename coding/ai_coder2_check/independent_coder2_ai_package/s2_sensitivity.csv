@@ -1,0 +1,9 @@
+﻿scenario,n_rows,n_publications,content_denominator,neutral-visual,neutral-nonvisual,motor-conflict (skeletal),motor-conflict (autonomic),valenced,interoceptive,state (no content),UNRESOLVED,by_authors_unresolved
+all_retained_rows,54,31,52,26,5,12,0,6,3,1,1,13
+exclude_contested,38,21,38,18,4,11,0,5,0,0,0,9
+theory_addressed_confirmed,35,18,34,19,3,12,0,0,0,0,1,6
+theory_addressed_confirmed_exclude_contested,26,13,26,12,3,11,0,0,0,0,0,4
+strict_attribution_confirmed,27,10,26,13,3,10,0,0,0,0,1,0
+strict_attribution_exclude_contested,22,9,22,10,3,9,0,0,0,0,0,0
+full_text_only,41,18,39,19,4,10,0,4,2,1,1,0
+verified_partition_only,29,15,27,8,3,10,0,4,2,1,1,0

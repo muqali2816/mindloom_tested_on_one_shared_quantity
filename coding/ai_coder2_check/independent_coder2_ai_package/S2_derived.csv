@@ -1,0 +1,55 @@
+﻿experiment_id,publication_id,content_class_7way,content_class_5way,theory_addressed_confirmed,theory_addressed_strict_confirmed,by_authors_unresolved,contested_inclusion,evidence_status,partition_status
+P01-E1,P01,neutral-visual,neutral-visual,True,True,False,True,full-text,verified-main-text
+P03-E1,P03,neutral-visual,neutral-visual,True,True,False,False,full-text,verified-main-text
+P04-E1,P04,neutral-visual,neutral-visual,True,False,True,False,abstract-only,unverified-publication-as-one
+P06-E1,P06,neutral-visual,neutral-visual,True,True,False,False,full-text,verified-main-text
+P07-E1,P07,neutral-visual,neutral-visual,True,False,True,False,abstract-only,unverified-publication-as-one
+P08-E1,P08,neutral-nonvisual,neutral-nonvisual,True,True,False,False,full-text,verified-main-text
+P08-E2,P08,neutral-nonvisual,neutral-nonvisual,True,True,False,False,full-text,verified-main-text
+P08-E3,P08,neutral-nonvisual,neutral-nonvisual,True,True,False,False,full-text,verified-main-text
+P09-E1,P09,neutral-visual,neutral-visual,False,False,True,False,abstract-only,unverified-publication-as-one
+P10-E1,P10,neutral-visual,neutral-visual,True,True,False,False,full-text,verified-main-text
+P11-E1,P11,neutral-visual,neutral-visual,False,False,True,True,abstract-only,unverified-publication-as-one
+P12-E1,P12,neutral-visual,neutral-visual,False,False,False,False,full-text,verified-main-text
+P12-E2,P12,neutral-visual,neutral-visual,False,False,False,False,full-text,verified-main-text
+P13-E1,P13,neutral-visual,neutral-visual,False,False,False,False,full-text,two-verified-plus-one-provenance-unresolved
+P13-E2,P13,neutral-visual,neutral-visual,False,False,False,False,full-text,two-verified-plus-one-provenance-unresolved
+P13-E3,P13,neutral-nonvisual,neutral-nonvisual,False,False,False,True,full-text,two-verified-plus-one-provenance-unresolved
+P14-E1,P14,neutral-nonvisual,neutral-nonvisual,False,False,True,False,abstract-only,unverified-publication-as-one
+P16-E1,P16,neutral-visual,neutral-visual,True,False,True,True,abstract-only,unverified-publication-as-one
+P17-E1,P17,neutral-visual,neutral-visual,True,False,True,True,abstract-only,unverified-publication-as-one
+P18-E1,P18,neutral-visual,neutral-visual,True,False,False,True,full-text,verified-main-text
+P19-E1,P19,neutral-visual,neutral-visual,True,False,False,True,full-text,verified-main-text
+P20-E1,P20,neutral-visual,neutral-visual,True,True,False,False,full-text,main-two-verified-ancillary-details-incomplete
+P20-E2,P20,neutral-visual,neutral-visual,True,True,False,False,full-text,main-two-verified-ancillary-details-incomplete
+P20-E3,P20,neutral-visual,neutral-visual,True,True,False,False,full-text,main-two-verified-ancillary-details-incomplete
+P21-E1,P21,neutral-visual,neutral-visual,True,True,False,False,full-text,six-methods-versus-abstract-discrepancy
+P21-E2,P21,neutral-visual,neutral-visual,True,True,False,False,full-text,six-methods-versus-abstract-discrepancy
+P21-E3,P21,neutral-visual,neutral-visual,True,True,False,True,full-text,six-methods-versus-abstract-discrepancy
+P21-E4,P21,neutral-visual,neutral-visual,True,True,False,True,full-text,six-methods-versus-abstract-discrepancy
+P21-E5,P21,neutral-visual,neutral-visual,True,True,False,False,full-text,six-methods-versus-abstract-discrepancy
+P21-E6,P21,neutral-visual,neutral-visual,True,True,False,False,full-text,six-methods-versus-abstract-discrepancy
+P22-E1,P22,motor-conflict (skeletal),motor-conflict,True,True,False,False,full-text,verified-main-text
+P22-E2,P22,motor-conflict (skeletal),motor-conflict,True,True,False,True,full-text,verified-main-text
+P22-E3,P22,motor-conflict (skeletal),motor-conflict,True,True,False,False,full-text,verified-main-text
+P22-E4,P22,UNRESOLVED,UNRESOLVED,True,True,False,True,full-text,verified-main-text
+P23-E1,P23,motor-conflict (skeletal),motor-conflict,True,False,True,False,abstract-only,unverified-publication-as-one
+P24-E1,P24,motor-conflict (skeletal),motor-conflict,True,True,False,False,full-text,verified-main-text
+P24-E2,P24,motor-conflict (skeletal),motor-conflict,True,True,False,False,full-text,verified-main-text
+P24-E3,P24,motor-conflict (skeletal),motor-conflict,True,True,False,False,full-text,verified-main-text
+P24-E4,P24,motor-conflict (skeletal),motor-conflict,True,True,False,False,full-text,verified-main-text
+P24-E5,P24,motor-conflict (skeletal),motor-conflict,True,True,False,False,full-text,verified-main-text
+P24-E6,P24,motor-conflict (skeletal),motor-conflict,True,True,False,False,full-text,verified-main-text
+P26-E1,P26,valenced,valenced,False,False,False,False,full-text,verified-main-text
+P26-E2,P26,valenced,valenced,False,False,False,False,full-text,verified-main-text
+P26-E3,P26,valenced,valenced,False,False,False,False,full-text,verified-main-text
+P27-E1,P27,valenced,valenced,False,False,True,False,abstract-only,unverified-publication-as-one
+P28-E1,P28,valenced,valenced,False,False,True,False,abstract-only,unverified-publication-as-one
+P29-E1,P29,valenced,valenced,False,False,False,True,full-text,verified-main-text
+P30-E1,P30,motor-conflict (skeletal),motor-conflict,True,True,False,False,full-text,verified-main-text
+P31-E1,P31,motor-conflict (skeletal),motor-conflict,True,False,True,False,abstract-only,unverified-publication-as-one
+P32-E1,P32,interoceptive,interoceptive,False,False,True,True,abstract-only,unverified-publication-as-one
+P33-E1,P33,interoceptive,interoceptive,False,False,False,True,full-text,verified-main-text
+P33-E2,P33,interoceptive,interoceptive,False,False,False,True,full-text,verified-main-text
+P34-E1,P34,neutral-visual,neutral-visual,False,False,True,False,abstract-only,unverified-publication-as-one
+P36-E1,P36,state (no content),state (no content),False,False,False,True,full-text,verified-main-text

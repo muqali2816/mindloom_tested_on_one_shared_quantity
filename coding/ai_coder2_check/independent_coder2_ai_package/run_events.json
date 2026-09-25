@@ -1,0 +1,17 @@
+[
+  {
+    "event": "source_review_started",
+    "utc": "2026-09-25T06:21:00.282391+00:00",
+    "scope": "S1 and S2 interleaved retrieval; no fabricated per-theory times"
+  },
+  {
+    "event": "annotation_draft_complete",
+    "utc": "2026-09-25T06:48:51.869878+00:00",
+    "scope": "S1 120 cells; S2 54 rows/32-publication audit; start of tabulation and structural validation"
+  },
+  {
+    "event": "validation_and_packaging_complete",
+    "utc": "2026-09-25T06:55:44.696144+00:00",
+    "scope": "54 structural checks and original S1/S2 loader compatibility passed; no coder1 comparison"
+  }
+]

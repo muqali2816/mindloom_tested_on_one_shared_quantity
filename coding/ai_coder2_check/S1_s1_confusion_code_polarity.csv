@@ -1,0 +1,10 @@
+code:polarity,coder2:EXPLICIT:positive,coder2:EXPLICIT:stated_null,coder2:EXPLICIT:negative,coder2:INTERPRETED:positive,coder2:INTERPRETED:stated_null,coder2:INTERPRETED:negative,coder2:NOT_LOCATED,coder2:NOT_APPLICABLE,coder2:UNRESOLVED
+coder1:EXPLICIT:positive,14,0,0,3,0,0,2,0,0
+coder1:EXPLICIT:stated_null,0,2,0,0,0,0,0,0,0
+coder1:EXPLICIT:negative,0,0,0,0,0,0,0,0,0
+coder1:INTERPRETED:positive,3,1,0,10,0,0,8,0,0
+coder1:INTERPRETED:stated_null,3,0,0,3,0,0,1,0,0
+coder1:INTERPRETED:negative,0,0,0,0,0,0,0,0,0
+coder1:NOT_LOCATED,0,0,0,8,0,0,58,1,1
+coder1:NOT_APPLICABLE,0,0,0,0,0,0,0,1,1
+coder1:UNRESOLVED,0,0,0,0,0,0,0,0,0

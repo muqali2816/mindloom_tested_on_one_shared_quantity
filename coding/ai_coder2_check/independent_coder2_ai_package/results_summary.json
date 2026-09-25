@@ -1,0 +1,153 @@
+{
+  "coder": "independent AI coding, not an independent human rater",
+  "codebook_hash": "6b2e7ad9df83b763c215eb79714fde83cf2a620eff8a9e3e95e80d3980ab8dcc",
+  "S1": {
+    "n": 120,
+    "codes": {
+      "NOT_LOCATED": 69,
+      "INTERPRETED": 24,
+      "EXPLICIT": 23,
+      "NOT_APPLICABLE": 2,
+      "UNRESOLVED": 2
+    },
+    "provisional": 1,
+    "flagged": 27,
+    "explicit_stated_null": 3
+  },
+  "S2": {
+    "publications_audited": 32,
+    "retained_rows": 54,
+    "publications_with_rows": 31,
+    "excluded_new_experiments_zero": [
+      "P35"
+    ],
+    "abstract_only_rows": 13,
+    "contested_rows": 16,
+    "ancillary_rows": 9,
+    "partition_uncertain_rows": 25
+  },
+  "intercoder_agreement": "NOT COMPUTED: coder 1 was not accessed",
+  "column_typology": "NOT COMPUTED: S4 and pair judgments were not supplied",
+  "sensitivity": [
+    {
+      "scenario": "all_retained_rows",
+      "n_rows": 54,
+      "n_publications": 31,
+      "content_denominator": 52,
+      "neutral-visual": 26,
+      "neutral-nonvisual": 5,
+      "motor-conflict (skeletal)": 12,
+      "motor-conflict (autonomic)": 0,
+      "valenced": 6,
+      "interoceptive": 3,
+      "state (no content)": 1,
+      "UNRESOLVED": 1,
+      "by_authors_unresolved": 13
+    },
+    {
+      "scenario": "exclude_contested",
+      "n_rows": 38,
+      "n_publications": 21,
+      "content_denominator": 38,
+      "neutral-visual": 18,
+      "neutral-nonvisual": 4,
+      "motor-conflict (skeletal)": 11,
+      "motor-conflict (autonomic)": 0,
+      "valenced": 5,
+      "interoceptive": 0,
+      "state (no content)": 0,
+      "UNRESOLVED": 0,
+      "by_authors_unresolved": 9
+    },
+    {
+      "scenario": "theory_addressed_confirmed",
+      "n_rows": 35,
+      "n_publications": 18,
+      "content_denominator": 34,
+      "neutral-visual": 19,
+      "neutral-nonvisual": 3,
+      "motor-conflict (skeletal)": 12,
+      "motor-conflict (autonomic)": 0,
+      "valenced": 0,
+      "interoceptive": 0,
+      "state (no content)": 0,
+      "UNRESOLVED": 1,
+      "by_authors_unresolved": 6
+    },
+    {
+      "scenario": "theory_addressed_confirmed_exclude_contested",
+      "n_rows": 26,
+      "n_publications": 13,
+      "content_denominator": 26,
+      "neutral-visual": 12,
+      "neutral-nonvisual": 3,
+      "motor-conflict (skeletal)": 11,
+      "motor-conflict (autonomic)": 0,
+      "valenced": 0,
+      "interoceptive": 0,
+      "state (no content)": 0,
+      "UNRESOLVED": 0,
+      "by_authors_unresolved": 4
+    },
+    {
+      "scenario": "strict_attribution_confirmed",
+      "n_rows": 27,
+      "n_publications": 10,
+      "content_denominator": 26,
+      "neutral-visual": 13,
+      "neutral-nonvisual": 3,
+      "motor-conflict (skeletal)": 10,
+      "motor-conflict (autonomic)": 0,
+      "valenced": 0,
+      "interoceptive": 0,
+      "state (no content)": 0,
+      "UNRESOLVED": 1,
+      "by_authors_unresolved": 0
+    },
+    {
+      "scenario": "strict_attribution_exclude_contested",
+      "n_rows": 22,
+      "n_publications": 9,
+      "content_denominator": 22,
+      "neutral-visual": 10,
+      "neutral-nonvisual": 3,
+      "motor-conflict (skeletal)": 9,
+      "motor-conflict (autonomic)": 0,
+      "valenced": 0,
+      "interoceptive": 0,
+      "state (no content)": 0,
+      "UNRESOLVED": 0,
+      "by_authors_unresolved": 0
+    },
+    {
+      "scenario": "full_text_only",
+      "n_rows": 41,
+      "n_publications": 18,
+      "content_denominator": 39,
+      "neutral-visual": 19,
+      "neutral-nonvisual": 4,
+      "motor-conflict (skeletal)": 10,
+      "motor-conflict (autonomic)": 0,
+      "valenced": 4,
+      "interoceptive": 2,
+      "state (no content)": 1,
+      "UNRESOLVED": 1,
+      "by_authors_unresolved": 0
+    },
+    {
+      "scenario": "verified_partition_only",
+      "n_rows": 29,
+      "n_publications": 15,
+      "content_denominator": 27,
+      "neutral-visual": 8,
+      "neutral-nonvisual": 3,
+      "motor-conflict (skeletal)": 10,
+      "motor-conflict (autonomic)": 0,
+      "valenced": 4,
+      "interoceptive": 2,
+      "state (no content)": 1,
+      "UNRESOLVED": 1,
+      "by_authors_unresolved": 0
+    }
+  ]
+}

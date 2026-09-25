@@ -1,0 +1,31 @@
+statistic,value
+S1_version,2.4
+S1_code_scheme,v2
+S1_n_cells_compared,120
+S1_n_theories,12
+S1_n_domains,10
+S1_n_manifest_grid_cells,120
+S1_1_raw_agreement_code_k_of_n,88 of 120
+S1_1_raw_agreement_code_proportion,0.7333333333333333
+S1_1_raw_agreement_code_polarity_k_of_n,85 of 120
+S1_1_raw_agreement_code_polarity_proportion,0.7083333333333334
+S1_3_kappa_nominal_code,0.5495601173020528
+S1_3_kappa_nominal_code_pe,0.40798611111111116
+S1_3_kappa_nominal_code_band,moderate
+S1_3_kappa_nominal_code_polarity,0.5221843003412969
+S1_3_kappa_binary_located_vs_not,0.6676549066113251
+S1_3_kappa_binary_located_vs_not_n_cells,118
+S1_3_n_EXPLICIT_null_coder1,2
+S1_3_n_EXPLICIT_null_coder2,3
+S1_3_n_UNRESOLVED_either_coder,2
+S1_3_n_UNRESOLVED_coder1,0
+S1_3_n_UNRESOLVED_coder2,2
+S1_3_kappa_ci_method,"cluster bootstrap over 12 theories, 2000 replicates, percentile 95 % (indicative; few clusters)"
+S1_3_kappa_ci95_low,0.4385339643342134
+S1_3_kappa_ci95_high,0.6612528237412134
+S1_5_origin_source,file column
+S1_5_kappa_nominal_submitted-v1,0.5631067961165048
+S1_5_raw_agreement_submitted-v1,52 of 70
+S1_5_kappa_nominal_added-in-revision,0.5292535305985204
+S1_5_raw_agreement_added-in-revision,36 of 50
+S1_n_disagreements,35

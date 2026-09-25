@@ -167,16 +167,13 @@ Sources are listed most-recent-empirical-statement first; that is the canonical 
 **GNWT — Global neuronal workspace theory** (content-level)
 - Mashour, Roelfsema, Changeux & Dehaene 2020 — doi:10.1016/j.neuron.2020.01.026
 - Cogitate Consortium et al. 2025 (adversarial test, preregistered predictions) — doi:10.1038/s41586-025-08888-1
-- Melloni et al. 2023 (Cogitate adversarial collaboration protocol; preregistered predictions) — doi:10.1371/journal.pone.0268577
 - Dehaene & Changeux 2011 — doi:10.1016/j.neuron.2011.03.018
 - Dehaene, Changeux, Naccache, Sackur & Sergent 2006 — doi:10.1016/j.tics.2006.03.007
 - Dehaene & Naccache 2001 — doi:10.1016/s0010-0277(00)00123-2
-- Shea & Frith 2019 (global workspace and metacognition; auxiliary, admissible as anchor for M7) — doi:10.1016/j.tics.2019.04.007
 
 **IIT (3.0/4.0) — Integrated information theory** (content-level)
 - Albantakis et al. 2023 (IIT 4.0) — doi:10.1371/journal.pcbi.1011465
 - Cogitate Consortium et al. 2025 (adversarial test, preregistered predictions) — doi:10.1038/s41586-025-08888-1
-- Melloni et al. 2023 (Cogitate adversarial collaboration protocol; preregistered predictions) — doi:10.1371/journal.pone.0268577
 - Tononi, Boly, Massimini & Koch 2016 — doi:10.1038/nrn.2016.44
 - Oizumi, Albantakis & Tononi 2014 (IIT 3.0) — doi:10.1371/journal.pcbi.1003588
 
@@ -209,20 +206,16 @@ Sources are listed most-recent-empirical-statement first; that is the canonical 
 - Seth 2013 — doi:10.1016/j.tics.2013.09.007
 - Clark 2013 (general predictive-processing framework) — doi:10.1017/s0140525x12000477
 - Auxiliary empirical/theoretical sources used in the PP literature and admissible as anchors: Pezzulo, Rigoli & Friston 2018 — doi:10.1016/j.tics.2018.01.009; Joffily & Coricelli 2013 — doi:10.1371/journal.pcbi.1003094; Kleckner et al. 2017 — doi:10.1038/s41562-017-0069; Garfinkel et al. 2015 — doi:10.1016/j.biopsycho.2014.11.004.
-- Kleckner et al. 2017 (allostatic–interoceptive system; auxiliary, admissible as anchor for M5) — doi:10.1038/s41562-017-0069
-- Seth 2016 (Infer yourself: interoception and internal action in conscious selfhood; commentary) — doi:10.1017/s0140525x15002265
 
 **SIT — Supramodular interaction theory** (content-level)
 - Morsella, Gray & Krieger 2009 — doi:10.1037/a0017121
 - Morsella, Krieger & Bargh 2008 — doi:10.1093/oso/9780195309980.003.0030
 - Morsella 2005 — doi:10.1037/0033-295x.112.4.1000
-- Gray, Bargh & Morsella 2013 (neural correlates of the essence of conscious conflict; empirical anchor for M8) — doi:10.1007/s00221-013-3566-5
 
 **Passive frame theory** (content-level; successor synthesis to SIT — code it on its own statements)
 - Morsella, Godwin & Jantz 2016 — doi:10.1017/s0140525x15002812
 - Morsella, Godwin, Jantz, Krieger & Gazzaley 2015 — doi:10.1017/s0140525x15000643
 - Poehlman, Jantz & Morsella 2012 — doi:10.3389/fpsyg.2012.00369
-- Heredia Cedillo, Lau & Morsella 2024 (identifying consciousness in other creatures) — doi:10.3390/bs14040337
 
 **UAL — Unlimited associative learning** (origin-level)
 - Birch, Ginsburg & Jablonka 2021 — doi:10.1007/s10539-021-09802-5
@@ -240,12 +233,9 @@ Sources are listed most-recent-empirical-statement first; that is the canonical 
 - Babo-Rebelo, Richter & Tallon-Baudry 2016 — doi:10.1523/JNEUROSCI.0262-16.2016
 - Park, Correia, Ducorps & Tallon-Baudry 2014 — doi:10.1038/nn.3671
 - Park & Tallon-Baudry 2014 — doi:10.1098/rstb.2013.0208
-- Tallon-Baudry, Campana, Park & Babo-Rebelo 2018 (visceral monitoring and the first-person perspective) — doi:10.1016/j.cortex.2017.05.019
-- Tallon-Baudry 2022 (the topological self; auxiliary) — doi:10.1016/j.tics.2022.09.002
-- Azzalini, Buot, Palminteri & Tallon-Baudry 2021 (heartbeat responses in vmPFC and subjective value) — doi:10.1523/jneurosci.1932-20.2021
 
 ---
-## 6. Files in this pack (v3.5)
+## 6. Files in this pack (v3.4)
 
 | File | Purpose |
 |---|---|
@@ -282,4 +272,4 @@ Sources are listed most-recent-empirical-statement first; that is the canonical 
 Anchor every non-NO cell to a citable source, as in S1. If the theory says nothing that bears on the dimension, code NO and state what you looked for.
 
 ---
-**Codebook v2.5 — frozen 25 September 2026. sha256 of everything above this line (all bytes up to and including the newline before the line that begins `**Codebook`): `bcfce5ddac993842166176d03d065f9dcd8615dd4a72ee05699cdb64bfe12906`.** Changes after the second coder starts → `codebook_changelog.md` and re-coding of affected cells.
+**Codebook v2.4 — frozen 24 September 2026. sha256 of everything above this line (all bytes up to and including the newline before the line that begins `**Codebook`): `6b2e7ad9df83b763c215eb79714fde83cf2a620eff8a9e3e95e80d3980ab8dcc`.** Changes after the second coder starts → `codebook_changelog.md` and re-coding of affected cells.
